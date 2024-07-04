@@ -71,6 +71,7 @@ var playEvent = __webpack_require__(/*! ./src/synth/play-event */ "./src/synth/p
 var SynthController = __webpack_require__(/*! ./src/synth/synth-controller */ "./src/synth/synth-controller.js");
 var getMidiFile = __webpack_require__(/*! ./src/synth/get-midi-file */ "./src/synth/get-midi-file.js");
 var midiRenderer = __webpack_require__(/*! ./src/synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
+var soundsCache = __webpack_require__(/*! ./src/synth/sounds-cache */ "./src/synth/sounds-cache.js");
 abcjs.synth = {
   CreateSynth: CreateSynth,
   instrumentIndexToName: instrumentIndexToName,
@@ -84,7 +85,8 @@ abcjs.synth = {
   playEvent: playEvent,
   getMidiFile: getMidiFile,
   sequence: sequence,
-  midiRenderer: midiRenderer
+  midiRenderer: midiRenderer,
+  soundsCache: soundsCache
 };
 abcjs['Editor'] = __webpack_require__(/*! ./src/edit/abc_editor */ "./src/edit/abc_editor.js");
 abcjs['EditArea'] = __webpack_require__(/*! ./src/edit/abc_editarea */ "./src/edit/abc_editarea.js");

@@ -59,6 +59,7 @@ var playEvent = require('./src/synth/play-event');
 var SynthController = require('./src/synth/synth-controller');
 var getMidiFile = require('./src/synth/get-midi-file');
 var midiRenderer = require('./src/synth/abc_midi_renderer');
+var soundsCache = require('./src/synth/sounds-cache');
 
 abcjs.synth = {
 	CreateSynth: CreateSynth,
@@ -74,6 +75,7 @@ abcjs.synth = {
 	getMidiFile: getMidiFile,
 	sequence: sequence,
 	midiRenderer: midiRenderer,
+	soundsCache: soundsCache,
 };
 
 abcjs['Editor'] = require('./src/edit/abc_editor');
