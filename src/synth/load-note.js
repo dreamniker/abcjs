@@ -39,42 +39,42 @@ var getNote = async function (url, instrument, name, audioContext) {
   var instrumentCache = soundsCache[instrument]
   const cacheKey = `${instrument}-${name}`
 
-  if (!instrumentCache[name]) {
-    instrumentCache[name] = new Promise(async function (resolve, reject) {
-      const loadNote = () => {
-        let noteUrl = url + instrument + '-mp3/' + name + '.mp3'
-        var xhr = new XMLHttpRequest()
-        xhr.open('GET', noteUrl, true)
-        xhr.responseType = 'arraybuffer'
-        xhr.onload = async function () {
-          if (xhr.status !== 200) {
-            reject(Error("Can't load sound at " + noteUrl + ' status=' + xhr.status))
-            return
-          }
-          const data = xhr.response
-          saveToCache(db, cacheKey, new Blob([data]))
-          var noteDecoded = async function (audioBuffer) {
-            resolve({
-              instrument: instrument,
-              name: name,
-              status: 'loaded',
-              audioBuffer: audioBuffer,
-            })
-          }
-          var maybePromise = audioContext.decodeAudioData(xhr.response, noteDecoded, function () {
-            reject(Error("Can't decode sound at " + noteUrl))
-          })
-          if (maybePromise && typeof maybePromise.catch === 'function') maybePromise.catch(reject)
-        }
-        xhr.onerror = function () {
-          reject(Error("Can't load sound at " + noteUrl))
-        }
-        xhr.send()
-      }
+  try {
+    const db = await openDatabase()
+    const cachedSound = await getFromCache(db, cacheKey)
 
-      try {
-        const db = await openDatabase()
-        const cachedSound = await getFromCache(db, cacheKey)
+    if (!instrumentCache[name]) {
+      instrumentCache[name] = new Promise(async function (resolve, reject) {
+        const loadNote = () => {
+          let noteUrl = url + instrument + '-mp3/' + name + '.mp3'
+          var xhr = new XMLHttpRequest()
+          xhr.open('GET', noteUrl, true)
+          xhr.responseType = 'arraybuffer'
+          xhr.onload = async function () {
+            if (xhr.status !== 200) {
+              reject(Error("Can't load sound at " + noteUrl + ' status=' + xhr.status))
+              return
+            }
+            const data = xhr.response
+            saveToCache(db, cacheKey, new Blob([data]))
+            var noteDecoded = async function (audioBuffer) {
+              resolve({
+                instrument: instrument,
+                name: name,
+                status: 'loaded',
+                audioBuffer: audioBuffer,
+              })
+            }
+            var maybePromise = audioContext.decodeAudioData(xhr.response, noteDecoded, function () {
+              reject(Error("Can't decode sound at " + noteUrl))
+            })
+            if (maybePromise && typeof maybePromise.catch === 'function') maybePromise.catch(reject)
+          }
+          xhr.onerror = function () {
+            reject(Error("Can't load sound at " + noteUrl))
+          }
+          xhr.send()
+        }
 
         if (cachedSound) {
           const reader = new FileReader()
@@ -103,14 +103,14 @@ var getNote = async function (url, instrument, name, audioContext) {
         } else {
           loadNote()
         }
-      } catch (error) {
-        console.error('Error accessing cache or loading note', instrument, name, ':', error.message)
-        reject(error)
-      }
-    }).catch((err) => {
-      console.error("Didn't load note", instrument, name, ':', err.message)
-      throw err
-    })
+      }).catch((err) => {
+        console.error("Didn't load note", instrument, name, ':', err.message)
+        throw err
+      })
+    }
+  } catch (error) {
+    console.error('Error accessing cache or loading note', instrument, name, ':', error.message)
+    reject(error)
   }
 
   return instrumentCache[name]
