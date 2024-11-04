@@ -5,10 +5,10 @@ import { noteToMidi, midiToNote } from '../../synth/note-to-midi';
  * Note structure for Tabs
  * 
  */
-var notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+export const notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
 
-function TabNote(note, clefTranspose) {
+export function TabNote(note, clefTranspose) {
   var pitch = noteToMidi(note)
   if (clefTranspose)
     pitch += clefTranspose
@@ -208,9 +208,4 @@ TabNote.prototype.emit = function () {
     }
   }
   return returned;
-};
-
-export default {
-  'TabNote': TabNote,
-  'notes': notes
 };

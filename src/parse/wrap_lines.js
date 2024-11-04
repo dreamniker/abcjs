@@ -1,6 +1,6 @@
 //    wrap_lines.js: does line wrap on an already parsed tune.
 
-function wrapLines(tune, lineBreaks, barNumbers) {
+export function wrapLines(tune, lineBreaks, barNumbers) {
 	if (!lineBreaks || tune.lines.length === 0)
 		return;
 
@@ -349,7 +349,7 @@ function getRevisedTuneParams(lineBreaks, staffWidth, params) {
 	return { revisedParams: revisedParams };
 }
 
-function calcLineWraps(tune, widths, params) {
+export function calcLineWraps(tune, widths, params) {
 	// For calculating how much can go on the line, it depends on the width of the line. It is a convenience to just divide it here
 	// by the minimum spacing instead of multiplying the min spacing later.
 	// The scaling works differently: this is done by changing the scaling of the outer SVG, so the scaling needs to be compensated
@@ -438,5 +438,3 @@ function calcLineWraps(tune, widths, params) {
 	ret.reParse = true;
 	return ret;
 }
-
-export default { wrapLines: wrapLines, calcLineWraps: calcLineWraps };

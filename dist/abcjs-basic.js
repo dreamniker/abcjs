@@ -1162,6 +1162,11 @@ function keyAccidentals(key) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "relativeMajor": function() { return /* binding */ relativeMajor; },
+/* harmony export */   "relativeMode": function() { return /* binding */ relativeMode; },
+/* harmony export */   "transposeKey": function() { return /* binding */ transposeKey; }
+/* harmony export */ });
 // All these keys have the same number of accidentals
 var keys = {
   'C': {
@@ -1286,11 +1291,6 @@ function transposeKey(key, steps) {
   }
   return key;
 }
-/* harmony default export */ __webpack_exports__["default"] = ({
-  relativeMajor: relativeMajor,
-  relativeMode: relativeMode,
-  transposeKey: transposeKey
-});
 
 /***/ }),
 
@@ -10292,6 +10292,10 @@ function addRichTextToAnnotationsAndLyrics(tune) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "calcLineWraps": function() { return /* binding */ calcLineWraps; },
+/* harmony export */   "wrapLines": function() { return /* binding */ wrapLines; }
+/* harmony export */ });
 //    wrap_lines.js: does line wrap on an already parsed tune.
 
 function wrapLines(tune, lineBreaks, barNumbers) {
@@ -10749,10 +10753,6 @@ function calcLineWraps(tune, widths, params) {
   ret.reParse = true;
   return ret;
 }
-/* harmony default export */ __webpack_exports__["default"] = ({
-  wrapLines: wrapLines,
-  calcLineWraps: calcLineWraps
-});
 
 /***/ }),
 
@@ -15210,6 +15210,10 @@ var getNote = /*#__PURE__*/function () {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "midiToNote": function() { return /* binding */ midiToNote; },
+/* harmony export */   "noteToMidi": function() { return /* binding */ noteToMidi; }
+/* harmony export */ });
 var accidentals = {
   "__": -2,
   "_": -1,
@@ -15254,10 +15258,6 @@ function midiToNote(midi) {
   }
   return name;
 }
-/* harmony default export */ __webpack_exports__["default"] = ({
-  noteToMidi: noteToMidi,
-  midiToNote: midiToNote
-});
 
 /***/ }),
 
@@ -16392,6 +16392,10 @@ StringTablature.prototype.setRelative = function (child, relative, first) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TabNote": function() { return /* binding */ TabNote; },
+/* harmony export */   "notes": function() { return /* binding */ notes; }
+/* harmony export */ });
 /* harmony import */ var _synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../synth/note-to-midi */ "./src/synth/note-to-midi.js");
 
 
@@ -16603,10 +16607,6 @@ TabNote.prototype.emit = function () {
   }
   return returned;
 };
-/* harmony default export */ __webpack_exports__["default"] = ({
-  'TabNote': TabNote,
-  'notes': notes
-});
 
 /***/ }),
 

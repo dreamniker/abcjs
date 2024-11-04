@@ -33,7 +33,7 @@ function createKeyReverse() {
 	}
 }
 
-function relativeMajor(key) {
+export function relativeMajor(key) {
 	// Translate a key to its relative major. If it doesn't exist, do the best we can
 	// by just returning the original key.
 	// There are alternate spellings of these - so the search needs to be case insensitive.
@@ -52,7 +52,7 @@ function relativeMajor(key) {
 	return key;
 }
 
-function relativeMode(majorKey, mode) {
+export function relativeMode(majorKey, mode) {
 	// The reverse of the relativeMajor. Translate it back to the original mode.
 	// If it isn't a recognized mode or it is already major, then just return the major key.
 	var group = keys[majorKey]
@@ -73,7 +73,7 @@ function relativeMode(majorKey, mode) {
 	return majorKey;
 }
 
-function transposeKey(key, steps) {
+export function transposeKey(key, steps) {
 	// This takes a major key and adds the desired steps.
 	// It assigns each key a number that is the number of steps from C so that there can just be arithmetic.
 	var match = keys[key]
@@ -88,5 +88,3 @@ function transposeKey(key, steps) {
 	}
 	return key;
 }
-
-export default {relativeMajor: relativeMajor, relativeMode: relativeMode, transposeKey: transposeKey};

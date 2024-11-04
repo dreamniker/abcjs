@@ -11,7 +11,7 @@ var accidentals = {
 
 var notesInOrder = ['C', '-', 'D', '-', 'E', 'F', '-', 'G', '-', 'A', '-', 'B', 'c', '-', 'd', '-', 'e', 'f', '-', 'g', '-', 'a', '-', 'b']
 
-function noteToMidi(note) {
+export function noteToMidi(note) {
 	var reg = note.match(/([_^\/]*)([ABCDEFGabcdefg])(,*)('*)/)
 	if (reg && reg.length === 5) {
 		var acc = accidentals[reg[1]]
@@ -22,7 +22,7 @@ function noteToMidi(note) {
 	return 0;
 }
 
-function midiToNote(midi) {
+export function midiToNote(midi) {
 	midi = parseInt(midi, 10) // TODO-PER: not sure how to handle quarter sharps and flats, so strip them for now.
 	var octave = Math.floor(midi / 12)
 	var pitch = midi % 12
@@ -46,5 +46,3 @@ function midiToNote(midi) {
 	}	
 	return name
 }
-
-export default {noteToMidi: noteToMidi, midiToNote: midiToNote};
