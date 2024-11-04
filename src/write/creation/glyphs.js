@@ -1,4 +1,4 @@
-var spacing = require('../helpers/spacing');
+import spacing from '../helpers/spacing';
 /**
  * Glyphs and some methods to adjust for their x and y baseline
  */
@@ -223,4 +223,4 @@ var Glyphs = {
 	}
 };
 
-module.exports = Glyphs; // we need the glyphs for layout information
+export default Glyphs; // we need the glyphs for layout information

@@ -43,4 +43,4 @@ GetFontAndAttr.prototype.calc = function (type, klass) {
 	return { font: font, attr: attr };
 };
 
-module.exports = GetFontAndAttr;
+export default GetFontAndAttr;

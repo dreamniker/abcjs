@@ -2,8 +2,9 @@
 
 /*global Math */
 
-var spacing = require('./helpers/spacing');
-var Svg = require('./svg');
+import spacing from './helpers/spacing';
+
+import Svg from './svg';
 
 /**
  * Implements the API for rendering ABCJS Abstract Rendering Structure to a canvas/paper (e.g. SVG, Raphael, etc)
@@ -188,4 +189,4 @@ Renderer.prototype.absolutemoveY = function (y) {
 	this.y = y;
 };
 
-module.exports = Renderer;
+export default Renderer;

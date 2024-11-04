@@ -73,4 +73,4 @@ function pitchesToPerc(pitchObj) {
 	var pitch = (pitchObj.accidental ? pitchObj.accidental[0] : 'x') + pitchObj.verticalPos;
 	return pitchMap[pitch];
 }
-module.exports = pitchesToPerc;
+export default pitchesToPerc;

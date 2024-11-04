@@ -1,6 +1,6 @@
-var parseKeyVoice = require('../parse/abc_parse_key_voice');
-var parseCommon = require('../parse/abc_common');
-var parseDirective = require('./abc_parse_directive');
+import parseKeyVoice from '../parse/abc_parse_key_voice';
+import parseCommon from '../parse/abc_common';
+import parseDirective from './abc_parse_directive';
 
 var TuneBuilder = function(tune) {
 	var self = this;
@@ -957,4 +957,4 @@ function addRichTextToAnnotationsAndLyrics(tune) {
 
 }
 
-module.exports = TuneBuilder;
+export default TuneBuilder;

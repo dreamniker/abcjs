@@ -1,6 +1,6 @@
 //    abc_parse_book.js: parses a string representing ABC Music Notation into a usable internal structure.
 
-var parseCommon = require('./abc_common');
+import parseCommon from './abc_common';
 
 var bookParser = function(book) {
 	"use strict";
@@ -59,5 +59,5 @@ var bookParser = function(book) {
 	};
 };
 
-module.exports = bookParser;
+export default bookParser;
 

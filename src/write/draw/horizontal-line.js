@@ -1,5 +1,5 @@
 // For debugging, it is sometimes useful to know where you are vertically.
-var sprintf = require("./sprintf");
+import sprintf from './sprintf';
 
 function printHorizontalLine(renderer, width, vertical, comment) {
 	var dy = 0.35;
@@ -22,4 +22,4 @@ function printHorizontalLine(renderer, width, vertical, comment) {
 		renderer.paper.text(comment, { x: width + 70, y: y, "text-anchor": "start", "font-size": "18px", fill: fill, stroke: fill });
 }
 
-module.exports = printHorizontalLine;
+export default printHorizontalLine;

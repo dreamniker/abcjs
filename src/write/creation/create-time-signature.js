@@ -1,8 +1,9 @@
 //    abc_create_time_signature.js
 
-var AbsoluteElement = require('./elements/absolute-element');
-var glyphs = require('./glyphs');
-var RelativeElement = require('./elements/relative-element');
+import AbsoluteElement from './elements/absolute-element';
+
+import glyphs from './glyphs';
+import RelativeElement from './elements/relative-element';
 
 var createTimeSignature = function (elem, tuneNumber) {
 	elem.el_type = "timeSignature";
@@ -52,4 +53,4 @@ var createTimeSignature = function (elem, tuneNumber) {
 	return abselem;
 };
 
-module.exports = createTimeSignature;
+export default createTimeSignature;

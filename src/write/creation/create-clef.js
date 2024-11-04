@@ -1,8 +1,9 @@
 //    abc_create_clef.js
 
-var AbsoluteElement = require('./elements/absolute-element');
-var glyphs = require('./glyphs');
-var RelativeElement = require('./elements/relative-element');
+import AbsoluteElement from './elements/absolute-element';
+
+import glyphs from './glyphs';
+import RelativeElement from './elements/relative-element';
 
 var createClef = function (elem, tuneNumber) {
 	var clef;
@@ -69,4 +70,4 @@ function clefOffsets(clef) {
 	}
 }
 
-module.exports = createClef;
+export default createClef;

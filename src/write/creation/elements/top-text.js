@@ -1,5 +1,5 @@
-const addTextIf = require("../add-text-if");
-const richText = require("./rich-text");
+import addTextIf from '../add-text-if';
+import richText from './rich-text';
 
 function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, paddingLeft, spacing, shouldAddClasses, getTextSize) {
 	this.rows = [];
@@ -77,4 +77,4 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
 	}
 }
 
-module.exports = TopText;
+export default TopText;

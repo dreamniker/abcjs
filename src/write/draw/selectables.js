@@ -1,5 +1,5 @@
-var highlight = require('../interactive/highlight');
-var unhighlight = require('../interactive/unhighlight');
+import highlight from '../interactive/highlight';
+import unhighlight from '../interactive/unhighlight';
 
 function Selectables(paper, selectTypes, tuneNumber) {
 	this.elements = [];
@@ -56,4 +56,4 @@ Selectables.prototype.wrapSvgEl = function (abcelem, el) {
 	this.add(absEl, el, false);
 };
 
-module.exports = Selectables;
+export default Selectables;

@@ -1,5 +1,5 @@
-var sprintf = require('./sprintf');
-var roundNumber = require("./round-number");
+import sprintf from './sprintf';
+import roundNumber from './round-number';
 
 function drawTie(renderer, params, linestartx, lineendx, selectables) {
 	layout(params, linestartx, lineendx);
@@ -102,4 +102,4 @@ var drawArc = function (renderer, x1, x2, pitch1, pitch2, above, klass, isTie, d
 	return ret;
 };
 
-module.exports = drawTie;
+export default drawTie;

@@ -422,4 +422,4 @@ function createSvg() {
 }
 
 
-module.exports = Svg;
+export default Svg;

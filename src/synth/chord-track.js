@@ -17,7 +17,7 @@
 //
 // If there is any note in the melody that has a rhythm head, then assume the melody controls the rhythm, so there is no chord added for that entire measure.
 
-var parseCommon = require("../parse/abc_common");
+import parseCommon from '../parse/abc_common';
 
 var ChordTrack = function ChordTrack(numVoices, chordsOff, midiOptions, meter) {
 	this.chordTrack = [];
@@ -562,4 +562,4 @@ function durationRounded(duration, tempoChangeFactor) {
 	return Math.round(duration * tempoChangeFactor * 1000000) / 1000000;
 }
 
-module.exports = ChordTrack;
+export default ChordTrack;

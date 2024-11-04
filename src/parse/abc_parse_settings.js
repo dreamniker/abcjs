@@ -1,4 +1,4 @@
-module.exports.legalAccents = [
+export const legalAccents = [
   'trill',
   'lowermordent',
   'uppermordent',
@@ -66,7 +66,7 @@ module.exports.legalAccents = [
   'courtesy'
 ];
 
-module.exports.volumeDecorations = [
+export const volumeDecorations = [
   'p',
   'pp',
   'f',
@@ -80,7 +80,7 @@ module.exports.volumeDecorations = [
   'sfz'
 ];
 
-module.exports.dynamicDecorations = [
+export const dynamicDecorations = [
   'crescendo(',
   'crescendo)',
   'diminuendo(',
@@ -91,7 +91,7 @@ module.exports.dynamicDecorations = [
   '~)'
 ];
 
-module.exports.accentPseudonyms = [
+export const accentPseudonyms = [
   ['<', 'accent'],
   ['>', 'accent'],
   ['tr', 'trill'],
@@ -101,16 +101,16 @@ module.exports.accentPseudonyms = [
   ['marcato', 'umarcato']
 ];
 
-module.exports.accentDynamicPseudonyms = [
+export const accentDynamicPseudonyms = [
   ['<(', 'crescendo('],
   ['<)', 'crescendo)'],
   ['>(', 'diminuendo('],
   ['>)', 'diminuendo)']
 ];
 
-module.exports.nonDecorations = 'ABCDEFGabcdefgxyzZ[]|^_{'; // use this to prescreen so we don't have to look for a decoration at every note.
+export const nonDecorations = 'ABCDEFGabcdefgxyzZ[]|^_{'; // use this to prescreen so we don't have to look for a decoration at every note.
 
-module.exports.durations = [
+export const durations = [
   0.5, 0.75, 0.875, 0.9375, 0.96875, 0.984375, 0.25, 0.375, 0.4375, 0.46875,
   0.484375, 0.4921875, 0.125, 0.1875, 0.21875, 0.234375, 0.2421875, 0.24609375,
   0.0625, 0.09375, 0.109375, 0.1171875, 0.12109375, 0.123046875, 0.03125,
@@ -118,7 +118,7 @@ module.exports.durations = [
   0.0234375, 0.02734375, 0.029296875, 0.0302734375, 0.03076171875
 ];
 
-module.exports.pitches = {
+export const pitches = {
   A: 5,
   B: 6,
   C: 0,
@@ -135,7 +135,7 @@ module.exports.pitches = {
   g: 11
 };
 
-module.exports.rests = {
+export const rests = {
   x: 'invisible',
   X: 'invisible-multimeasure',
   y: 'spacer',
@@ -143,7 +143,7 @@ module.exports.rests = {
   Z: 'multimeasure'
 };
 
-module.exports.accMap = {
+export const accMap = {
   dblflat: '__',
   flat: '_',
   natural: '=',
@@ -153,7 +153,7 @@ module.exports.accMap = {
   quartersharp: '^/'
 };
 
-module.exports.tripletQ = {
+export const tripletQ = {
   2: 3,
   3: 2,
   4: 3,

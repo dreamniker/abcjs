@@ -1,7 +1,7 @@
 //    abc_midi_sequencer.js: Turn parsed abc into a linear series of events.
 
 var sequence;
-var parseCommon = require("../parse/abc_common");
+import parseCommon from '../parse/abc_common';
 
 (function() {
 	"use strict";
@@ -660,4 +660,4 @@ var parseCommon = require("../parse/abc_common");
 
 })();
 
-module.exports = sequence;
+export default sequence;

@@ -1,8 +1,8 @@
 
-var StringTablature = require('./string-tablature');
-var TabCommon = require('../tab-common');
-var TabRenderer = require('../tab-renderer');
-var TabStringPatterns = require('./tab-string-patterns');
+import StringTablature from './string-tablature';
+import TabCommon from '../tab-common';
+import TabRenderer from '../tab-renderer';
+import TabStringPatterns from './tab-string-patterns';
 
 
 /**
@@ -44,4 +44,4 @@ var AbcStringTab = function () {
   return { name: 'StringTab', tablature: Plugin };
 };
 
-module.exports = AbcStringTab;
+export default AbcStringTab;

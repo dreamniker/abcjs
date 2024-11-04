@@ -1,5 +1,5 @@
-var spacing = require('../helpers/spacing');
-var createAnalysis = require('./create-analysis');
+import spacing from '../helpers/spacing';
+import createAnalysis from './create-analysis';
 
 function setupSelection(engraver, svgs) {
 	engraver.rangeHighlight = rangeHighlight;
@@ -415,4 +415,4 @@ function removeGlobalClass(svg, klass) {
 	}
 }
 
-module.exports = setupSelection;
+export default setupSelection;

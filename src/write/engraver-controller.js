@@ -2,22 +2,23 @@
 
 /*global Math */
 
-var spacing = require('./helpers/spacing');
-var AbstractEngraver = require('./creation/abstract-engraver');
-var Renderer = require('./renderer');
-var FreeText = require('./creation/elements/free-text');
-var Separator = require('./creation/elements/separator');
-var Subtitle = require('./creation/elements/subtitle');
-var TopText = require('./creation/elements/top-text');
-var BottomText = require('./creation/elements/bottom-text');
-var setupSelection = require('./interactive/selection');
-var layout = require('./layout/layout');
-var Classes = require('./helpers/classes');
-var GetFontAndAttr = require('./helpers/get-font-and-attr');
-var GetTextSize = require('./helpers/get-text-size');
-var draw = require('./draw/draw');
-var tablatures = require('../api/abc_tablatures');
-var findSelectableElement = require('./interactive/find-selectable-element');
+import spacing from './helpers/spacing';
+
+import AbstractEngraver from './creation/abstract-engraver';
+import Renderer from './renderer';
+import FreeText from './creation/elements/free-text';
+import Separator from './creation/elements/separator';
+import Subtitle from './creation/elements/subtitle';
+import TopText from './creation/elements/top-text';
+import BottomText from './creation/elements/bottom-text';
+import setupSelection from './interactive/selection';
+import layout from './layout/layout';
+import Classes from './helpers/classes';
+import GetFontAndAttr from './helpers/get-font-and-attr';
+import GetTextSize from './helpers/get-text-size';
+import draw from './draw/draw';
+import tablatures from '../api/abc_tablatures';
+import findSelectableElement from './interactive/find-selectable-element';
 
 /**
  * @class
@@ -393,4 +394,4 @@ EngraverController.prototype.addSelectListener = function (clickListener) {
 	this.listeners[this.listeners.length] = clickListener;
 };
 
-module.exports = EngraverController;
+export default EngraverController;

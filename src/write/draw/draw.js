@@ -1,8 +1,8 @@
-var drawStaffGroup = require('./staff-group');
-var setPaperSize = require('./set-paper-size');
-var nonMusic = require('./non-music');
-var spacing = require('../helpers/spacing');
-var Selectables = require('./selectables');
+import drawStaffGroup from './staff-group';
+import setPaperSize from './set-paper-size';
+import nonMusic from './non-music';
+import spacing from '../helpers/spacing';
+import Selectables from './selectables';
 
 function draw(renderer, classes, abcTune, width, maxWidth, responsive, scale, selectTypes, tuneNumber, lineOffset) {
 	var selectables = new Selectables(renderer.paper, selectTypes, tuneNumber);
@@ -70,4 +70,4 @@ function addStaffPadding(renderer, staffSeparation, lastStaffGroup, thisStaffGro
 		renderer.moveY(staffSeparation - separationInPixels);
 }
 
-module.exports = draw;
+export default draw;

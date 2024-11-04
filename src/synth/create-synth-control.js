@@ -1,13 +1,12 @@
-var supportsAudio = require('./supports-audio');
-var registerAudioContext = require('./register-audio-context');
-var activeAudioContext = require('./active-audio-context');
-var parseCommon = require('../parse/abc_common');
-
-var loopImage = require('./images/loop.svg.js');
-var playImage = require('./images/play.svg.js');
-var pauseImage = require('./images/pause.svg.js');
-var loadingImage = require('./images/loading.svg.js');
-var resetImage = require('./images/reset.svg.js');
+import supportsAudio from './supports-audio';
+import registerAudioContext from './register-audio-context';
+import activeAudioContext from './active-audio-context';
+import parseCommon from '../parse/abc_common';
+import loopImage from './images/loop.svg.js';
+import playImage from './images/play.svg.js';
+import pauseImage from './images/pause.svg.js';
+import loadingImage from './images/loading.svg.js';
+import resetImage from './images/reset.svg.js';
 
 function CreateSynthControl(parent, options) {
 	var self = this;
@@ -224,4 +223,4 @@ function attachListeners(self) {
 	if (hasWarp)
 		self.parent.querySelector(".abcjs-midi-tempo").addEventListener("change", function(ev){acResumerMiddleWare(self.options.warpHandler, ev, playBtn, self.options.afterResume)});
 }
-module.exports = CreateSynthControl;
+export default CreateSynthControl;

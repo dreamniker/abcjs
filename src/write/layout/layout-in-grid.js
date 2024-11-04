@@ -1,4 +1,4 @@
-var getLeftEdgeOfStaff = require('./get-left-edge-of-staff');
+import getLeftEdgeOfStaff from './get-left-edge-of-staff';
 
 function layoutInGrid(renderer, staffGroup, timeBasedLayout) {
 	var leftEdge = getLeftEdgeOfStaff(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
@@ -80,4 +80,4 @@ function getTotalDuration(staffGroup, timeBasedLayout) {
 	return { totalDuration: maxCount, minSpacing: maxSpacing}
 }
 
-module.exports = layoutInGrid;
+export default layoutInGrid;

@@ -1,4 +1,4 @@
-var soundsCache = require('./sounds-cache')
+import soundsCache from './sounds-cache';
 
 async function openDatabase() {
   return new Promise((resolve, reject) => {
@@ -116,4 +116,4 @@ var getNote = async function (url, instrument, name, audioContext) {
   return instrumentCache[name]
 }
 
-module.exports = getNote
+export default getNote;

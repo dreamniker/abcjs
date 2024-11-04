@@ -9,4 +9,4 @@ function Subtitle(spaceAbove, formatting, info, center, paddingLeft, getTextSize
 	this.rows.push({ move: size.height });
 }
 
-module.exports = Subtitle;
+export default Subtitle;

@@ -101,4 +101,4 @@ Classes.prototype.generate = function (c) {
 };
 
 
-module.exports = Classes;
+export default Classes;

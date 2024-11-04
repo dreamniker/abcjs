@@ -1,6 +1,6 @@
-var RelativeElement = require('./elements/relative-element');
-var spacing = require('../helpers/spacing');
-const translateChord = require("./translate-chord");
+import RelativeElement from './elements/relative-element';
+import spacing from '../helpers/spacing';
+import translateChord from './translate-chord';
 
 var addChord = function (getTextSize, abselem, elem, roomTaken, roomTakenRight, noteheadWidth, jazzchords, germanAlphabet) {
 	for (var i = 0; i < elem.chord.length; i++) {
@@ -119,4 +119,4 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
 	}
 	return { roomTaken: roomTaken, roomTakenRight: roomTakenRight };
 }
-module.exports = addChord;
+export default addChord;

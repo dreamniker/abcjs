@@ -225,4 +225,4 @@ TieElem.prototype.avoidCollisionAbove = function () {
 	}
 };
 
-module.exports = TieElem;
+export default TieElem;

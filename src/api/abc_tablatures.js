@@ -5,7 +5,7 @@
  * where plugin represents a plugin instance 
  * 
  */
-var StringTablature = require('../tablatures/instruments/tab-string');
+import StringTablature from '../tablatures/instruments/tab-string';
 
 /* extend the table below when adding a new instrument plugin */
 
@@ -181,4 +181,4 @@ var abcTablatures = {
 };
 
 
-module.exports = abcTablatures ;
+export default abcTablatures;

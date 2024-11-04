@@ -1,6 +1,6 @@
-var sprintf = require('./sprintf');
-var printPath = require('./print-path');
-var roundNumber = require("./round-number");
+import sprintf from './sprintf';
+import printPath from './print-path';
+import roundNumber from './round-number';
 
 function drawCrescendo(renderer, params, selectables) {
 	if (params.pitch === undefined)
@@ -35,4 +35,4 @@ var drawLine = function (renderer, y1, y2, y3, y4, left, right) {
 	return printPath(renderer, { path: pathString, highlight: "stroke", stroke: renderer.foregroundColor, 'class': renderer.controller.classes.generate('dynamics decoration'), "data-name": "dynamics" });
 };
 
-module.exports = drawCrescendo;
+export default drawCrescendo;

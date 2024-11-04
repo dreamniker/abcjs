@@ -1,4 +1,4 @@
-var getBarYAt = require('./get-bar-y-at');
+import getBarYAt from './get-bar-y-at';
 
 function layoutTriplet(element) {
 	// TODO end and beginning of line (PER: P.S. I'm not sure this can happen: I think the parser will always specify both the start and end points.)
@@ -72,4 +72,4 @@ function xAtMidpoint(startX, endX) {
 	return startX + (endX - startX) / 2;
 }
 
-module.exports = layoutTriplet;
+export default layoutTriplet;

@@ -26,9 +26,9 @@ THE SOFTWARE.
 /*global abcjs_is_user_script, abcjs_plugin_autostart */
 "use strict";
 
-var TuneBook = require('./src/api/abc_tunebook').TuneBook;
-var Parse = require('./src/parse/abc_parse');
-var EngraverController = require('./src/write/engraver-controller');
+import { TuneBook } from './src/api/abc_tunebook';
+import Parse from './src/parse/abc_parse';
+import EngraverController from './src/write/engraver-controller';
 
 var Plugin = function() {
 	"use strict";
@@ -251,4 +251,4 @@ var abcjs = {
 	plugin: plugin
 };
 
-module.exports = abcjs;
+export default abcjs;

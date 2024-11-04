@@ -1,9 +1,8 @@
-var tunebook = require('./abc_tunebook');
-var Tune = require('../data/abc_tune');
-
-var EngraverController = require('../write/engraver-controller');
-var Parse = require('../parse/abc_parse');
-var wrap = require('../parse/wrap_lines');
+import tunebook from './abc_tunebook';
+import Tune from '../data/abc_tune';
+import EngraverController from '../write/engraver-controller';
+import Parse from '../parse/abc_parse';
+import wrap from '../parse/wrap_lines';
 // var tablatures = require('./abc_tablatures');
 
 
@@ -152,4 +151,4 @@ function doLineWrapping(div, tune, tuneNumber, abcString, params) {
 	return tune;
 }
 
-module.exports = renderAbc;
+export default renderAbc;

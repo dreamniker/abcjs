@@ -1,7 +1,7 @@
-var sprintf = require('./sprintf');
-var renderText = require('./text');
-var printPath = require('./print-path');
-var roundNumber = require("./round-number");
+import sprintf from './sprintf';
+import renderText from './text';
+import printPath from './print-path';
+import roundNumber from './round-number';
 
 function drawTriplet(renderer, params, selectables) {
 	renderer.paper.openGroup({ klass: renderer.controller.classes.generate('triplet ' + params.durationClass), "data-name": "triplet" });
@@ -43,4 +43,4 @@ function drawBracket(renderer, x1, y1, x2, y2) {
 	printPath(renderer, { path: pathString, stroke: renderer.foregroundColor, "data-name": "triplet-bracket" });
 }
 
-module.exports = drawTriplet;
+export default drawTriplet;

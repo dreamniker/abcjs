@@ -1,5 +1,5 @@
-var sprintf = require('./sprintf');
-var roundNumber = require("./round-number");
+import sprintf from './sprintf';
+import roundNumber from './round-number';
 
 function printLine(renderer, x1, x2, y, klass, name, dy) {
 	var fill = renderer.foregroundColor;
@@ -38,5 +38,5 @@ function printLine(renderer, x1, x2, y, klass, name, dy) {
 	return ret;
 }
 
-module.exports = printLine;
+export default printLine;
 

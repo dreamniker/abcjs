@@ -1,8 +1,9 @@
 //    abc_create_key_signature.js
 
-var AbsoluteElement = require('./elements/absolute-element');
-var glyphs = require('./glyphs');
-var RelativeElement = require('./elements/relative-element');
+import AbsoluteElement from './elements/absolute-element';
+
+import glyphs from './glyphs';
+import RelativeElement from './elements/relative-element';
 
 var createKeySignature = function (elem, tuneNumber) {
 	elem.el_type = "keySignature";
@@ -28,4 +29,4 @@ var createKeySignature = function (elem, tuneNumber) {
 	return abselem;
 };
 
-module.exports = createKeySignature;
+export default createKeySignature;

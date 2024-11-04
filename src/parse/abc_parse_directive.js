@@ -1,4 +1,4 @@
-var parseCommon = require('./abc_common');
+import parseCommon from './abc_common';
 
 var parseDirective = {};
 
@@ -1234,4 +1234,4 @@ var parseDirective = {};
 	}
 })();
 
-module.exports = parseDirective;
+export default parseDirective;

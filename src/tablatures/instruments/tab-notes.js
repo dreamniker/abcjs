@@ -1,5 +1,5 @@
 
-var TabNote = require('./tab-note');
+import TabNote from './tab-note';
 
 var notes = TabNote.notes;
 
@@ -38,4 +38,4 @@ TabNotes.prototype.build = function () {
   return buildReturned;
 };
 
-module.exports = TabNotes;
+export default TabNotes;

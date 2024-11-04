@@ -47,4 +47,4 @@ function midiToNote(midi) {
 	return name
 }
 
-module.exports = {noteToMidi: noteToMidi, midiToNote: midiToNote};
+export default {noteToMidi: noteToMidi, midiToNote: midiToNote};

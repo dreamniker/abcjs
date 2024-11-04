@@ -1,5 +1,5 @@
-var glyphs = require('./glyphs');
-var RelativeElement = require('./elements/relative-element');
+import glyphs from './glyphs';
+import RelativeElement from './elements/relative-element';
 
 var createNoteHead = function (abselem, c, pitchelem, options) {
 	if (!options) options = {};
@@ -104,4 +104,4 @@ var createNoteHead = function (abselem, c, pitchelem, options) {
 
 };
 
-module.exports = createNoteHead;
+export default createNoteHead;

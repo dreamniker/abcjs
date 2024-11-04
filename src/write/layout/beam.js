@@ -1,6 +1,6 @@
-var RelativeElement = require('../creation/elements/relative-element');
-var spacing = require('../helpers/spacing');
-var getBarYAt = require('./get-bar-y-at');
+import RelativeElement from '../creation/elements/relative-element';
+import spacing from '../helpers/spacing';
+import getBarYAt from './get-bar-y-at';
 
 var layoutBeam = function (beam) {
 	if (beam.elems.length === 0 || beam.allrests) return;
@@ -210,4 +210,4 @@ function createAdditionalBeams(elems, asc, beam, isGrace, dy) {
 	return beams;
 }
 
-module.exports = layoutBeam;
+export default layoutBeam;

@@ -1,6 +1,6 @@
-var sprintf = require('./sprintf');
-var printPath = require('./print-path');
-var roundNumber = require("./round-number");
+import sprintf from './sprintf';
+import printPath from './print-path';
+import roundNumber from './round-number';
 
 function drawGlissando(renderer, params, selectables) {
 	if (!params.anchor1 || !params.anchor2 || !params.anchor1.heads || !params.anchor2.heads || params.anchor1.heads.length === 0 || params.anchor2.heads.length === 0)
@@ -73,4 +73,4 @@ var drawSquiggly = function (renderer, x, y, num, slope) {
 	return printPath(renderer, { path: p, highlight: "stroke", stroke: renderer.foregroundColor, 'class': renderer.controller.classes.generate('decoration'), "data-name": "glissando" });
 }
 
-module.exports = drawGlissando;
+export default drawGlissando;

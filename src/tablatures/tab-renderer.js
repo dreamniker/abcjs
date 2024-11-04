@@ -1,7 +1,8 @@
 /* eslint-disable no-debugger */
-var VoiceElement = require('../write/creation/elements/voice-element');
-var TabAbsoluteElements = require('./tab-absolute-elements');
-var spacing = require('../write/helpers/spacing');
+import VoiceElement from '../write/creation/elements/voice-element';
+
+import TabAbsoluteElements from './tab-absolute-elements';
+import spacing from '../write/helpers/spacing';
 
 function initSpecialY() {
   return {
@@ -256,4 +257,4 @@ TabRenderer.prototype.doLayout = function () {
   linkStaffAndTabs(staffGroup.staffs); // crossreference tabs and staff
 };
 
-module.exports = TabRenderer;
+export default TabRenderer;

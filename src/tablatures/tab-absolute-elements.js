@@ -1,8 +1,9 @@
 /**
  * Tablature Absolute elements factory
  */
-var AbsoluteElement = require('../write/creation/elements/absolute-element');
-var RelativeElement = require('../write/creation/elements/relative-element');
+import AbsoluteElement from '../write/creation/elements/absolute-element';
+
+import RelativeElement from '../write/creation/elements/relative-element';
 
 function isObject(a) { return a != null && a.constructor === Object; }
 function cloneObject(dest, src) {
@@ -298,4 +299,4 @@ TabAbsoluteElements.prototype.build = function (plugin,
   }
 };
 
-module.exports = TabAbsoluteElements;
+export default TabAbsoluteElements;

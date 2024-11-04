@@ -89,4 +89,4 @@ function transposeKey(key, steps) {
 	return key;
 }
 
-module.exports = {relativeMajor: relativeMajor, relativeMode: relativeMode, transposeKey: transposeKey};
+export default {relativeMajor: relativeMajor, relativeMode: relativeMode, transposeKey: transposeKey};

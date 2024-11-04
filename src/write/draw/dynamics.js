@@ -1,4 +1,4 @@
-var printSymbol = require('./print-symbol');
+import printSymbol from './print-symbol';
 
 function drawDynamics(renderer, params, selectables) {
 	if (params.pitch === undefined)
@@ -17,4 +17,4 @@ function drawDynamics(renderer, params, selectables) {
 	return [el];
 }
 
-module.exports = drawDynamics;
+export default drawDynamics;

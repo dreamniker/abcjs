@@ -1,4 +1,4 @@
-var layoutVoiceElements = require('./voice-elements');
+import layoutVoiceElements from './voice-elements';
 
 function checkLastBarX(voices) {
 	var maxX = 0;
@@ -143,4 +143,4 @@ function isSameStaff(voice1, voice2) {
 	return (voice1.staff.voices[0] === voice2.staff.voices[0]);
 }
 
-module.exports = layoutStaffGroup;
+export default layoutStaffGroup;

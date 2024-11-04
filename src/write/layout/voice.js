@@ -1,6 +1,6 @@
-var layoutBeam = require('./beam');
-var getBarYAt = require('./get-bar-y-at');
-var layoutTriplet = require('./triplet');
+import layoutBeam from './beam';
+import getBarYAt from './get-bar-y-at';
+import layoutTriplet from './triplet';
 
 var layoutVoice = function (voice) {
 	for (var i = 0; i < voice.beams.length; i++) {
@@ -134,4 +134,4 @@ function yAtNote(element, beam) {
 }
 
 
-module.exports = layoutVoice;
+export default layoutVoice;

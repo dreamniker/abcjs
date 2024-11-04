@@ -1,5 +1,5 @@
-var printPath = require('./print-path');
-var roundNumber = require("./round-number");
+import printPath from './print-path';
+import roundNumber from './round-number';
 
 function drawBeam(renderer, params) {
 	if (params.beams.length === 0) return;
@@ -53,4 +53,4 @@ function getY(startX, startY, slope, currentX) {
 	return startY + x * slope;
 }
 
-module.exports = drawBeam;
+export default drawBeam;

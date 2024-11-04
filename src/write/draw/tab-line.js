@@ -1,6 +1,6 @@
-var sprintf = require('./sprintf');
-var roundNumber = require('./round-number');
-var printStem = require('./print-stem');
+import sprintf from './sprintf';
+import roundNumber from './round-number';
+import printStem from './print-stem';
 
 function TabLine(renderer, klass, dx, name) {
 	this.renderer = renderer;
@@ -36,5 +36,5 @@ TabLine.prototype.printHorizontal = function (x1, x2, y) {
 	return this.renderer.paper.pathToBack(this.options);
 }
 
-module.exports = TabLine;
+export default TabLine;
 

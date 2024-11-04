@@ -1,6 +1,6 @@
-var SynthSequence = require('./synth-sequence');
-var CreateSynth = require('./create-synth');
-var activeAudioContext = require("./active-audio-context");
+import SynthSequence from './synth-sequence';
+import CreateSynth from './create-synth';
+import activeAudioContext from './active-audio-context';
 
 function playEvent(midiPitches, midiGracePitches, millisecondsPerMeasure, soundFontUrl, debugCallback) {
 	var sequence = new SynthSequence();
@@ -43,4 +43,4 @@ function doPlay(sequence, millisecondsPerMeasure, soundFontUrl, debugCallback) {
 	});
 }
 
-module.exports = playEvent;
+export default playEvent;

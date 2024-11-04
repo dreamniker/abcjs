@@ -1,11 +1,12 @@
 // abc_decoration.js: Creates a data structure suitable for printing a line of abc
 
-var DynamicDecoration = require('./elements/dynamic-decoration');
-var CrescendoElem = require('./elements/crescendo-element');
-var GlissandoElem = require('./elements/glissando-element');
-var glyphs = require('./glyphs');
-var RelativeElement = require('./elements/relative-element');
-var TieElem = require('./elements/tie-element');
+import DynamicDecoration from './elements/dynamic-decoration';
+
+import CrescendoElem from './elements/crescendo-element';
+import GlissandoElem from './elements/glissando-element';
+import glyphs from './glyphs';
+import RelativeElement from './elements/relative-element';
+import TieElem from './elements/tie-element';
 
 var Decoration = function Decoration() {
 	this.startDiminuendoX = undefined;
@@ -363,4 +364,4 @@ Decoration.prototype.createDecoration = function (voice, decoration, pitch, widt
 	leftDecoration(decoration, abselem, roomtaken);
 };
 
-module.exports = Decoration;
+export default Decoration;

@@ -1,4 +1,4 @@
-var setClass = require('../helpers/set-class');
+import setClass from '../helpers/set-class';
 
 var highlight = function (klass, color) {
 	if (klass === undefined)
@@ -8,4 +8,4 @@ var highlight = function (klass, color) {
 	setClass(this.elemset, klass, "", color);
 };
 
-module.exports = highlight;
+export default highlight;

@@ -1,6 +1,6 @@
-var renderText = require('./text');
-var glyphs = require('../creation/glyphs');
-var elementGroup = require('./group-elements');
+import renderText from './text';
+import glyphs from '../creation/glyphs';
+import elementGroup from './group-elements';
 
 /**
  * assumes this.y is set appropriately
@@ -56,4 +56,4 @@ function kernSymbols(lastSymbol, thisSymbol, lastSymbolWidth) {
 	return width;
 }
 
-module.exports = printSymbol;
+export default printSymbol;

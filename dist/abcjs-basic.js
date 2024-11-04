@@ -9,100 +9,20 @@
 		root["ABCJS"] = factory();
 })(this, function() {
 return /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-/**!
-Copyright (c) 2009-2023 Paul Rosen and Gregory Dyke
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
- **This text is from: http://opensource.org/licenses/MIT**
-!**/
-var version = __webpack_require__(/*! ./version */ "./version.js");
-var animation = __webpack_require__(/*! ./src/api/abc_animation */ "./src/api/abc_animation.js");
-var tuneBook = __webpack_require__(/*! ./src/api/abc_tunebook */ "./src/api/abc_tunebook.js");
-var sequence = __webpack_require__(/*! ./src/synth/abc_midi_sequencer */ "./src/synth/abc_midi_sequencer.js");
-var strTranspose = __webpack_require__(/*! ./src/str/output */ "./src/str/output.js");
-var abcjs = {};
-abcjs.signature = "abcjs-basic v" + version;
-Object.keys(animation).forEach(function (key) {
-  abcjs[key] = animation[key];
-});
-Object.keys(tuneBook).forEach(function (key) {
-  abcjs[key] = tuneBook[key];
-});
-abcjs.renderAbc = __webpack_require__(/*! ./src/api/abc_tunebook_svg */ "./src/api/abc_tunebook_svg.js");
-abcjs.tuneMetrics = __webpack_require__(/*! ./src/api/tune-metrics */ "./src/api/tune-metrics.js");
-abcjs.TimingCallbacks = __webpack_require__(/*! ./src/api/abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
-var glyphs = __webpack_require__(/*! ./src/write/creation/glyphs */ "./src/write/creation/glyphs.js");
-abcjs.setGlyph = glyphs.setSymbol;
-abcjs.strTranspose = strTranspose;
-var CreateSynth = __webpack_require__(/*! ./src/synth/create-synth */ "./src/synth/create-synth.js");
-var instrumentIndexToName = __webpack_require__(/*! ./src/synth/instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
-var pitchToNoteName = __webpack_require__(/*! ./src/synth/pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
-var SynthSequence = __webpack_require__(/*! ./src/synth/synth-sequence */ "./src/synth/synth-sequence.js");
-var CreateSynthControl = __webpack_require__(/*! ./src/synth/create-synth-control */ "./src/synth/create-synth-control.js");
-var registerAudioContext = __webpack_require__(/*! ./src/synth/register-audio-context */ "./src/synth/register-audio-context.js");
-var activeAudioContext = __webpack_require__(/*! ./src/synth/active-audio-context */ "./src/synth/active-audio-context.js");
-var supportsAudio = __webpack_require__(/*! ./src/synth/supports-audio */ "./src/synth/supports-audio.js");
-var playEvent = __webpack_require__(/*! ./src/synth/play-event */ "./src/synth/play-event.js");
-var SynthController = __webpack_require__(/*! ./src/synth/synth-controller */ "./src/synth/synth-controller.js");
-var getMidiFile = __webpack_require__(/*! ./src/synth/get-midi-file */ "./src/synth/get-midi-file.js");
-var midiRenderer = __webpack_require__(/*! ./src/synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
-var soundsCache = __webpack_require__(/*! ./src/synth/sounds-cache */ "./src/synth/sounds-cache.js");
-abcjs.synth = {
-  CreateSynth: CreateSynth,
-  instrumentIndexToName: instrumentIndexToName,
-  pitchToNoteName: pitchToNoteName,
-  SynthController: SynthController,
-  SynthSequence: SynthSequence,
-  CreateSynthControl: CreateSynthControl,
-  registerAudioContext: registerAudioContext,
-  activeAudioContext: activeAudioContext,
-  supportsAudio: supportsAudio,
-  playEvent: playEvent,
-  getMidiFile: getMidiFile,
-  sequence: sequence,
-  midiRenderer: midiRenderer,
-  soundsCache: soundsCache
-};
-abcjs['Editor'] = __webpack_require__(/*! ./src/edit/abc_editor */ "./src/edit/abc_editor.js");
-abcjs['EditArea'] = __webpack_require__(/*! ./src/edit/abc_editarea */ "./src/edit/abc_editarea.js");
-module.exports = abcjs;
-
-/***/ }),
 
 /***/ "./src/api/abc_animation.js":
 /*!**********************************!*\
   !*** ./src/api/abc_animation.js ***!
   \**********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
 //    abc_animation.js: handles animating the music in real time.
 
-var TimingCallbacks = __webpack_require__(/*! ./abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
+
 var animation = {};
 (function () {
   "use strict";
@@ -173,7 +93,7 @@ var animation = {};
         timer = undefined;
       }
     }
-    timer = new TimingCallbacks(tune, {
+    timer = new _abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_0__["default"](tune, {
       qpm: options.bpm,
       eventCallback: setCursor
     });
@@ -191,7 +111,7 @@ var animation = {};
     }
   };
 })();
-module.exports = animation;
+/* harmony default export */ __webpack_exports__["default"] = (animation);
 
 /***/ }),
 
@@ -199,8 +119,10 @@ module.exports = animation;
 /*!***********************************!*\
   !*** ./src/api/abc_tablatures.js ***!
   \***********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tablatures_instruments_tab_string__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../tablatures/instruments/tab-string */ "./src/tablatures/instruments/tab-string.js");
 /*
  * Tablature Plugins
  * tablature are defined dynamically and registered inside abcjs
@@ -208,7 +130,7 @@ module.exports = animation;
  * where plugin represents a plugin instance 
  * 
  */
-var StringTablature = __webpack_require__(/*! ../tablatures/instruments/tab-string */ "./src/tablatures/instruments/tab-string.js");
+
 
 /* extend the table below when adding a new instrument plugin */
 
@@ -385,12 +307,12 @@ var abcTablatures = {
   init: function init() {
     // just register plugin hosted by abcjs 
     if (!this.inited) {
-      this.register(new StringTablature());
+      this.register(new _tablatures_instruments_tab_string__WEBPACK_IMPORTED_MODULE_0__["default"]());
       this.inited = true;
     }
   }
 };
-module.exports = abcTablatures;
+/* harmony default export */ __webpack_exports__["default"] = (abcTablatures);
 
 /***/ }),
 
@@ -398,8 +320,9 @@ module.exports = abcTablatures;
 /*!*****************************************!*\
   !*** ./src/api/abc_timing_callbacks.js ***!
   \*****************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var TimingCallbacks = function TimingCallbacks(target, params) {
   var self = this;
   if (!params) params = {};
@@ -701,7 +624,7 @@ function getLineEndTimings(timings, anticipation) {
   }
   return callbackTimes;
 }
-module.exports = TimingCallbacks;
+/* harmony default export */ __webpack_exports__["default"] = (TimingCallbacks);
 
 /***/ }),
 
@@ -709,14 +632,18 @@ module.exports = TimingCallbacks;
 /*!*********************************!*\
   !*** ./src/api/abc_tunebook.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parse_abc_parse__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parse/abc_parse */ "./src/parse/abc_parse.js");
+/* harmony import */ var _parse_abc_parse_book__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../parse/abc_parse_book */ "./src/parse/abc_parse_book.js");
+/* harmony import */ var _abc_tablatures__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./abc_tablatures */ "./src/api/abc_tablatures.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 //    abc_tunebook.js: splits a string representing ABC Music Notation into individual tunes.
 
-var Parse = __webpack_require__(/*! ../parse/abc_parse */ "./src/parse/abc_parse.js");
-var bookParser = __webpack_require__(/*! ../parse/abc_parse_book */ "./src/parse/abc_parse_book.js");
-var tablatures = __webpack_require__(/*! ./abc_tablatures */ "./src/api/abc_tablatures.js");
+
+
+
 var tunebook = {};
 (function () {
   "use strict";
@@ -728,7 +655,7 @@ var tunebook = {};
     return num;
   };
   var TuneBook = tunebook.TuneBook = function (book) {
-    var parsed = bookParser(book);
+    var parsed = (0,_parse_abc_parse_book__WEBPACK_IMPORTED_MODULE_1__["default"])(book);
     this.header = parsed.header;
     this.tunes = parsed.tunes;
   };
@@ -771,7 +698,7 @@ var tunebook = {};
 
     // parse the abc string
     var book = new TuneBook(abc);
-    var abcParser = new Parse();
+    var abcParser = new _parse_abc_parse__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
     // output each tune, if it exists. Otherwise clear the div.
     for (var i = 0; i < output.length; i++) {
@@ -787,8 +714,8 @@ var tunebook = {};
           // Init tablatures plugins
           //
           if (params.tablature) {
-            tablatures.init();
-            tune.tablatures = tablatures.preparePlugins(tune, currentTune, params);
+            _abc_tablatures__WEBPACK_IMPORTED_MODULE_2__["default"].init();
+            tune.tablatures = _abc_tablatures__WEBPACK_IMPORTED_MODULE_2__["default"].preparePlugins(tune, currentTune, params);
           }
           var warnings = abcParser.getWarnings();
           if (warnings) tune.warnings = warnings;
@@ -942,7 +869,7 @@ var tunebook = {};
     return tunes;
   };
 })();
-module.exports = tunebook;
+/* harmony default export */ __webpack_exports__["default"] = (tunebook);
 
 /***/ }),
 
@@ -950,13 +877,19 @@ module.exports = tunebook;
 /*!*************************************!*\
   !*** ./src/api/abc_tunebook_svg.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var tunebook = __webpack_require__(/*! ./abc_tunebook */ "./src/api/abc_tunebook.js");
-var Tune = __webpack_require__(/*! ../data/abc_tune */ "./src/data/abc_tune.js");
-var EngraverController = __webpack_require__(/*! ../write/engraver-controller */ "./src/write/engraver-controller.js");
-var Parse = __webpack_require__(/*! ../parse/abc_parse */ "./src/parse/abc_parse.js");
-var wrap = __webpack_require__(/*! ../parse/wrap_lines */ "./src/parse/wrap_lines.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_tunebook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_tunebook */ "./src/api/abc_tunebook.js");
+/* harmony import */ var _data_abc_tune__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/abc_tune */ "./src/data/abc_tune.js");
+/* harmony import */ var _write_engraver_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../write/engraver-controller */ "./src/write/engraver-controller.js");
+/* harmony import */ var _parse_abc_parse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../parse/abc_parse */ "./src/parse/abc_parse.js");
+/* harmony import */ var _parse_wrap_lines__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../parse/wrap_lines */ "./src/parse/wrap_lines.js");
+
+
+
+
+
 // var tablatures = require('./abc_tablatures');
 
 var resizeDivs = {};
@@ -994,7 +927,7 @@ function renderOne(div, tune, params, tuneNumber, lineOffset) {
     div.style.overflowY = "auto";
     div = div.children[0]; // The music should be rendered in the inner div.
   } else div.innerHTML = "";
-  var engraver_controller = new EngraverController(div, params);
+  var engraver_controller = new _write_engraver_controller__WEBPACK_IMPORTED_MODULE_2__["default"](div, params);
   engraver_controller.engraveABC(tune, tuneNumber, lineOffset);
   tune.engraver = engraver_controller;
   if (params.viewportVertical || params.viewportHorizontal) {
@@ -1069,14 +1002,14 @@ var renderAbc = function renderAbc(output, abc, parserParams, engraverParams, re
     if (removeDiv) div.parentNode.removeChild(div);
     return null;
   }
-  return tunebook.renderEngine(callback, output, abc, params);
+  return _abc_tunebook__WEBPACK_IMPORTED_MODULE_0__["default"].renderEngine(callback, output, abc, params);
 };
 function doLineWrapping(div, tune, tuneNumber, abcString, params) {
-  var engraver_controller = new EngraverController(div, params);
+  var engraver_controller = new _write_engraver_controller__WEBPACK_IMPORTED_MODULE_2__["default"](div, params);
   var widths = engraver_controller.getMeasureWidths(tune);
-  var ret = wrap.calcLineWraps(tune, widths, params);
+  var ret = _parse_wrap_lines__WEBPACK_IMPORTED_MODULE_4__["default"].calcLineWraps(tune, widths, params);
   if (ret.reParse) {
-    var abcParser = new Parse();
+    var abcParser = new _parse_abc_parse__WEBPACK_IMPORTED_MODULE_3__["default"]();
     abcParser.parse(abcString, ret.revisedParams);
     tune = abcParser.getTune();
     var warnings = abcParser.getWarnings();
@@ -1087,7 +1020,7 @@ function doLineWrapping(div, tune, tuneNumber, abcString, params) {
   tune.explanation = ret.explanation;
   return tune;
 }
-module.exports = renderAbc;
+/* harmony default export */ __webpack_exports__["default"] = (renderAbc);
 
 /***/ }),
 
@@ -1095,25 +1028,28 @@ module.exports = renderAbc;
 /*!*********************************!*\
   !*** ./src/api/tune-metrics.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var tunebook = __webpack_require__(/*! ./abc_tunebook */ "./src/api/abc_tunebook.js");
-var EngraverController = __webpack_require__(/*! ../write/engraver-controller */ "./src/write/engraver-controller.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_tunebook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_tunebook */ "./src/api/abc_tunebook.js");
+/* harmony import */ var _write_engraver_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../write/engraver-controller */ "./src/write/engraver-controller.js");
+
+
 var tuneMetrics = function tuneMetrics(abc, params) {
   function callback(div, tune, tuneNumber, abcString) {
     div = document.createElement("div");
     div.setAttribute("style", "visibility: hidden;");
     document.body.appendChild(div);
-    var engraver_controller = new EngraverController(div, params);
+    var engraver_controller = new _write_engraver_controller__WEBPACK_IMPORTED_MODULE_1__["default"](div, params);
     var widths = engraver_controller.getMeasureWidths(tune);
     div.parentNode.removeChild(div);
     return {
       sections: widths
     };
   }
-  return tunebook.renderEngine(callback, "*", abc, params);
+  return _abc_tunebook__WEBPACK_IMPORTED_MODULE_0__["default"].renderEngine(callback, "*", abc, params);
 };
-module.exports = tuneMetrics;
+/* harmony default export */ __webpack_exports__["default"] = (tuneMetrics);
 
 /***/ }),
 
@@ -1121,10 +1057,11 @@ module.exports = tuneMetrics;
 /*!**************************************!*\
   !*** ./src/const/key-accidentals.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var _require = __webpack_require__(/*! ./relative-major */ "./src/const/relative-major.js"),
-  relativeMajor = _require.relativeMajor;
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _relative_major__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./relative-major */ "./src/const/relative-major.js");
+
 var key1sharp = {
   acc: 'sharp',
   note: 'f'
@@ -1208,14 +1145,13 @@ var keys = {
   'none': []
 };
 function keyAccidentals(key) {
-  var newKey = keys[relativeMajor(key)];
+  var newKey = keys[(0,_relative_major__WEBPACK_IMPORTED_MODULE_0__.relativeMajor)(key)];
   if (!newKey)
     // If we don't recognize the key then there is no change
     return null;
   return JSON.parse(JSON.stringify(newKey));
 }
-;
-module.exports = keyAccidentals;
+/* harmony default export */ __webpack_exports__["default"] = (keyAccidentals);
 
 /***/ }),
 
@@ -1223,8 +1159,9 @@ module.exports = keyAccidentals;
 /*!*************************************!*\
   !*** ./src/const/relative-major.js ***!
   \*************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 // All these keys have the same number of accidentals
 var keys = {
   'C': {
@@ -1349,11 +1286,11 @@ function transposeKey(key, steps) {
   }
   return key;
 }
-module.exports = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   relativeMajor: relativeMajor,
   relativeMode: relativeMode,
   transposeKey: transposeKey
-};
+});
 
 /***/ }),
 
@@ -1361,15 +1298,21 @@ module.exports = {
 /*!******************************!*\
   !*** ./src/data/abc_tune.js ***!
   \******************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _write_helpers_spacing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../write/helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../synth/abc_midi_sequencer */ "./src/synth/abc_midi_sequencer.js");
+/* harmony import */ var _synth_abc_midi_flattener__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../synth/abc_midi_flattener */ "./src/synth/abc_midi_flattener.js");
+/* harmony import */ var _deline_tune__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./deline-tune */ "./src/data/deline-tune.js");
 //    abc_tune.js: a computer usable internal structure representing one tune.
 
-var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
-var spacing = __webpack_require__(/*! ../write/helpers/spacing */ "./src/write/helpers/spacing.js");
-var sequence = __webpack_require__(/*! ../synth/abc_midi_sequencer */ "./src/synth/abc_midi_sequencer.js");
-var flatten = __webpack_require__(/*! ../synth/abc_midi_flattener */ "./src/synth/abc_midi_flattener.js");
-var delineTune = __webpack_require__(/*! ./deline-tune */ "./src/data/deline-tune.js");
+
+
+
+
+
 
 /**
  * This is the data for a single ABC tune. It is created and populated by the window.ABCJS.parse.Parse class.
@@ -1667,9 +1610,9 @@ var Tune = function Tune() {
             endChar: element.abcelem.endChar,
             startCharArray: [element.abcelem.startChar],
             endCharArray: [element.abcelem.endChar],
-            midiPitches: element.abcelem.midiPitches ? parseCommon.cloneArray(element.abcelem.midiPitches) : []
+            midiPitches: element.abcelem.midiPitches ? _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].cloneArray(element.abcelem.midiPitches) : []
           };
-          if (element.abcelem.midiGraceNotePitches) eventHash["event" + voiceTimeMilliseconds].midiGraceNotePitches = parseCommon.cloneArray(element.abcelem.midiGraceNotePitches);
+          if (element.abcelem.midiGraceNotePitches) eventHash["event" + voiceTimeMilliseconds].midiGraceNotePitches = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].cloneArray(element.abcelem.midiGraceNotePitches);
         } else {
           // If there is more than one voice then two notes can fall at the same time. Usually they would be lined up in the same place, but if it is a whole rest, then it is placed funny. In any case, the left most element wins.
           if (eventHash["event" + voiceTimeMilliseconds].left) eventHash["event" + voiceTimeMilliseconds].left = Math.min(eventHash["event" + voiceTimeMilliseconds].left, element.x);else eventHash["event" + voiceTimeMilliseconds].left = element.x;
@@ -1717,10 +1660,10 @@ var Tune = function Tune() {
       if (group && group.staffs && group.staffs.length > 0) {
         var firstStaff = group.staffs[0];
         var middleC = firstStaff.absoluteY;
-        var top = middleC - firstStaff.top * spacing.STEP;
+        var top = middleC - firstStaff.top * _write_helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP;
         var lastStaff = group.staffs[group.staffs.length - 1];
         middleC = lastStaff.absoluteY;
-        var bottom = middleC - lastStaff.bottom * spacing.STEP;
+        var bottom = middleC - lastStaff.bottom * _write_helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP;
         var height = bottom - top;
         var voices = group.voices;
         for (var v = 0; v < voices.length; v++) {
@@ -1922,11 +1865,11 @@ var Tune = function Tune() {
   };
   this.setUpAudio = function (options) {
     if (!options) options = {};
-    var seq = sequence(this, options);
-    return flatten(seq, options, this.formatting.percmap, this.formatting.midi);
+    var seq = (0,_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_2__["default"])(this, options);
+    return (0,_synth_abc_midi_flattener__WEBPACK_IMPORTED_MODULE_3__["default"])(seq, options, this.formatting.percmap, this.formatting.midi);
   };
   this.deline = function (options) {
-    return delineTune(this.lines, options);
+    return (0,_deline_tune__WEBPACK_IMPORTED_MODULE_4__["default"])(this.lines, options);
   };
   this.findSelectableElement = function (target) {
     if (this.engraver && this.engraver.selectables) return this.engraver.findSelectableElement(target);
@@ -1937,7 +1880,7 @@ var Tune = function Tune() {
     return [];
   };
 };
-module.exports = Tune;
+/* harmony default export */ __webpack_exports__["default"] = (Tune);
 
 /***/ }),
 
@@ -1945,8 +1888,9 @@ module.exports = Tune;
 /*!*********************************!*\
   !*** ./src/data/deline-tune.js ***!
   \*********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function delineTune(inputLines, options) {
   if (!options) options = {};
   var lineBreaks = !!options.lineBreaks;
@@ -2132,7 +2076,7 @@ function cloneLine(line) {
   }
   return output;
 }
-module.exports = delineTune;
+/* harmony default export */ __webpack_exports__["default"] = (delineTune);
 
 /***/ }),
 
@@ -2140,8 +2084,9 @@ module.exports = delineTune;
 /*!**********************************!*\
   !*** ./src/edit/abc_editarea.js ***!
   \**********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 // abc_editor.js
 
 // window.ABCJS.Editor is the interface class for the area that contains the ABC text. It is responsible for
@@ -2249,7 +2194,7 @@ EditArea.prototype.setString = function (str) {
 EditArea.prototype.getElem = function () {
   return this.textarea;
 };
-module.exports = EditArea;
+/* harmony default export */ __webpack_exports__["default"] = (EditArea);
 
 /***/ }),
 
@@ -2257,8 +2202,14 @@ module.exports = EditArea;
 /*!********************************!*\
   !*** ./src/edit/abc_editor.js ***!
   \********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _synth_synth_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../synth/synth-controller */ "./src/synth/synth-controller.js");
+/* harmony import */ var _synth_supports_audio__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../synth/supports-audio */ "./src/synth/supports-audio.js");
+/* harmony import */ var _api_abc_tunebook_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api/abc_tunebook_svg */ "./src/api/abc_tunebook_svg.js");
+/* harmony import */ var _abc_editarea__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./abc_editarea */ "./src/edit/abc_editarea.js");
 // window.ABCJS.Editor:
 //
 // constructor(editarea, params)
@@ -2305,11 +2256,11 @@ module.exports = EditArea;
 // - pause(bool)
 //		Stops the automatic rendering when the user is typing.
 //
-var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
-var SynthController = __webpack_require__(/*! ../synth/synth-controller */ "./src/synth/synth-controller.js");
-var supportsAudio = __webpack_require__(/*! ../synth/supports-audio */ "./src/synth/supports-audio.js");
-var renderAbc = __webpack_require__(/*! ../api/abc_tunebook_svg */ "./src/api/abc_tunebook_svg.js");
-var EditArea = __webpack_require__(/*! ./abc_editarea */ "./src/edit/abc_editarea.js");
+
+
+
+
+
 function gatherAbcParams(params) {
   // There used to be a bunch of ways parameters can be passed in. This just simplifies it.
   var abcjsParams = {};
@@ -2360,7 +2311,7 @@ var Editor = function Editor(editarea, params) {
   this.abcjsParams = gatherAbcParams(params);
   if (params.indicate_changed) this.indicate_changed = true;
   if (typeof editarea === "string") {
-    this.editarea = new EditArea(editarea);
+    this.editarea = new _abc_editarea__WEBPACK_IMPORTED_MODULE_4__["default"](editarea);
   } else {
     this.editarea = editarea;
   }
@@ -2381,7 +2332,7 @@ var Editor = function Editor(editarea, params) {
   this.clientClickListener = this.abcjsParams.clickListener;
   this.abcjsParams.clickListener = this.highlight.bind(this);
   if (params.synth) {
-    if (supportsAudio()) {
+    if ((0,_synth_supports_audio__WEBPACK_IMPORTED_MODULE_2__["default"])()) {
       this.synth = {
         el: params.synth.el,
         cursorControl: params.synth.cursorControl,
@@ -2426,7 +2377,7 @@ var Editor = function Editor(editarea, params) {
     return element;
   };
   this.removeClassName = function (element, className) {
-    element.className = parseCommon.strip(element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), ' '));
+    element.className = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), ' '));
     return element;
   };
   this.setReadOnly = function (readOnly) {
@@ -2457,7 +2408,7 @@ Editor.prototype.redrawMidi = function () {
   if (this.synth) {
     var userAction = this.synth.synthControl; // Can't really tell if there was a user action before drawing, but we assume that if the synthControl was created already there was a user action.
     if (!this.synth.synthControl) {
-      this.synth.synthControl = new SynthController();
+      this.synth.synthControl = new _synth_synth_controller__WEBPACK_IMPORTED_MODULE_1__["default"]();
       this.synth.synthControl.load(this.synth.el, this.synth.cursorControl, this.synth.options);
     }
     this.synth.synthControl.setTune(this.tunes[0], userAction, this.synth.options);
@@ -2469,7 +2420,7 @@ Editor.prototype.modelChanged = function () {
   try {
     this.timerId = null;
     if (this.synth && this.synth.synthControl) this.synth.synthControl.disable(true);
-    this.tunes = renderAbc(this.div, this.currentAbc, this.abcjsParams);
+    this.tunes = (0,_api_abc_tunebook_svg__WEBPACK_IMPORTED_MODULE_3__["default"])(this.div, this.currentAbc, this.abcjsParams);
     if (this.tunes.length > 0) {
       this.warnings = this.tunes[0].warnings;
     }
@@ -2545,7 +2496,7 @@ Editor.prototype.setDirtyStyle = function (isDirty) {
     return element;
   };
   var removeClassName = function removeClassName(element, className) {
-    element.className = parseCommon.strip(element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), ' '));
+    element.className = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), ' '));
     return element;
   };
   var readonlyClass = 'abc_textarea_dirty';
@@ -2605,7 +2556,7 @@ Editor.prototype.pauseMidi = function (shouldPause) {
   this.midiPause = shouldPause;
   if (!shouldPause) this.redrawMidi();
 };
-module.exports = Editor;
+/* harmony default export */ __webpack_exports__["default"] = (Editor);
 
 /***/ }),
 
@@ -2613,11 +2564,13 @@ module.exports = Editor;
 /*!*************************************!*\
   !*** ./src/midi/abc_midi_create.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
 //    abc_midi_create.js: Turn a linear series of events into a midi file.
 
-var rendererFactory = __webpack_require__(/*! ../synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
+
 var create;
 (function () {
   "use strict";
@@ -2627,7 +2580,7 @@ var create;
   create = function create(abcTune, options) {
     if (options === undefined) options = {};
     var commands = abcTune.setUpAudio(options);
-    var midi = rendererFactory();
+    var midi = (0,_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_0__["default"])();
     var title = abcTune.metaText ? abcTune.metaText.title : undefined;
     if (title && title.length > 128) title = title.substring(0, 124) + '...';
     var key = abcTune.getKeySignature();
@@ -2710,7 +2663,7 @@ var create;
     }
   }
 })();
-module.exports = create;
+/* harmony default export */ __webpack_exports__["default"] = (create);
 
 /***/ }),
 
@@ -2718,8 +2671,9 @@ module.exports = create;
 /*!*********************************!*\
   !*** ./src/parse/abc_common.js ***!
   \*********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_parse.js: parses a string representing ABC Music Notation into a usable internal structure.
 
 var parseCommon = {};
@@ -2765,7 +2719,7 @@ parseCommon.last = function (arr) {
   if (arr.length === 0) return null;
   return arr[arr.length - 1];
 };
-module.exports = parseCommon;
+/* harmony default export */ __webpack_exports__["default"] = (parseCommon);
 
 /***/ }),
 
@@ -2773,23 +2727,32 @@ module.exports = parseCommon;
 /*!********************************!*\
   !*** ./src/parse/abc_parse.js ***!
   \********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
+/* harmony import */ var _abc_parse_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./abc_parse_header */ "./src/parse/abc_parse_header.js");
+/* harmony import */ var _abc_parse_music__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./abc_parse_music */ "./src/parse/abc_parse_music.js");
+/* harmony import */ var _abc_tokenizer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./abc_tokenizer */ "./src/parse/abc_tokenizer.js");
+/* harmony import */ var _wrap_lines__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./wrap_lines */ "./src/parse/wrap_lines.js");
+/* harmony import */ var _data_abc_tune__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data/abc_tune */ "./src/data/abc_tune.js");
+/* harmony import */ var _parse_tune_builder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../parse/tune-builder */ "./src/parse/tune-builder.js");
 //    abc_parse.js: parses a string representing ABC Music Notation into a usable internal structure.
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
-var parseDirective = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
-var ParseHeader = __webpack_require__(/*! ./abc_parse_header */ "./src/parse/abc_parse_header.js");
-var ParseMusic = __webpack_require__(/*! ./abc_parse_music */ "./src/parse/abc_parse_music.js");
-var Tokenizer = __webpack_require__(/*! ./abc_tokenizer */ "./src/parse/abc_tokenizer.js");
-var wrap = __webpack_require__(/*! ./wrap_lines */ "./src/parse/wrap_lines.js");
-var Tune = __webpack_require__(/*! ../data/abc_tune */ "./src/data/abc_tune.js");
-var TuneBuilder = __webpack_require__(/*! ../parse/tune-builder */ "./src/parse/tune-builder.js");
+
+
+
+
+
+
+
+
 var Parse = function Parse() {
   "use strict";
 
-  var tune = new Tune();
-  var tuneBuilder = new TuneBuilder(tune);
+  var tune = new _data_abc_tune__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  var tuneBuilder = new _parse_tune_builder__WEBPACK_IMPORTED_MODULE_7__["default"](tune);
   var tokenizer;
   var wordsContinuation = '';
   var symbolContinuation = '';
@@ -2990,14 +2953,14 @@ var Parse = function Parse() {
       warn("Can't add words before the first line of music", line, 0);
       return;
     }
-    words = parseCommon.strip(words);
+    words = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(words);
     if (words[words.length - 1] !== '-') words = words + ' '; // Just makes it easier to parse below, since every word has a divider after it.
     var word_list = [];
     // first make a list of words from the string we are passed. A word is divided on either a space or dash.
     var last_divider = 0;
     var replace = false;
     var addWord = function addWord(i) {
-      var word = parseCommon.strip(words.substring(last_divider, i));
+      var word = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(words.substring(last_divider, i));
       word = word.replace(/\\([-_*|~])/g, '$1');
       last_divider = i + 1;
       if (word.length > 0) {
@@ -3022,7 +2985,7 @@ var Parse = function Parse() {
           break;
         case '-':
           if (!escNext && !addWord(i) && word_list.length > 0) {
-            parseCommon.last(word_list).divider = '-';
+            _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].last(word_list).divider = '-';
             word_list.push({
               skip: true,
               to: 'next'
@@ -3111,14 +3074,14 @@ var Parse = function Parse() {
       warn("Can't add symbols before the first line of music", line, 0);
       return;
     }
-    words = parseCommon.strip(words);
+    words = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(words);
     if (words[words.length - 1] !== '-') words = words + ' '; // Just makes it easier to parse below, since every word has a divider after it.
     var word_list = [];
     // first make a list of words from the string we are passed. A word is divided on either a space or dash.
     var last_divider = 0;
     var replace = false;
     var addWord = function addWord(i) {
-      var word = parseCommon.strip(words.substring(last_divider, i));
+      var word = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(words.substring(last_divider, i));
       last_divider = i + 1;
       if (word.length > 0) {
         if (replace) word = word.replace(/~/g, ' ');
@@ -3141,7 +3104,7 @@ var Parse = function Parse() {
           break;
         case '-':
           if (!addWord(i) && word_list.length > 0) {
-            parseCommon.last(word_list).divider = '-';
+            _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].last(word_list).divider = '-';
             word_list.push({
               skip: true,
               to: 'next'
@@ -3199,8 +3162,8 @@ var Parse = function Parse() {
     });
   };
   var parseLine = function parseLine(line) {
-    if (parseCommon.startsWith(line, '%%')) {
-      var err = parseDirective.addDirective(line.substring(2));
+    if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(line, '%%')) {
+      var err = _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].addDirective(line.substring(2));
       if (err) warn(err, line, 2);
       return;
     }
@@ -3232,7 +3195,7 @@ var Parse = function Parse() {
     });
     for (var i = 0; i < nextVoice.length; i++) {
       var element = nextVoice[i];
-      var hint = parseCommon.clone(element);
+      var hint = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(element);
       voice.push(hint);
       if (element.el_type === 'bar') return;
     }
@@ -3302,12 +3265,12 @@ var Parse = function Parse() {
       return backslash + "\x12" + padding + '\n';
     });
     var lines = strTune.split('\n');
-    if (parseCommon.last(lines).length === 0)
+    if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].last(lines).length === 0)
       // remove the blank line we added above.
       lines.pop();
-    tokenizer = new Tokenizer(lines, multilineVars);
-    header = new ParseHeader(tokenizer, warn, multilineVars, tune, tuneBuilder);
-    music = new ParseMusic(tokenizer, warn, multilineVars, tune, tuneBuilder, header);
+    tokenizer = new _abc_tokenizer__WEBPACK_IMPORTED_MODULE_4__["default"](lines, multilineVars);
+    header = new _abc_parse_header__WEBPACK_IMPORTED_MODULE_2__["default"](tokenizer, warn, multilineVars, tune, tuneBuilder);
+    music = new _abc_parse_music__WEBPACK_IMPORTED_MODULE_3__["default"](tokenizer, warn, multilineVars, tune, tuneBuilder, header);
     if (switches.print) tune.media = 'print';
     multilineVars.reset();
     multilineVars.iChar = startPos;
@@ -3324,7 +3287,7 @@ var Parse = function Parse() {
     header.reset(tokenizer, warn, multilineVars, tune);
     try {
       if (switches.format) {
-        parseDirective.globalFormatting(switches.format);
+        _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].globalFormatting(switches.format);
       }
       var line = tokenizer.nextLine();
       while (line) {
@@ -3373,10 +3336,10 @@ var Parse = function Parse() {
     if (switches.hint_measures) {
       addHintMeasures();
     }
-    wrap.wrapLines(tune, multilineVars.lineBreaks, multilineVars.barNumbers);
+    _wrap_lines__WEBPACK_IMPORTED_MODULE_5__["default"].wrapLines(tune, multilineVars.lineBreaks, multilineVars.barNumbers);
   };
 };
-module.exports = Parse;
+/* harmony default export */ __webpack_exports__["default"] = (Parse);
 
 /***/ }),
 
@@ -3384,17 +3347,19 @@ module.exports = Parse;
 /*!*************************************!*\
   !*** ./src/parse/abc_parse_book.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
 //    abc_parse_book.js: parses a string representing ABC Music Notation into a usable internal structure.
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+
 var bookParser = function bookParser(book) {
   "use strict";
 
   var directives = "";
   var initialWhiteSpace = book.match(/(\s*)/);
-  book = parseCommon.strip(book);
+  book = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(book);
   var tuneStrings = book.split("\nX:");
   // Put back the X: that we lost when splitting the tunes.
   for (var i = 1; i < tuneStrings.length; i++) {
@@ -3411,7 +3376,7 @@ var bookParser = function bookParser(book) {
     pos += tune.length + 1; // We also lost a newline when splitting, so count that.
   });
 
-  if (tunes.length > 1 && !parseCommon.startsWith(tunes[0].abc, 'X:')) {
+  if (tunes.length > 1 && !_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(tunes[0].abc, 'X:')) {
     // If there is only one tune, the X: might be missing, otherwise assume the top of the file is "intertune"
     // There could be file-wide directives in this, if so, we need to insert it into each tune. We can probably get away with
     // just looking for file-wide directives here (before the first tune) and inserting them at the bottom of each tune, since
@@ -3419,7 +3384,7 @@ var bookParser = function bookParser(book) {
     var dir = tunes.shift();
     var arrDir = dir.abc.split('\n');
     arrDir.forEach(function (line) {
-      if (parseCommon.startsWith(line, '%%')) directives += line + '\n';
+      if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(line, '%%')) directives += line + '\n';
     });
   }
   var header = directives;
@@ -3436,19 +3401,19 @@ var bookParser = function bookParser(book) {
     var title = tune.pure.split("T:");
     if (title.length > 1) {
       title = title[1].split("\n");
-      tune.title = parseCommon.strip(title[0]);
+      tune.title = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(title[0]);
     }
 
     // for the user's convenience, parse and store the id separately. The id is between the first X: and the next \n
     var id = tune.pure.substring(2, tune.pure.indexOf("\n"));
-    tune.id = parseCommon.strip(id);
+    tune.id = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(id);
   });
   return {
     header: header,
     tunes: tunes
   };
 };
-module.exports = bookParser;
+/* harmony default export */ __webpack_exports__["default"] = (bookParser);
 
 /***/ }),
 
@@ -3456,9 +3421,11 @@ module.exports = bookParser;
 /*!******************************************!*\
   !*** ./src/parse/abc_parse_directive.js ***!
   \******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+
 var parseDirective = {};
 (function () {
   "use strict";
@@ -4492,7 +4459,7 @@ var parseDirective = {};
         var textBlock = '';
         line = tokenizer.nextLine();
         while (line && line.indexOf('%%endtext') !== 0) {
-          if (parseCommon.startsWith(line, "%%")) textBlock += line.substring(2) + "\n";else textBlock += line + "\n";
+          if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(line, "%%")) textBlock += line.substring(2) + "\n";else textBlock += line + "\n";
           line = tokenizer.nextLine();
         }
         tuneBuilder.addText(textBlock, {
@@ -4588,7 +4555,7 @@ var parseDirective = {};
               numVoices: 0
             });
           }
-          var staff = parseCommon.last(multilineVars.staves);
+          var staff = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].last(multilineVars.staves);
           if (bracket !== undefined && staff.bracket === undefined) staff.bracket = bracket;
           if (brace !== undefined && staff.brace === undefined) staff.brace = brace;
           if (continueBar) staff.connectBarLines = 'end';
@@ -4835,7 +4802,7 @@ var parseDirective = {};
     };
   }
 })();
-module.exports = parseDirective;
+/* harmony default export */ __webpack_exports__["default"] = (parseDirective);
 
 /***/ }),
 
@@ -4843,17 +4810,21 @@ module.exports = parseDirective;
 /*!***************************************!*\
   !*** ./src/parse/abc_parse_header.js ***!
   \***************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
+/* harmony import */ var _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./abc_parse_key_voice */ "./src/parse/abc_parse_key_voice.js");
 //    abc_parse_header.js: parses a the header fields from a string representing ABC Music Notation into a usable internal structure.
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
-var parseDirective = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
-var parseKeyVoice = __webpack_require__(/*! ./abc_parse_key_voice */ "./src/parse/abc_parse_key_voice.js");
+
+
+
 var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tuneBuilder) {
   this.reset = function (tokenizer, warn, multilineVars, tune) {
-    parseKeyVoice.initialize(tokenizer, warn, multilineVars, tune, tuneBuilder);
-    parseDirective.initialize(tokenizer, warn, multilineVars, tune, tuneBuilder);
+    _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].initialize(tokenizer, warn, multilineVars, tune, tuneBuilder);
+    _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].initialize(tokenizer, warn, multilineVars, tune, tuneBuilder);
   };
   this.reset(tokenizer, warn, multilineVars, tune);
   this.setTitle = function (title, origSize) {
@@ -5024,8 +4995,8 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
       warn("Need an = in a macro definition", line, start);
       return;
     }
-    var before = parseCommon.strip(line.substring(start, equals));
-    var after = parseCommon.strip(line.substring(equals + 1));
+    var before = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(line.substring(start, equals));
+    var after = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(line.substring(equals + 1));
     if (before.length !== 1) {
       warn("Macro definitions can only be one character", line, start);
       return;
@@ -5211,7 +5182,7 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
       var endChar = multilineVars.iChar + e + 1;
       switch (line.substring(i, i + 3)) {
         case "[I:":
-          var err = parseDirective.addDirective(line.substring(i + 3, e));
+          var err = _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].addDirective(line.substring(i + 3, e));
           if (err) warn(err, line, i);
           return [e - i + 1 + ws];
         case "[M:":
@@ -5219,12 +5190,12 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
           if (tuneBuilder.hasBeginMusic() && meter) tuneBuilder.appendStartingElement('meter', startChar, endChar, meter);else multilineVars.meter = meter;
           return [e - i + 1 + ws];
         case "[K:":
-          var result = parseKeyVoice.parseKey(line.substring(i + 3, e), true);
+          var result = _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].parseKey(line.substring(i + 3, e), true);
           if (result.foundClef && tuneBuilder.hasBeginMusic()) tuneBuilder.appendStartingElement('clef', startChar, endChar, multilineVars.clef);
-          if (result.foundKey && tuneBuilder.hasBeginMusic()) tuneBuilder.appendStartingElement('key', startChar, endChar, parseKeyVoice.fixKey(multilineVars.clef, multilineVars.key));
+          if (result.foundKey && tuneBuilder.hasBeginMusic()) tuneBuilder.appendStartingElement('key', startChar, endChar, _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].fixKey(multilineVars.clef, multilineVars.key));
           return [e - i + 1 + ws];
         case "[P:":
-          var part = parseDirective.parseFontChangeLine(line.substring(i + 3, e));
+          var part = _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(line.substring(i + 3, e));
           if (startLine || tune.lines.length <= tune.lineNum) multilineVars.partForNextLine = {
             title: part,
             startChar: startChar,
@@ -5249,7 +5220,7 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
           break;
         case "[V:":
           if (e > 0) {
-            parseKeyVoice.parseVoice(line, i + 3, e);
+            _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].parseVoice(line, i + 3, e);
             //startNewLine();
             return [e - i + 1 + ws, line[i + 1], line.substring(i + 3, e)];
           }
@@ -5267,7 +5238,7 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
     if (line.length >= i + 3) {
       switch (line.substring(i, i + 2)) {
         case "I:":
-          var err = parseDirective.addDirective(line.substring(i + 2));
+          var err = _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].addDirective(line.substring(i + 2));
           if (err) warn(err, line, i);
           return [line.length];
         case "M:":
@@ -5275,9 +5246,9 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
           if (tuneBuilder.hasBeginMusic() && meter) tuneBuilder.appendStartingElement('meter', multilineVars.iChar + i, multilineVars.iChar + line.length, meter);
           return [line.length];
         case "K:":
-          var result = parseKeyVoice.parseKey(line.substring(i + 2), tuneBuilder.hasBeginMusic());
+          var result = _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].parseKey(line.substring(i + 2), tuneBuilder.hasBeginMusic());
           if (result.foundClef && tuneBuilder.hasBeginMusic()) tuneBuilder.appendStartingElement('clef', multilineVars.iChar + i, multilineVars.iChar + line.length, multilineVars.clef);
-          if (result.foundKey && tuneBuilder.hasBeginMusic()) tuneBuilder.appendStartingElement('key', multilineVars.iChar + i, multilineVars.iChar + line.length, parseKeyVoice.fixKey(multilineVars.clef, multilineVars.key));
+          if (result.foundKey && tuneBuilder.hasBeginMusic()) tuneBuilder.appendStartingElement('key', multilineVars.iChar + i, multilineVars.iChar + line.length, _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].fixKey(multilineVars.clef, multilineVars.key));
           return [line.length];
         case "P:":
           if (tuneBuilder.hasBeginMusic()) tuneBuilder.appendElement('part', multilineVars.iChar + i, multilineVars.iChar + line.length, {
@@ -5292,11 +5263,11 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
           if (e === -1) e = line.length;
           var tempo = this.setTempo(line, i + 2, e, multilineVars.iChar);
           if (tempo.type === 'delaySet') tuneBuilder.appendElement('tempo', multilineVars.iChar + i, multilineVars.iChar + line.length, this.calcTempo(tempo.tempo));else if (tempo.type === 'immediate') tuneBuilder.appendElement('tempo', multilineVars.iChar + i, multilineVars.iChar + line.length, tempo.tempo);
-          return [e, line[i], parseCommon.strip(line.substring(i + 2))];
+          return [e, line[i], _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(line.substring(i + 2))];
         case "V:":
-          parseKeyVoice.parseVoice(line, i + 2, line.length);
+          _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].parseVoice(line, i + 2, line.length);
           //						startNewLine();
-          return [line.length, line[i], parseCommon.strip(line.substring(i + 2))];
+          return [line.length, line[i], _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(line.substring(i + 2))];
         default:
         // TODO: complain about unhandled header
       }
@@ -5325,13 +5296,13 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
     var restOfLine = tokenizer.translateString(tokenizer.stripComment(line.substring(2)));
     if (field === 'unalignedWords' || field === 'notes') {
       // These fields can be multi-line
-      tuneBuilder.addMetaTextArray(field, parseDirective.parseFontChangeLine(restOfLine), {
+      tuneBuilder.addMetaTextArray(field, _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(restOfLine), {
         startChar: multilineVars.iChar,
         endChar: multilineVars.iChar + line.length
       });
     } else if (field !== undefined) {
       // these fields are single line
-      tuneBuilder.addMetaText(field, parseDirective.parseFontChangeLine(restOfLine), {
+      tuneBuilder.addMetaText(field, _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(restOfLine), {
         startChar: multilineVars.iChar,
         endChar: multilineVars.iChar + line.length
       });
@@ -5341,14 +5312,14 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
       switch (line[0]) {
         case 'H':
           // History is a little different because once it starts it continues until another header field is encountered
-          tuneBuilder.addMetaTextArray("history", parseDirective.parseFontChangeLine(restOfLine), {
+          tuneBuilder.addMetaTextArray("history", _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(restOfLine), {
             startChar: multilineVars.iChar,
             endChar: multilineVars.iChar + line.length
           });
           line = tokenizer.peekLine();
           while (line && line[1] !== ':') {
             tokenizer.nextLine();
-            tuneBuilder.addMetaTextArray("history", parseDirective.parseFontChangeLine(tokenizer.translateString(tokenizer.stripComment(line))), {
+            tuneBuilder.addMetaTextArray("history", _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(tokenizer.translateString(tokenizer.stripComment(line))), {
               startChar: multilineVars.iChar,
               endChar: multilineVars.iChar + line.length
             });
@@ -5358,10 +5329,10 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
         case 'K':
           // since the key is the last thing that can happen in the header, we can resolve the tempo now
           this.resolveTempo();
-          var result = parseKeyVoice.parseKey(line.substring(2), false);
+          var result = _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].parseKey(line.substring(2), false);
           if (!multilineVars.is_in_header && tuneBuilder.hasBeginMusic()) {
             if (result.foundClef) tuneBuilder.appendStartingElement('clef', startChar, endChar, multilineVars.clef);
-            if (result.foundKey) tuneBuilder.appendStartingElement('key', startChar, endChar, parseKeyVoice.fixKey(multilineVars.clef, multilineVars.key));
+            if (result.foundKey) tuneBuilder.appendStartingElement('key', startChar, endChar, _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].fixKey(multilineVars.clef, multilineVars.key));
           }
           multilineVars.is_in_header = false; // The first key signifies the end of the header.
           break;
@@ -5373,7 +5344,7 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
           break;
         case 'P':
           // TODO-PER: There is more to do with parts, but the writer doesn't care.
-          if (multilineVars.is_in_header) tuneBuilder.addMetaText("partOrder", parseDirective.parseFontChangeLine(restOfLine), {
+          if (multilineVars.is_in_header) tuneBuilder.addMetaText("partOrder", _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(restOfLine), {
             startChar: multilineVars.iChar,
             endChar: multilineVars.iChar + line.length
           });else multilineVars.partForNextLine = {
@@ -5390,13 +5361,13 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
           break;
         case 'T':
           if (multilineVars.titlecaps) restOfLine = restOfLine.toUpperCase();
-          this.setTitle(parseDirective.parseFontChangeLine(tokenizer.theReverser(restOfLine)), origSize);
+          this.setTitle(_abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].parseFontChangeLine(tokenizer.theReverser(restOfLine)), origSize);
           break;
         case 'U':
           this.addUserDefinition(line, 2, line.length);
           break;
         case 'V':
-          parseKeyVoice.parseVoice(line, 2, line.length);
+          _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_2__["default"].parseVoice(line, 2, line.length);
           if (!multilineVars.is_in_header) return {
             newline: true
           };
@@ -5424,7 +5395,7 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
     return {};
   };
 };
-module.exports = ParseHeader;
+/* harmony default export */ __webpack_exports__["default"] = (ParseHeader);
 
 /***/ }),
 
@@ -5432,11 +5403,15 @@ module.exports = ParseHeader;
 /*!******************************************!*\
   !*** ./src/parse/abc_parse_key_voice.js ***!
   \******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
-var parseDirective = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
-var transpose = __webpack_require__(/*! ./abc_transpose */ "./src/parse/abc_transpose.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
+/* harmony import */ var _abc_transpose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./abc_transpose */ "./src/parse/abc_transpose.js");
+
+
+
 var parseKeyVoice = {};
 (function () {
   var tokenizer;
@@ -5452,7 +5427,7 @@ var parseKeyVoice = {};
     tuneBuilder = tuneBuilder_;
   };
   parseKeyVoice.standardKey = function (keyName, root, acc, localTranspose) {
-    return transpose.keySignature(multilineVars, keyName, root, acc, localTranspose);
+    return _abc_transpose__WEBPACK_IMPORTED_MODULE_2__["default"].keySignature(multilineVars, keyName, root, acc, localTranspose);
   };
   var clefLines = {
     'treble': {
@@ -5685,7 +5660,7 @@ var parseKeyVoice = {};
       mode: key.mode
     };
     key.accidentals.forEach(function (k) {
-      ret.accidentals.push(parseCommon.clone(k));
+      ret.accidentals.push(_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(k));
     });
     return ret;
   };
@@ -5751,7 +5726,7 @@ var parseKeyVoice = {};
     }
   };
   parseKeyVoice.fixKey = function (clef, key) {
-    var fixedKey = parseCommon.clone(key);
+    var fixedKey = _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(key);
     parseKeyVoice.addPosToKey(clef, fixedKey);
     return fixedKey;
   };
@@ -5810,7 +5785,7 @@ var parseKeyVoice = {};
     // first the key
     switch (tokens[0].token) {
       case 'HP':
-        parseDirective.addDirective("bagpipes");
+        _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].addDirective("bagpipes");
         multilineVars.key = {
           root: "HP",
           accidentals: [],
@@ -5821,7 +5796,7 @@ var parseKeyVoice = {};
         tokens.shift();
         break;
       case 'Hp':
-        parseDirective.addDirective("bagpipes");
+        _abc_parse_directive__WEBPACK_IMPORTED_MODULE_1__["default"].addDirective("bagpipes");
         multilineVars.key = {
           root: "Hp",
           accidentals: [{
@@ -6438,7 +6413,7 @@ var parseKeyVoice = {};
     setCurrentVoice(id);
   };
 })();
-module.exports = parseKeyVoice;
+/* harmony default export */ __webpack_exports__["default"] = (parseKeyVoice);
 
 /***/ }),
 
@@ -6446,29 +6421,23 @@ module.exports = parseKeyVoice;
 /*!**************************************!*\
   !*** ./src/parse/abc_parse_music.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
-var parseKeyVoice = __webpack_require__(/*! ./abc_parse_key_voice */ "./src/parse/abc_parse_key_voice.js");
-var transpose = __webpack_require__(/*! ./abc_transpose */ "./src/parse/abc_transpose.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./abc_parse_key_voice */ "./src/parse/abc_parse_key_voice.js");
+/* harmony import */ var _abc_transpose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./abc_transpose */ "./src/parse/abc_transpose.js");
+/* harmony import */ var _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./abc_parse_settings */ "./src/parse/abc_parse_settings.js");
+
+
+
 var tokenizer;
 var warn;
 var multilineVars;
 var tune;
 var tuneBuilder;
 var header;
-var _require = __webpack_require__(/*! ./abc_parse_settings */ "./src/parse/abc_parse_settings.js"),
-  legalAccents = _require.legalAccents,
-  volumeDecorations = _require.volumeDecorations,
-  dynamicDecorations = _require.dynamicDecorations,
-  accentPseudonyms = _require.accentPseudonyms,
-  accentDynamicPseudonyms = _require.accentDynamicPseudonyms,
-  nonDecorations = _require.nonDecorations,
-  durations = _require.durations,
-  pitches = _require.pitches,
-  rests = _require.rests,
-  accMap = _require.accMap,
-  tripletQ = _require.tripletQ;
+
 var MusicParser = function MusicParser(_tokenizer, _warn, _multilineVars, _tune, _tuneBuilder, _header) {
   tokenizer = _tokenizer;
   warn = _warn;
@@ -6649,7 +6618,7 @@ MusicParser.prototype.parseMusic = function (line) {
           if (ii > 0) el.force_end_beam_last = true;
           i += ii;
         } else {
-          if (nonDecorations.indexOf(line[i]) === -1) ret = letter_to_accent(line, i);else ret = [0];
+          if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.nonDecorations.indexOf(line[i]) === -1) ret = letter_to_accent(line, i);else ret = [0];
           if (ret[0] > 0) {
             if (ret[1] === null) {
               if (i + 1 < line.length) this.startNewLine(); // There was a ! in the middle of the line. Start a new line if there is anything after it.
@@ -6945,7 +6914,7 @@ MusicParser.prototype.parseMusic = function (line) {
             // The first item on a line is a regular note value, each item after that represents a dot placed after the previous note.
             // Only durations less than a whole note are tested because whole note durations have some tricky rules.
 
-            if (el.duration < 1 && durations.indexOf(el.duration) === -1 && el.duration !== 0) {
+            if (el.duration < 1 && _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.durations.indexOf(el.duration) === -1 && el.duration !== 0) {
               if (!el.rest || el.rest.type !== 'spacer') warn("Duration not representable: " + line.substring(startI, i), line, i);
             }
             multilineVars.addFormattingOptions(el, tune.formatting, 'note');
@@ -7020,7 +6989,7 @@ var letter_to_chord = function letter_to_chord(line, i) {
         chord[1] = chord[1].replace(/^([ABCDEFG])([♯♭]?)\^([^A-Za-z])/g, "$1$2∆$3");
       }
       chord[2] = 'default';
-      chord[1] = transpose.chordName(multilineVars, chord[1]);
+      chord[1] = _abc_transpose__WEBPACK_IMPORTED_MODULE_2__["default"].chordName(multilineVars, chord[1]);
     }
     return chord;
   }
@@ -7097,10 +7066,10 @@ var letter_to_accent = function letter_to_accent(line, i) {
   if (macro !== undefined) {
     if (macro[0] === '!' || macro[0] === '+') macro = macro.substring(1);
     if (macro[macro.length - 1] === '!' || macro[macro.length - 1] === '+') macro = macro.substring(0, macro.length - 1);
-    if (legalAccents.includes(macro)) return [1, macro];else if (volumeDecorations.includes(macro)) {
+    if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.legalAccents.includes(macro)) return [1, macro];else if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.volumeDecorations.includes(macro)) {
       if (multilineVars.volumePosition === 'hidden') macro = "";
       return [1, macro];
-    } else if (dynamicDecorations.includes(macro)) {
+    } else if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.dynamicDecorations.includes(macro)) {
       if (multilineVars.dynamicPosition === 'hidden') macro = "";
       return [1, macro];
     } else {
@@ -7125,27 +7094,27 @@ var letter_to_accent = function letter_to_accent(line, i) {
       var ret = tokenizer.getBrackettedSubstring(line, i, 5);
       // Be sure that the accent is recognizable.
       if (ret[1].length > 1 && (ret[1][0] === '^' || ret[1][0] === '_')) ret[1] = ret[1].substring(1); // TODO-PER: The test files have indicators forcing the ornament to the top or bottom, but that isn't in the standard. We'll just ignore them.
-      if (legalAccents.includes(ret[1])) return ret;
-      if (volumeDecorations.includes(ret[1])) {
+      if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.legalAccents.includes(ret[1])) return ret;
+      if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.volumeDecorations.includes(ret[1])) {
         if (multilineVars.volumePosition === 'hidden') ret[1] = '';
         return ret;
       }
-      if (dynamicDecorations.includes(ret[1])) {
+      if (_abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.dynamicDecorations.includes(ret[1])) {
         if (multilineVars.dynamicPosition === 'hidden') ret[1] = '';
         return ret;
       }
-      var ind = accentPseudonyms.findIndex(function (acc) {
+      var ind = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.accentPseudonyms.findIndex(function (acc) {
         return ret[1] === acc[0];
       });
       if (ind >= 0) {
-        ret[1] = accentPseudonyms[ind][1];
+        ret[1] = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.accentPseudonyms[ind][1];
         return ret;
       }
-      ind = accentDynamicPseudonyms.findIndex(function (acc) {
+      ind = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.accentDynamicPseudonyms.findIndex(function (acc) {
         return ret[1] === acc[0];
       });
       if (ind >= 0) {
-        ret[1] = accentDynamicPseudonyms[ind][1];
+        ret[1] = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.accentDynamicPseudonyms[ind][1];
         if (multilineVars.dynamicPosition === 'hidden') ret[1] = '';
         return ret;
       }
@@ -7232,7 +7201,7 @@ var letter_to_open_slurs_and_triplets = function letter_to_open_slurs_and_triple
       if (i + 1 < line.length && line[i + 1] >= '2' && line[i + 1] <= '9') {
         if (ret.triplet !== undefined) warn("Can't nest triplets", line, i);else {
           ret.triplet = line[i + 1] - '0';
-          ret.tripletQ = tripletQ[ret.triplet];
+          ret.tripletQ = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.tripletQ[ret.triplet];
           ret.num_notes = ret.triplet;
           if (i + 2 < line.length && line[i + 2] === ':') {
             // We are expecting "(p:q:r" or "(p:q" or "(p::r"
@@ -7282,9 +7251,9 @@ MusicParser.prototype.startNewLine = function () {
     endChar: -1
   };
   if (multilineVars.partForNextLine.title) params.part = multilineVars.partForNextLine;
-  params.clef = multilineVars.currentVoice && multilineVars.staves[multilineVars.currentVoice.staffNum].clef !== undefined ? parseCommon.clone(multilineVars.staves[multilineVars.currentVoice.staffNum].clef) : parseCommon.clone(multilineVars.clef);
+  params.clef = multilineVars.currentVoice && multilineVars.staves[multilineVars.currentVoice.staffNum].clef !== undefined ? _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(multilineVars.staves[multilineVars.currentVoice.staffNum].clef) : _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(multilineVars.clef);
   var scoreTranspose = multilineVars.currentVoice ? multilineVars.currentVoice.scoreTranspose : 0;
-  params.key = parseKeyVoice.standardKey(multilineVars.key.root + multilineVars.key.acc + multilineVars.key.mode, multilineVars.key.root, multilineVars.key.acc, scoreTranspose);
+  params.key = _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_1__["default"].standardKey(multilineVars.key.root + multilineVars.key.acc + multilineVars.key.mode, multilineVars.key.root, multilineVars.key.acc, scoreTranspose);
   params.key.mode = multilineVars.key.mode;
   if (multilineVars.key.impliedNaturals) params.key.impliedNaturals = multilineVars.key.impliedNaturals;
   if (multilineVars.key.explicitAccidentals) {
@@ -7302,7 +7271,7 @@ MusicParser.prototype.startNewLine = function () {
   }
   multilineVars.targetKey = params.key;
   if (params.key.explicitAccidentals) delete params.key.explicitAccidentals;
-  parseKeyVoice.addPosToKey(params.clef, params.key);
+  _abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_1__["default"].addPosToKey(params.clef, params.key);
   if (multilineVars.meter !== null) {
     if (multilineVars.currentVoice) {
       multilineVars.staves.forEach(function (st) {
@@ -7426,11 +7395,11 @@ var getCoreNote = function getCoreNote(line, index, el, canHaveBrokenRhythm) {
       case 'f':
       case 'g':
         if (state === 'startSlur' || state === 'sharp2' || state === 'flat2' || state === 'pitch') {
-          el.pitch = pitches[line[index]];
+          el.pitch = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.pitches[line[index]];
           el.pitch += 7 * (multilineVars.currentVoice && multilineVars.currentVoice.octave !== undefined ? multilineVars.currentVoice.octave : multilineVars.octave);
           el.name = line[index];
-          if (el.accidental) el.name = accMap[el.accidental] + el.name;
-          transpose.note(multilineVars, el);
+          if (el.accidental) el.name = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.accMap[el.accidental] + el.name;
+          _abc_transpose__WEBPACK_IMPORTED_MODULE_2__["default"].note(multilineVars, el);
           state = 'octave';
           // At this point we have a valid note. The rest is optional. Set the duration in case we don't get one below
           if (canHaveBrokenRhythm && multilineVars.next_note_duration !== 0) {
@@ -7442,7 +7411,7 @@ var getCoreNote = function getCoreNote(line, index, el, canHaveBrokenRhythm) {
           if (multilineVars.clef && multilineVars.clef.type === "perc" || multilineVars.currentVoice && multilineVars.currentVoice.clef === "perc") {
             var key = line[index];
             if (el.accidental) {
-              key = accMap[el.accidental] + key;
+              key = _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.accMap[el.accidental] + key;
             }
             if (tune.formatting && tune.formatting.midi && tune.formatting.midi.drummap) el.midipitch = tune.formatting.midi.drummap[key];
           }
@@ -7476,7 +7445,7 @@ var getCoreNote = function getCoreNote(line, index, el, canHaveBrokenRhythm) {
       case 'Z':
         if (state === 'startSlur') {
           el.rest = {
-            type: rests[line[index]]
+            type: _abc_parse_settings__WEBPACK_IMPORTED_MODULE_3__.rests[line[index]]
           };
           // There shouldn't be some of the properties that notes have. If some sneak in due to bad syntax in the abc file,
           // just nix them here.
@@ -7634,7 +7603,7 @@ var getBrokenRhythm = function getBrokenRhythm(line, index) {
   }
   return null;
 };
-module.exports = MusicParser;
+/* harmony default export */ __webpack_exports__["default"] = (MusicParser);
 
 /***/ }),
 
@@ -7642,17 +7611,31 @@ module.exports = MusicParser;
 /*!*****************************************!*\
   !*** ./src/parse/abc_parse_settings.js ***!
   \*****************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-module.exports.legalAccents = ['trill', 'lowermordent', 'uppermordent', 'mordent', 'pralltriller', 'accent', 'fermata', 'invertedfermata', 'tenuto', '0', '1', '2', '3', '4', '5', '+', 'wedge', 'open', 'thumb', 'snap', 'turn', 'roll', 'breath', 'shortphrase', 'mediumphrase', 'longphrase', 'segno', 'coda', 'D.S.', 'D.C.', 'fine', 'beambr1', 'beambr2', 'slide', 'marcato', 'upbow', 'downbow', '/', '//', '///', '////', 'trem1', 'trem2', 'trem3', 'trem4', 'turnx', 'invertedturn', 'invertedturnx', 'trill(', 'trill)', 'arpeggio', 'xstem', 'mark', 'umarcato', 'style=normal', 'style=harmonic', 'style=rhythm', 'style=x', 'style=triangle', 'D.C.alcoda', 'D.C.alfine', 'D.S.alcoda', 'D.S.alfine', 'editorial', 'courtesy'];
-module.exports.volumeDecorations = ['p', 'pp', 'f', 'ff', 'mf', 'mp', 'ppp', 'pppp', 'fff', 'ffff', 'sfz'];
-module.exports.dynamicDecorations = ['crescendo(', 'crescendo)', 'diminuendo(', 'diminuendo)', 'glissando(', 'glissando)', '~(', '~)'];
-module.exports.accentPseudonyms = [['<', 'accent'], ['>', 'accent'], ['tr', 'trill'], ['plus', '+'], ['emphasis', 'accent'], ['^', 'umarcato'], ['marcato', 'umarcato']];
-module.exports.accentDynamicPseudonyms = [['<(', 'crescendo('], ['<)', 'crescendo)'], ['>(', 'diminuendo('], ['>)', 'diminuendo)']];
-module.exports.nonDecorations = 'ABCDEFGabcdefgxyzZ[]|^_{'; // use this to prescreen so we don't have to look for a decoration at every note.
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "accMap": function() { return /* binding */ accMap; },
+/* harmony export */   "accentDynamicPseudonyms": function() { return /* binding */ accentDynamicPseudonyms; },
+/* harmony export */   "accentPseudonyms": function() { return /* binding */ accentPseudonyms; },
+/* harmony export */   "durations": function() { return /* binding */ durations; },
+/* harmony export */   "dynamicDecorations": function() { return /* binding */ dynamicDecorations; },
+/* harmony export */   "legalAccents": function() { return /* binding */ legalAccents; },
+/* harmony export */   "nonDecorations": function() { return /* binding */ nonDecorations; },
+/* harmony export */   "pitches": function() { return /* binding */ pitches; },
+/* harmony export */   "rests": function() { return /* binding */ rests; },
+/* harmony export */   "tripletQ": function() { return /* binding */ tripletQ; },
+/* harmony export */   "volumeDecorations": function() { return /* binding */ volumeDecorations; }
+/* harmony export */ });
+var legalAccents = ['trill', 'lowermordent', 'uppermordent', 'mordent', 'pralltriller', 'accent', 'fermata', 'invertedfermata', 'tenuto', '0', '1', '2', '3', '4', '5', '+', 'wedge', 'open', 'thumb', 'snap', 'turn', 'roll', 'breath', 'shortphrase', 'mediumphrase', 'longphrase', 'segno', 'coda', 'D.S.', 'D.C.', 'fine', 'beambr1', 'beambr2', 'slide', 'marcato', 'upbow', 'downbow', '/', '//', '///', '////', 'trem1', 'trem2', 'trem3', 'trem4', 'turnx', 'invertedturn', 'invertedturnx', 'trill(', 'trill)', 'arpeggio', 'xstem', 'mark', 'umarcato', 'style=normal', 'style=harmonic', 'style=rhythm', 'style=x', 'style=triangle', 'D.C.alcoda', 'D.C.alfine', 'D.S.alcoda', 'D.S.alfine', 'editorial', 'courtesy'];
+var volumeDecorations = ['p', 'pp', 'f', 'ff', 'mf', 'mp', 'ppp', 'pppp', 'fff', 'ffff', 'sfz'];
+var dynamicDecorations = ['crescendo(', 'crescendo)', 'diminuendo(', 'diminuendo)', 'glissando(', 'glissando)', '~(', '~)'];
+var accentPseudonyms = [['<', 'accent'], ['>', 'accent'], ['tr', 'trill'], ['plus', '+'], ['emphasis', 'accent'], ['^', 'umarcato'], ['marcato', 'umarcato']];
+var accentDynamicPseudonyms = [['<(', 'crescendo('], ['<)', 'crescendo)'], ['>(', 'diminuendo('], ['>)', 'diminuendo)']];
+var nonDecorations = 'ABCDEFGabcdefgxyzZ[]|^_{'; // use this to prescreen so we don't have to look for a decoration at every note.
 
-module.exports.durations = [0.5, 0.75, 0.875, 0.9375, 0.96875, 0.984375, 0.25, 0.375, 0.4375, 0.46875, 0.484375, 0.4921875, 0.125, 0.1875, 0.21875, 0.234375, 0.2421875, 0.24609375, 0.0625, 0.09375, 0.109375, 0.1171875, 0.12109375, 0.123046875, 0.03125, 0.046875, 0.0546875, 0.05859375, 0.060546875, 0.0615234375, 0.015625, 0.0234375, 0.02734375, 0.029296875, 0.0302734375, 0.03076171875];
-module.exports.pitches = {
+var durations = [0.5, 0.75, 0.875, 0.9375, 0.96875, 0.984375, 0.25, 0.375, 0.4375, 0.46875, 0.484375, 0.4921875, 0.125, 0.1875, 0.21875, 0.234375, 0.2421875, 0.24609375, 0.0625, 0.09375, 0.109375, 0.1171875, 0.12109375, 0.123046875, 0.03125, 0.046875, 0.0546875, 0.05859375, 0.060546875, 0.0615234375, 0.015625, 0.0234375, 0.02734375, 0.029296875, 0.0302734375, 0.03076171875];
+var pitches = {
   A: 5,
   B: 6,
   C: 0,
@@ -7668,14 +7651,14 @@ module.exports.pitches = {
   f: 10,
   g: 11
 };
-module.exports.rests = {
+var rests = {
   x: 'invisible',
   X: 'invisible-multimeasure',
   y: 'spacer',
   z: 'rest',
   Z: 'multimeasure'
 };
-module.exports.accMap = {
+var accMap = {
   dblflat: '__',
   flat: '_',
   natural: '=',
@@ -7684,7 +7667,7 @@ module.exports.accMap = {
   quarterflat: '_/',
   quartersharp: '^/'
 };
-module.exports.tripletQ = {
+var tripletQ = {
   2: 3,
   3: 2,
   4: 3,
@@ -7703,11 +7686,13 @@ module.exports.tripletQ = {
 /*!************************************!*\
   !*** ./src/parse/abc_tokenizer.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
 //    abc_tokenizer.js: tokenizes an ABC Music Notation string to support abc_parse.
 
-var parseCommon = __webpack_require__(/*! ./abc_common */ "./src/parse/abc_common.js");
+
 
 // this is a series of functions that get a particular element out of the passed stream.
 // the return is the number of characters consumed, so 0 means that the element wasn't found.
@@ -7890,7 +7875,7 @@ var Tokenizer = function Tokenizer(lines, multilineVars) {
     // The word 'clef' is optional, but if it appears, a clef MUST appear
     var needsClef = false;
     var strClef = str.substring(i);
-    if (parseCommon.startsWith(strClef, 'clef=')) {
+    if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'clef=')) {
       needsClef = true;
       strClef = strClef.substring(5);
       i += 5;
@@ -7908,7 +7893,7 @@ var Tokenizer = function Tokenizer(lines, multilineVars) {
       strClef = strClef.substring(j);
     }
     var name = null;
-    if (parseCommon.startsWith(strClef, 'treble')) name = 'treble';else if (parseCommon.startsWith(strClef, 'bass3')) name = 'bass3';else if (parseCommon.startsWith(strClef, 'bass')) name = 'bass';else if (parseCommon.startsWith(strClef, 'tenor')) name = 'tenor';else if (parseCommon.startsWith(strClef, 'alto2')) name = 'alto2';else if (parseCommon.startsWith(strClef, 'alto1')) name = 'alto1';else if (parseCommon.startsWith(strClef, 'alto')) name = 'alto';else if (!bExplicitOnly && needsClef && parseCommon.startsWith(strClef, 'none')) name = 'none';else if (parseCommon.startsWith(strClef, 'perc')) name = 'perc';else if (!bExplicitOnly && needsClef && parseCommon.startsWith(strClef, 'C')) name = 'tenor';else if (!bExplicitOnly && needsClef && parseCommon.startsWith(strClef, 'F')) name = 'bass';else if (!bExplicitOnly && needsClef && parseCommon.startsWith(strClef, 'G')) name = 'treble';else return {
+    if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'treble')) name = 'treble';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'bass3')) name = 'bass3';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'bass')) name = 'bass';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'tenor')) name = 'tenor';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'alto2')) name = 'alto2';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'alto1')) name = 'alto1';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'alto')) name = 'alto';else if (!bExplicitOnly && needsClef && _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'none')) name = 'none';else if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'perc')) name = 'perc';else if (!bExplicitOnly && needsClef && _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'C')) name = 'tenor';else if (!bExplicitOnly && needsClef && _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'F')) name = 'bass';else if (!bExplicitOnly && needsClef && _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(strClef, 'G')) name = 'treble';else return {
       len: i + 5,
       warn: "Unknown clef specified: " + strOrig
     };
@@ -8115,7 +8100,7 @@ var Tokenizer = function Tokenizer(lines, multilineVars) {
   this.isMatch = function (str, match) {
     var i = this.skipWhiteSpace(str);
     if (finished(str, i)) return 0;
-    if (parseCommon.startsWith(str.substring(i), match)) return i + match.length;
+    if (_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].startsWith(str.substring(i), match)) return i + match.length;
     return 0;
   };
   this.getPitchFromTokens = function (tokens) {
@@ -8895,8 +8880,8 @@ var Tokenizer = function Tokenizer(lines, multilineVars) {
   };
   this.stripComment = function (str) {
     var i = str.indexOf('%');
-    if (i >= 0) return parseCommon.strip(str.substring(0, i));
-    return parseCommon.strip(str);
+    if (i >= 0) return _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(str.substring(0, i));
+    return _abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].strip(str);
   };
   this.getInt = function (str) {
     // This parses the beginning of the string for a number and returns { value: num, digits: num }
@@ -9035,7 +9020,7 @@ Tokenizer.prototype.nextLine = function () {
   }
   return null;
 };
-module.exports = Tokenizer;
+/* harmony default export */ __webpack_exports__["default"] = (Tokenizer);
 
 /***/ }),
 
@@ -9043,13 +9028,17 @@ module.exports = Tokenizer;
 /*!************************************!*\
   !*** ./src/parse/abc_transpose.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _all_notes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./all-notes */ "./src/parse/all-notes.js");
+/* harmony import */ var _parse_transpose_chord__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../parse/transpose-chord */ "./src/parse/transpose-chord.js");
+/* harmony import */ var _const_key_accidentals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../const/key-accidentals */ "./src/const/key-accidentals.js");
 //    abc_transpose.js: Handles the automatic transposition of key signatures, chord symbols, and notes.
 
-var allNotes = __webpack_require__(/*! ./all-notes */ "./src/parse/all-notes.js");
-var transposeChordName = __webpack_require__(/*! ../parse/transpose-chord */ "./src/parse/transpose-chord.js");
-var keyAccidentals = __webpack_require__(/*! ../const/key-accidentals */ "./src/const/key-accidentals.js");
+
+
+
 var transpose = {};
 var keyIndex = {
   'C': 0,
@@ -9074,14 +9063,14 @@ var newKey = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'];
 var newKeyMinor = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B'];
 transpose.keySignature = function (multilineVars, keyName, root, acc, localTranspose) {
   if (multilineVars.clef.type === "perc" || multilineVars.clef.type === "none") return {
-    accidentals: keyAccidentals(keyName),
+    accidentals: (0,_const_key_accidentals__WEBPACK_IMPORTED_MODULE_2__["default"])(keyName),
     root: root,
     acc: acc
   };
   if (!localTranspose) localTranspose = 0;
   multilineVars.localTransposeVerticalMovement = 0;
   multilineVars.localTransposePreferFlats = false;
-  var k = keyAccidentals(keyName);
+  var k = (0,_const_key_accidentals__WEBPACK_IMPORTED_MODULE_2__["default"])(keyName);
   if (!k) return multilineVars.key; // If the key isn't in the list, it is non-standard. We won't attempt to transpose it.
   multilineVars.localTranspose = (multilineVars.globalTranspose ? multilineVars.globalTranspose : 0) + localTranspose;
   if (!multilineVars.localTranspose) return {
@@ -9118,7 +9107,7 @@ transpose.keySignature = function (multilineVars, keyName, root, acc, localTrans
   if (index > 11) index = index % 12;
   var newKeyName = keyName[0] === 'm' ? newKeyMinor[index] : newKey[index];
   var transposedKey = newKeyName + keyName;
-  var newKeySig = keyAccidentals(transposedKey);
+  var newKeySig = (0,_const_key_accidentals__WEBPACK_IMPORTED_MODULE_2__["default"])(transposedKey);
   if (newKeySig.length > 0 && newKeySig[0].acc === 'flat') multilineVars.localTransposePreferFlats = true;
   var distance = transposedKey.charCodeAt(0) - baseKey.charCodeAt(0);
   if (multilineVars.localTranspose > 0) {
@@ -9149,7 +9138,7 @@ transpose.keySignature = function (multilineVars, keyName, root, acc, localTrans
   };
 };
 transpose.chordName = function (multilineVars, chord) {
-  return transposeChordName(chord, multilineVars.localTranspose, multilineVars.localTransposePreferFlats, multilineVars.freegchord);
+  return (0,_parse_transpose_chord__WEBPACK_IMPORTED_MODULE_1__["default"])(chord, multilineVars.localTranspose, multilineVars.localTransposePreferFlats, multilineVars.freegchord);
 };
 var pitchToLetter = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
 function accidentalChange(origPitch, newPitch, accidental, origKeySig, newKeySig) {
@@ -9210,8 +9199,8 @@ transpose.note = function (multilineVars, el) {
     if (el.name) {
       var actual = el.accidental ? el.name.substring(1) : el.name;
       var acc = el.accidental ? el.name[0] : '';
-      var p = allNotes.pitchIndex(actual);
-      el.name = acc + allNotes.noteName(p + multilineVars.localTransposeVerticalMovement);
+      var p = _all_notes__WEBPACK_IMPORTED_MODULE_0__["default"].pitchIndex(actual);
+      el.name = acc + _all_notes__WEBPACK_IMPORTED_MODULE_0__["default"].noteName(p + multilineVars.localTransposeVerticalMovement);
     }
   }
   if (el.accidental) {
@@ -9223,7 +9212,7 @@ transpose.note = function (multilineVars, el) {
     }
   }
 };
-module.exports = transpose;
+/* harmony default export */ __webpack_exports__["default"] = (transpose);
 
 /***/ }),
 
@@ -9231,8 +9220,9 @@ module.exports = transpose;
 /*!********************************!*\
   !*** ./src/parse/all-notes.js ***!
   \********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var allNotes = {};
 var allPitches = ['C,,,', 'D,,,', 'E,,,', 'F,,,', 'G,,,', 'A,,,', 'B,,,', 'C,,', 'D,,', 'E,,', 'F,,', 'G,,', 'A,,', 'B,,', 'C,', 'D,', 'E,', 'F,', 'G,', 'A,', 'B,', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'c', 'd', 'e', 'f', 'g', 'a', 'b', "c'", "d'", "e'", "f'", "g'", "a'", "b'", "c''", "d''", "e''", "f''", "g''", "a''", "b''", "c'''", "d'''", "e'''", "f'''", "g'''", "a'''", "b'''"];
 allNotes.pitchIndex = function (noteName) {
@@ -9241,7 +9231,7 @@ allNotes.pitchIndex = function (noteName) {
 allNotes.noteName = function (pitchIndex) {
   return allPitches[pitchIndex];
 };
-module.exports = allNotes;
+/* harmony default export */ __webpack_exports__["default"] = (allNotes);
 
 /***/ }),
 
@@ -9249,8 +9239,9 @@ module.exports = allNotes;
 /*!**************************************!*\
   !*** ./src/parse/transpose-chord.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var sharpChords = ['C', 'C♯', 'D', "D♯", 'E', 'F', "F♯", 'G', 'G♯', 'A', 'A♯', 'B'];
 var flatChords = ['C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭', 'A', 'B♭', 'B'];
 var sharpChordsFree = ['C', 'C#', 'D', "D#", 'E', 'F', "F#", 'G', 'G#', 'A', 'A#', 'B'];
@@ -9312,7 +9303,7 @@ function transposeChordName(chord, steps, preferFlats, freeGCchord) {
   if (extra2) chord += extra2;
   return chord;
 }
-module.exports = transposeChordName;
+/* harmony default export */ __webpack_exports__["default"] = (transposeChordName);
 
 /***/ }),
 
@@ -9320,11 +9311,15 @@ module.exports = transposeChordName;
 /*!***********************************!*\
   !*** ./src/parse/tune-builder.js ***!
   \***********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var parseKeyVoice = __webpack_require__(/*! ../parse/abc_parse_key_voice */ "./src/parse/abc_parse_key_voice.js");
-var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
-var parseDirective = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parse_abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parse/abc_parse_key_voice */ "./src/parse/abc_parse_key_voice.js");
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _abc_parse_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./abc_parse_directive */ "./src/parse/abc_parse_directive.js");
+
+
+
 var TuneBuilder = function TuneBuilder(tune) {
   var self = this;
   this.setVisualTranspose = function (visualTranspose) {
@@ -9440,7 +9435,7 @@ var TuneBuilder = function TuneBuilder(tune) {
               }
               // remove ending marks from the overlay voice so they are not repeated
               for (kkk = 0; kkk < staff.voices[staff.voices.length - 1].length; kkk++) {
-                staff.voices[staff.voices.length - 1][kkk] = parseCommon.clone(staff.voices[staff.voices.length - 1][kkk]);
+                staff.voices[staff.voices.length - 1][kkk] = _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(staff.voices[staff.voices.length - 1][kkk]);
                 var el = staff.voices[staff.voices.length - 1][kkk];
                 if (el.el_type === 'bar' && el.startEnding) {
                   delete el.startEnding;
@@ -9706,7 +9701,7 @@ var TuneBuilder = function TuneBuilder(tune) {
 
     // TODO-PER: This could be done faster as we go instead of as the last step.
     function fixClefPlacement(el) {
-      parseKeyVoice.fixClef(el);
+      _parse_abc_parse_key_voice__WEBPACK_IMPORTED_MODULE_0__["default"].fixClef(el);
     }
     function wrapMusicLines(lines, barsperstaff) {
       for (i = 0; i < lines.length; i++) {
@@ -9726,7 +9721,7 @@ var TuneBuilder = function TuneBuilder(tune) {
                       var nextLine = getNextMusicLine(lines, i);
                       if (!nextLine) {
                         var cp = JSON.parse(JSON.stringify(lines[i]));
-                        lines.push(parseCommon.clone(cp));
+                        lines.push(_parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(cp));
                         nextLine = lines[lines.length - 1];
                         for (var ss = 0; ss < nextLine.staff.length; ss++) {
                           for (var vv = 0; vv < nextLine.staff[ss].voices.length; vv++) {
@@ -9924,16 +9919,16 @@ var TuneBuilder = function TuneBuilder(tune) {
     }
 
     // Clone the object because it will be sticking around for the next line and we don't want the extra fields in it.
-    var hashParams = parseCommon.clone(hashParams2);
+    var hashParams = _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(hashParams2);
     if (tune.lines[tune.lineNum] && tune.lines[tune.lineNum].staff) {
       // be sure that we are on a music type line before doing the following.
       // If tune is the first item in tune staff, then we might have to initialize the staff, first.
       if (tune.lines[tune.lineNum].staff.length <= tune.staffNum) {
         tune.lines[tune.lineNum].staff[tune.staffNum] = {};
-        tune.lines[tune.lineNum].staff[tune.staffNum].clef = parseCommon.clone(tune.lines[tune.lineNum].staff[0].clef);
-        tune.lines[tune.lineNum].staff[tune.staffNum].key = parseCommon.clone(tune.lines[tune.lineNum].staff[0].key);
-        if (tune.lines[tune.lineNum].staff[0].meter) tune.lines[tune.lineNum].staff[tune.staffNum].meter = parseCommon.clone(tune.lines[tune.lineNum].staff[0].meter);
-        tune.lines[tune.lineNum].staff[tune.staffNum].workingClef = parseCommon.clone(tune.lines[tune.lineNum].staff[0].workingClef);
+        tune.lines[tune.lineNum].staff[tune.staffNum].clef = _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(tune.lines[tune.lineNum].staff[0].clef);
+        tune.lines[tune.lineNum].staff[tune.staffNum].key = _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(tune.lines[tune.lineNum].staff[0].key);
+        if (tune.lines[tune.lineNum].staff[0].meter) tune.lines[tune.lineNum].staff[tune.staffNum].meter = _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(tune.lines[tune.lineNum].staff[0].meter);
+        tune.lines[tune.lineNum].staff[tune.staffNum].workingClef = _parse_abc_common__WEBPACK_IMPORTED_MODULE_1__["default"].clone(tune.lines[tune.lineNum].staff[0].workingClef);
         tune.lines[tune.lineNum].staff[tune.staffNum].voices = [[]];
       }
       // If tune is a clef type, then we replace the working clef on the line. This is kept separate from
@@ -10270,13 +10265,13 @@ function addRichTextToAnnotationsAndLyrics(tune) {
             var element = voice[n];
             if (element.chord) {
               for (var c = 0; c < element.chord.length; c++) {
-                element.chord[c].name = parseDirective.parseFontChangeLine(element.chord[c].name);
+                element.chord[c].name = _abc_parse_directive__WEBPACK_IMPORTED_MODULE_2__["default"].parseFontChangeLine(element.chord[c].name);
                 console.log(element.chord[c].name);
               }
             }
             if (element.lyric) {
               for (var l = 0; l < element.lyric.length; l++) {
-                element.lyric[l].syllable = parseDirective.parseFontChangeLine(element.lyric[l].syllable);
+                element.lyric[l].syllable = _abc_parse_directive__WEBPACK_IMPORTED_MODULE_2__["default"].parseFontChangeLine(element.lyric[l].syllable);
                 console.log(element.lyric[l].syllable);
               }
             }
@@ -10286,7 +10281,7 @@ function addRichTextToAnnotationsAndLyrics(tune) {
     }
   }
 }
-module.exports = TuneBuilder;
+/* harmony default export */ __webpack_exports__["default"] = (TuneBuilder);
 
 /***/ }),
 
@@ -10294,8 +10289,9 @@ module.exports = TuneBuilder;
 /*!*********************************!*\
   !*** ./src/parse/wrap_lines.js ***!
   \*********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    wrap_lines.js: does line wrap on an already parsed tune.
 
 function wrapLines(tune, lineBreaks, barNumbers) {
@@ -10753,10 +10749,10 @@ function calcLineWraps(tune, widths, params) {
   ret.reParse = true;
   return ret;
 }
-module.exports = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   wrapLines: wrapLines,
   calcLineWraps: calcLineWraps
-};
+});
 
 /***/ }),
 
@@ -10764,14 +10760,15 @@ module.exports = {
 /*!***************************!*\
   !*** ./src/str/output.js ***!
   \***************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var keyAccidentals = __webpack_require__(/*! ../const/key-accidentals */ "./src/const/key-accidentals.js");
-var _require = __webpack_require__(/*! ../const/relative-major */ "./src/const/relative-major.js"),
-  relativeMajor = _require.relativeMajor,
-  transposeKey = _require.transposeKey,
-  relativeMode = _require.relativeMode;
-var transposeChordName = __webpack_require__(/*! ../parse/transpose-chord */ "./src/parse/transpose-chord.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _const_key_accidentals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../const/key-accidentals */ "./src/const/key-accidentals.js");
+/* harmony import */ var _const_relative_major__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const/relative-major */ "./src/const/relative-major.js");
+/* harmony import */ var _parse_transpose_chord__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../parse/transpose-chord */ "./src/parse/transpose-chord.js");
+
+
+
 var strTranspose;
 (function () {
   "use strict";
@@ -10780,11 +10777,11 @@ var strTranspose;
     if (abcTune === "TEST")
       // Backdoor way to get entry points for unit tests
       return {
-        keyAccidentals: keyAccidentals,
-        relativeMajor: relativeMajor,
-        transposeKey: transposeKey,
-        relativeMode: relativeMode,
-        transposeChordName: transposeChordName
+        keyAccidentals: _const_key_accidentals__WEBPACK_IMPORTED_MODULE_0__["default"],
+        relativeMajor: _const_relative_major__WEBPACK_IMPORTED_MODULE_1__.relativeMajor,
+        transposeKey: _const_relative_major__WEBPACK_IMPORTED_MODULE_1__.transposeKey,
+        relativeMode: _const_relative_major__WEBPACK_IMPORTED_MODULE_1__.relativeMode,
+        transposeChordName: _parse_transpose_chord__WEBPACK_IMPORTED_MODULE_2__["default"]
       };
     steps = parseInt(steps, 10);
     var changes = [];
@@ -10892,7 +10889,7 @@ var strTranspose;
           var ch = el.chord[c];
           if (ch.position === 'default') {
             var prefersFlats = destinationKey.accidentals.length && destinationKey.accidentals[0].acc === 'flat';
-            var newChord = transposeChordName(ch.name, steps, prefersFlats, true);
+            var newChord = (0,_parse_transpose_chord__WEBPACK_IMPORTED_MODULE_2__["default"])(ch.name, steps, prefersFlats, true);
             newChord = newChord.replace(/♭/g, "b").replace(/♯/g, "#");
             if (newChord !== ch.name)
               // If we didn't recognize the chord the input is returned unchanged and there is nothing to replace
@@ -10934,16 +10931,16 @@ var strTranspose;
   function newKey(key, steps) {
     if (key.root === "none") {
       return {
-        root: transposeKey("C", steps),
+        root: (0,_const_relative_major__WEBPACK_IMPORTED_MODULE_1__.transposeKey)("C", steps),
         mode: "",
         acc: "",
         accidentals: []
       };
     }
-    var major = relativeMajor(key.root + key.acc + key.mode);
-    var newMajor = transposeKey(major, steps);
-    var newMode = relativeMode(newMajor, key.mode);
-    var acc = keyAccidentals(newMajor);
+    var major = (0,_const_relative_major__WEBPACK_IMPORTED_MODULE_1__.relativeMajor)(key.root + key.acc + key.mode);
+    var newMajor = (0,_const_relative_major__WEBPACK_IMPORTED_MODULE_1__.transposeKey)(major, steps);
+    var newMode = (0,_const_relative_major__WEBPACK_IMPORTED_MODULE_1__.relativeMode)(newMajor, key.mode);
+    var acc = (0,_const_key_accidentals__WEBPACK_IMPORTED_MODULE_0__["default"])(newMajor);
     return {
       root: newMode[0],
       mode: key.mode,
@@ -11239,7 +11236,7 @@ var strTranspose;
   }
 })();
 
-module.exports = strTranspose;
+/* harmony default export */ __webpack_exports__["default"] = (strTranspose);
 
 /***/ }),
 
@@ -11247,8 +11244,11 @@ module.exports = strTranspose;
 /*!*****************************************!*\
   !*** ./src/synth/abc_midi_flattener.js ***!
   \*****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _chord_track__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chord-track */ "./src/synth/chord-track.js");
+/* harmony import */ var _pitches_to_perc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pitches-to-perc */ "./src/synth/pitches-to-perc.js");
 //    abc_midi_flattener.js: Turn a linear series of events into a series of MIDI commands.
 
 // We input a set of voices, but the notes are still complex. This pass changes the logical definitions
@@ -11256,8 +11256,8 @@ module.exports = strTranspose;
 // It also extracts guitar chords to a separate voice and resolves their rhythm.
 
 var flatten;
-var ChordTrack = __webpack_require__(/*! ./chord-track */ "./src/synth/chord-track.js");
-var pitchesToPerc = __webpack_require__(/*! ./pitches-to-perc */ "./src/synth/pitches-to-perc.js");
+
+
 (function () {
   "use strict";
 
@@ -11346,7 +11346,7 @@ var pitchesToPerc = __webpack_require__(/*! ./pitches-to-perc */ "./src/synth/pi
     if (options.chordprog !== undefined && !midiOptions.chordprog) midiOptions.chordprog = [options.chordprog];
     if (options.chordvol !== undefined && !midiOptions.chordvol) midiOptions.chordvol = [options.chordvol];
     if (options.gchord !== undefined && !midiOptions.gchord) midiOptions.gchord = [options.gchord];
-    chordTrack = new ChordTrack(voices.length, options.chordsOff, midiOptions, meter);
+    chordTrack = new _chord_track__WEBPACK_IMPORTED_MODULE_0__["default"](voices.length, options.chordsOff, midiOptions, meter);
 
     // First adjust the input to resolve ties, set the starting time for each note, etc. That will make the rest of the logic easier
     preProcess(voices, options);
@@ -11852,7 +11852,7 @@ var pitchesToPerc = __webpack_require__(/*! ./pitches-to-perc */ "./src/synth/pi
         if (note.endSlur) slurCount -= note.endSlur.length;
         var actualPitch = note.actualPitch ? note.actualPitch : adjustPitch(note);
         if (currentInstrument === drumInstrument && percmap) {
-          var name = pitchesToPerc(note);
+          var name = (0,_pitches_to_perc__WEBPACK_IMPORTED_MODULE_1__["default"])(note);
           if (name && percmap[name]) actualPitch = percmap[name].sound;
         }
         var p = {
@@ -11984,7 +11984,7 @@ var pitchesToPerc = __webpack_require__(/*! ./pitches-to-perc */ "./src/synth/pi
       grace = graces[g];
       var actualPitch = adjustPitch(grace);
       if (currentInstrument === drumInstrument && percmap) {
-        var name = pitchesToPerc(grace);
+        var name = (0,_pitches_to_perc__WEBPACK_IMPORTED_MODULE_1__["default"])(grace);
         if (name && percmap[name]) actualPitch = percmap[name].sound;
       }
       var pitch = {
@@ -12218,7 +12218,7 @@ var pitchesToPerc = __webpack_require__(/*! ./pitches-to-perc */ "./src/synth/pi
     }
   }
 })();
-module.exports = flatten;
+/* harmony default export */ __webpack_exports__["default"] = (flatten);
 
 /***/ }),
 
@@ -12226,11 +12226,13 @@ module.exports = flatten;
 /*!****************************************!*\
   !*** ./src/synth/abc_midi_renderer.js ***!
   \****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _cents_to_factor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cents-to-factor */ "./src/synth/cents-to-factor.js");
 //    abc_midi_renderer.js: Create the actual format for the midi.
 
-var centsToFactor = __webpack_require__(/*! ./cents-to-factor */ "./src/synth/cents-to-factor.js");
+
 var rendererFactory;
 (function () {
   "use strict";
@@ -12329,7 +12331,7 @@ var rendererFactory;
     if (cents) {
       // the pitch is altered so send a midi pitch wheel event
       this.track += "%e" + this.channel.toString(16);
-      var bend = Math.round(centsToFactor(cents) * HALF_STEP);
+      var bend = Math.round((0,_cents_to_factor__WEBPACK_IMPORTED_MODULE_0__["default"])(cents) * HALF_STEP);
       this.track += to7BitHex(0x2000 + bend);
       this.track += toDurationHex(0); // this all happens at once so there is a zero length here
       this.noteWarped[pitch] = true;
@@ -12497,7 +12499,7 @@ var rendererFactory;
     return new Midi();
   };
 })();
-module.exports = rendererFactory;
+/* harmony default export */ __webpack_exports__["default"] = (rendererFactory);
 
 /***/ }),
 
@@ -12505,12 +12507,14 @@ module.exports = rendererFactory;
 /*!*****************************************!*\
   !*** ./src/synth/abc_midi_sequencer.js ***!
   \*****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
 //    abc_midi_sequencer.js: Turn parsed abc into a linear series of events.
 
 var sequence;
-var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
+
 (function () {
   "use strict";
 
@@ -12848,9 +12852,9 @@ var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/ab
                     }
                     if (elem.rest) noteElem.rest = elem.rest;
                     if (elem.decoration) noteElem.decoration = elem.decoration.slice(0);
-                    if (elem.pitches) noteElem.pitches = parseCommon.cloneArray(elem.pitches);
-                    if (elem.gracenotes) noteElem.gracenotes = parseCommon.cloneArray(elem.gracenotes);
-                    if (elem.chord) noteElem.chord = parseCommon.cloneArray(elem.chord);
+                    if (elem.pitches) noteElem.pitches = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].cloneArray(elem.pitches);
+                    if (elem.gracenotes) noteElem.gracenotes = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].cloneArray(elem.gracenotes);
+                    if (elem.chord) noteElem.chord = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].cloneArray(elem.chord);
                     voices[voiceNumber].push(noteElem);
                     if (elem.style === "rhythm") {
                       rhythmHeadThisBar = true;
@@ -12916,8 +12920,8 @@ var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/ab
                     if (!e) e = voices[voiceNumber].length; // If there wasn't a first ending marker, then we copy everything.
                     // duplicate each of the elements - this has to be a deep copy.
                     for (var z = s; z < e; z++) {
-                      var item = parseCommon.clone(voices[voiceNumber][z]);
-                      if (item.pitches) item.pitches = parseCommon.cloneArray(item.pitches);
+                      var item = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(voices[voiceNumber][z]);
+                      if (item.pitches) item.pitches = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].cloneArray(item.pitches);
                       voices[voiceNumber].push(item);
                     }
                     // reset these in case there is a second repeat later on.
@@ -13265,7 +13269,7 @@ var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/ab
     arr.push(item);
   }
 })();
-module.exports = sequence;
+/* harmony default export */ __webpack_exports__["default"] = (sequence);
 
 /***/ }),
 
@@ -13273,14 +13277,16 @@ module.exports = sequence;
 /*!*******************************************!*\
   !*** ./src/synth/active-audio-context.js ***!
   \*******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var registerAudioContext = __webpack_require__(/*! ./register-audio-context.js */ "./src/synth/register-audio-context.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _register_audio_context_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register-audio-context.js */ "./src/synth/register-audio-context.js");
+
 function activeAudioContext() {
-  if (!window.abcjsAudioContext) registerAudioContext();
+  if (!window.abcjsAudioContext) (0,_register_audio_context_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
   return window.abcjsAudioContext;
 }
-module.exports = activeAudioContext;
+/* harmony default export */ __webpack_exports__["default"] = (activeAudioContext);
 
 /***/ }),
 
@@ -13288,8 +13294,9 @@ module.exports = activeAudioContext;
 /*!**************************************!*\
   !*** ./src/synth/cents-to-factor.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 // This turns the number of cents to detune into a value that is convenient to use in pitch calculations
 // A cent is 1/100 of a musical half step and is calculated exponentially over the course of an octave.
 // The equation is:
@@ -13298,7 +13305,7 @@ module.exports = activeAudioContext;
 function centsToFactor(cents) {
   return Math.pow(2, cents / 1200);
 }
-module.exports = centsToFactor;
+/* harmony default export */ __webpack_exports__["default"] = (centsToFactor);
 
 /***/ }),
 
@@ -13306,8 +13313,10 @@ module.exports = centsToFactor;
 /*!**********************************!*\
   !*** ./src/synth/chord-track.js ***!
   \**********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
 //
 // The algorithm for chords is:
 // - The chords are done in a separate track.
@@ -13327,7 +13336,7 @@ module.exports = centsToFactor;
 //
 // If there is any note in the melody that has a rhythm head, then assume the melody controls the rhythm, so there is no chord added for that entire measure.
 
-var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
+
 var ChordTrack = function ChordTrack(numVoices, chordsOff, midiOptions, meter) {
   this.chordTrack = [];
   this.chordTrackFinished = false;
@@ -13366,7 +13375,7 @@ ChordTrack.prototype.setRhythmHead = function (isRhythmHead, elem) {
   if (isRhythmHead) {
     if (this.lastChord && this.lastChord.chick) {
       for (var i2 = 0; i2 < this.lastChord.chick.length; i2++) {
-        var note2 = parseCommon.clone(elem.pitches[0]);
+        var note2 = _parse_abc_common__WEBPACK_IMPORTED_MODULE_0__["default"].clone(elem.pitches[0]);
         note2.actualPitch = this.lastChord.chick[i2];
         ePitches.push(note2);
       }
@@ -13881,7 +13890,7 @@ function timeToRealTime(time) {
 function durationRounded(duration, tempoChangeFactor) {
   return Math.round(duration * tempoChangeFactor * 1000000) / 1000000;
 }
-module.exports = ChordTrack;
+/* harmony default export */ __webpack_exports__["default"] = (ChordTrack);
 
 /***/ }),
 
@@ -13889,11 +13898,13 @@ module.exports = ChordTrack;
 /*!**************************************!*\
   !*** ./src/synth/create-note-map.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
 // Convert the input structure to a more useful structure where each item has a length of its own.
 
-var instrumentIndexToName = __webpack_require__(/*! ./instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
+
 var createNoteMap = function createNoteMap(sequence) {
   var map = [];
   for (var i = 0; i < sequence.tracks.length; i++) {
@@ -13902,7 +13913,7 @@ var createNoteMap = function createNoteMap(sequence) {
 
   // TODO-PER: handle more than one note in a track
   var nextNote = {};
-  var currentInstrument = instrumentIndexToName[0];
+  var currentInstrument = _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_0__["default"][0];
   // ev.start and ev.duration are in whole notes. Need to turn them into
   sequence.tracks.forEach(function (track, i) {
     track.forEach(function (ev) {
@@ -13911,7 +13922,7 @@ var createNoteMap = function createNoteMap(sequence) {
           // ev contains:
           // {"cmd":"note","pitch":72,"volume":95,"start":0.125,"duration":0.25,"instrument":0,"gap":0}
           // where start and duration are in whole notes, gap is in 1/1920 of a second (i.e. MIDI ticks)
-          var inst = ev.instrument !== undefined ? instrumentIndexToName[ev.instrument] : currentInstrument;
+          var inst = ev.instrument !== undefined ? _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_0__["default"][ev.instrument] : currentInstrument;
           if (ev.duration > 0) {
             var gap = ev.gap ? ev.gap : 0;
             var len = ev.duration;
@@ -13931,7 +13942,7 @@ var createNoteMap = function createNoteMap(sequence) {
           }
           break;
         case "program":
-          currentInstrument = instrumentIndexToName[ev.instrument];
+          currentInstrument = _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_0__["default"][ev.instrument];
           break;
         case "text":
           // Ignore the track names - that is just for midi files.
@@ -13944,7 +13955,7 @@ var createNoteMap = function createNoteMap(sequence) {
   });
   return map;
 };
-module.exports = createNoteMap;
+/* harmony default export */ __webpack_exports__["default"] = (createNoteMap);
 
 /***/ }),
 
@@ -13952,17 +13963,27 @@ module.exports = createNoteMap;
 /*!*******************************************!*\
   !*** ./src/synth/create-synth-control.js ***!
   \*******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var supportsAudio = __webpack_require__(/*! ./supports-audio */ "./src/synth/supports-audio.js");
-var registerAudioContext = __webpack_require__(/*! ./register-audio-context */ "./src/synth/register-audio-context.js");
-var activeAudioContext = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
-var parseCommon = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
-var loopImage = __webpack_require__(/*! ./images/loop.svg.js */ "./src/synth/images/loop.svg.js");
-var playImage = __webpack_require__(/*! ./images/play.svg.js */ "./src/synth/images/play.svg.js");
-var pauseImage = __webpack_require__(/*! ./images/pause.svg.js */ "./src/synth/images/pause.svg.js");
-var loadingImage = __webpack_require__(/*! ./images/loading.svg.js */ "./src/synth/images/loading.svg.js");
-var resetImage = __webpack_require__(/*! ./images/reset.svg.js */ "./src/synth/images/reset.svg.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _supports_audio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./supports-audio */ "./src/synth/supports-audio.js");
+/* harmony import */ var _register_audio_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register-audio-context */ "./src/synth/register-audio-context.js");
+/* harmony import */ var _active_audio_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../parse/abc_common */ "./src/parse/abc_common.js");
+/* harmony import */ var _images_loop_svg_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./images/loop.svg.js */ "./src/synth/images/loop.svg.js");
+/* harmony import */ var _images_play_svg_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/play.svg.js */ "./src/synth/images/play.svg.js");
+/* harmony import */ var _images_pause_svg_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/pause.svg.js */ "./src/synth/images/pause.svg.js");
+/* harmony import */ var _images_loading_svg_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./images/loading.svg.js */ "./src/synth/images/loading.svg.js");
+/* harmony import */ var _images_reset_svg_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/reset.svg.js */ "./src/synth/images/reset.svg.js");
+
+
+
+
+
+
+
+
+
 function CreateSynthControl(parent, options) {
   var self = this;
   // parent is either an element or a selector.
@@ -13973,7 +13994,7 @@ function CreateSynthControl(parent, options) {
   } else if (!(parent instanceof HTMLElement)) throw new Error("The first parameter must be a valid element or selector in the DOM.");
   self.parent = parent;
   self.options = {};
-  if (options) self.options = parseCommon.clone(options);
+  if (options) self.options = _parse_abc_common__WEBPACK_IMPORTED_MODULE_3__["default"].clone(options);
 
   // This can be called in the following cases:
   // AC already registered and not suspended
@@ -13984,7 +14005,7 @@ function CreateSynthControl(parent, options) {
   // If the AC is already registered, then just use it - ignore what is passed in
   // Create the AC if necessary if there isn't one already.
   // We don't care right now if the AC is suspended - whenever a button is clicked then we check it.
-  if (self.options.ac) registerAudioContext(self.options.ac);
+  if (self.options.ac) (0,_register_audio_context__WEBPACK_IMPORTED_MODULE_1__["default"])(self.options.ac);
   buildDom(self.parent, self.options);
   attachListeners(self);
   self.disable = function (isDisabled) {
@@ -14037,8 +14058,8 @@ function CreateSynthControl(parent, options) {
     var isResumed = false;
     if (self.options.ac) {
       isResumed = self.options.ac.state !== "suspended";
-    } else if (activeAudioContext()) {
-      isResumed = activeAudioContext().state !== "suspended";
+    } else if ((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])()) {
+      isResumed = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])().state !== "suspended";
     }
     if (isResumed) self.options.afterResume();
   }
@@ -14054,17 +14075,17 @@ function buildDom(parent, options) {
   if (hasLoop) {
     var repeatTitle = options.repeatTitle ? options.repeatTitle : "Click to toggle play once/repeat.";
     var repeatAria = options.repeatAria ? options.repeatAria : repeatTitle;
-    html += '<button type="button" class="abcjs-midi-loop abcjs-btn" title="' + repeatTitle + '" aria-label="' + repeatAria + '">' + loopImage + '</button>\n';
+    html += '<button type="button" class="abcjs-midi-loop abcjs-btn" title="' + repeatTitle + '" aria-label="' + repeatAria + '">' + _images_loop_svg_js__WEBPACK_IMPORTED_MODULE_4__["default"] + '</button>\n';
   }
   if (hasRestart) {
     var restartTitle = options.restartTitle ? options.restartTitle : "Click to go to beginning.";
     var restartAria = options.restartAria ? options.restartAria : restartTitle;
-    html += '<button type="button" class="abcjs-midi-reset abcjs-btn" title="' + restartTitle + '" aria-label="' + restartAria + '">' + resetImage + '</button>\n';
+    html += '<button type="button" class="abcjs-midi-reset abcjs-btn" title="' + restartTitle + '" aria-label="' + restartAria + '">' + _images_reset_svg_js__WEBPACK_IMPORTED_MODULE_8__["default"] + '</button>\n';
   }
   if (hasPlay) {
     var playTitle = options.playTitle ? options.playTitle : "Click to play/pause.";
     var playAria = options.playAria ? options.playAria : playTitle;
-    html += '<button type="button" class="abcjs-midi-start abcjs-btn" title="' + playTitle + '" aria-label="' + playAria + '">' + playImage + pauseImage + loadingImage + '</button>\n';
+    html += '<button type="button" class="abcjs-midi-start abcjs-btn" title="' + playTitle + '" aria-label="' + playAria + '">' + _images_play_svg_js__WEBPACK_IMPORTED_MODULE_5__["default"] + _images_pause_svg_js__WEBPACK_IMPORTED_MODULE_6__["default"] + _images_loading_svg_js__WEBPACK_IMPORTED_MODULE_7__["default"] + '</button>\n';
   }
   if (hasProgress) {
     var randomTitle = options.randomTitle ? options.randomTitle : "Click to change the playback position.";
@@ -14086,12 +14107,12 @@ function buildDom(parent, options) {
 }
 function acResumerMiddleWare(next, ev, playBtn, afterResume, isPromise) {
   var needsInit = true;
-  if (!activeAudioContext()) {
-    registerAudioContext();
+  if (!(0,_active_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])()) {
+    (0,_register_audio_context__WEBPACK_IMPORTED_MODULE_1__["default"])();
   } else {
-    needsInit = activeAudioContext().state === "suspended";
+    needsInit = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])().state === "suspended";
   }
-  if (!supportsAudio()) {
+  if (!(0,_supports_audio__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
     throw {
       status: "NotSupported",
       message: "This browser does not support audio."
@@ -14099,7 +14120,7 @@ function acResumerMiddleWare(next, ev, playBtn, afterResume, isPromise) {
   }
   if ((needsInit || isPromise) && playBtn) playBtn.classList.add("abcjs-loading");
   if (needsInit) {
-    activeAudioContext().resume().then(function () {
+    (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])().resume().then(function () {
       if (afterResume) {
         afterResume().then(function (response) {
           doNext(next, ev, playBtn, isPromise);
@@ -14145,7 +14166,7 @@ function attachListeners(self) {
     acResumerMiddleWare(self.options.warpHandler, ev, playBtn, self.options.afterResume);
   });
 }
-module.exports = CreateSynthControl;
+/* harmony default export */ __webpack_exports__["default"] = (CreateSynthControl);
 
 /***/ }),
 
@@ -14153,18 +14174,29 @@ module.exports = CreateSynthControl;
 /*!***********************************!*\
   !*** ./src/synth/create-synth.js ***!
   \***********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var getNote = __webpack_require__(/*! ./load-note */ "./src/synth/load-note.js");
-var createNoteMap = __webpack_require__(/*! ./create-note-map */ "./src/synth/create-note-map.js");
-var registerAudioContext = __webpack_require__(/*! ./register-audio-context */ "./src/synth/register-audio-context.js");
-var activeAudioContext = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
-var supportsAudio = __webpack_require__(/*! ./supports-audio */ "./src/synth/supports-audio.js");
-var pitchToNoteName = __webpack_require__(/*! ./pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
-var instrumentIndexToName = __webpack_require__(/*! ./instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
-var downloadBuffer = __webpack_require__(/*! ./download-buffer */ "./src/synth/download-buffer.js");
-var placeNote = __webpack_require__(/*! ./place-note */ "./src/synth/place-note.js");
-var soundsCache = __webpack_require__(/*! ./sounds-cache */ "./src/synth/sounds-cache.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _load_note__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./load-note */ "./src/synth/load-note.js");
+/* harmony import */ var _create_note_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-note-map */ "./src/synth/create-note-map.js");
+/* harmony import */ var _register_audio_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./register-audio-context */ "./src/synth/register-audio-context.js");
+/* harmony import */ var _active_audio_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+/* harmony import */ var _supports_audio__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./supports-audio */ "./src/synth/supports-audio.js");
+/* harmony import */ var _pitch_to_note_name__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
+/* harmony import */ var _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
+/* harmony import */ var _download_buffer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./download-buffer */ "./src/synth/download-buffer.js");
+/* harmony import */ var _place_note__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./place-note */ "./src/synth/place-note.js");
+/* harmony import */ var _sounds_cache__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sounds-cache */ "./src/synth/sounds-cache.js");
+
+
+
+
+
+
+
+
+
+
 
 // TODO-PER: remove the midi tests from here: I don't think the object can be constructed unless it passes.
 var notSupportedMessage = "MIDI is not supported in this browser.";
@@ -14188,8 +14220,8 @@ function CreateSynth() {
   self.init = function (options) {
     if (!options) options = {};
     if (options.options) self.options = options.options;
-    registerAudioContext(options.audioContext); // This works no matter what - if there is already an ac it is a nop; if the context is not passed in, then it creates one.
-    var startTime = activeAudioContext().currentTime;
+    (0,_register_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])(options.audioContext); // This works no matter what - if there is already an ac it is a nop; if the context is not passed in, then it creates one.
+    var startTime = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime;
     self.debugCallback = options.debugCallback;
     if (self.debugCallback) self.debugCallback("init called");
     self.audioBufferPossible = self._deviceCapable();
@@ -14270,17 +14302,17 @@ function CreateSynth() {
     var allNotes = {};
     var cached = [];
     var errorNotes = [];
-    var currentInstrument = instrumentIndexToName[0];
+    var currentInstrument = _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_6__["default"][0];
     self.flattened.tracks.forEach(function (track) {
       track.forEach(function (event) {
-        if (event.cmd === "program" && instrumentIndexToName[event.instrument]) currentInstrument = instrumentIndexToName[event.instrument];
+        if (event.cmd === "program" && _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_6__["default"][event.instrument]) currentInstrument = _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_6__["default"][event.instrument];
         if (event.pitch !== undefined) {
           var pitchNumber = event.pitch;
-          var noteName = pitchToNoteName[pitchNumber];
-          var inst = event.instrument !== undefined ? instrumentIndexToName[event.instrument] : currentInstrument;
+          var noteName = _pitch_to_note_name__WEBPACK_IMPORTED_MODULE_5__["default"][pitchNumber];
+          var inst = event.instrument !== undefined ? _instrument_index_to_name__WEBPACK_IMPORTED_MODULE_6__["default"][event.instrument] : currentInstrument;
           if (noteName) {
             if (!allNotes[inst]) allNotes[inst] = {};
-            if (!soundsCache[inst] || !soundsCache[inst][noteName]) allNotes[inst][noteName] = true;else {
+            if (!_sounds_cache__WEBPACK_IMPORTED_MODULE_9__["default"][inst] || !_sounds_cache__WEBPACK_IMPORTED_MODULE_9__["default"][inst][noteName]) allNotes[inst][noteName] = true;else {
               var label2 = inst + ":" + noteName;
               if (cached.indexOf(label2) < 0) cached.push(label2);
             }
@@ -14292,8 +14324,8 @@ function CreateSynth() {
         }
       });
     });
-    if (self.debugCallback) self.debugCallback("note gathering time = " + Math.floor((activeAudioContext().currentTime - startTime) * 1000) + "ms");
-    startTime = activeAudioContext().currentTime;
+    if (self.debugCallback) self.debugCallback("note gathering time = " + Math.floor(((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime - startTime) * 1000) + "ms");
+    startTime = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime;
     var notes = [];
     Object.keys(allNotes).forEach(function (instrument) {
       Object.keys(allNotes[instrument]).forEach(function (note) {
@@ -14323,7 +14355,7 @@ function CreateSynth() {
         if (index < batches.length) {
           self._loadBatch(batches[index], self.soundFontUrl, startTime).then(function (data) {
             if (self.debugCallback) self.debugCallback("loadBatch then");
-            startTime = activeAudioContext().currentTime;
+            startTime = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime;
             if (data) {
               if (data.error) results.error = results.error.concat(data.error);
               if (data.loaded) results.loaded = results.loaded.concat(data.loaded);
@@ -14344,10 +14376,10 @@ function CreateSynth() {
     var promises = [];
     batch.forEach(function (item) {
       if (self.debugCallback) self.debugCallback("getNote " + item.instrument + ':' + item.note);
-      promises.push(getNote(soundFontUrl, item.instrument, item.note, activeAudioContext()));
+      promises.push((0,_load_note__WEBPACK_IMPORTED_MODULE_0__["default"])(soundFontUrl, item.instrument, item.note, (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])()));
     });
     return Promise.all(promises).then(function (response) {
-      if (self.debugCallback) self.debugCallback("mp3 load time = " + Math.floor((activeAudioContext().currentTime - startTime) * 1000) + "ms");
+      if (self.debugCallback) self.debugCallback("mp3 load time = " + Math.floor(((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime - startTime) * 1000) + "ms");
       var loaded = [];
       var cached = [];
       var pending = [];
@@ -14410,7 +14442,7 @@ function CreateSynth() {
     if (!self.audioBufferPossible) return Promise.reject(new Error(notSupportedMessage));
     if (self.debugCallback) self.debugCallback("prime called");
     return new Promise(function (resolve) {
-      var startTime = activeAudioContext().currentTime;
+      var startTime = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime;
       var tempoMultiplier = self.millisecondsPerMeasure / 1000 / self.meterSize;
       self.duration = self.flattened.totalDuration * tempoMultiplier;
       if (self.duration <= 0) {
@@ -14421,11 +14453,11 @@ function CreateSynth() {
         });
       }
       self.duration += fadeTimeSec;
-      var totalSamples = Math.floor(activeAudioContext().sampleRate * self.duration);
+      var totalSamples = Math.floor((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().sampleRate * self.duration);
 
       // There might be a previous run that needs to be turned off.
       self.stop();
-      var noteMapTracks = createNoteMap(self.flattened);
+      var noteMapTracks = (0,_create_note_map__WEBPACK_IMPORTED_MODULE_1__["default"])(self.flattened);
       if (self.options.swing) addSwing(noteMapTracks, self.options.swing, self.meterFraction, self.pickupLength);
       if (self.sequenceCallback) self.sequenceCallback(noteMapTracks, self.callbackContext);
       var panDistances = setPan(noteMapTracks.length, self.pan);
@@ -14445,7 +14477,7 @@ function CreateSynth() {
 
       // Now that we know what we are trying to create, construct the audio buffer by creating each sound and placing it.
       var allPromises = [];
-      var audioBuffer = activeAudioContext().createBuffer(2, totalSamples, activeAudioContext().sampleRate);
+      var audioBuffer = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().createBuffer(2, totalSamples, (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().sampleRate);
       for (var key2 = 0; key2 < Object.keys(uniqueSounds).length; key2++) {
         var k = Object.keys(uniqueSounds)[key2];
         var parts = k.split(":");
@@ -14459,30 +14491,30 @@ function CreateSynth() {
           tempoMultiplier: parseFloat(parts[5]),
           cents: cents
         };
-        allPromises.push(placeNote(audioBuffer, activeAudioContext().sampleRate, parts, uniqueSounds[k], self.soundFontVolumeMultiplier, self.programOffsets[parts.instrument], fadeTimeSec, self.noteEnd / 1000, self.debugCallback));
+        allPromises.push((0,_place_note__WEBPACK_IMPORTED_MODULE_8__["default"])(audioBuffer, (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().sampleRate, parts, uniqueSounds[k], self.soundFontVolumeMultiplier, self.programOffsets[parts.instrument], fadeTimeSec, self.noteEnd / 1000, self.debugCallback));
       }
       self.audioBuffers = [audioBuffer];
       if (self.debugCallback) {
-        self.debugCallback("sampleRate = " + activeAudioContext().sampleRate);
+        self.debugCallback("sampleRate = " + (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().sampleRate);
         self.debugCallback("totalSamples = " + totalSamples);
-        self.debugCallback("creationTime = " + Math.floor((activeAudioContext().currentTime - startTime) * 1000) + "ms");
+        self.debugCallback("creationTime = " + Math.floor(((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime - startTime) * 1000) + "ms");
       }
       function resolveData(me) {
         var duration = me && me.audioBuffers && me.audioBuffers.length > 0 ? me.audioBuffers[0].duration : 0;
         return {
-          status: activeAudioContext().state,
+          status: (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().state,
           duration: duration
         };
       }
       Promise.all(allPromises).then(function () {
         // Safari iOS can mess with the audioContext state, so resume if needed.
-        if (activeAudioContext().state === "suspended") {
-          activeAudioContext().resume().then(function () {
+        if ((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().state === "suspended") {
+          (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().resume().then(function () {
             resolve(resolveData(self));
           });
-        } else if (activeAudioContext().state === "interrupted") {
-          activeAudioContext().suspend().then(function () {
-            activeAudioContext().resume().then(function () {
+        } else if ((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().state === "interrupted") {
+          (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().suspend().then(function () {
+            (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().resume().then(function () {
               resolve(resolveData(self));
             });
           });
@@ -14542,7 +14574,7 @@ function CreateSynth() {
     if (self.debugCallback) self.debugCallback("start called");
     var resumePosition = self.pausedTimeSec ? self.pausedTimeSec : 0;
     self._kickOffSound(resumePosition);
-    self.startTimeSec = activeAudioContext().currentTime - resumePosition;
+    self.startTimeSec = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime - resumePosition;
     self.pausedTimeSec = undefined;
     if (self.debugCallback) self.debugCallback("MIDI STARTED", self.startTimeSec);
   };
@@ -14593,7 +14625,7 @@ function CreateSynth() {
       }
     });
     self.directSource = [];
-    var elapsed = activeAudioContext().currentTime - self.startTimeSec;
+    var elapsed = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().currentTime - self.startTimeSec;
     return elapsed;
   };
   self.finished = function () {
@@ -14602,7 +14634,7 @@ function CreateSynth() {
     self.isRunning = false;
   };
   self.download = function () {
-    return downloadBuffer(self);
+    return (0,_download_buffer__WEBPACK_IMPORTED_MODULE_7__["default"])(self);
   };
   self.getAudioBuffer = function () {
     return self.audioBuffers[0];
@@ -14614,7 +14646,7 @@ function CreateSynth() {
   /////////////// Private functions //////////////
 
   self._deviceCapable = function () {
-    if (!supportsAudio()) {
+    if (!(0,_supports_audio__WEBPACK_IMPORTED_MODULE_4__["default"])()) {
       console.warn(notSupportedMessage);
       if (self.debugCallback) self.debugCallback(notSupportedMessage);
       return false;
@@ -14625,9 +14657,9 @@ function CreateSynth() {
     self.isRunning = true;
     self.directSource = [];
     self.audioBuffers.forEach(function (audioBuffer, trackNum) {
-      self.directSource[trackNum] = activeAudioContext().createBufferSource(); // creates a sound source
+      self.directSource[trackNum] = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().createBufferSource(); // creates a sound source
       self.directSource[trackNum].buffer = audioBuffer; // tell the source which sound to play
-      self.directSource[trackNum].connect(activeAudioContext().destination); // connect the source to the context's destination (the speakers)
+      self.directSource[trackNum].connect((0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().destination); // connect the source to the context's destination (the speakers)
     });
 
     self.directSource.forEach(function (source) {
@@ -14698,7 +14730,7 @@ function CreateSynth() {
     }
   }
 }
-module.exports = CreateSynth;
+/* harmony default export */ __webpack_exports__["default"] = (CreateSynth);
 
 /***/ }),
 
@@ -14706,8 +14738,9 @@ module.exports = CreateSynth;
 /*!**************************************!*\
   !*** ./src/synth/download-buffer.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var downloadBuffer = function downloadBuffer(buffer) {
   return window.URL.createObjectURL(bufferToWave(buffer.audioBuffers));
 };
@@ -14770,7 +14803,7 @@ function bufferToWave(audioBuffers) {
     pos += 4;
   }
 }
-module.exports = downloadBuffer;
+/* harmony default export */ __webpack_exports__["default"] = (downloadBuffer);
 
 /***/ }),
 
@@ -14778,10 +14811,13 @@ module.exports = downloadBuffer;
 /*!************************************!*\
   !*** ./src/synth/get-midi-file.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var tunebook = __webpack_require__(/*! ../api/abc_tunebook */ "./src/api/abc_tunebook.js");
-var midiCreate = __webpack_require__(/*! ../midi/abc_midi_create */ "./src/midi/abc_midi_create.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _api_abc_tunebook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api/abc_tunebook */ "./src/api/abc_tunebook.js");
+/* harmony import */ var _midi_abc_midi_create__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../midi/abc_midi_create */ "./src/midi/abc_midi_create.js");
+
+
 var getMidiFile = function getMidiFile(source, options) {
   var params = {};
   if (options) {
@@ -14793,7 +14829,7 @@ var getMidiFile = function getMidiFile(source, options) {
   }
   params.generateInline = false;
   function callback(div, tune, index) {
-    var downloadMidi = midiCreate(tune, params);
+    var downloadMidi = (0,_midi_abc_midi_create__WEBPACK_IMPORTED_MODULE_1__["default"])(tune, params);
     switch (params.midiOutputType) {
       case "encoded":
         return downloadMidi;
@@ -14814,7 +14850,7 @@ var getMidiFile = function getMidiFile(source, options) {
         return generateMidiDownloadLink(tune, params, downloadMidi, index);
     }
   }
-  if (typeof source === "string") return tunebook.renderEngine(callback, "*", source, params);else return callback(null, source, 0);
+  if (typeof source === "string") return _api_abc_tunebook__WEBPACK_IMPORTED_MODULE_0__["default"].renderEngine(callback, "*", source, params);else return callback(null, source, 0);
 };
 function isFunction(functionToCheck) {
   var getType = {};
@@ -14834,7 +14870,7 @@ var generateMidiDownloadLink = function generateMidiDownloadLink(tune, midiParam
   if (midiParams.postTextDownload) html += midiParams.postTextDownload;
   return html + "</div>";
 };
-module.exports = getMidiFile;
+/* harmony default export */ __webpack_exports__["default"] = (getMidiFile);
 
 /***/ }),
 
@@ -14842,10 +14878,11 @@ module.exports = getMidiFile;
 /*!*****************************************!*\
   !*** ./src/synth/images/loading.svg.js ***!
   \*****************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var svg = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" class=\"abcjs-loading-svg\">\n    <circle cx=\"50\" cy=\"50\" fill=\"none\" stroke-width=\"20\" r=\"35\" stroke-dasharray=\"160 55\"></circle>\n</svg>\n";
-module.exports = svg;
+/* harmony default export */ __webpack_exports__["default"] = (svg);
 
 /***/ }),
 
@@ -14853,10 +14890,11 @@ module.exports = svg;
 /*!**************************************!*\
   !*** ./src/synth/images/loop.svg.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var svg = "\n<svg version=\"1.0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 700\" preserveAspectRatio=\"xMidYMid meet\">\n\t<g transform=\"translate(0,700) scale(0.1,-0.1)\" >\n\t<path d=\"M3111 6981 c-20 -37 -90 -55 -364 -96 -120 -18 -190 -33 -244 -55\n\t-42 -17 -124 -42 -182 -56 -78 -18 -119 -34 -157 -60 -28 -19 -86 -46 -128\n\t-60 -43 -13 -107 -42 -144 -64 -37 -23 -84 -46 -106 -52 -21 -7 -56 -29 -79\n\t-50 -22 -22 -61 -50 -86 -63 -26 -13 -67 -40 -91 -60 -24 -20 -65 -47 -90 -60\n\t-25 -13 -53 -31 -61 -41 -8 -9 -32 -30 -54 -46 -75 -54 -486 -460 -512 -507\n\t-15 -25 -48 -69 -75 -98 -26 -28 -48 -57 -48 -63 0 -6 -18 -29 -39 -53 -21\n\t-23 -56 -71 -77 -107 -20 -36 -50 -80 -65 -97 -16 -18 -33 -52 -40 -75 -12\n\t-47 -47 -115 -84 -166 -13 -18 -30 -56 -38 -83 -8 -27 -34 -80 -56 -118 -33\n\t-53 -46 -91 -62 -167 -12 -63 -34 -127 -59 -179 -42 -84 -60 -166 -60 -270 0\n\t-90 26 -122 125 -154 54 -17 96 -19 430 -20 305 -1 381 2 430 14 82 22 140 51\n\t153 78 6 12 22 47 37 77 14 30 38 77 54 103 15 27 34 73 40 103 7 30 28 78 48\n\t107 19 28 44 74 55 101 10 28 34 67 53 87 18 20 49 61 68 90 19 30 44 63 57\n\t74 13 11 36 40 52 65 59 94 232 270 306 313 20 11 57 37 82 58 25 20 70 52\n\t100 72 30 19 66 47 79 61 13 14 49 35 80 46 30 12 80 37 111 56 31 19 95 45\n\t143 58 48 12 110 37 139 55 63 40 127 55 323 76 83 9 208 28 279 41 156 29\n\t165 29 330 4 453 -71 514 -84 606 -130 31 -16 83 -36 116 -45 32 -9 84 -34\n\t115 -56 31 -21 82 -48 113 -60 32 -11 72 -33 89 -48 18 -16 59 -45 92 -65 33\n\t-21 74 -51 90 -66 17 -15 49 -40 73 -54 52 -32 65 -61 50 -113 -8 -31 -61 -90\n\t-277 -308 -300 -303 -361 -382 -369 -481 -2 -29 0 -66 6 -81 13 -40 88 -138\n\t115 -151 12 -6 54 -26 92 -44 l70 -33 945 -2 c520 -1 975 2 1012 7 64 8 191\n\t50 231 76 11 7 33 34 50 60 22 34 42 51 65 58 l32 9 0 1101 0 1102 -32 9 c-21\n\t7 -44 26 -64 55 -60 84 -77 97 -140 110 -44 9 -76 10 -127 2 -59 -9 -77 -17\n\t-134 -62 -37 -28 -172 -155 -301 -281 -129 -127 -249 -237 -267 -245 -25 -10\n\t-41 -11 -71 -2 -58 15 -112 45 -124 69 -6 11 -35 35 -64 54 -28 18 -58 41 -66\n\t50 -8 9 -41 35 -75 58 -33 22 -77 56 -99 75 -21 18 -64 46 -95 61 -31 14 -73\n\t39 -93 55 -20 15 -70 40 -110 55 -40 15 -97 44 -127 64 -29 21 -78 44 -107 53\n\t-30 8 -77 31 -105 51 -42 28 -73 39 -173 60 -68 14 -154 39 -196 58 -95 43\n\t-131 51 -343 76 -209 24 -242 32 -279 70 l-30 29 -328 0 c-312 0 -330 -1 -339\n\t-19z\"></path>\n\t<path d=\"M254 2875 c-89 -16 -107 -26 -145 -78 -32 -44 -62 -66 -91 -67 -17 0\n\t-18 -61 -18 -1140 l0 -1140 24 0 c16 0 41 -17 72 -50 40 -42 61 -55 117 -72\n\tl69 -21 82 23 c44 12 96 30 114 39 18 9 148 132 290 272 141 141 267 261 279\n\t268 51 26 86 14 176 -61 32 -26 62 -48 66 -48 5 0 36 -25 70 -55 34 -30 74\n\t-61 89 -69 15 -8 37 -28 50 -45 12 -17 50 -45 84 -62 34 -17 78 -44 98 -60 19\n\t-16 61 -37 93 -48 32 -11 81 -37 107 -56 27 -20 76 -45 109 -56 33 -12 75 -31\n\t93 -44 62 -45 93 -58 191 -82 54 -12 130 -37 168 -54 68 -29 180 -58 226 -59\n\t62 0 183 -64 183 -96 0 -12 88 -14 639 -14 l639 0 12 30 c18 44 76 66 233 89\n\t89 14 160 30 200 47 34 15 106 42 159 60 54 18 112 44 130 57 47 35 85 52 146\n\t67 29 7 76 28 105 48 29 20 77 48 107 63 30 15 66 39 80 54 14 15 50 40 81 56\n\t31 15 78 46 104 69 26 22 61 46 79 54 17 7 43 26 56 42 14 16 41 41 60 56 64\n\t48 380 362 408 405 15 23 40 51 55 63 15 12 36 38 46 58 11 21 37 57 58 82 22\n\t25 49 62 62 83 13 20 38 56 57 78 19 23 50 74 69 113 19 39 46 86 59 104 14\n\t18 34 62 46 98 12 36 32 77 45 92 31 38 60 97 80 167 9 33 26 76 37 95 29 50\n\t47 103 68 206 10 52 32 117 51 155 29 56 33 74 34 140 0 94 -10 108 -101 138\n\t-61 20 -83 21 -463 21 -226 0 -421 -4 -451 -10 -63 -12 -86 -30 -110 -85 -10\n\t-22 -33 -63 -52 -92 -21 -31 -42 -80 -53 -123 -11 -44 -32 -93 -56 -128 -20\n\t-32 -47 -83 -59 -115 -12 -32 -37 -77 -56 -100 -19 -23 -50 -65 -69 -94 -19\n\t-29 -44 -57 -54 -63 -11 -5 -29 -27 -42 -47 -52 -85 -234 -277 -300 -315 -25\n\t-15 -53 -38 -62 -51 -9 -14 -42 -39 -74 -57 -32 -18 -75 -48 -95 -66 -21 -18\n\t-59 -44 -85 -58 -26 -13 -72 -40 -100 -59 -35 -24 -78 -41 -128 -52 -47 -11\n\t-99 -31 -139 -56 -69 -42 -94 -49 -391 -110 -245 -51 -425 -66 -595 -50 -168\n\t16 -230 27 -330 61 -47 16 -123 35 -170 44 -98 17 -123 25 -172 58 -20 14 -71\n\t37 -114 53 -44 15 -95 40 -115 56 -20 16 -70 42 -110 59 -40 16 -88 45 -108\n\t63 -20 19 -55 46 -78 61 -24 14 -49 35 -55 47 -7 11 -34 33 -60 49 -50 31 -65\n\t61 -53 102 4 13 130 147 281 298 236 238 277 283 299 335 15 32 35 71 46 86\n\t12 18 19 44 19 76 0 42 -8 63 -53 138 -92 151 11 139 -1207 141 -798 2 -1030\n\t0 -1086 -11z\"></path>\n\t</g>\n</svg>\n";
-module.exports = svg;
+/* harmony default export */ __webpack_exports__["default"] = (svg);
 
 /***/ }),
 
@@ -14864,10 +14902,11 @@ module.exports = svg;
 /*!***************************************!*\
   !*** ./src/synth/images/pause.svg.js ***!
   \***************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var svg = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\" class=\"abcjs-pause-svg\">\n  <g>\n    <rect width=\"8.23\" height=\"25\"/>\n    <rect width=\"8.23\" height=\"25\" x=\"17\"/>\n  </g>\n</svg>\n";
-module.exports = svg;
+/* harmony default export */ __webpack_exports__["default"] = (svg);
 
 /***/ }),
 
@@ -14875,10 +14914,11 @@ module.exports = svg;
 /*!**************************************!*\
   !*** ./src/synth/images/play.svg.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var svg = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\" class=\"abcjs-play-svg\">\n    <g>\n    <polygon points=\"4 0 23 12.5 4 25\"/>\n    </g>\n</svg>\n";
-module.exports = svg;
+/* harmony default export */ __webpack_exports__["default"] = (svg);
 
 /***/ }),
 
@@ -14886,10 +14926,11 @@ module.exports = svg;
 /*!***************************************!*\
   !*** ./src/synth/images/reset.svg.js ***!
   \***************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var svg = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\">\n  <g>\n    <polygon points=\"5 12.5 24 0 24 25\"/>\n    <rect width=\"3\" height=\"25\" x=\"0\" y=\"0\"/>\n  </g>\n</svg>\n";
-module.exports = svg;
+/* harmony default export */ __webpack_exports__["default"] = (svg);
 
 /***/ }),
 
@@ -14897,10 +14938,11 @@ module.exports = svg;
 /*!***********************************************!*\
   !*** ./src/synth/instrument-index-to-name.js ***!
   \***********************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var instrumentIndexToName = ["acoustic_grand_piano", "bright_acoustic_piano", "electric_grand_piano", "honkytonk_piano", "electric_piano_1", "electric_piano_2", "harpsichord", "clavinet", "celesta", "glockenspiel", "music_box", "vibraphone", "marimba", "xylophone", "tubular_bells", "dulcimer", "drawbar_organ", "percussive_organ", "rock_organ", "church_organ", "reed_organ", "accordion", "harmonica", "tango_accordion", "acoustic_guitar_nylon", "acoustic_guitar_steel", "electric_guitar_jazz", "electric_guitar_clean", "electric_guitar_muted", "overdriven_guitar", "distortion_guitar", "guitar_harmonics", "acoustic_bass", "electric_bass_finger", "electric_bass_pick", "fretless_bass", "slap_bass_1", "slap_bass_2", "synth_bass_1", "synth_bass_2", "violin", "viola", "cello", "contrabass", "tremolo_strings", "pizzicato_strings", "orchestral_harp", "timpani", "string_ensemble_1", "string_ensemble_2", "synth_strings_1", "synth_strings_2", "choir_aahs", "voice_oohs", "synth_choir", "orchestra_hit", "trumpet", "trombone", "tuba", "muted_trumpet", "french_horn", "brass_section", "synth_brass_1", "synth_brass_2", "soprano_sax", "alto_sax", "tenor_sax", "baritone_sax", "oboe", "english_horn", "bassoon", "clarinet", "piccolo", "flute", "recorder", "pan_flute", "blown_bottle", "shakuhachi", "whistle", "ocarina", "lead_1_square", "lead_2_sawtooth", "lead_3_calliope", "lead_4_chiff", "lead_5_charang", "lead_6_voice", "lead_7_fifths", "lead_8_bass_lead", "pad_1_new_age", "pad_2_warm", "pad_3_polysynth", "pad_4_choir", "pad_5_bowed", "pad_6_metallic", "pad_7_halo", "pad_8_sweep", "fx_1_rain", "fx_2_soundtrack", "fx_3_crystal", "fx_4_atmosphere", "fx_5_brightness", "fx_6_goblins", "fx_7_echoes", "fx_8_scifi", "sitar", "banjo", "shamisen", "koto", "kalimba", "bagpipe", "fiddle", "shanai", "tinkle_bell", "agogo", "steel_drums", "woodblock", "taiko_drum", "melodic_tom", "synth_drum", "reverse_cymbal", "guitar_fret_noise", "breath_noise", "seashore", "bird_tweet", "telephone_ring", "helicopter", "applause", "gunshot", "percussion"];
-module.exports = instrumentIndexToName;
+/* harmony default export */ __webpack_exports__["default"] = (instrumentIndexToName);
 
 /***/ }),
 
@@ -14908,13 +14950,15 @@ module.exports = instrumentIndexToName;
 /*!********************************!*\
   !*** ./src/synth/load-note.js ***!
   \********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sounds_cache__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sounds-cache */ "./src/synth/sounds-cache.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-var soundsCache = __webpack_require__(/*! ./sounds-cache */ "./src/synth/sounds-cache.js");
+
 function openDatabase() {
   return _openDatabase.apply(this, arguments);
 }
@@ -15018,8 +15062,8 @@ var getNote = /*#__PURE__*/function () {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
-            if (!soundsCache[instrument]) soundsCache[instrument] = {};
-            instrumentCache = soundsCache[instrument];
+            if (!_sounds_cache__WEBPACK_IMPORTED_MODULE_0__["default"][instrument]) _sounds_cache__WEBPACK_IMPORTED_MODULE_0__["default"][instrument] = {};
+            instrumentCache = _sounds_cache__WEBPACK_IMPORTED_MODULE_0__["default"][instrument];
             cacheKey = "".concat(instrument, "-").concat(name);
             _context4.prev = 3;
             _context4.next = 6;
@@ -15155,7 +15199,7 @@ var getNote = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-module.exports = getNote;
+/* harmony default export */ __webpack_exports__["default"] = (getNote);
 
 /***/ }),
 
@@ -15163,8 +15207,9 @@ module.exports = getNote;
 /*!***********************************!*\
   !*** ./src/synth/note-to-midi.js ***!
   \***********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var accidentals = {
   "__": -2,
   "_": -1,
@@ -15209,10 +15254,10 @@ function midiToNote(midi) {
   }
   return name;
 }
-module.exports = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   noteToMidi: noteToMidi,
   midiToNote: midiToNote
-};
+});
 
 /***/ }),
 
@@ -15220,8 +15265,9 @@ module.exports = {
 /*!*****************************************!*\
   !*** ./src/synth/pitch-to-note-name.js ***!
   \*****************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var pitchToNoteName = {
   21: 'A0',
   22: 'Bb0',
@@ -15325,7 +15371,7 @@ var pitchToNoteName = {
   120: 'C9',
   121: 'Db9'
 };
-module.exports = pitchToNoteName;
+/* harmony default export */ __webpack_exports__["default"] = (pitchToNoteName);
 
 /***/ }),
 
@@ -15333,8 +15379,9 @@ module.exports = pitchToNoteName;
 /*!**************************************!*\
   !*** ./src/synth/pitches-to-perc.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var pitchMap = {
   f0: "_C",
   n0: "=C",
@@ -15409,7 +15456,7 @@ function pitchesToPerc(pitchObj) {
   var pitch = (pitchObj.accidental ? pitchObj.accidental[0] : 'x') + pitchObj.verticalPos;
   return pitchMap[pitch];
 }
-module.exports = pitchesToPerc;
+/* harmony default export */ __webpack_exports__["default"] = (pitchesToPerc);
 
 /***/ }),
 
@@ -15417,11 +15464,15 @@ module.exports = pitchesToPerc;
 /*!*********************************!*\
   !*** ./src/synth/place-note.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var soundsCache = __webpack_require__(/*! ./sounds-cache */ "./src/synth/sounds-cache.js");
-var pitchToNoteName = __webpack_require__(/*! ./pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
-var centsToFactor = __webpack_require__(/*! ./cents-to-factor */ "./src/synth/cents-to-factor.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sounds_cache__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sounds-cache */ "./src/synth/sounds-cache.js");
+/* harmony import */ var _pitch_to_note_name__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
+/* harmony import */ var _cents_to_factor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cents-to-factor */ "./src/synth/cents-to-factor.js");
+
+
+
 function placeNote(outputAudioBuffer, sampleRate, sound, startArray, volumeMultiplier, ofsMs, fadeTimeSec, noteEndSec, debugCallback) {
   // sound contains { instrument, pitch, volume, len, pan, tempoMultiplier
   // len is in whole notes. Multiply by tempoMultiplier to get seconds.
@@ -15432,13 +15483,13 @@ function placeNote(outputAudioBuffer, sampleRate, sound, startArray, volumeMulti
   len -= noteEndSec;
   if (len < 0) len = 0.005; // Have some small audible length no matter how short the note is.
   var offlineCtx = new OfflineAC(2, Math.floor((len + fadeTimeSec) * sampleRate), sampleRate);
-  var noteName = pitchToNoteName[sound.pitch];
-  if (!soundsCache[sound.instrument]) {
+  var noteName = _pitch_to_note_name__WEBPACK_IMPORTED_MODULE_1__["default"][sound.pitch];
+  if (!_sounds_cache__WEBPACK_IMPORTED_MODULE_0__["default"][sound.instrument]) {
     // It shouldn't happen that the entire instrument cache wasn't created, but this has been seen in practice, so guard against it.
     if (debugCallback) debugCallback('placeNote skipped (instrument empty): ' + sound.instrument + ':' + noteName);
     return Promise.resolve();
   }
-  var noteBufferPromise = soundsCache[sound.instrument][noteName];
+  var noteBufferPromise = _sounds_cache__WEBPACK_IMPORTED_MODULE_0__["default"][sound.instrument][noteName];
   if (!noteBufferPromise) {
     // if the note isn't present then just skip it - it will leave a blank spot in the audio.
     if (debugCallback) debugCallback('placeNote skipped: ' + sound.instrument + ':' + noteName);
@@ -15465,7 +15516,7 @@ function placeNote(outputAudioBuffer, sampleRate, sound, startArray, volumeMulti
     source.gainNode.gain.linearRampToValueAtTime(source.gainNode.gain.value, len);
     source.gainNode.gain.linearRampToValueAtTime(0.0, len + fadeTimeSec);
     if (sound.cents) {
-      source.playbackRate.value = centsToFactor(sound.cents);
+      source.playbackRate.value = (0,_cents_to_factor__WEBPACK_IMPORTED_MODULE_2__["default"])(sound.cents);
     }
 
     // connect all the nodes
@@ -15520,7 +15571,7 @@ var copyToChannel = function copyToChannel(toBuffer, fromBuffer, start) {
     }
   }
 };
-module.exports = placeNote;
+/* harmony default export */ __webpack_exports__["default"] = (placeNote);
 
 /***/ }),
 
@@ -15528,13 +15579,17 @@ module.exports = placeNote;
 /*!*********************************!*\
   !*** ./src/synth/play-event.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var SynthSequence = __webpack_require__(/*! ./synth-sequence */ "./src/synth/synth-sequence.js");
-var CreateSynth = __webpack_require__(/*! ./create-synth */ "./src/synth/create-synth.js");
-var activeAudioContext = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _synth_sequence__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./synth-sequence */ "./src/synth/synth-sequence.js");
+/* harmony import */ var _create_synth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-synth */ "./src/synth/create-synth.js");
+/* harmony import */ var _active_audio_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+
+
+
 function playEvent(midiPitches, midiGracePitches, millisecondsPerMeasure, soundFontUrl, debugCallback) {
-  var sequence = new SynthSequence();
+  var sequence = new _synth_sequence__WEBPACK_IMPORTED_MODULE_0__["default"]();
   for (var i = 0; i < midiPitches.length; i++) {
     var note = midiPitches[i];
     var trackNum = sequence.addTrack();
@@ -15547,7 +15602,7 @@ function playEvent(midiPitches, midiGracePitches, millisecondsPerMeasure, soundF
     }
     sequence.appendNote(trackNum, note.pitch, note.duration, note.volume, note.cents);
   }
-  var ac = activeAudioContext();
+  var ac = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_2__["default"])();
   if (ac.state === "suspended") {
     return ac.resume().then(function () {
       return doPlay(sequence, millisecondsPerMeasure, soundFontUrl, debugCallback);
@@ -15557,7 +15612,7 @@ function playEvent(midiPitches, midiGracePitches, millisecondsPerMeasure, soundF
   }
 }
 function doPlay(sequence, millisecondsPerMeasure, soundFontUrl, debugCallback) {
-  var buffer = new CreateSynth();
+  var buffer = new _create_synth__WEBPACK_IMPORTED_MODULE_1__["default"]();
   return buffer.init({
     sequence: sequence,
     millisecondsPerMeasure: millisecondsPerMeasure,
@@ -15572,7 +15627,7 @@ function doPlay(sequence, millisecondsPerMeasure, soundFontUrl, debugCallback) {
     return Promise.resolve();
   });
 }
-module.exports = playEvent;
+/* harmony default export */ __webpack_exports__["default"] = (playEvent);
 
 /***/ }),
 
@@ -15580,8 +15635,9 @@ module.exports = playEvent;
 /*!*********************************************!*\
   !*** ./src/synth/register-audio-context.js ***!
   \*********************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 // Call this when it is safe for the abcjs to produce sound. This is after the first user gesture on the page.
 // If you call it with no parameters, then an AudioContext is created and stored.
 // If you call it with a parameter, that is used as an already created AudioContext.
@@ -15597,7 +15653,7 @@ function registerAudioContext(ac) {
   }
   return window.abcjsAudioContext.state !== "suspended";
 }
-module.exports = registerAudioContext;
+/* harmony default export */ __webpack_exports__["default"] = (registerAudioContext);
 
 /***/ }),
 
@@ -15605,10 +15661,11 @@ module.exports = registerAudioContext;
 /*!***********************************!*\
   !*** ./src/synth/sounds-cache.js ***!
   \***********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var soundsCache = {};
-module.exports = soundsCache;
+/* harmony default export */ __webpack_exports__["default"] = (soundsCache);
 
 /***/ }),
 
@@ -15616,9 +15673,11 @@ module.exports = soundsCache;
 /*!*************************************!*\
   !*** ./src/synth/supports-audio.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var activeAudioContext = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _active_audio_context__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+
 
 //
 // Support for audio depends on three things: support for Promise, support for AudioContext, and support for AudioContext.resume.
@@ -15633,10 +15692,10 @@ var activeAudioContext = __webpack_require__(/*! ./active-audio-context */ "./sr
 function supportsAudio() {
   if (!window.Promise) return false;
   if (!window.AudioContext && !window.webkitAudioContext && !navigator.mozAudioContext && !navigator.msAudioContext) return false;
-  var aac = activeAudioContext();
+  var aac = (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_0__["default"])();
   if (aac) return aac.resume !== undefined;
 }
-module.exports = supportsAudio;
+/* harmony default export */ __webpack_exports__["default"] = (supportsAudio);
 
 /***/ }),
 
@@ -15644,12 +15703,17 @@ module.exports = supportsAudio;
 /*!***************************************!*\
   !*** ./src/synth/synth-controller.js ***!
   \***************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var CreateSynthControl = __webpack_require__(/*! ./create-synth-control */ "./src/synth/create-synth-control.js");
-var CreateSynth = __webpack_require__(/*! ./create-synth */ "./src/synth/create-synth.js");
-var TimingCallbacks = __webpack_require__(/*! ../api/abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
-var activeAudioContext = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _create_synth_control__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create-synth-control */ "./src/synth/create-synth-control.js");
+/* harmony import */ var _create_synth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-synth */ "./src/synth/create-synth.js");
+/* harmony import */ var _api_abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
+/* harmony import */ var _active_audio_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./active-audio-context */ "./src/synth/active-audio-context.js");
+
+
+
+
 function SynthController() {
   var self = this;
   self.warp = 100;
@@ -15668,7 +15732,7 @@ function SynthController() {
     if (!visualOptions) visualOptions = {};
     if (visualOptions.displayPlay === undefined) visualOptions.displayPlay = true;
     if (visualOptions.displayProgress === undefined) visualOptions.displayProgress = true;
-    self.control = new CreateSynthControl(selector, {
+    self.control = new _create_synth_control__WEBPACK_IMPORTED_MODULE_0__["default"](selector, {
       loopHandler: visualOptions.displayLoop ? self.toggleLoop : undefined,
       restartHandler: visualOptions.displayRestart ? self.restart : undefined,
       playPromiseHandler: visualOptions.displayPlay ? self.play : undefined,
@@ -15707,8 +15771,8 @@ function SynthController() {
     if (self.control) self.control.setTempo(self.currentTempo);
     self.percent = 0;
     var loadingResponse;
-    if (!self.midiBuffer) self.midiBuffer = new CreateSynth();
-    return activeAudioContext().resume().then(function (response) {
+    if (!self.midiBuffer) self.midiBuffer = new _create_synth__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    return (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().resume().then(function (response) {
       return self.midiBuffer.init({
         visualObj: self.visualObj,
         options: self.options,
@@ -15722,7 +15786,7 @@ function SynthController() {
       if (self.cursorControl && self.cursorControl.beatSubdivisions !== undefined && parseInt(self.cursorControl.beatSubdivisions, 10) >= 1 && parseInt(self.cursorControl.beatSubdivisions, 10) <= 64) subdivisions = parseInt(self.cursorControl.beatSubdivisions, 10);
 
       // Need to create the TimingCallbacks after priming the midi so that the midi data is available for the callbacks.
-      self.timer = new TimingCallbacks(self.visualObj, {
+      self.timer = new _api_abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_2__["default"](self.visualObj, {
         beatCallback: self.beatCallback,
         eventCallback: self.eventCallback,
         lineEndCallback: self.lineEndCallback,
@@ -15780,7 +15844,7 @@ function SynthController() {
     }
   };
   self._play = function () {
-    return activeAudioContext().resume().then(function () {
+    return (0,_active_audio_context__WEBPACK_IMPORTED_MODULE_3__["default"])().resume().then(function () {
       self.isStarted = !self.isStarted;
       if (self.isStarted) {
         if (self.cursorControl && self.cursorControl.onStart && typeof self.cursorControl.onStart === 'function') self.cursorControl.onStart();
@@ -15909,7 +15973,7 @@ function SynthController() {
     document.body.removeChild(link);
   };
 }
-module.exports = SynthController;
+/* harmony default export */ __webpack_exports__["default"] = (SynthController);
 
 /***/ }),
 
@@ -15917,8 +15981,9 @@ module.exports = SynthController;
 /*!*************************************!*\
   !*** ./src/synth/synth-sequence.js ***!
   \*************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var SynthSequence = function SynthSequence() {
   var self = this;
   self.tracks = [];
@@ -15955,7 +16020,7 @@ var SynthSequence = function SynthSequence() {
     self.totalDuration = Math.max(self.totalDuration, self.starts[trackNumber]);
   };
 };
-module.exports = SynthSequence;
+/* harmony default export */ __webpack_exports__["default"] = (SynthSequence);
 
 /***/ }),
 
@@ -15963,19 +16028,22 @@ module.exports = SynthSequence;
 /*!*******************************************************!*\
   !*** ./src/tablatures/instruments/string-patterns.js ***!
   \*******************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var _require = __webpack_require__(/*! ../../synth/note-to-midi */ "./src/synth/note-to-midi.js"),
-  noteToMidi = _require.noteToMidi;
-var TabNote = __webpack_require__(/*! ./tab-note */ "./src/tablatures/instruments/tab-note.js");
-var TabNotes = __webpack_require__(/*! ./tab-notes */ "./src/tablatures/instruments/tab-notes.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../synth/note-to-midi */ "./src/synth/note-to-midi.js");
+/* harmony import */ var _tab_note__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab-note */ "./src/tablatures/instruments/tab-note.js");
+/* harmony import */ var _tab_notes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab-notes */ "./src/tablatures/instruments/tab-notes.js");
+
+
+
 function buildCapo(self) {
   var capoTuning = null;
   var tuning = self.tuning;
   if (self.capo > 0) {
     capoTuning = [];
     for (var iii = 0; iii < tuning.length; iii++) {
-      var curNote = new TabNote.TabNote(tuning[iii]);
+      var curNote = new _tab_note__WEBPACK_IMPORTED_MODULE_1__["default"].TabNote(tuning[iii]);
       for (var jjj = 0; jjj < self.capo; jjj++) {
         curNote = curNote.nextNote();
       }
@@ -15996,7 +16064,7 @@ function buildPatterns(self) {
     if (iii != tuning.length - 1) {
       nextNote = tuning[iii + 1];
     }
-    var tabNotes = new TabNotes(tuning[iii], nextNote);
+    var tabNotes = new _tab_notes__WEBPACK_IMPORTED_MODULE_2__["default"](tuning[iii], nextNote);
     var stringNotes = tabNotes.build();
     if (stringNotes.error) {
       return stringNotes;
@@ -16046,7 +16114,7 @@ function handleChordNotes(self, notes) {
   var retNotes = [];
   for (var iiii = 0; iiii < notes.length; iiii++) {
     if (notes[iiii].endTie) continue;
-    var note = new TabNote.TabNote(notes[iiii].name, self.clefTranspose);
+    var note = new _tab_note__WEBPACK_IMPORTED_MODULE_1__["default"].TabNote(notes[iiii].name, self.clefTranspose);
     note.checkKeyAccidentals(self.accidentals, self.measureAccidentals);
     var curPos = toNumber(self, note);
     retNotes.push(curPos);
@@ -16138,7 +16206,7 @@ StringPatterns.prototype.notesToNumber = function (notes, graces) {
       }
     } else {
       if (!notes[0].endTie) {
-        note = new TabNote.TabNote(notes[0].name, this.clefTranspose);
+        note = new _tab_note__WEBPACK_IMPORTED_MODULE_1__["default"].TabNote(notes[0].name, this.clefTranspose);
         note.checkKeyAccidentals(this.accidentals, this.measureAccidentals);
         number = toNumber(this, note);
         if (number) {
@@ -16155,7 +16223,7 @@ StringPatterns.prototype.notesToNumber = function (notes, graces) {
   if (graces) {
     retGraces = [];
     for (var iiii = 0; iiii < graces.length; iiii++) {
-      note = new TabNote.TabNote(graces[iiii].name, this.clefTranspose);
+      note = new _tab_note__WEBPACK_IMPORTED_MODULE_1__["default"].TabNote(graces[iiii].name, this.clefTranspose);
       note.checkKeyAccidentals(this.accidentals, this.measureAccidentals);
       number = toNumber(this, note);
       if (number) {
@@ -16236,7 +16304,7 @@ function StringPatterns(plugin) {
   this.tuning = tuning;
   this.stringPitches = [];
   for (var i = 0; i < this.tuning.length; i++) {
-    var pitch = noteToMidi(this.tuning[i]) + this.capo;
+    var pitch = (0,_synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__.noteToMidi)(this.tuning[i]) + this.capo;
     this.stringPitches.push(pitch);
   }
   if (this.capo > 0) {
@@ -16251,7 +16319,7 @@ function StringPatterns(plugin) {
   // second position pattern per string
   this.secondPos = buildSecond(this);
 }
-module.exports = StringPatterns;
+/* harmony default export */ __webpack_exports__["default"] = (StringPatterns);
 
 /***/ }),
 
@@ -16259,8 +16327,9 @@ module.exports = StringPatterns;
 /*!********************************************************!*\
   !*** ./src/tablatures/instruments/string-tablature.js ***!
   \********************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 /**
  * Layout tablature informations for draw
  * @param {*} numLines 
@@ -16312,7 +16381,7 @@ StringTablature.prototype.setRelative = function (child, relative, first) {
   }
   return first;
 };
-module.exports = StringTablature;
+/* harmony default export */ __webpack_exports__["default"] = (StringTablature);
 
 /***/ }),
 
@@ -16320,11 +16389,11 @@ module.exports = StringTablature;
 /*!************************************************!*\
   !*** ./src/tablatures/instruments/tab-note.js ***!
   \************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var _require = __webpack_require__(/*! ../../synth/note-to-midi */ "./src/synth/note-to-midi.js"),
-  noteToMidi = _require.noteToMidi,
-  midiToNote = _require.midiToNote;
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../synth/note-to-midi */ "./src/synth/note-to-midi.js");
+
 
 /**
  * 
@@ -16333,9 +16402,9 @@ var _require = __webpack_require__(/*! ../../synth/note-to-midi */ "./src/synth/
  */
 var notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 function TabNote(note, clefTranspose) {
-  var pitch = noteToMidi(note);
+  var pitch = (0,_synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__.noteToMidi)(note);
   if (clefTranspose) pitch += clefTranspose;
-  var newNote = midiToNote(pitch);
+  var newNote = (0,_synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__.midiToNote)(pitch);
   var isFlat = false;
   var isSharp = false;
   var isAltered = false;
@@ -16479,11 +16548,11 @@ TabNote.prototype.getAccidentalEquiv = function () {
   return cloned;
 };
 TabNote.prototype.nextNote = function () {
-  var note = midiToNote(this.pitch + 1 + this.pitchAltered);
+  var note = (0,_synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__.midiToNote)(this.pitch + 1 + this.pitchAltered);
   return new TabNote(note);
 };
 TabNote.prototype.prevNote = function () {
-  var note = midiToNote(this.pitch - 1 + this.pitchAltered);
+  var note = (0,_synth_note_to_midi__WEBPACK_IMPORTED_MODULE_0__.midiToNote)(this.pitch - 1 + this.pitchAltered);
   return new TabNote(note);
 };
 TabNote.prototype.emitNoAccidentals = function () {
@@ -16534,10 +16603,10 @@ TabNote.prototype.emit = function () {
   }
   return returned;
 };
-module.exports = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   'TabNote': TabNote,
   'notes': notes
-};
+});
 
 /***/ }),
 
@@ -16545,13 +16614,15 @@ module.exports = {
 /*!*************************************************!*\
   !*** ./src/tablatures/instruments/tab-notes.js ***!
   \*************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var TabNote = __webpack_require__(/*! ./tab-note */ "./src/tablatures/instruments/tab-note.js");
-var notes = TabNote.notes;
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tab_note__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tab-note */ "./src/tablatures/instruments/tab-note.js");
+
+var notes = _tab_note__WEBPACK_IMPORTED_MODULE_0__["default"].notes;
 function TabNotes(fromNote, toNote) {
-  this.fromN = new TabNote.TabNote(fromNote);
-  this.toN = new TabNote.TabNote(toNote);
+  this.fromN = new _tab_note__WEBPACK_IMPORTED_MODULE_0__["default"].TabNote(fromNote);
+  this.toN = new _tab_note__WEBPACK_IMPORTED_MODULE_0__["default"].TabNote(toNote);
 }
 TabNotes.prototype.build = function () {
   var fromN = this.fromN;
@@ -16580,7 +16651,7 @@ TabNotes.prototype.build = function () {
   }
   return buildReturned;
 };
-module.exports = TabNotes;
+/* harmony default export */ __webpack_exports__["default"] = (TabNotes);
 
 /***/ }),
 
@@ -16588,16 +16659,18 @@ module.exports = TabNotes;
 /*!***********************************************************!*\
   !*** ./src/tablatures/instruments/tab-string-patterns.js ***!
   \***********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var StringPatterns = __webpack_require__(/*! ./string-patterns */ "./src/tablatures/instruments/string-patterns.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _string_patterns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./string-patterns */ "./src/tablatures/instruments/string-patterns.js");
+
 function TabStringPatterns(plugin, defaultTuning) {
   this.tuning = plugin._super.params.tuning;
   if (!this.tuning) {
     this.tuning = defaultTuning;
   }
   plugin.tuning = this.tuning;
-  this.strings = new StringPatterns(plugin);
+  this.strings = new _string_patterns__WEBPACK_IMPORTED_MODULE_0__["default"](plugin);
 }
 TabStringPatterns.prototype.notesToNumber = function (notes, graces) {
   var converter = this.strings;
@@ -16607,7 +16680,7 @@ TabStringPatterns.prototype.stringToPitch = function (stringNumber) {
   var converter = this.strings;
   return converter.stringToPitch(stringNumber);
 };
-module.exports = TabStringPatterns;
+/* harmony default export */ __webpack_exports__["default"] = (TabStringPatterns);
 
 /***/ }),
 
@@ -16615,12 +16688,17 @@ module.exports = TabStringPatterns;
 /*!**************************************************!*\
   !*** ./src/tablatures/instruments/tab-string.js ***!
   \**************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var StringTablature = __webpack_require__(/*! ./string-tablature */ "./src/tablatures/instruments/string-tablature.js");
-var TabCommon = __webpack_require__(/*! ../tab-common */ "./src/tablatures/tab-common.js");
-var TabRenderer = __webpack_require__(/*! ../tab-renderer */ "./src/tablatures/tab-renderer.js");
-var TabStringPatterns = __webpack_require__(/*! ./tab-string-patterns */ "./src/tablatures/instruments/tab-string-patterns.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _string_tablature__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./string-tablature */ "./src/tablatures/instruments/string-tablature.js");
+/* harmony import */ var _tab_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tab-common */ "./src/tablatures/tab-common.js");
+/* harmony import */ var _tab_renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tab-renderer */ "./src/tablatures/tab-renderer.js");
+/* harmony import */ var _tab_string_patterns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tab-string-patterns */ "./src/tablatures/instruments/tab-string-patterns.js");
+
+
+
+
 
 /**
  * upon init mainly store provided instances for later usage
@@ -16629,7 +16707,7 @@ var TabStringPatterns = __webpack_require__(/*! ./tab-string-patterns */ "./src/
  * @param {*} params  complementary args provided to Tablature Plugin
  */
 Plugin.prototype.init = function (abcTune, tuneNumber, params, staffNumber, tabSettings) {
-  var _super = new TabCommon(abcTune, tuneNumber, params);
+  var _super = new _tab_common__WEBPACK_IMPORTED_MODULE_1__["default"](abcTune, tuneNumber, params);
   this.abcTune = abcTune;
   this._super = _super;
   this.linePitch = 3;
@@ -16639,14 +16717,14 @@ Plugin.prototype.init = function (abcTune, tuneNumber, params, staffNumber, tabS
   this.capo = params.capo;
   this.transpose = params.visualTranspose;
   this.hideTabSymbol = params.hideTabSymbol;
-  this.tablature = new StringTablature(this.nbLines, this.linePitch);
-  var semantics = new TabStringPatterns(this, tabSettings.defaultTuning);
+  this.tablature = new _string_tablature__WEBPACK_IMPORTED_MODULE_0__["default"](this.nbLines, this.linePitch);
+  var semantics = new _tab_string_patterns__WEBPACK_IMPORTED_MODULE_3__["default"](this, tabSettings.defaultTuning);
   this.semantics = semantics;
 };
 Plugin.prototype.render = function (renderer, line, staffIndex) {
   if (this._super.inError) return;
   if (this.tablature.bypass(line)) return;
-  var rndrer = new TabRenderer(this, renderer, line, staffIndex);
+  var rndrer = new _tab_renderer__WEBPACK_IMPORTED_MODULE_2__["default"](this, renderer, line, staffIndex);
   rndrer.doLayout();
 };
 function Plugin() {}
@@ -16660,7 +16738,7 @@ var AbcStringTab = function AbcStringTab() {
     tablature: Plugin
   };
 };
-module.exports = AbcStringTab;
+/* harmony default export */ __webpack_exports__["default"] = (AbcStringTab);
 
 /***/ }),
 
@@ -16668,13 +16746,16 @@ module.exports = AbcStringTab;
 /*!*************************************************!*\
   !*** ./src/tablatures/tab-absolute-elements.js ***!
   \*************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _write_creation_elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../write/creation/elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
+/* harmony import */ var _write_creation_elements_relative_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../write/creation/elements/relative-element */ "./src/write/creation/elements/relative-element.js");
 /**
  * Tablature Absolute elements factory
  */
-var AbsoluteElement = __webpack_require__(/*! ../write/creation/elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
-var RelativeElement = __webpack_require__(/*! ../write/creation/elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+
+
 function isObject(a) {
   return a != null && a.constructor === Object;
 }
@@ -16688,7 +16769,7 @@ function cloneObject(dest, src) {
   }
 }
 function cloneAbsolute(absSrc) {
-  var returned = new AbsoluteElement('', 0, 0, '', 0);
+  var returned = new _write_creation_elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"]('', 0, 0, '', 0);
   cloneObject(returned, absSrc);
   returned.top = 0;
   returned.bottom = -1;
@@ -16709,7 +16790,7 @@ function cloneAbsoluteAndRelatives(absSrc, plugin) {
     var first = true;
     for (var ii = 0; ii < children.length; ii++) {
       var child = children[ii];
-      var relative = new RelativeElement('', 0, 0, 0, '');
+      var relative = new _write_creation_elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"]('', 0, 0, 0, '');
       cloneObject(relative, child);
       first = plugin.tablature.setRelative(child, relative, first);
       returned.children.push(relative);
@@ -16735,9 +16816,9 @@ function buildTabAbsolute(plugin, absX, relX) {
 
   // For tablature like whistle tab where you want the TAB symbol hidden
   if (!plugin.hideTabSymbol) {
-    var tabAbsolute = new AbsoluteElement(element, 0, 0, "symbol", 0);
+    var tabAbsolute = new _write_creation_elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](element, 0, 0, "symbol", 0);
     tabAbsolute.x = absX;
-    var tabRelative = new RelativeElement(tabIcon, 0, 0, 7.5, "tab");
+    var tabRelative = new _write_creation_elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](tabIcon, 0, 0, 7.5, "tab");
     tabRelative.x = relX;
     tabAbsolute.children.push(tabRelative);
     if (tabAbsolute.abcelem.el_type == 'tab') {
@@ -16786,7 +16867,7 @@ function buildRelativeTabNote(plugin, relX, def, curNote, isGrace) {
   var opt = {
     type: 'tabNumber'
   };
-  var tabNoteRelative = new RelativeElement(strNote, 0, 0, pitch + 0.3, opt);
+  var tabNoteRelative = new _write_creation_elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](strNote, 0, 0, pitch + 0.3, opt);
   tabNoteRelative.x = relX;
   tabNoteRelative.isGrace = isGrace;
   tabNoteRelative.isAltered = curNote.note.isAltered;
@@ -16978,7 +17059,7 @@ TabAbsoluteElements.prototype.build = function (plugin, staffAbsolute, tabVoice,
     }
   }
 };
-module.exports = TabAbsoluteElements;
+/* harmony default export */ __webpack_exports__["default"] = (TabAbsoluteElements);
 
 /***/ }),
 
@@ -16986,8 +17067,9 @@ module.exports = TabAbsoluteElements;
 /*!**************************************!*\
   !*** ./src/tablatures/tab-common.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 /**
  *
  * Common Class/Method available for all instruments
@@ -17012,7 +17094,7 @@ TabCommon.prototype.setError = function (error) {
     }
   }
 };
-module.exports = TabCommon;
+/* harmony default export */ __webpack_exports__["default"] = (TabCommon);
 
 /***/ }),
 
@@ -17020,12 +17102,16 @@ module.exports = TabCommon;
 /*!****************************************!*\
   !*** ./src/tablatures/tab-renderer.js ***!
   \****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _write_creation_elements_voice_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../write/creation/elements/voice-element */ "./src/write/creation/elements/voice-element.js");
+/* harmony import */ var _tab_absolute_elements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab-absolute-elements */ "./src/tablatures/tab-absolute-elements.js");
+/* harmony import */ var _write_helpers_spacing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../write/helpers/spacing */ "./src/write/helpers/spacing.js");
 /* eslint-disable no-debugger */
-var VoiceElement = __webpack_require__(/*! ../write/creation/elements/voice-element */ "./src/write/creation/elements/voice-element.js");
-var TabAbsoluteElements = __webpack_require__(/*! ./tab-absolute-elements */ "./src/tablatures/tab-absolute-elements.js");
-var spacing = __webpack_require__(/*! ../write/helpers/spacing */ "./src/write/helpers/spacing.js");
+
+
+
 function initSpecialY() {
   return {
     tempoHeightAbove: 0,
@@ -17089,7 +17175,7 @@ function TabRenderer(plugin, renderer, line, staffIndex) {
   this.renderer = renderer;
   this.plugin = plugin;
   this.line = line;
-  this.absolutes = new TabAbsoluteElements();
+  this.absolutes = new _tab_absolute_elements__WEBPACK_IMPORTED_MODULE_1__["default"]();
   this.staffIndex = staffIndex;
   this.tabStaff = {
     clef: {
@@ -17243,9 +17329,9 @@ TabRenderer.prototype.doLayout = function () {
   // build from staff
   this.tabStaff.voices = [];
   for (var ii = 0; ii < nbVoices; ii++) {
-    var tabVoice = new VoiceElement(0, 0);
+    var tabVoice = new _write_creation_elements_voice_element__WEBPACK_IMPORTED_MODULE_0__["default"](0, 0);
     if (ii > 0) tabVoice.duplicate = true;
-    var nameHeight = buildTabName(this, tabVoice) / spacing.STEP;
+    var nameHeight = buildTabName(this, tabVoice) / _write_helpers_spacing__WEBPACK_IMPORTED_MODULE_2__["default"].STEP;
     nameHeight = Math.max(nameHeight, 1); // If there is no label for the tab line, then there needs to be a little padding
     // This was pushing down the top staff by the tab label height
     //staffGroup.staffs[this.staffIndex].top += nameHeight;
@@ -17261,7 +17347,7 @@ TabRenderer.prototype.doLayout = function () {
   linkStaffAndTabs(staffGroup.staffs); // crossreference tabs and staff
 };
 
-module.exports = TabRenderer;
+/* harmony default export */ __webpack_exports__["default"] = (TabRenderer);
 
 /***/ }),
 
@@ -17269,30 +17355,51 @@ module.exports = TabRenderer;
 /*!*************************************************!*\
   !*** ./src/write/creation/abstract-engraver.js ***!
   \*************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
+/* harmony import */ var _elements_beam_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./elements/beam-element */ "./src/write/creation/elements/beam-element.js");
+/* harmony import */ var _elements_brace_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./elements/brace-element */ "./src/write/creation/elements/brace-element.js");
+/* harmony import */ var _create_clef__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create-clef */ "./src/write/creation/create-clef.js");
+/* harmony import */ var _create_key_signature__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./create-key-signature */ "./src/write/creation/create-key-signature.js");
+/* harmony import */ var _create_note_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./create-note-head */ "./src/write/creation/create-note-head.js");
+/* harmony import */ var _create_time_signature__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./create-time-signature */ "./src/write/creation/create-time-signature.js");
+/* harmony import */ var _decoration__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./decoration */ "./src/write/creation/decoration.js");
+/* harmony import */ var _elements_ending_element__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./elements/ending-element */ "./src/write/creation/elements/ending-element.js");
+/* harmony import */ var _glyphs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _elements_staff_group_element__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./elements/staff-group-element */ "./src/write/creation/elements/staff-group-element.js");
+/* harmony import */ var _elements_tempo_element__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./elements/tempo-element */ "./src/write/creation/elements/tempo-element.js");
+/* harmony import */ var _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./elements/tie-element */ "./src/write/creation/elements/tie-element.js");
+/* harmony import */ var _elements_triplet_element__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./elements/triplet-element */ "./src/write/creation/elements/triplet-element.js");
+/* harmony import */ var _elements_voice_element__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./elements/voice-element */ "./src/write/creation/elements/voice-element.js");
+/* harmony import */ var _add_chord__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./add-chord */ "./src/write/creation/add-chord.js");
+/* harmony import */ var _synth_pitches_to_perc__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../synth/pitches-to-perc */ "./src/synth/pitches-to-perc.js");
+/* harmony import */ var _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../parse/abc_common */ "./src/parse/abc_common.js");
 // abc_abstract_engraver.js: Creates a data structure suitable for printing a line of abc
 
-var AbsoluteElement = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
-var BeamElem = __webpack_require__(/*! ./elements/beam-element */ "./src/write/creation/elements/beam-element.js");
-var BraceElem = __webpack_require__(/*! ./elements/brace-element */ "./src/write/creation/elements/brace-element.js");
-var createClef = __webpack_require__(/*! ./create-clef */ "./src/write/creation/create-clef.js");
-var createKeySignature = __webpack_require__(/*! ./create-key-signature */ "./src/write/creation/create-key-signature.js");
-var createNoteHead = __webpack_require__(/*! ./create-note-head */ "./src/write/creation/create-note-head.js");
-var createTimeSignature = __webpack_require__(/*! ./create-time-signature */ "./src/write/creation/create-time-signature.js");
-var Decoration = __webpack_require__(/*! ./decoration */ "./src/write/creation/decoration.js");
-var EndingElem = __webpack_require__(/*! ./elements/ending-element */ "./src/write/creation/elements/ending-element.js");
-var glyphs = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var StaffGroupElement = __webpack_require__(/*! ./elements/staff-group-element */ "./src/write/creation/elements/staff-group-element.js");
-var TempoElement = __webpack_require__(/*! ./elements/tempo-element */ "./src/write/creation/elements/tempo-element.js");
-var TieElem = __webpack_require__(/*! ./elements/tie-element */ "./src/write/creation/elements/tie-element.js");
-var TripletElem = __webpack_require__(/*! ./elements/triplet-element */ "./src/write/creation/elements/triplet-element.js");
-var VoiceElement = __webpack_require__(/*! ./elements/voice-element */ "./src/write/creation/elements/voice-element.js");
-var addChord = __webpack_require__(/*! ./add-chord */ "./src/write/creation/add-chord.js");
-var pitchesToPerc = __webpack_require__(/*! ../../synth/pitches-to-perc */ "./src/synth/pitches-to-perc.js");
-var parseCommon = __webpack_require__(/*! ../../parse/abc_common */ "./src/parse/abc_common.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var getDuration = function getDuration(elem) {
   var d = 0;
   if (elem.duration) {
@@ -17387,7 +17494,7 @@ var chartable = {
   }
 };
 var AbstractEngraver = function AbstractEngraver(getTextSize, tuneNumber, options) {
-  this.decoration = new Decoration();
+  this.decoration = new _decoration__WEBPACK_IMPORTED_MODULE_7__["default"]();
   this.getTextSize = getTextSize;
   this.tuneNumber = tuneNumber;
   this.isBagpipes = options.bagpipes;
@@ -17422,7 +17529,7 @@ AbstractEngraver.prototype.reset = function () {
   this.stemdir = undefined;
 };
 AbstractEngraver.prototype.setStemHeight = function (heightInPixels) {
-  this.stemHeight = Math.round(heightInPixels * 10 / spacing.STEP) / 10;
+  this.stemHeight = Math.round(heightInPixels * 10 / _helpers_spacing__WEBPACK_IMPORTED_MODULE_11__["default"].STEP) / 10;
 };
 AbstractEngraver.prototype.getCurrentVoiceId = function (s, v) {
   return "s" + s + "v" + v;
@@ -17460,7 +17567,7 @@ AbstractEngraver.prototype.createABCLine = function (staffs, tempo, l) {
   this.minY = 2; // PER: This will be the lowest that any note reaches. It will be used to set the dynamics row.
   // See if there are any lyrics on this line.
   this.containsLyrics(staffs);
-  var staffgroup = new StaffGroupElement(this.getTextSize);
+  var staffgroup = new _elements_staff_group_element__WEBPACK_IMPORTED_MODULE_12__["default"](this.getTextSize);
   this.tempoSet = false;
   for (var s = 0; s < staffs.length; s++) {
     if (hint) this.restoreState();
@@ -17473,7 +17580,7 @@ AbstractEngraver.prototype.createABCStaff = function (staffgroup, abcstaff, temp
   // If the tempo is passed in, then the first element should get the tempo attached to it.
   staffgroup.getTextSize.updateFonts(abcstaff);
   for (var v = 0; v < abcstaff.voices.length; v++) {
-    var voice = new VoiceElement(v, abcstaff.voices.length);
+    var voice = new _elements_voice_element__WEBPACK_IMPORTED_MODULE_16__["default"](v, abcstaff.voices.length);
     if (v === 0) {
       voice.barfrom = abcstaff.connectBarLines === "start" || abcstaff.connectBarLines === "continue";
       voice.barto = abcstaff.connectBarLines === "continue" || abcstaff.connectBarLines === "end";
@@ -17483,10 +17590,10 @@ AbstractEngraver.prototype.createABCStaff = function (staffgroup, abcstaff, temp
 
     if (abcstaff.title && abcstaff.title[v]) {
       voice.header = abcstaff.title[v].replace(/\\n/g, "\n");
-      voice.headerPosition = 6 + staffgroup.getTextSize.baselineToCenter(voice.header, "voicefont", 'staff-extra voice-name', v, abcstaff.voices.length) / spacing.STEP;
+      voice.headerPosition = 6 + staffgroup.getTextSize.baselineToCenter(voice.header, "voicefont", 'staff-extra voice-name', v, abcstaff.voices.length) / _helpers_spacing__WEBPACK_IMPORTED_MODULE_11__["default"].STEP;
     }
     if (abcstaff.clef && abcstaff.clef.type === "perc") voice.isPercussion = true;
-    var clef = (!this.initialClef || l === 0) && createClef(abcstaff.clef, this.tuneNumber);
+    var clef = (!this.initialClef || l === 0) && (0,_create_clef__WEBPACK_IMPORTED_MODULE_3__["default"])(abcstaff.clef, this.tuneNumber);
     if (clef) {
       if (v === 0 && abcstaff.barNumber) {
         this.addMeasureNumber(abcstaff.barNumber, clef);
@@ -17495,7 +17602,7 @@ AbstractEngraver.prototype.createABCStaff = function (staffgroup, abcstaff, temp
       this.startlimitelem = clef; // limit ties here
     }
 
-    var keySig = createKeySignature(abcstaff.key, this.tuneNumber);
+    var keySig = (0,_create_key_signature__WEBPACK_IMPORTED_MODULE_4__["default"])(abcstaff.key, this.tuneNumber);
     if (keySig) {
       voice.addChild(keySig);
       this.startlimitelem = keySig; // limit ties here
@@ -17505,7 +17612,7 @@ AbstractEngraver.prototype.createABCStaff = function (staffgroup, abcstaff, temp
       if (abcstaff.meter.type === 'specified') {
         this.measureLength = abcstaff.meter.value[0].num / abcstaff.meter.value[0].den;
       } else this.measureLength = 1;
-      var ts = createTimeSignature(abcstaff.meter, this.tuneNumber);
+      var ts = (0,_create_time_signature__WEBPACK_IMPORTED_MODULE_6__["default"])(abcstaff.meter, this.tuneNumber);
       voice.addChild(ts);
       this.startlimitelem = ts; // limit ties here
     }
@@ -17520,7 +17627,7 @@ AbstractEngraver.prototype.createABCStaff = function (staffgroup, abcstaff, temp
       // only do brace and bracket processing on the first voice, otherwise it would be done twice.
       if (abcstaff.brace === "start" || !staffgroup.brace && abcstaff.brace) {
         if (!staffgroup.brace) staffgroup.brace = [];
-        staffgroup.brace.push(new BraceElem(voice, "brace"));
+        staffgroup.brace.push(new _elements_brace_element__WEBPACK_IMPORTED_MODULE_2__["default"](voice, "brace"));
       } else if (abcstaff.brace === "end" && staffgroup.brace) {
         staffgroup.brace[staffgroup.brace.length - 1].setBottomStaff(voice);
       } else if (abcstaff.brace === "continue" && staffgroup.brace) {
@@ -17528,7 +17635,7 @@ AbstractEngraver.prototype.createABCStaff = function (staffgroup, abcstaff, temp
       }
       if (abcstaff.bracket === "start" || !staffgroup.bracket && abcstaff.bracket) {
         if (!staffgroup.bracket) staffgroup.bracket = [];
-        staffgroup.bracket.push(new BraceElem(voice, "bracket"));
+        staffgroup.bracket.push(new _elements_brace_element__WEBPACK_IMPORTED_MODULE_2__["default"](voice, "bracket"));
       } else if (abcstaff.bracket === "end" && staffgroup.bracket) {
         staffgroup.bracket[staffgroup.bracket.length - 1].setBottomStaff(voice);
       } else if (abcstaff.bracket === "continue" && staffgroup.bracket) {
@@ -17560,14 +17667,14 @@ AbstractEngraver.prototype.createABCVoice = function (abcline, tempo, s, v, isSi
   this.stemdir = this.isBagpipes ? "down" : null;
   this.abcline = abcline;
   if (this.partstartelem) {
-    this.partstartelem = new EndingElem("", null, null);
+    this.partstartelem = new _elements_ending_element__WEBPACK_IMPORTED_MODULE_8__["default"]("", null, null);
     voice.addOther(this.partstartelem);
   }
   var voiceNumber = voice.voicetotal < 2 ? -1 : voice.voicenumber;
   for (var slur in this.slurs) {
     if (this.slurs.hasOwnProperty(slur)) {
       // this is already a slur element, but it was created for the last line, so recreate it.
-      this.slurs[slur] = new TieElem({
+      this.slurs[slur] = new _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__["default"]({
         force: this.slurs[slur].force,
         voiceNumber: voiceNumber,
         stemDir: this.slurs[slur].stemDir,
@@ -17579,7 +17686,7 @@ AbstractEngraver.prototype.createABCVoice = function (abcline, tempo, s, v, isSi
   }
   for (var i = 0; i < this.ties.length; i++) {
     // this is already a tie element, but it was created for the last line, so recreate it.
-    this.ties[i] = new TieElem({
+    this.ties[i] = new _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__["default"]({
       force: this.ties[i].force,
       stemDir: this.ties[i].stemDir,
       voiceNumber: voiceNumber,
@@ -17601,8 +17708,8 @@ AbstractEngraver.prototype.createABCVoice = function (abcline, tempo, s, v, isSi
       for (i = 0; i < abselems.length; i++) {
         if (!this.tempoSet && tempo && !tempo.suppress) {
           this.tempoSet = true;
-          var tempoElement = new AbsoluteElement(tempo, 0, 0, "tempo", this.tuneNumber, {});
-          tempoElement.addFixedX(new TempoElement(tempo, this.tuneNumber, createNoteHead));
+          var tempoElement = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](tempo, 0, 0, "tempo", this.tuneNumber, {});
+          tempoElement.addFixedX(new _elements_tempo_element__WEBPACK_IMPORTED_MODULE_13__["default"](tempo, this.tuneNumber, _create_note_head__WEBPACK_IMPORTED_MODULE_5__["default"]));
           voice.addChild(tempoElement);
         }
         voice.addChild(abselems[i]);
@@ -17613,16 +17720,16 @@ AbstractEngraver.prototype.createABCVoice = function (abcline, tempo, s, v, isSi
   this.pushCrossLineElems(s, v);
 };
 AbstractEngraver.prototype.saveState = function () {
-  this.tiesSave = parseCommon.cloneArray(this.ties);
-  this.slursSave = parseCommon.cloneHashOfHash(this.slurs);
-  this.slursbyvoiceSave = parseCommon.cloneHashOfHash(this.slursbyvoice);
-  this.tiesbyvoiceSave = parseCommon.cloneHashOfArrayOfHash(this.tiesbyvoice);
+  this.tiesSave = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneArray(this.ties);
+  this.slursSave = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneHashOfHash(this.slurs);
+  this.slursbyvoiceSave = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneHashOfHash(this.slursbyvoice);
+  this.tiesbyvoiceSave = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneHashOfArrayOfHash(this.tiesbyvoice);
 };
 AbstractEngraver.prototype.restoreState = function () {
-  this.ties = parseCommon.cloneArray(this.tiesSave);
-  this.slurs = parseCommon.cloneHashOfHash(this.slursSave);
-  this.slursbyvoice = parseCommon.cloneHashOfHash(this.slursbyvoiceSave);
-  this.tiesbyvoice = parseCommon.cloneHashOfArrayOfHash(this.tiesbyvoiceSave);
+  this.ties = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneArray(this.tiesSave);
+  this.slurs = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneHashOfHash(this.slursSave);
+  this.slursbyvoice = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneHashOfHash(this.slursbyvoiceSave);
+  this.tiesbyvoice = _parse_abc_common__WEBPACK_IMPORTED_MODULE_19__["default"].cloneHashOfArrayOfHash(this.tiesbyvoiceSave);
 };
 
 // function writeMeasureWidth(voice) {
@@ -17658,17 +17765,17 @@ AbstractEngraver.prototype.createABCElement = function (isFirstStaff, isSingleLi
       //	  elemset[0].addChild(writeMeasureWidth(voice));
       break;
     case "meter":
-      elemset[0] = createTimeSignature(elem, this.tuneNumber);
+      elemset[0] = (0,_create_time_signature__WEBPACK_IMPORTED_MODULE_6__["default"])(elem, this.tuneNumber);
       this.startlimitelem = elemset[0]; // limit ties here
       if (voice.duplicate && elemset.length > 0) elemset[0].invisible = true;
       break;
     case "clef":
-      elemset[0] = createClef(elem, this.tuneNumber);
+      elemset[0] = (0,_create_clef__WEBPACK_IMPORTED_MODULE_3__["default"])(elem, this.tuneNumber);
       if (!elemset[0]) return null;
       if (voice.duplicate && elemset.length > 0) elemset[0].invisible = true;
       break;
     case "key":
-      var absKey = createKeySignature(elem, this.tuneNumber);
+      var absKey = (0,_create_key_signature__WEBPACK_IMPORTED_MODULE_4__["default"])(elem, this.tuneNumber);
       if (absKey) {
         elemset[0] = absKey;
         this.startlimitelem = elemset[0]; // limit ties here
@@ -17680,17 +17787,17 @@ AbstractEngraver.prototype.createABCElement = function (isFirstStaff, isSingleLi
       this.stemdir = elem.direction === "auto" ? undefined : elem.direction;
       break;
     case "part":
-      var abselem = new AbsoluteElement(elem, 0, 0, 'part', this.tuneNumber);
+      var abselem = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 0, 'part', this.tuneNumber);
       var dim = this.getTextSize.calc(elem.title, 'partsfont', "part");
-      abselem.addFixedX(new RelativeElement(elem.title, 0, 0, undefined, {
+      abselem.addFixedX(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](elem.title, 0, 0, undefined, {
         type: "part",
-        height: dim.height / spacing.STEP
+        height: dim.height / _helpers_spacing__WEBPACK_IMPORTED_MODULE_11__["default"].STEP
       }));
       elemset[0] = abselem;
       break;
     case "tempo":
-      var abselem3 = new AbsoluteElement(elem, 0, 0, 'tempo', this.tuneNumber);
-      abselem3.addFixedX(new TempoElement(elem, this.tuneNumber, createNoteHead));
+      var abselem3 = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 0, 'tempo', this.tuneNumber);
+      abselem3.addFixedX(new _elements_tempo_element__WEBPACK_IMPORTED_MODULE_13__["default"](elem, this.tuneNumber, _create_note_head__WEBPACK_IMPORTED_MODULE_5__["default"]));
       elemset[0] = abselem3;
       break;
     case "style":
@@ -17711,8 +17818,8 @@ AbstractEngraver.prototype.createABCElement = function (isFirstStaff, isSingleLi
       voice.color = this.voiceColor;
       break;
     default:
-      var abselem2 = new AbsoluteElement(elem, 0, 0, 'unsupported', this.tuneNumber);
-      abselem2.addFixed(new RelativeElement("element type " + elem.el_type, 0, 0, undefined, {
+      var abselem2 = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 0, 'unsupported', this.tuneNumber);
+      abselem2.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("element type " + elem.el_type, 0, 0, undefined, {
         type: "debug"
       }));
       elemset[0] = abselem2;
@@ -17733,7 +17840,7 @@ function setAveragePitch(elem) {
 }
 AbstractEngraver.prototype.createBeam = function (isSingleLineStaff, voice, elems) {
   var abselemset = [];
-  var beamelem = new BeamElem(this.stemHeight * this.voiceScale, this.stemdir, this.flatBeams, elems[0]);
+  var beamelem = new _elements_beam_element__WEBPACK_IMPORTED_MODULE_1__["default"](this.stemHeight * this.voiceScale, this.stemdir, this.flatBeams, elems[0]);
   if (hint) beamelem.setHint();
   for (var i = 0; i < elems.length; i++) {
     // Do a first pass to figure out the stem direction before creating the notes, so that staccatos and other decorations can be placed correctly.
@@ -17775,14 +17882,14 @@ var sortPitch = function sortPitch(elem) {
 var ledgerLines = function ledgerLines(abselem, minPitch, maxPitch, isRest, symbolWidth, additionalLedgers, dir, dx, scale) {
   for (var i = maxPitch; i > 11; i--) {
     if (i % 2 === 0 && !isRest) {
-      abselem.addFixed(new RelativeElement(null, dx, (symbolWidth + 4) * scale, i, {
+      abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, (symbolWidth + 4) * scale, i, {
         type: "ledger"
       }));
     }
   }
   for (i = minPitch; i < 1; i++) {
     if (i % 2 === 0 && !isRest) {
-      abselem.addFixed(new RelativeElement(null, dx, (symbolWidth + 4) * scale, i, {
+      abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, (symbolWidth + 4) * scale, i, {
         type: "ledger"
       }));
     }
@@ -17791,7 +17898,7 @@ var ledgerLines = function ledgerLines(abselem, minPitch, maxPitch, isRest, symb
     // PER: draw additional ledgers
     var ofs = symbolWidth;
     if (dir === 'down') ofs = -ofs;
-    abselem.addFixed(new RelativeElement(null, ofs + dx, (symbolWidth + 4) * scale, additionalLedgers[i], {
+    abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, ofs + dx, (symbolWidth + 4) * scale, additionalLedgers[i], {
       type: "ledger"
     }));
   }
@@ -17803,7 +17910,7 @@ AbstractEngraver.prototype.addGraceNotes = function (elem, voice, abselem, noteh
   var gracebeam = null;
   var flag;
   if (elem.gracenotes.length > 1) {
-    gracebeam = new BeamElem(stemHeight, "grace", isBagpipes);
+    gracebeam = new _elements_beam_element__WEBPACK_IMPORTED_MODULE_1__["default"](stemHeight, "grace", isBagpipes);
     if (hint) gracebeam.setHint();
     gracebeam.mainNote = abselem; // this gives us a reference back to the note this is attached to so that the stems can be attached somewhere.
   }
@@ -17822,7 +17929,7 @@ AbstractEngraver.prototype.addGraceNotes = function (elem, voice, abselem, noteh
     var gracepitch = elem.gracenotes[i].verticalPos;
     flag = gracebeam ? null : chartable.uflags[isBagpipes ? 5 : 3];
     var accidentalSlot = [];
-    var ret = createNoteHead(abselem, "noteheads.quarter", elem.gracenotes[i], {
+    var ret = (0,_create_note_head__WEBPACK_IMPORTED_MODULE_5__["default"])(abselem, "noteheads.quarter", elem.gracenotes[i], {
       dir: "up",
       headx: -graceoffsets[i],
       extrax: -graceoffsets[i],
@@ -17838,7 +17945,7 @@ AbstractEngraver.prototype.addGraceNotes = function (elem, voice, abselem, noteh
     if (elem.gracenotes[i].acciaccatura) {
       var pos = elem.gracenotes[i].verticalPos + 7 * gracescale; // the same formula that determines the flag position.
       var dAcciaccatura = gracebeam ? 5 : 6; // just an offset to make it line up correctly.
-      abselem.addRight(new RelativeElement("flags.ugrace", -graceoffsets[i] + dAcciaccatura, 0, pos, {
+      abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("flags.ugrace", -graceoffsets[i] + dAcciaccatura, 0, pos, {
         scalex: gracescale,
         scaley: gracescale
       }));
@@ -17863,13 +17970,13 @@ AbstractEngraver.prototype.addGraceNotes = function (elem, voice, abselem, noteh
       var p2 = gracepitch + 7 * gracescale;
       var dx = grace.dx + grace.w;
       var width = -0.6;
-      abselem.addExtra(new RelativeElement(null, dx, 0, p1, {
+      abselem.addExtra(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, 0, p1, {
         "type": "stem",
         "pitch2": p2,
         linewidth: width
       }));
     }
-    ledgerLines(abselem, gracepitch, gracepitch, false, glyphs.getSymbolWidth("noteheads.quarter"), [], true, grace.dx - 1, 0.6);
+    ledgerLines(abselem, gracepitch, gracepitch, false, _glyphs__WEBPACK_IMPORTED_MODULE_9__["default"].getSymbolWidth("noteheads.quarter"), [], true, grace.dx - 1, 0.6);
 
     // if this is the first grace note, we might want to start a slur.
     // there is a slur if graceSlurs is specifically set.
@@ -17878,7 +17985,7 @@ AbstractEngraver.prototype.addGraceNotes = function (elem, voice, abselem, noteh
     var isInvisibleRest = elem.rest && (elem.rest.type === "spacer" || elem.rest.type === "invisible");
     if (i === 0 && !isBagpipes && this.graceSlurs && !isInvisibleRest) {
       // This is the overall slur that is under the grace notes.
-      voice.addOther(new TieElem({
+      voice.addOther(new _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__["default"]({
         anchor1: grace,
         anchor2: notehead,
         isGrace: true
@@ -17938,15 +18045,15 @@ function addRestToAbsElement(abselem, elem, duration, dot, isMultiVoice, stemdir
       elem.minpitch = restpitch;
       elem.maxpitch = restpitch;
       dot = 0;
-      var mmWidth = glyphs.getSymbolWidth(c);
-      abselem.addHead(new RelativeElement(c, mmWidth, mmWidth * 2, 7));
-      var numMeasures = new RelativeElement("" + elem.rest.text, mmWidth, mmWidth, 16, {
+      var mmWidth = _glyphs__WEBPACK_IMPORTED_MODULE_9__["default"].getSymbolWidth(c);
+      abselem.addHead(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](c, mmWidth, mmWidth * 2, 7));
+      var numMeasures = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("" + elem.rest.text, mmWidth, mmWidth, 16, {
         type: "multimeasure-text"
       });
       abselem.addExtra(numMeasures);
   }
   if (elem.rest.type.indexOf("multimeasure") < 0 && elem.rest.type !== "invisible") {
-    var ret = createNoteHead(abselem, c, {
+    var ret = (0,_create_note_head__WEBPACK_IMPORTED_MODULE_5__["default"])(abselem, c, {
       verticalPos: restpitch
     }, {
       dot: dot,
@@ -18006,9 +18113,9 @@ AbstractEngraver.prototype.addNoteToAbcElement = function (abselem, elem, dot, s
         additionalLedgers.push(curr.verticalPos - curr.verticalPos % 2);
       }
       if (dir === "down") {
-        roomTaken = glyphs.getSymbolWidth(noteSymbol) + 2;
+        roomTaken = _glyphs__WEBPACK_IMPORTED_MODULE_9__["default"].getSymbolWidth(noteSymbol) + 2;
       } else {
-        dotshiftx = glyphs.getSymbolWidth(noteSymbol) + 2;
+        dotshiftx = _glyphs__WEBPACK_IMPORTED_MODULE_9__["default"].getSymbolWidth(noteSymbol) + 2;
       }
     }
   }
@@ -18029,7 +18136,7 @@ AbstractEngraver.prototype.addNoteToAbcElement = function (abselem, elem, dot, s
       c = chartable[elem.pitches[p].style][-durlog];
     } else if (voice.isPercussion && this.percmap) {
       c = noteSymbol;
-      var percHead = this.percmap[pitchesToPerc(elem.pitches[p])];
+      var percHead = this.percmap[(0,_synth_pitches_to_perc__WEBPACK_IMPORTED_MODULE_18__["default"])(elem.pitches[p])];
       if (percHead && percHead.noteHead) {
         if (chartable[percHead.noteHead]) c = chartable[percHead.noteHead][-durlog];
       }
@@ -18063,7 +18170,7 @@ AbstractEngraver.prototype.addNoteToAbcElement = function (abselem, elem, dot, s
       }
     }
     var hasStem = !nostem && durlog <= -1;
-    var ret = createNoteHead(abselem, c, elem.pitches[p], {
+    var ret = (0,_create_note_head__WEBPACK_IMPORTED_MODULE_5__["default"])(abselem, c, elem.pitches[p], {
       dir: dir,
       extrax: -roomTaken,
       flag: flag,
@@ -18074,7 +18181,7 @@ AbstractEngraver.prototype.addNoteToAbcElement = function (abselem, elem, dot, s
       shouldExtendStem: !stemdir,
       printAccidentals: !voice.isPercussion
     });
-    symbolWidth = Math.max(glyphs.getSymbolWidth(c), symbolWidth);
+    symbolWidth = Math.max(_glyphs__WEBPACK_IMPORTED_MODULE_9__["default"].getSymbolWidth(c), symbolWidth);
     abselem.extraw -= ret.extraLeft;
     noteHead = ret.notehead;
     if (noteHead) {
@@ -18104,7 +18211,7 @@ AbstractEngraver.prototype.addNoteToAbcElement = function (abselem, elem, dot, s
     if (noteHead && noteHead.c === 'noteheads.triangle.quarter') {
       if (dir === 'down') p2 -= 0.7;else p1 -= 1.2;
     }
-    abselem.addRight(new RelativeElement(null, dx, 0, p1, {
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, 0, p1, {
       "type": "stem",
       "pitch2": p2,
       linewidth: width,
@@ -18131,10 +18238,10 @@ AbstractEngraver.prototype.addLyric = function (abselem, elem) {
   });
   var lyricDim = this.getTextSize.calc(lyricStr, 'vocalfont', "lyric");
   var position = elem.positioning ? elem.positioning.vocalPosition : 'below';
-  abselem.addCentered(new RelativeElement(lyricStr, 0, lyricDim.width, undefined, {
+  abselem.addCentered(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](lyricStr, 0, lyricDim.width, undefined, {
     type: "lyric",
     position: position,
-    height: lyricDim.height / spacing.STEP,
+    height: lyricDim.height / _helpers_spacing__WEBPACK_IMPORTED_MODULE_11__["default"].STEP,
     dim: this.getTextSize.attr('vocalfont', "lyric")
   }));
 };
@@ -18166,7 +18273,7 @@ AbstractEngraver.prototype.createNote = function (elem, nostem, isSingleLineStaf
   if (elem.rest && elem.rest.type === 'multimeasure') durationForSpacing = 1;
   if (elem.rest && elem.rest.type === 'invisible-multimeasure') durationForSpacing = this.measureLength * elem.rest.text;
   var absType = elem.rest ? "rest" : "note";
-  var abselem = new AbsoluteElement(elem, durationForSpacing, 1, absType, this.tuneNumber, {
+  var abselem = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, durationForSpacing, 1, absType, this.tuneNumber, {
     durationClassOveride: elem.duration * this.tripletmultiplier
   });
   if (hint) abselem.setHint();
@@ -18199,7 +18306,7 @@ AbstractEngraver.prototype.createNote = function (elem, nostem, isSingleLineStaf
     this.decoration.createDecoration(voice, elem.decoration, abselem.top, notehead ? notehead.w : 0, abselem, roomtaken, dir, bottom, elem.positioning, this.hasVocals, this.accentAbove);
   }
   if (elem.barNumber) {
-    abselem.addFixed(new RelativeElement(elem.barNumber, -10, 0, 0, {
+    abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](elem.barNumber, -10, 0, 0, {
       type: "barNumber"
     }));
   }
@@ -18207,12 +18314,12 @@ AbstractEngraver.prototype.createNote = function (elem, nostem, isSingleLineStaf
   // ledger lines
   ledgerLines(abselem, elem.minpitch, elem.maxpitch, elem.rest, symbolWidth, additionalLedgers, dir, -2, 1);
   if (elem.chord !== undefined) {
-    var ret3 = addChord(this.getTextSize, abselem, elem, roomtaken, roomtakenright, symbolWidth, this.jazzchords, this.germanAlphabet);
+    var ret3 = (0,_add_chord__WEBPACK_IMPORTED_MODULE_17__["default"])(this.getTextSize, abselem, elem, roomtaken, roomtakenright, symbolWidth, this.jazzchords, this.germanAlphabet);
     roomtaken = ret3.roomTaken;
     roomtakenright = ret3.roomTakenRight;
   }
   if (elem.startTriplet) {
-    this.triplet = new TripletElem(elem.startTriplet, notehead, {
+    this.triplet = new _elements_triplet_element__WEBPACK_IMPORTED_MODULE_15__["default"](elem.startTriplet, notehead, {
       flatBeams: this.flatBeams
     }); // above is opposite from case of slurs
   }
@@ -18248,7 +18355,7 @@ AbstractEngraver.prototype.addSlursAndTies = function (abselem, pitchelem, noteh
   }
   var voiceNumber = voice.voicetotal < 2 ? -1 : voice.voicenumber;
   if (pitchelem.startTie) {
-    var tie = new TieElem({
+    var tie = new _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__["default"]({
       anchor1: notehead,
       force: this.stemdir === "down" || this.stemdir === "up",
       stemDir: this.stemdir,
@@ -18275,7 +18382,7 @@ AbstractEngraver.prototype.addSlursAndTies = function (abselem, pitchelem, noteh
         voice.setRange(slur);
         delete this.slurs[slurid];
       } else {
-        slur = new TieElem({
+        slur = new _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__["default"]({
           anchor2: notehead,
           stemDir: this.stemdir,
           voiceNumber: voiceNumber
@@ -18297,7 +18404,7 @@ AbstractEngraver.prototype.addSlursAndTies = function (abselem, pitchelem, noteh
   if (pitchelem.startSlur) {
     for (i = 0; i < pitchelem.startSlur.length; i++) {
       slurid = pitchelem.startSlur[i].label;
-      slur = new TieElem({
+      slur = new _elements_tie_element__WEBPACK_IMPORTED_MODULE_14__["default"]({
         anchor1: notehead,
         stemDir: this.stemdir,
         voiceNumber: voiceNumber,
@@ -18316,7 +18423,7 @@ AbstractEngraver.prototype.addMeasureNumber = function (number, abselem) {
     // If this is a clef rather than bar line, then the number shouldn't be centered because it could overlap the left side. This is an easy way to let it be centered but move it over, too.
     dx += measureNumDim.width / 2;
   var vert = measureNumDim.width > 10 && abselem.abcelem.type === "treble" ? 13 : 11;
-  abselem.addFixed(new RelativeElement(number, dx, measureNumDim.width, vert + measureNumDim.height / spacing.STEP, {
+  abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](number, dx, measureNumDim.width, vert + measureNumDim.height / _helpers_spacing__WEBPACK_IMPORTED_MODULE_11__["default"].STEP, {
     type: "barNumber",
     dim: this.getTextSize.attr("measurefont", 'bar-number')
   }));
@@ -18324,7 +18431,7 @@ AbstractEngraver.prototype.addMeasureNumber = function (number, abselem) {
 AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) {
   // bar_thin, bar_thin_thick, bar_thin_thin, bar_thick_thin, bar_right_repeat, bar_left_repeat, bar_double_repeat
 
-  var abselem = new AbsoluteElement(elem, 0, 10, 'bar', this.tuneNumber);
+  var abselem = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 10, 'bar', this.tuneNumber);
   var anchor = null; // place to attach part lines
   var dx = 0;
   if (elem.barNumber) {
@@ -18346,13 +18453,13 @@ AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) 
     this.startlimitelem = abselem;
   }
   if (firstdots) {
-    abselem.addRight(new RelativeElement("dots.dot", dx, 1, 7));
-    abselem.addRight(new RelativeElement("dots.dot", dx, 1, 5));
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("dots.dot", dx, 1, 7));
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("dots.dot", dx, 1, 5));
     dx += 6; //2 hardcoded, twice;
   }
 
   if (firstthin) {
-    anchor = new RelativeElement(null, dx, 1, 2, {
+    anchor = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, 1, 2, {
       "type": "bar",
       "pitch2": 10,
       linewidth: 0.6
@@ -18360,7 +18467,7 @@ AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) 
     abselem.addRight(anchor);
   }
   if (elem.type === "bar_invisible") {
-    anchor = new RelativeElement(null, dx, 1, 2, {
+    anchor = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, 1, 2, {
       "type": "none",
       "pitch2": 10,
       linewidth: 0.6
@@ -18372,7 +18479,7 @@ AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) 
   }
   if (thick) {
     dx += 4; //3 hardcoded;
-    anchor = new RelativeElement(null, dx, 4, 2, {
+    anchor = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, 4, 2, {
       "type": "bar",
       "pitch2": 10,
       linewidth: 4
@@ -18392,7 +18499,7 @@ AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) 
   }
   if (secondthin) {
     dx += 3; //3 hardcoded;
-    anchor = new RelativeElement(null, dx, 1, 2, {
+    anchor = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"](null, dx, 1, 2, {
       "type": "bar",
       "pitch2": 10,
       linewidth: 0.6
@@ -18402,26 +18509,26 @@ AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) 
 
   if (seconddots) {
     dx += 3; //3 hardcoded;
-    abselem.addRight(new RelativeElement("dots.dot", dx, 1, 7));
-    abselem.addRight(new RelativeElement("dots.dot", dx, 1, 5));
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("dots.dot", dx, 1, 7));
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_10__["default"]("dots.dot", dx, 1, 5));
   } // 2 is hardcoded
 
   if (elem.startEnding && isFirstStaff) {
     // only put the first & second ending marks on the first staff
     var textWidth = this.getTextSize.calc(elem.startEnding, "repeatfont", '').width;
     abselem.minspacing += textWidth + 10; // Give plenty of room for the ending number.
-    this.partstartelem = new EndingElem(elem.startEnding, anchor, null);
+    this.partstartelem = new _elements_ending_element__WEBPACK_IMPORTED_MODULE_8__["default"](elem.startEnding, anchor, null);
     voice.addOther(this.partstartelem);
   }
 
   // Add a little space to the left of the bar line so that nothing can crowd it.
   abselem.extraw -= 5;
   if (elem.chord !== undefined) {
-    var ret3 = addChord(this.getTextSize, abselem, elem, 0, 0, 0, false, this.germanAlphabet);
+    var ret3 = (0,_add_chord__WEBPACK_IMPORTED_MODULE_17__["default"])(this.getTextSize, abselem, elem, 0, 0, 0, false, this.germanAlphabet);
   }
   return abselem;
 };
-module.exports = AbstractEngraver;
+/* harmony default export */ __webpack_exports__["default"] = (AbstractEngraver);
 
 /***/ }),
 
@@ -18429,11 +18536,15 @@ module.exports = AbstractEngraver;
 /*!*****************************************!*\
   !*** ./src/write/creation/add-chord.js ***!
   \*****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var translateChord = __webpack_require__(/*! ./translate-chord */ "./src/write/creation/translate-chord.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _translate_chord__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./translate-chord */ "./src/write/creation/translate-chord.js");
+
+
+
 var addChord = function addChord(getTextSize, abselem, elem, roomTaken, roomTakenRight, noteheadWidth, jazzchords, germanAlphabet) {
   for (var i = 0; i < elem.chord.length; i++) {
     var pos = elem.chord[i].position;
@@ -18476,16 +18587,16 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
     var chord = chords[j];
     var x = 0;
     var y;
-    if (!isAnnotation) chord = translateChord(chord, jazzchords, germanAlphabet);
+    if (!isAnnotation) chord = (0,_translate_chord__WEBPACK_IMPORTED_MODULE_2__["default"])(chord, jazzchords, germanAlphabet);
     var dim = getTextSize.calc(chord, font, klass);
     var chordWidth = dim.width;
-    var chordHeight = dim.height / spacing.STEP;
+    var chordHeight = dim.height / _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP;
     switch (pos) {
       case "left":
         roomTaken += chordWidth + 7;
         x = -roomTaken; // TODO-PER: This is just a guess from trial and error
         y = elem.averagepitch;
-        abselem.addExtra(new RelativeElement(chord, x, chordWidth + 4, y, {
+        abselem.addExtra(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](chord, x, chordWidth + 4, y, {
           type: "text",
           height: chordHeight,
           dim: attr,
@@ -18496,7 +18607,7 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
         roomTakenRight += 4;
         x = roomTakenRight; // TODO-PER: This is just a guess from trial and error
         y = elem.averagepitch;
-        abselem.addRight(new RelativeElement(chord, x, chordWidth + 4, y, {
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](chord, x, chordWidth + 4, y, {
           type: "text",
           height: chordHeight,
           dim: attr,
@@ -18505,7 +18616,7 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
         break;
       case "below":
         // setting the y-coordinate to undefined for now: it will be overwritten later on, after we figure out what the highest element on the line is.
-        abselem.addRight(new RelativeElement(chord, 0, 0, undefined, {
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](chord, 0, 0, undefined, {
           type: "text",
           position: "below",
           height: chordHeight,
@@ -18515,7 +18626,7 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
         break;
       case "above":
         // setting the y-coordinate to undefined for now: it will be overwritten later on, after we figure out what the highest element on the line is.
-        abselem.addRight(new RelativeElement(chord, 0, 0, undefined, {
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](chord, 0, 0, undefined, {
           type: "text",
           position: "above",
           height: chordHeight,
@@ -18525,8 +18636,8 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
         break;
       default:
         if (rel_position) {
-          var relPositionY = rel_position.y + 3 * spacing.STEP; // TODO-PER: this is a fudge factor to make it line up with abcm2ps
-          abselem.addRight(new RelativeElement(chord, x + rel_position.x, 0, elem.minpitch + relPositionY / spacing.STEP, {
+          var relPositionY = rel_position.y + 3 * _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP; // TODO-PER: this is a fudge factor to make it line up with abcm2ps
+          abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](chord, x + rel_position.x, 0, elem.minpitch + relPositionY / _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP, {
             position: "relative",
             type: "text",
             height: chordHeight,
@@ -18537,7 +18648,7 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
           var pos2 = 'above';
           if (elem.positioning && elem.positioning.chordPosition) pos2 = elem.positioning.chordPosition;
           if (pos2 !== 'hidden') {
-            abselem.addCentered(new RelativeElement(chord, noteheadWidth / 2, chordWidth, undefined, {
+            abselem.addCentered(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](chord, noteheadWidth / 2, chordWidth, undefined, {
               type: "chord",
               position: pos2,
               height: chordHeight,
@@ -18553,7 +18664,7 @@ function chordString(chordString, pos, rel_position, isAnnotation, font, klass, 
     roomTakenRight: roomTakenRight
   };
 }
-module.exports = addChord;
+/* harmony default export */ __webpack_exports__["default"] = (addChord);
 
 /***/ }),
 
@@ -18561,8 +18672,9 @@ module.exports = addChord;
 /*!*******************************************!*\
   !*** ./src/write/creation/add-text-if.js ***!
   \*******************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function addTextIf(rows, params, getTextSize) {
   if (!params.text) return;
   if (!params.marginLeft) params.marginLeft = 0;
@@ -18602,7 +18714,7 @@ function addTextIf(rows, params, getTextSize) {
     });
   }
 }
-module.exports = addTextIf;
+/* harmony default export */ __webpack_exports__["default"] = (addTextIf);
 
 /***/ }),
 
@@ -18610,8 +18722,9 @@ module.exports = addTextIf;
 /*!*******************************************!*\
   !*** ./src/write/creation/calc-height.js ***!
   \*******************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var calcHeight = function calcHeight(staffGroup) {
   // the height is calculated here in a parallel way to the drawing below in hopes that both of these functions will be modified together.
   // TODO-PER: also add the space between staves. (That's systemStaffSeparation, which is the minimum distance between the staff LINES.)
@@ -18626,7 +18739,7 @@ var calcHeight = function calcHeight(staffGroup) {
   }
   return height;
 };
-module.exports = calcHeight;
+/* harmony default export */ __webpack_exports__["default"] = (calcHeight);
 
 /***/ }),
 
@@ -18634,18 +18747,22 @@ module.exports = calcHeight;
 /*!*******************************************!*\
   !*** ./src/write/creation/create-clef.js ***!
   \*******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
+/* harmony import */ var _glyphs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
 //    abc_create_clef.js
 
-var AbsoluteElement = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
-var glyphs = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+
+
+
 var createClef = function createClef(elem, tuneNumber) {
   var clef;
   var octave = 0;
   elem.el_type = "clef";
-  var abselem = new AbsoluteElement(elem, 0, 10, 'staff-extra clef', tuneNumber);
+  var abselem = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 10, 'staff-extra clef', tuneNumber);
   abselem.isClef = true;
   switch (elem.type) {
     case "treble":
@@ -18698,7 +18815,7 @@ var createClef = function createClef(elem, tuneNumber) {
       clef = "clefs.perc";
       break;
     default:
-      abselem.addFixed(new RelativeElement("clef=" + elem.type, 0, 0, undefined, {
+      abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("clef=" + elem.type, 0, 0, undefined, {
         type: "debug"
       }));
   }
@@ -18707,15 +18824,15 @@ var createClef = function createClef(elem, tuneNumber) {
   // }
   var dx = 5;
   if (clef) {
-    var height = glyphs.symbolHeightInPitches(clef);
+    var height = _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches(clef);
     var ofs = clefOffsets(clef);
-    abselem.addRight(new RelativeElement(clef, dx, glyphs.getSymbolWidth(clef), elem.clefPos, {
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"](clef, dx, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(clef), elem.clefPos, {
       top: height + elem.clefPos + ofs,
       bottom: elem.clefPos + ofs
     }));
     if (octave !== 0) {
       var scale = 2 / 3;
-      var adjustspacing = (glyphs.getSymbolWidth(clef) - glyphs.getSymbolWidth("8") * scale) / 2;
+      var adjustspacing = (_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(clef) - _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("8") * scale) / 2;
       var pitch = octave > 0 ? abselem.top + 3 : abselem.bottom - 1;
       var top = octave > 0 ? abselem.top + 3 : abselem.bottom - 3;
       var bottom = top - 2;
@@ -18724,7 +18841,7 @@ var createClef = function createClef(elem, tuneNumber) {
         pitch = 3;
         adjustspacing = 0;
       }
-      abselem.addRight(new RelativeElement("8", dx + adjustspacing, glyphs.getSymbolWidth("8") * scale, pitch, {
+      abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("8", dx + adjustspacing, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("8") * scale, pitch, {
         scalex: scale,
         scaley: scale,
         top: top,
@@ -18750,7 +18867,7 @@ function clefOffsets(clef) {
       return 0;
   }
 }
-module.exports = createClef;
+/* harmony default export */ __webpack_exports__["default"] = (createClef);
 
 /***/ }),
 
@@ -18758,17 +18875,21 @@ module.exports = createClef;
 /*!****************************************************!*\
   !*** ./src/write/creation/create-key-signature.js ***!
   \****************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
+/* harmony import */ var _glyphs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
 //    abc_create_key_signature.js
 
-var AbsoluteElement = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
-var glyphs = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+
+
+
 var createKeySignature = function createKeySignature(elem, tuneNumber) {
   elem.el_type = "keySignature";
   if (!elem.accidentals || elem.accidentals.length === 0) return null;
-  var abselem = new AbsoluteElement(elem, 0, 10, 'staff-extra key-signature', tuneNumber);
+  var abselem = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 10, 'staff-extra key-signature', tuneNumber);
   abselem.isKeySig = true;
   var dx = 0;
   elem.accidentals.forEach(function (acc) {
@@ -18797,16 +18918,16 @@ var createKeySignature = function createKeySignature(elem, tuneNumber) {
       default:
         symbol = "accidentals.flat";
     }
-    abselem.addRight(new RelativeElement(symbol, dx, glyphs.getSymbolWidth(symbol), acc.verticalPos, {
-      thickness: glyphs.symbolHeightInPitches(symbol),
-      top: acc.verticalPos + glyphs.symbolHeightInPitches(symbol) + fudge,
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"](symbol, dx, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(symbol), acc.verticalPos, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches(symbol),
+      top: acc.verticalPos + _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches(symbol) + fudge,
       bottom: acc.verticalPos + fudge
     }));
-    dx += glyphs.getSymbolWidth(symbol) + 2;
+    dx += _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(symbol) + 2;
   }, this);
   return abselem;
 };
-module.exports = createKeySignature;
+/* harmony default export */ __webpack_exports__["default"] = (createKeySignature);
 
 /***/ }),
 
@@ -18814,10 +18935,13 @@ module.exports = createKeySignature;
 /*!************************************************!*\
   !*** ./src/write/creation/create-note-head.js ***!
   \************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var glyphs = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _glyphs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+
+
 var createNoteHead = function createNoteHead(abselem, c, pitchelem, options) {
   if (!options) options = {};
   var dir = options.dir !== undefined ? options.dir : null;
@@ -18837,23 +18961,23 @@ var createNoteHead = function createNoteHead(abselem, c, pitchelem, options) {
   var accidentalshiftx = 0;
   var newDotShiftX = 0;
   var extraLeft = 0;
-  if (c === undefined) abselem.addFixed(new RelativeElement("pitch is undefined", 0, 0, 0, {
+  if (c === undefined) abselem.addFixed(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"]("pitch is undefined", 0, 0, 0, {
     type: "debug"
   }));else if (c === "") {
-    notehead = new RelativeElement(null, 0, 0, pitch);
+    notehead = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](null, 0, 0, pitch);
   } else {
     var shiftheadx = headx;
     if (pitchelem.printer_shift) {
       var adjust = pitchelem.printer_shift === "same" ? 1 : 0;
-      shiftheadx = dir === "down" ? -glyphs.getSymbolWidth(c) * scale + adjust : glyphs.getSymbolWidth(c) * scale - adjust;
+      shiftheadx = dir === "down" ? -_glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(c) * scale + adjust : _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(c) * scale - adjust;
     }
     var opts = {
       scalex: scale,
       scaley: scale,
-      thickness: glyphs.symbolHeightInPitches(c) * scale,
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].symbolHeightInPitches(c) * scale,
       name: pitchelem.name
     };
-    notehead = new RelativeElement(c, shiftheadx, glyphs.getSymbolWidth(c) * scale, pitch, opts);
+    notehead = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](c, shiftheadx, _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(c) * scale, pitch, opts);
     notehead.stemDir = dir;
     if (flag) {
       var pos = pitch + (dir === "down" ? -7 : 7) * scale;
@@ -18864,7 +18988,7 @@ var createNoteHead = function createNoteHead(abselem, c, pitchelem, options) {
       }
       //if (scale===1 && (dir==="down")?(pos>6):(pos<6)) pos=6;
       var xdelta = dir === "down" ? headx : headx + notehead.w - 0.6;
-      abselem.addRight(new RelativeElement(flag, xdelta, glyphs.getSymbolWidth(flag) * scale, pos, {
+      abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](flag, xdelta, _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(flag) * scale, pos, {
         scalex: scale,
         scaley: scale
       }));
@@ -18872,7 +18996,7 @@ var createNoteHead = function createNoteHead(abselem, c, pitchelem, options) {
     newDotShiftX = notehead.w + dotshiftx - 2 + 5 * dot;
     for (; dot > 0; dot--) {
       var dotadjusty = 1 - Math.abs(pitch) % 2; //PER: take abs value of the pitch. And the shift still happens on ledger lines.
-      abselem.addRight(new RelativeElement("dots.dot", notehead.w + dotshiftx - 2 + 5 * dot, glyphs.getSymbolWidth("dots.dot"), pitch + dotadjusty));
+      abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"]("dots.dot", notehead.w + dotshiftx - 2 + 5 * dot, _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth("dots.dot"), pitch + dotadjusty));
     }
   }
   if (notehead) notehead.highestVert = pitchelem.highestVert;
@@ -18912,18 +19036,18 @@ var createNoteHead = function createNoteHead(abselem, c, pitchelem, options) {
       }
     }
     if (accSlotFound === false) {
-      accPlace -= glyphs.getSymbolWidth(symb) * scale + 2;
+      accPlace -= _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(symb) * scale + 2;
       accidentalSlot.push([pitch, accPlace]);
-      accidentalshiftx = glyphs.getSymbolWidth(symb) * scale + 2;
+      accidentalshiftx = _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(symb) * scale + 2;
     }
-    var h = glyphs.symbolHeightInPitches(symb);
-    abselem.addExtra(new RelativeElement(symb, accPlace, glyphs.getSymbolWidth(symb), pitch, {
+    var h = _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].symbolHeightInPitches(symb);
+    abselem.addExtra(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](symb, accPlace, _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(symb), pitch, {
       scalex: scale,
       scaley: scale,
       top: pitch + h / 2,
       bottom: pitch - h / 2
     }));
-    extraLeft = glyphs.getSymbolWidth(symb) / 2; // TODO-PER: We need a little extra width if there is an accidental, but I'm not sure why it isn't the full width of the accidental.
+    extraLeft = _glyphs__WEBPACK_IMPORTED_MODULE_0__["default"].getSymbolWidth(symb) / 2; // TODO-PER: We need a little extra width if there is an accidental, but I'm not sure why it isn't the full width of the accidental.
   }
 
   return {
@@ -18933,7 +19057,7 @@ var createNoteHead = function createNoteHead(abselem, c, pitchelem, options) {
     extraLeft: extraLeft
   };
 };
-module.exports = createNoteHead;
+/* harmony default export */ __webpack_exports__["default"] = (createNoteHead);
 
 /***/ }),
 
@@ -18941,83 +19065,87 @@ module.exports = createNoteHead;
 /*!*****************************************************!*\
   !*** ./src/write/creation/create-time-signature.js ***!
   \*****************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
+/* harmony import */ var _glyphs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
 //    abc_create_time_signature.js
 
-var AbsoluteElement = __webpack_require__(/*! ./elements/absolute-element */ "./src/write/creation/elements/absolute-element.js");
-var glyphs = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+
+
+
 var createTimeSignature = function createTimeSignature(elem, tuneNumber) {
   elem.el_type = "timeSignature";
-  var abselem = new AbsoluteElement(elem, 0, 10, 'staff-extra time-signature', tuneNumber);
+  var abselem = new _elements_absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](elem, 0, 10, 'staff-extra time-signature', tuneNumber);
   if (elem.type === "specified") {
     var x = 0;
     for (var i = 0; i < elem.value.length; i++) {
       if (i !== 0) {
-        abselem.addRight(new RelativeElement('+', x + 1, glyphs.getSymbolWidth("+"), 6, {
-          thickness: glyphs.symbolHeightInPitches("+")
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]('+', x + 1, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("+"), 6, {
+          thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("+")
         }));
-        x += glyphs.getSymbolWidth("+") + 2;
+        x += _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("+") + 2;
       }
       if (elem.value[i].den) {
         var numWidth = 0;
         for (var i2 = 0; i2 < elem.value[i].num.length; i2++) {
-          numWidth += glyphs.getSymbolWidth(elem.value[i].num[i2]);
+          numWidth += _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(elem.value[i].num[i2]);
         }
         var denWidth = 0;
         for (i2 = 0; i2 < elem.value[i].num.length; i2++) {
-          denWidth += glyphs.getSymbolWidth(elem.value[i].den[i2]);
+          denWidth += _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(elem.value[i].den[i2]);
         }
         var maxWidth = Math.max(numWidth, denWidth);
-        abselem.addRight(new RelativeElement(elem.value[i].num, x + (maxWidth - numWidth) / 2, numWidth, 8, {
-          thickness: glyphs.symbolHeightInPitches(elem.value[i].num[0])
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"](elem.value[i].num, x + (maxWidth - numWidth) / 2, numWidth, 8, {
+          thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches(elem.value[i].num[0])
         }));
-        abselem.addRight(new RelativeElement(elem.value[i].den, x + (maxWidth - denWidth) / 2, denWidth, 4, {
-          thickness: glyphs.symbolHeightInPitches(elem.value[i].den[0])
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"](elem.value[i].den, x + (maxWidth - denWidth) / 2, denWidth, 4, {
+          thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches(elem.value[i].den[0])
         }));
         x += maxWidth;
       } else {
         var thisWidth = 0;
         for (var i3 = 0; i3 < elem.value[i].num.length; i3++) {
-          thisWidth += glyphs.getSymbolWidth(elem.value[i].num[i3]);
+          thisWidth += _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(elem.value[i].num[i3]);
         }
-        abselem.addRight(new RelativeElement(elem.value[i].num, x, thisWidth, 6, {
-          thickness: glyphs.symbolHeightInPitches(elem.value[i].num[0])
+        abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"](elem.value[i].num, x, thisWidth, 6, {
+          thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches(elem.value[i].num[0])
         }));
         x += thisWidth;
       }
     }
   } else if (elem.type === "common_time") {
-    abselem.addRight(new RelativeElement("timesig.common", 0, glyphs.getSymbolWidth("timesig.common"), 6, {
-      thickness: glyphs.symbolHeightInPitches("timesig.common")
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("timesig.common", 0, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("timesig.common"), 6, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("timesig.common")
     }));
   } else if (elem.type === "cut_time") {
-    abselem.addRight(new RelativeElement("timesig.cut", 0, glyphs.getSymbolWidth("timesig.cut"), 6, {
-      thickness: glyphs.symbolHeightInPitches("timesig.cut")
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("timesig.cut", 0, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("timesig.cut"), 6, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("timesig.cut")
     }));
   } else if (elem.type === "tempus_imperfectum") {
-    abselem.addRight(new RelativeElement("timesig.imperfectum", 0, glyphs.getSymbolWidth("timesig.imperfectum"), 6, {
-      thickness: glyphs.symbolHeightInPitches("timesig.imperfectum")
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("timesig.imperfectum", 0, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("timesig.imperfectum"), 6, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("timesig.imperfectum")
     }));
   } else if (elem.type === "tempus_imperfectum_prolatio") {
-    abselem.addRight(new RelativeElement("timesig.imperfectum2", 0, glyphs.getSymbolWidth("timesig.imperfectum2"), 6, {
-      thickness: glyphs.symbolHeightInPitches("timesig.imperfectum2")
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("timesig.imperfectum2", 0, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("timesig.imperfectum2"), 6, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("timesig.imperfectum2")
     }));
   } else if (elem.type === "tempus_perfectum") {
-    abselem.addRight(new RelativeElement("timesig.perfectum", 0, glyphs.getSymbolWidth("timesig.perfectum"), 6, {
-      thickness: glyphs.symbolHeightInPitches("timesig.perfectum")
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("timesig.perfectum", 0, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("timesig.perfectum"), 6, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("timesig.perfectum")
     }));
   } else if (elem.type === "tempus_perfectum_prolatio") {
-    abselem.addRight(new RelativeElement("timesig.perfectum2", 0, glyphs.getSymbolWidth("timesig.perfectum2"), 6, {
-      thickness: glyphs.symbolHeightInPitches("timesig.perfectum2")
+    abselem.addRight(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_2__["default"]("timesig.perfectum2", 0, _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth("timesig.perfectum2"), 6, {
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].symbolHeightInPitches("timesig.perfectum2")
     }));
   } else {
     console.log("time signature:", elem);
   }
   return abselem;
 };
-module.exports = createTimeSignature;
+/* harmony default export */ __webpack_exports__["default"] = (createTimeSignature);
 
 /***/ }),
 
@@ -19025,16 +19153,23 @@ module.exports = createTimeSignature;
 /*!******************************************!*\
   !*** ./src/write/creation/decoration.js ***!
   \******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _elements_dynamic_decoration__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/dynamic-decoration */ "./src/write/creation/elements/dynamic-decoration.js");
+/* harmony import */ var _elements_crescendo_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./elements/crescendo-element */ "./src/write/creation/elements/crescendo-element.js");
+/* harmony import */ var _elements_glissando_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./elements/glissando-element */ "./src/write/creation/elements/glissando-element.js");
+/* harmony import */ var _glyphs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+/* harmony import */ var _elements_tie_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./elements/tie-element */ "./src/write/creation/elements/tie-element.js");
 // abc_decoration.js: Creates a data structure suitable for printing a line of abc
 
-var DynamicDecoration = __webpack_require__(/*! ./elements/dynamic-decoration */ "./src/write/creation/elements/dynamic-decoration.js");
-var CrescendoElem = __webpack_require__(/*! ./elements/crescendo-element */ "./src/write/creation/elements/crescendo-element.js");
-var GlissandoElem = __webpack_require__(/*! ./elements/glissando-element */ "./src/write/creation/elements/glissando-element.js");
-var glyphs = __webpack_require__(/*! ./glyphs */ "./src/write/creation/glyphs.js");
-var RelativeElement = __webpack_require__(/*! ./elements/relative-element */ "./src/write/creation/elements/relative-element.js");
-var TieElem = __webpack_require__(/*! ./elements/tie-element */ "./src/write/creation/elements/tie-element.js");
+
+
+
+
+
+
 var Decoration = function Decoration() {
   this.startDiminuendoX = undefined;
   this.startCrescendoX = undefined;
@@ -19065,19 +19200,19 @@ var closeDecoration = function closeDecoration(voice, decoration, pitch, width, 
       }
       if (pitch > 9) yPos++; // take up some room of those that are above
       var deltaX = width / 2;
-      if (glyphs.getSymbolAlign(symbol) !== "center") {
-        deltaX -= glyphs.getSymbolWidth(symbol) / 2;
+      if (_glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolAlign(symbol) !== "center") {
+        deltaX -= _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolWidth(symbol) / 2;
       }
-      abselem.addFixedX(new RelativeElement(symbol, deltaX, glyphs.getSymbolWidth(symbol), yPos));
+      abselem.addFixedX(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"](symbol, deltaX, _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolWidth(symbol), yPos));
     }
     if (decoration[i] === "slide" && abselem.heads[0]) {
       var yPos2 = abselem.heads[0].pitch;
       yPos2 -= 2; // TODO-PER: not sure what this fudge factor is.
-      var blank1 = new RelativeElement("", -roomtaken - 15, 0, yPos2 - 1);
-      var blank2 = new RelativeElement("", -roomtaken - 5, 0, yPos2 + 1);
+      var blank1 = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"]("", -roomtaken - 15, 0, yPos2 - 1);
+      var blank2 = new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"]("", -roomtaken - 5, 0, yPos2 + 1);
       abselem.addFixedX(blank1);
       abselem.addFixedX(blank2);
-      voice.addOther(new TieElem({
+      voice.addOther(new _elements_tie_element__WEBPACK_IMPORTED_MODULE_5__["default"]({
         anchor1: blank1,
         anchor2: blank2,
         fixedY: true
@@ -19104,7 +19239,7 @@ var volumeDecoration = function volumeDecoration(voice, decoration, abselem, pos
       case "ffff":
       case "sfz":
       case "mf":
-        var elem = new DynamicDecoration(abselem, decoration[i], positioning);
+        var elem = new _elements_dynamic_decoration__WEBPACK_IMPORTED_MODULE_0__["default"](abselem, decoration[i], positioning);
         voice.addOther(elem);
     }
   }
@@ -19133,7 +19268,7 @@ var compoundDecoration = function compoundDecoration(decoration, pitch, width, a
     deltaX += dir === 'down' ? -5 : 3;
     for (var i = 0; i < count; i++) {
       placement -= 1;
-      abselem.addFixedX(new RelativeElement(symbol, deltaX, glyphs.getSymbolWidth(symbol), placement));
+      abselem.addFixedX(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"](symbol, deltaX, _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolWidth(symbol), placement));
     }
   }
   for (var i = 0; i < decoration.length; i++) {
@@ -19173,7 +19308,7 @@ var stackedDecoration = function stackedDecoration(decoration, width, abselem, y
     var textFudge = 2;
     var textHeight = 5;
     // TODO-PER: Get the height of the current font and use that for the thickness.
-    abselem.addFixedX(new RelativeElement(text, width / 2, 0, y + textFudge, {
+    abselem.addFixedX(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"](text, width / 2, 0, y + textFudge, {
       type: "decoration",
       klass: 'ornament',
       thickness: 3,
@@ -19183,15 +19318,15 @@ var stackedDecoration = function stackedDecoration(decoration, width, abselem, y
   }
   function symbolDecoration(symbol, placement) {
     var deltaX = width / 2;
-    if (glyphs.getSymbolAlign(symbol) !== "center") {
-      deltaX -= glyphs.getSymbolWidth(symbol) / 2;
+    if (_glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolAlign(symbol) !== "center") {
+      deltaX -= _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolWidth(symbol) / 2;
     }
-    var height = glyphs.symbolHeightInPitches(symbol) + 1; // adding a little padding so nothing touches.
+    var height = _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].symbolHeightInPitches(symbol) + 1; // adding a little padding so nothing touches.
     var y = getPlacement(placement);
     y = placement === 'above' ? y + height / 2 : y - height / 2; // Center the element vertically.
-    abselem.addFixedX(new RelativeElement(symbol, deltaX, glyphs.getSymbolWidth(symbol), y, {
+    abselem.addFixedX(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"](symbol, deltaX, _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolWidth(symbol), y, {
       klass: 'ornament',
-      thickness: glyphs.symbolHeightInPitches(symbol),
+      thickness: _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].symbolHeightInPitches(symbol),
       position: placement
     }));
     incrementPlacement(placement, height);
@@ -19311,9 +19446,9 @@ function leftDecoration(decoration, abselem, roomtaken) {
         // top note to the bottom note. The arpeggio should also be a little taller than the stacked notes, so there is an extra
         // one drawn and it is offset by half of a note height (that is, one Y unit).
         for (var j = abselem.abcelem.minpitch - 1; j <= abselem.abcelem.maxpitch; j += 2) {
-          abselem.addExtra(new RelativeElement("scripts.arpeggio", -glyphs.getSymbolWidth("scripts.arpeggio") * 2 - roomtaken, 0, j + 2, {
+          abselem.addExtra(new _elements_relative_element__WEBPACK_IMPORTED_MODULE_4__["default"]("scripts.arpeggio", -_glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].getSymbolWidth("scripts.arpeggio") * 2 - roomtaken, 0, j + 2, {
             klass: 'ornament',
-            thickness: glyphs.symbolHeightInPitches("scripts.arpeggio")
+            thickness: _glyphs__WEBPACK_IMPORTED_MODULE_3__["default"].symbolHeightInPitches("scripts.arpeggio")
           }));
         }
         break;
@@ -19364,13 +19499,13 @@ Decoration.prototype.dynamicDecoration = function (voice, decoration, abselem, p
     }
   }
   if (diminuendo) {
-    voice.addOther(new CrescendoElem(diminuendo.start, diminuendo.stop, ">", positioning));
+    voice.addOther(new _elements_crescendo_element__WEBPACK_IMPORTED_MODULE_1__["default"](diminuendo.start, diminuendo.stop, ">", positioning));
   }
   if (crescendo) {
-    voice.addOther(new CrescendoElem(crescendo.start, crescendo.stop, "<", positioning));
+    voice.addOther(new _elements_crescendo_element__WEBPACK_IMPORTED_MODULE_1__["default"](crescendo.start, crescendo.stop, "<", positioning));
   }
   if (glissando) {
-    voice.addOther(new GlissandoElem(glissando.start, glissando.stop));
+    voice.addOther(new _elements_glissando_element__WEBPACK_IMPORTED_MODULE_2__["default"](glissando.start, glissando.stop));
   }
 };
 Decoration.prototype.createDecoration = function (voice, decoration, pitch, width, abselem, roomtaken, dir, minPitch, positioning, hasVocals, accentAbove) {
@@ -19396,7 +19531,7 @@ Decoration.prototype.createDecoration = function (voice, decoration, pitch, widt
   //}
   leftDecoration(decoration, abselem, roomtaken);
 };
-module.exports = Decoration;
+/* harmony default export */ __webpack_exports__["default"] = (Decoration);
 
 /***/ }),
 
@@ -19404,12 +19539,15 @@ module.exports = Decoration;
 /*!*********************************************************!*\
   !*** ./src/write/creation/elements/absolute-element.js ***!
   \*********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _interactive_highlight__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../interactive/highlight */ "./src/write/interactive/highlight.js");
+/* harmony import */ var _interactive_unhighlight__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../interactive/unhighlight */ "./src/write/interactive/unhighlight.js");
 //    abc_absolute_element.js: Definition of the AbsoluteElement class.
 
-var highlight = __webpack_require__(/*! ../../interactive/highlight */ "./src/write/interactive/highlight.js");
-var unhighlight = __webpack_require__(/*! ../../interactive/unhighlight */ "./src/write/interactive/unhighlight.js");
+
+
 
 // Everything that is placed in the SVG is first created as an absolute element. This is one unit of graphic information.
 // That is, it embodies a concept: a clef, a time signature, a bar line,etc. or most complexly:
@@ -19625,12 +19763,12 @@ AbsoluteElement.prototype.setHint = function () {
   this.hint = true;
 };
 AbsoluteElement.prototype.highlight = function (klass, color) {
-  highlight.bind(this)(klass, color);
+  _interactive_highlight__WEBPACK_IMPORTED_MODULE_0__["default"].bind(this)(klass, color);
 };
 AbsoluteElement.prototype.unhighlight = function (klass, color) {
-  unhighlight.bind(this)(klass, color);
+  _interactive_unhighlight__WEBPACK_IMPORTED_MODULE_1__["default"].bind(this)(klass, color);
 };
-module.exports = AbsoluteElement;
+/* harmony default export */ __webpack_exports__["default"] = (AbsoluteElement);
 
 /***/ }),
 
@@ -19638,8 +19776,9 @@ module.exports = AbsoluteElement;
 /*!*****************************************************!*\
   !*** ./src/write/creation/elements/beam-element.js ***!
   \*****************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_beam_element.js: Definition of the BeamElem class.
 
 // Most elements on the page are related to a particular absolute element -- notes, rests, bars, etc. Beams, however, span multiple elements.
@@ -19742,7 +19881,7 @@ function calcAverage(total, numElements) {
   if (!numElements) return 0;
   return total / numElements;
 }
-module.exports = BeamElem;
+/* harmony default export */ __webpack_exports__["default"] = (BeamElem);
 
 /***/ }),
 
@@ -19750,10 +19889,13 @@ module.exports = BeamElem;
 /*!****************************************************!*\
   !*** ./src/write/creation/elements/bottom-text.js ***!
   \****************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var addTextIf = __webpack_require__(/*! ../add-text-if */ "./src/write/creation/add-text-if.js");
-var richText = __webpack_require__(/*! ./rich-text */ "./src/write/creation/elements/rich-text.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _add_text_if__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../add-text-if */ "./src/write/creation/add-text-if.js");
+/* harmony import */ var _rich_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rich-text */ "./src/write/creation/elements/rich-text.js");
+
+
 function BottomText(metaText, width, isPrint, paddingLeft, spacing, shouldAddClasses, getTextSize) {
   this.rows = [];
   if (metaText.unalignedWords && metaText.unalignedWords.length > 0) this.unalignedWords(metaText.unalignedWords, paddingLeft, spacing, shouldAddClasses, getTextSize);
@@ -19780,7 +19922,7 @@ function addSingleLine(rows, preface, text, marginLeft, klass, shouldAddClasses,
       }].concat(text);
     }
     klass = shouldAddClasses ? 'abcjs-extra-text ' + klass : '';
-    richText(rows, text, 'historyfont', klass, "description", marginLeft, {
+    (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(rows, text, 'historyfont', klass, "description", marginLeft, {
       absElemType: "extraText",
       anchor: 'start'
     }, getTextSize);
@@ -19792,7 +19934,7 @@ function addMultiLine(rows, preface, content, marginLeft, defFont, absElemType, 
     var size = getTextSize.calc("A", defFont, klass);
     if (typeof content === 'string') {
       if (preface) content = preface + "\n" + content;
-      addTextIf(rows, {
+      (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(rows, {
         marginLeft: marginLeft,
         text: content,
         font: defFont,
@@ -19812,7 +19954,7 @@ function addMultiLine(rows, preface, content, marginLeft, defFont, absElemType, 
         move: spacing.info
       });
       if (preface) {
-        addTextIf(rows, {
+        (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(rows, {
           marginLeft: marginLeft,
           text: preface,
           font: defFont,
@@ -19825,7 +19967,7 @@ function addMultiLine(rows, preface, content, marginLeft, defFont, absElemType, 
         });
       }
       for (var j = 0; j < content.length; j++) {
-        richText(rows, content[j], defFont, '', name, marginLeft, {
+        (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(rows, content[j], defFont, '', name, marginLeft, {
           anchor: 'start'
         }, getTextSize);
         // TODO-PER: Hack! the string and rich lines should have used up the same amount of space without this.
@@ -19865,14 +20007,14 @@ BottomText.prototype.footer = function (footer, width, paddingLeft, getTextSize)
     klass: klass
   });
   // Note: whether there is a footer or not doesn't change any other positioning, so this doesn't change the Y-coordinate.
-  addTextIf(this.rows, {
+  (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
     marginLeft: paddingLeft,
     text: footer.left,
     font: font,
     klass: klass,
     name: "footer"
   }, getTextSize);
-  addTextIf(this.rows, {
+  (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
     marginLeft: paddingLeft + width / 2,
     text: footer.center,
     font: font,
@@ -19880,7 +20022,7 @@ BottomText.prototype.footer = function (footer, width, paddingLeft, getTextSize)
     anchor: 'middle',
     name: "footer"
   }, getTextSize);
-  addTextIf(this.rows, {
+  (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
     marginLeft: paddingLeft + width,
     text: footer.right,
     font: font,
@@ -19889,7 +20031,7 @@ BottomText.prototype.footer = function (footer, width, paddingLeft, getTextSize)
     name: "footer"
   }, getTextSize);
 };
-module.exports = BottomText;
+/* harmony default export */ __webpack_exports__["default"] = (BottomText);
 
 /***/ }),
 
@@ -19897,8 +20039,9 @@ module.exports = BottomText;
 /*!******************************************************!*\
   !*** ./src/write/creation/elements/brace-element.js ***!
   \******************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_brace_element.js: Definition of the BraceElement class.
 
 var BraceElem = function BraceElem(voice, type) {
@@ -19925,7 +20068,7 @@ BraceElem.prototype.isStartVoice = function (voice) {
   if (this.startVoice && this.startVoice.staff && this.startVoice.staff.voices.length > 0 && this.startVoice.staff.voices[0] === voice) return true;
   return false;
 };
-module.exports = BraceElem;
+/* harmony default export */ __webpack_exports__["default"] = (BraceElem);
 
 /***/ }),
 
@@ -19933,8 +20076,9 @@ module.exports = BraceElem;
 /*!**********************************************************!*\
   !*** ./src/write/creation/elements/crescendo-element.js ***!
   \**********************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_crescendo_element.js: Definition of the CrescendoElem class.
 
 var CrescendoElem = function CrescendoElem(anchor1, anchor2, dir, positioning) {
@@ -19946,7 +20090,7 @@ var CrescendoElem = function CrescendoElem(anchor1, anchor2, dir, positioning) {
   this.pitch = undefined; // This will be set later
 };
 
-module.exports = CrescendoElem;
+/* harmony default export */ __webpack_exports__["default"] = (CrescendoElem);
 
 /***/ }),
 
@@ -19954,8 +20098,9 @@ module.exports = CrescendoElem;
 /*!***********************************************************!*\
   !*** ./src/write/creation/elements/dynamic-decoration.js ***!
   \***********************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_dynamic_decoration.js: Definition of the DynamicDecoration class.
 
 var DynamicDecoration = function DynamicDecoration(anchor, dec, position) {
@@ -19966,7 +20111,7 @@ var DynamicDecoration = function DynamicDecoration(anchor, dec, position) {
   this.pitch = undefined; // This will be set later
 };
 
-module.exports = DynamicDecoration;
+/* harmony default export */ __webpack_exports__["default"] = (DynamicDecoration);
 
 /***/ }),
 
@@ -19974,8 +20119,9 @@ module.exports = DynamicDecoration;
 /*!*******************************************************!*\
   !*** ./src/write/creation/elements/ending-element.js ***!
   \*******************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_ending_element.js: Definition of the EndingElement class.
 
 var EndingElem = function EndingElem(text, anchor1, anchor2) {
@@ -19987,7 +20133,7 @@ var EndingElem = function EndingElem(text, anchor1, anchor2) {
   this.pitch = undefined; // This will be set later
 };
 
-module.exports = EndingElem;
+/* harmony default export */ __webpack_exports__["default"] = (EndingElem);
 
 /***/ }),
 
@@ -19995,8 +20141,9 @@ module.exports = EndingElem;
 /*!**************************************************!*\
   !*** ./src/write/creation/elements/free-text.js ***!
   \**************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function FreeText(info, vskip, getFontAndAttr, paddingLeft, width, getTextSize) {
   var text = info.text;
   this.rows = [];
@@ -20077,7 +20224,7 @@ function FreeText(info, vskip, getFontAndAttr, paddingLeft, width, getTextSize) 
     }
   }
 }
-module.exports = FreeText;
+/* harmony default export */ __webpack_exports__["default"] = (FreeText);
 
 /***/ }),
 
@@ -20085,15 +20232,16 @@ module.exports = FreeText;
 /*!**********************************************************!*\
   !*** ./src/write/creation/elements/glissando-element.js ***!
   \**********************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var GlissandoElem = function GlissandoElem(anchor1, anchor2) {
   this.type = "GlissandoElem";
   this.anchor1 = anchor1; // must have a .x and a .parent property or be null (means starts at the "beginning" of the line - after keysig)
   this.anchor2 = anchor2; // must have a .x property or be null (means ends at the end of the line)
 };
 
-module.exports = GlissandoElem;
+/* harmony default export */ __webpack_exports__["default"] = (GlissandoElem);
 
 /***/ }),
 
@@ -20101,8 +20249,9 @@ module.exports = GlissandoElem;
 /*!*********************************************************!*\
   !*** ./src/write/creation/elements/relative-element.js ***!
   \*********************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_relative_element.js: Definition of the RelativeElement class.
 
 var RelativeElement = function RelativeElement(c, dx, w, pitch, opt) {
@@ -20193,7 +20342,7 @@ RelativeElement.prototype.getLane = function () {
 RelativeElement.prototype.setX = function (x) {
   this.x = x + this.dx;
 };
-module.exports = RelativeElement;
+/* harmony default export */ __webpack_exports__["default"] = (RelativeElement);
 
 /***/ }),
 
@@ -20201,9 +20350,11 @@ module.exports = RelativeElement;
 /*!**************************************************!*\
   !*** ./src/write/creation/elements/rich-text.js ***!
   \**************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var addTextIf = __webpack_require__(/*! ../add-text-if */ "./src/write/creation/add-text-if.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _add_text_if__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../add-text-if */ "./src/write/creation/add-text-if.js");
+
 function richText(rows, str, defFont, klass, name, paddingLeft, attr, getTextSize) {
   var space = getTextSize.calc("i", defFont, klass);
   if (str === '') {
@@ -20212,7 +20363,7 @@ function richText(rows, str, defFont, klass, name, paddingLeft, attr, getTextSiz
     });
   } else {
     if (typeof str === 'string') {
-      addTextIf(rows, {
+      (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(rows, {
         marginLeft: paddingLeft,
         text: str,
         font: defFont,
@@ -20263,7 +20414,7 @@ function richText(rows, str, defFont, klass, name, paddingLeft, attr, getTextSiz
     });
   }
 }
-module.exports = richText;
+/* harmony default export */ __webpack_exports__["default"] = (richText);
 
 /***/ }),
 
@@ -20271,8 +20422,9 @@ module.exports = richText;
 /*!**************************************************!*\
   !*** ./src/write/creation/elements/separator.js ***!
   \**************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function Separator(spaceAbove, lineLength, spaceBelow) {
   this.rows = [];
   if (spaceAbove) this.rows.push({
@@ -20286,7 +20438,7 @@ function Separator(spaceAbove, lineLength, spaceBelow) {
     move: spaceBelow
   });
 }
-module.exports = Separator;
+/* harmony default export */ __webpack_exports__["default"] = (Separator);
 
 /***/ }),
 
@@ -20294,8 +20446,10 @@ module.exports = Separator;
 /*!************************************************************!*\
   !*** ./src/write/creation/elements/staff-group-element.js ***!
   \************************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _calc_height__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../calc-height */ "./src/write/creation/calc-height.js");
 //    abc_staff_group_element.js: Definition of the StaffGroupElement class.
 
 // StaffGroupElement contains all the elements that go together to make one line of music.
@@ -20324,7 +20478,7 @@ module.exports = Separator;
 // TODO-PER: Where is that used? It looks like it might not be needed.
 // height: Set in the draw() method to the height actually used. Used by the calling function to know where to start the next staff group.
 // TODO-PER: This should actually be set in the layout method and passed back as a return value.
-var calcHeight = __webpack_require__(/*! ../calc-height */ "./src/write/creation/calc-height.js");
+
 var StaffGroupElement = function StaffGroupElement(getTextSize) {
   this.getTextSize = getTextSize;
   this.voices = [];
@@ -20364,7 +20518,7 @@ StaffGroupElement.prototype.addVoice = function (voice, staffnumber, stafflines)
   voice.staff = this.staffs[staffnumber];
 };
 StaffGroupElement.prototype.setHeight = function () {
-  this.height = calcHeight(this);
+  this.height = (0,_calc_height__WEBPACK_IMPORTED_MODULE_0__["default"])(this);
 };
 StaffGroupElement.prototype.setWidth = function (width) {
   this.w = width;
@@ -20387,7 +20541,7 @@ StaffGroupElement.prototype.setStaffLimits = function (voice) {
   this.setLimit('volumeHeightBelow', voice);
   this.setLimit('dynamicHeightBelow', voice);
 };
-module.exports = StaffGroupElement;
+/* harmony default export */ __webpack_exports__["default"] = (StaffGroupElement);
 
 /***/ }),
 
@@ -20395,8 +20549,9 @@ module.exports = StaffGroupElement;
 /*!*************************************************!*\
   !*** ./src/write/creation/elements/subtitle.js ***!
   \*************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function Subtitle(spaceAbove, formatting, info, center, paddingLeft, getTextSize) {
   this.rows = [];
   if (spaceAbove) this.rows.push({
@@ -20420,7 +20575,7 @@ function Subtitle(spaceAbove, formatting, info, center, paddingLeft, getTextSize
     move: size.height
   });
 }
-module.exports = Subtitle;
+/* harmony default export */ __webpack_exports__["default"] = (Subtitle);
 
 /***/ }),
 
@@ -20428,12 +20583,15 @@ module.exports = Subtitle;
 /*!******************************************************!*\
   !*** ./src/write/creation/elements/tempo-element.js ***!
   \******************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _absolute_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./absolute-element */ "./src/write/creation/elements/absolute-element.js");
+/* harmony import */ var _relative_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./relative-element */ "./src/write/creation/elements/relative-element.js");
 //    abc_tempo_element.js: Definition of the TempoElement class.
 
-var AbsoluteElement = __webpack_require__(/*! ./absolute-element */ "./src/write/creation/elements/absolute-element.js");
-var RelativeElement = __webpack_require__(/*! ./relative-element */ "./src/write/creation/elements/relative-element.js");
+
+
 var TempoElement = function TempoElement(tempo, tuneNumber, createNoteHead) {
   this.type = "TempoElement";
   this.tempo = tempo;
@@ -20453,7 +20611,7 @@ TempoElement.prototype.setX = function (x) {
 TempoElement.prototype.createNote = function (createNoteHead, tempo, tuneNumber) {
   var temposcale = 0.75;
   var duration = tempo.duration[0]; // TODO when multiple durations
-  var absElem = new AbsoluteElement(tempo, duration, 1, 'tempo', tuneNumber);
+  var absElem = new _absolute_element__WEBPACK_IMPORTED_MODULE_0__["default"](tempo, duration, 1, 'tempo', tuneNumber);
   // There aren't an infinite number of note values, but we are passed a float, so just in case something is off upstream,
   // merge all of the in between points.
   var dot;
@@ -20522,7 +20680,7 @@ TempoElement.prototype.createNote = function (createNoteHead, tempo, tuneNumber)
     var p2 = 5 * temposcale;
     var dx = tempoNote.dx + tempoNote.w;
     var width = -0.6;
-    stem = new RelativeElement(null, dx, 0, p1, {
+    stem = new _relative_element__WEBPACK_IMPORTED_MODULE_1__["default"](null, dx, 0, p1, {
       "type": "stem",
       "pitch2": p2,
       linewidth: width
@@ -20531,7 +20689,7 @@ TempoElement.prototype.createNote = function (createNoteHead, tempo, tuneNumber)
   }
   return absElem;
 };
-module.exports = TempoElement;
+/* harmony default export */ __webpack_exports__["default"] = (TempoElement);
 
 /***/ }),
 
@@ -20539,8 +20697,9 @@ module.exports = TempoElement;
 /*!****************************************************!*\
   !*** ./src/write/creation/elements/tie-element.js ***!
   \****************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_tie_element.js: Definition of the TieElement class.
 
 var TieElem = function TieElem(options) {
@@ -20697,7 +20856,7 @@ TieElem.prototype.avoidCollisionAbove = function () {
     if (maxInnerHeight > this.startY && maxInnerHeight > this.endY) this.startY = this.endY = maxInnerHeight - 1;
   }
 };
-module.exports = TieElem;
+/* harmony default export */ __webpack_exports__["default"] = (TieElem);
 
 /***/ }),
 
@@ -20705,17 +20864,20 @@ module.exports = TieElem;
 /*!*************************************************!*\
   !*** ./src/write/creation/elements/top-text.js ***!
   \*************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var addTextIf = __webpack_require__(/*! ../add-text-if */ "./src/write/creation/add-text-if.js");
-var richText = __webpack_require__(/*! ./rich-text */ "./src/write/creation/elements/rich-text.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _add_text_if__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../add-text-if */ "./src/write/creation/add-text-if.js");
+/* harmony import */ var _rich_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rich-text */ "./src/write/creation/elements/rich-text.js");
+
+
 function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, paddingLeft, spacing, shouldAddClasses, getTextSize) {
   this.rows = [];
   if (metaText.header && isPrint) {
     // Note: whether there is a header or not doesn't change any other positioning, so this doesn't change the Y-coordinate.
     // This text goes above the margin, so we'll temporarily move up.
     var headerTextHeight = getTextSize.calc("X", "headerfont", 'abcjs-header abcjs-meta-top').height;
-    addTextIf(this.rows, {
+    (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
       marginLeft: paddingLeft,
       text: metaText.header.left,
       font: 'headerfont',
@@ -20724,7 +20886,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
       info: metaTextInfo.header,
       name: "header"
     }, getTextSize);
-    addTextIf(this.rows, {
+    (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
       marginLeft: paddingLeft + width / 2,
       text: metaText.header.center,
       font: 'headerfont',
@@ -20734,7 +20896,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
       info: metaTextInfo.header,
       name: "header"
     }, getTextSize);
-    addTextIf(this.rows, {
+    (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
       marginLeft: paddingLeft + width,
       text: metaText.header.right,
       font: 'headerfont',
@@ -20755,7 +20917,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
   var tLeft = formatting.titleleft ? paddingLeft : paddingLeft + width / 2;
   if (metaText.title) {
     var klass = shouldAddClasses ? 'abcjs-title' : '';
-    richText(this.rows, metaText.title, "titlefont", klass, 'title', tLeft, {
+    (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(this.rows, metaText.title, "titlefont", klass, 'title', tLeft, {
       marginTop: spacing.title,
       anchor: tAnchor,
       absElemType: "title",
@@ -20766,7 +20928,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
     var index = 0;
     while (index < lines.length && lines[index].subtitle) {
       var klass = shouldAddClasses ? 'abcjs-text abcjs-subtitle' : '';
-      richText(this.rows, lines[index].subtitle.text, "subtitlefont", klass, 'subtitle', tLeft, {
+      (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(this.rows, lines[index].subtitle.text, "subtitlefont", klass, 'subtitle', tLeft, {
         marginTop: spacing.subtitle,
         anchor: tAnchor,
         absElemType: "subtitle",
@@ -20782,7 +20944,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
     if (metaText.rhythm && metaText.rhythm.length > 0) {
       var noMove = !!(metaText.composer || metaText.origin);
       var klass = shouldAddClasses ? 'abcjs-rhythm' : '';
-      addTextIf(this.rows, {
+      (0,_add_text_if__WEBPACK_IMPORTED_MODULE_0__["default"])(this.rows, {
         marginLeft: paddingLeft,
         text: metaText.rhythm,
         font: 'infofont',
@@ -20821,7 +20983,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
     }
     if (composerLine) {
       var klass = shouldAddClasses ? 'abcjs-composer' : '';
-      richText(this.rows, composerLine, 'composerfont', klass, "composer", paddingLeft + width, {
+      (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(this.rows, composerLine, 'composerfont', klass, "composer", paddingLeft + width, {
         anchor: "end",
         absElemType: "composer",
         info: metaTextInfo.composer,
@@ -20831,7 +20993,7 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
   }
   if (metaText.author && metaText.author.length > 0) {
     var klass = shouldAddClasses ? 'abcjs-author' : '';
-    richText(this.rows, metaText.author, 'composerfont', klass, "author", paddingLeft + width, {
+    (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(this.rows, metaText.author, 'composerfont', klass, "author", paddingLeft + width, {
       anchor: "end",
       absElemType: "author",
       info: metaTextInfo.author
@@ -20839,14 +21001,14 @@ function TopText(metaText, metaTextInfo, formatting, lines, width, isPrint, padd
   }
   if (metaText.partOrder && metaText.partOrder.length > 0) {
     var klass = shouldAddClasses ? 'abcjs-part-order' : '';
-    richText(this.rows, metaText.partOrder, 'partsfont', klass, "part-order", paddingLeft, {
+    (0,_rich_text__WEBPACK_IMPORTED_MODULE_1__["default"])(this.rows, metaText.partOrder, 'partsfont', klass, "part-order", paddingLeft, {
       absElemType: "partOrder",
       info: metaTextInfo.partOrder,
       anchor: 'start'
     }, getTextSize);
   }
 }
-module.exports = TopText;
+/* harmony default export */ __webpack_exports__["default"] = (TopText);
 
 /***/ }),
 
@@ -20854,8 +21016,9 @@ module.exports = TopText;
 /*!********************************************************!*\
   !*** ./src/write/creation/elements/triplet-element.js ***!
   \********************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_triplet_element.js: Definition of the TripletElem class.
 
 var TripletElem = function TripletElem(number, anchor1, options) {
@@ -20878,7 +21041,7 @@ TripletElem.prototype.setCloseAnchor = function (anchor2) {
   //if (this.anchor1.parent.beam)
   if (!this.anchor1.parent.beam || this.anchor1.stemDir === 'up') this.endingHeightAbove = 4;
 };
-module.exports = TripletElem;
+/* harmony default export */ __webpack_exports__["default"] = (TripletElem);
 
 /***/ }),
 
@@ -20886,8 +21049,9 @@ module.exports = TripletElem;
 /*!******************************************************!*\
   !*** ./src/write/creation/elements/voice-element.js ***!
   \******************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_voice_element.js: Definition of the VoiceElement class.
 
 var VoiceElement = function VoiceElement(voicenumber, voicetotal) {
@@ -20966,7 +21130,7 @@ VoiceElement.prototype.addBeam = function (child) {
 VoiceElement.prototype.setWidth = function (width) {
   this.w = width;
 };
-module.exports = VoiceElement;
+/* harmony default export */ __webpack_exports__["default"] = (VoiceElement);
 
 /***/ }),
 
@@ -20974,9 +21138,11 @@ module.exports = VoiceElement;
 /*!**************************************!*\
   !*** ./src/write/creation/glyphs.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+
 /**
  * Glyphs and some methods to adjust for their x and y baseline
  */
@@ -21132,7 +21298,7 @@ var Glyphs = {
   },
   symbolHeightInPitches: function symbolHeightInPitches(symbol) {
     var height = glyphs[symbol] ? glyphs[symbol].h : 0;
-    return height / spacing.STEP;
+    return height / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
   },
   getSymbolAlign: function getSymbolAlign(symbol) {
     if (symbol.substring(0, 7) === "scripts" && symbol !== "scripts.roll") {
@@ -21205,7 +21371,7 @@ var Glyphs = {
     glyphs[name] = path;
   }
 };
-module.exports = Glyphs; // we need the glyphs for layout information
+/* harmony default export */ __webpack_exports__["default"] = (Glyphs); // we need the glyphs for layout information
 
 /***/ }),
 
@@ -21213,8 +21379,9 @@ module.exports = Glyphs; // we need the glyphs for layout information
 /*!***********************************************!*\
   !*** ./src/write/creation/translate-chord.js ***!
   \***********************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function germanNote(note) {
   switch (note) {
     case "B#":
@@ -21254,7 +21421,7 @@ function translateChord(chordString, jazzchords, germanAlphabet) {
   }
   return lines.join("\n");
 }
-module.exports = translateChord;
+/* harmony default export */ __webpack_exports__["default"] = (translateChord);
 
 /***/ }),
 
@@ -21262,26 +21429,32 @@ module.exports = translateChord;
 /*!************************************!*\
   !*** ./src/write/draw/absolute.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var drawTempo = __webpack_require__(/*! ./tempo */ "./src/write/draw/tempo.js");
-var drawRelativeElement = __webpack_require__(/*! ./relative */ "./src/write/draw/relative.js");
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var setClass = __webpack_require__(/*! ../helpers/set-class */ "./src/write/helpers/set-class.js");
-var elementGroup = __webpack_require__(/*! ./group-elements */ "./src/write/draw/group-elements.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tempo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tempo */ "./src/write/draw/tempo.js");
+/* harmony import */ var _relative__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./relative */ "./src/write/draw/relative.js");
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _helpers_set_class__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/set-class */ "./src/write/helpers/set-class.js");
+/* harmony import */ var _group_elements__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./group-elements */ "./src/write/draw/group-elements.js");
+
+
+
+
+
 function drawAbsolute(renderer, params, bartop, selectables, staffPos) {
   if (params.invisible) return;
   var isTempo = params.children.length > 0 && params.children[0].type === "TempoElement";
   params.elemset = [];
-  elementGroup.beginGroup(renderer.paper, renderer.controller);
+  _group_elements__WEBPACK_IMPORTED_MODULE_4__["default"].beginGroup(renderer.paper, renderer.controller);
   for (var i = 0; i < params.children.length; i++) {
     var child = params.children[i];
     switch (child.type) {
       case "TempoElement":
-        drawTempo(renderer, child);
+        (0,_tempo__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, child);
         break;
       default:
-        var el = drawRelativeElement(renderer, child, bartop);
+        var el = (0,_relative__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, child, bartop);
         if (child.type === "symbol" && child.c && child.c.indexOf('notehead') >= 0) {
           el.setAttribute('class', 'abcjs-notehead');
         }
@@ -21298,7 +21471,7 @@ function drawAbsolute(renderer, params, bartop, selectables, staffPos) {
       }
     }
   }
-  var g = elementGroup.endGroup(klass, params.type);
+  var g = _group_elements__WEBPACK_IMPORTED_MODULE_4__["default"].endGroup(klass, params.type);
   if (g) {
     // TODO-PER-HACK! This corrects the classes because the tablature is not being created at the right time.
     if (params.cloned) {
@@ -21323,20 +21496,20 @@ function drawAbsolute(renderer, params, bartop, selectables, staffPos) {
   } else if (params.elemset.length > 0) selectables.add(params, params.elemset[0], params.type === 'note', staffPos);
   // If there was no output, then don't add to the selectables. This happens when using the "y" spacer, for instance.
 
-  if (params.klass) setClass(params.elemset, "mark", "", "#00ff00");
-  if (params.hint) setClass(params.elemset, "abcjs-hint", "", null);
+  if (params.klass) (0,_helpers_set_class__WEBPACK_IMPORTED_MODULE_3__["default"])(params.elemset, "mark", "", "#00ff00");
+  if (params.hint) (0,_helpers_set_class__WEBPACK_IMPORTED_MODULE_3__["default"])(params.elemset, "abcjs-hint", "", null);
   params.abcelem.abselem = params;
   if (params.heads && params.heads.length > 0) {
     params.notePositions = [];
     for (var jj = 0; jj < params.heads.length; jj++) {
       params.notePositions.push({
         x: params.heads[jj].x + params.heads[jj].w / 2,
-        y: staffPos.zero - params.heads[jj].pitch * spacing.STEP
+        y: staffPos.zero - params.heads[jj].pitch * _helpers_spacing__WEBPACK_IMPORTED_MODULE_2__["default"].STEP
       });
     }
   }
 }
-module.exports = drawAbsolute;
+/* harmony default export */ __webpack_exports__["default"] = (drawAbsolute);
 
 /***/ }),
 
@@ -21344,10 +21517,13 @@ module.exports = drawAbsolute;
 /*!********************************!*\
   !*** ./src/write/draw/beam.js ***!
   \********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var printPath = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _print_path__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
 function drawBeam(renderer, params) {
   if (params.beams.length === 0) return;
   var pathString = "";
@@ -21368,7 +21544,7 @@ function drawBeam(renderer, params) {
   }
   var durationClass = ("abcjs-d" + params.duration).replace(/\./g, "-");
   var klasses = renderer.controller.classes.generate('beam-elem ' + durationClass);
-  var el = printPath(renderer, {
+  var el = (0,_print_path__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
     path: pathString,
     stroke: "none",
     fill: renderer.foregroundColor,
@@ -21378,12 +21554,12 @@ function drawBeam(renderer, params) {
 }
 function draw(renderer, startX, startY, endX, endY, dy) {
   // the X coordinates are actual coordinates, but the Y coordinates are in pitches.
-  startY = roundNumber(renderer.calcY(startY));
-  endY = roundNumber(renderer.calcY(endY));
-  startX = roundNumber(startX);
-  endX = roundNumber(endX);
-  var startY2 = roundNumber(startY + dy);
-  var endY2 = roundNumber(endY + dy);
+  startY = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer.calcY(startY));
+  endY = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer.calcY(endY));
+  startX = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(startX);
+  endX = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(endX);
+  var startY2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(startY + dy);
+  var endY2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(endY + dy);
   return "M" + startX + " " + startY + " L" + endX + " " + endY + "L" + endX + " " + endY2 + " L" + startX + " " + startY2 + "z";
 }
 function getSlope(renderer, startX, startY, endX, endY) {
@@ -21393,7 +21569,7 @@ function getY(startX, startY, slope, currentX) {
   var x = currentX - startX;
   return startY + x * slope;
 }
-module.exports = drawBeam;
+/* harmony default export */ __webpack_exports__["default"] = (drawBeam);
 
 /***/ }),
 
@@ -21401,25 +21577,29 @@ module.exports = drawBeam;
 /*!*********************************!*\
   !*** ./src/write/draw/brace.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+
+
+
 function drawBrace(renderer, params, selectables) {
   // The absoluteY number is the spot where the note on the first ledger line is drawn (i.e. middle C if treble clef)
   // The STEP offset here moves it to the top and bottom lines
-  var startY = params.startVoice.staff.absoluteY - spacing.STEP * 10;
-  if (params.endVoice && params.endVoice.staff) params.endY = params.endVoice.staff.absoluteY - spacing.STEP * 2;else if (params.lastContinuedVoice && params.lastContinuedVoice.staff) params.endY = params.lastContinuedVoice.staff.absoluteY - spacing.STEP * 2;else params.endY = params.startVoice.staff.absoluteY - spacing.STEP * 2;
+  var startY = params.startVoice.staff.absoluteY - _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 10;
+  if (params.endVoice && params.endVoice.staff) params.endY = params.endVoice.staff.absoluteY - _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 2;else if (params.lastContinuedVoice && params.lastContinuedVoice.staff) params.endY = params.lastContinuedVoice.staff.absoluteY - _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 2;else params.endY = params.startVoice.staff.absoluteY - _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 2;
   return draw(renderer, params.x, startY, params.endY, params.type, params.header, selectables);
 }
 function straightPath(renderer, xLeft, yTop, yBottom, type) {
-  xLeft += spacing.STEP;
-  var xLineWidth = spacing.STEP * 0.75;
-  var yOverlap = spacing.STEP * 0.75;
+  xLeft += _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP;
+  var xLineWidth = _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 0.75;
+  var yOverlap = _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 0.75;
   var height = yBottom - yTop;
   // Straight line
-  var pathString = sprintf("M %f %f l %f %f l %f %f l %f %f z", xLeft, yTop - yOverlap,
+  var pathString = (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f l %f %f l %f %f l %f %f z", xLeft, yTop - yOverlap,
   // top left line
   0, height + yOverlap * 2,
   // bottom left line
@@ -21428,20 +21608,20 @@ function straightPath(renderer, xLeft, yTop, yBottom, type) {
   0, -(height + yOverlap * 2) // top right line
   );
   // Top arm
-  var wCurve = spacing.STEP * 2;
-  var hCurve = spacing.STEP;
-  pathString += sprintf("M %f %f q %f %f %f %f q %f %f %f %f z", xLeft + xLineWidth, yTop - yOverlap,
+  var wCurve = _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP * 2;
+  var hCurve = _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP;
+  pathString += (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f q %f %f %f %f q %f %f %f %f z", xLeft + xLineWidth, yTop - yOverlap,
   // top left arm
   wCurve * 0.6, hCurve * 0.2, wCurve, -hCurve,
   // right point
-  -wCurve * 0.1, hCurve * 0.3, -wCurve, hCurve + spacing.STEP // left bottom
+  -wCurve * 0.1, hCurve * 0.3, -wCurve, hCurve + _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP // left bottom
   );
   // Bottom arm
-  pathString += sprintf("M %f %f q %f %f %f %f q %f %f %f %f z", xLeft + xLineWidth, yTop + yOverlap + height,
+  pathString += (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f q %f %f %f %f q %f %f %f %f z", xLeft + xLineWidth, yTop + yOverlap + height,
   // bottom left arm
   wCurve * 0.6, -hCurve * 0.2, wCurve, hCurve,
   // right point
-  -wCurve * 0.1, -hCurve * 0.3, -wCurve, -hCurve - spacing.STEP // left bottom
+  -wCurve * 0.1, -hCurve * 0.3, -wCurve, -hCurve - _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP // left bottom
   );
 
   return renderer.paper.path({
@@ -21465,7 +21645,7 @@ function curvyPath(renderer, xLeft, yTop, yBottom, type) {
   });
 }
 function curve(xLeft, yTop, xCurve, yCurve) {
-  return sprintf("M %f %f C %f %f %f %f %f %f C %f %f %f %f %f %f z", xLeft + xCurve[0], yTop + yCurve[0], xLeft + xCurve[1], yTop + yCurve[1], xLeft + xCurve[2], yTop + yCurve[2], xLeft + xCurve[3], yTop + yCurve[3], xLeft + xCurve[4], yTop + yCurve[4], xLeft + xCurve[5], yTop + yCurve[5], xLeft + xCurve[6], yTop + yCurve[6]);
+  return (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f C %f %f %f %f %f %f C %f %f %f %f %f %f z", xLeft + xCurve[0], yTop + yCurve[0], xLeft + xCurve[1], yTop + yCurve[1], xLeft + xCurve[2], yTop + yCurve[2], xLeft + xCurve[3], yTop + yCurve[3], xLeft + xCurve[4], yTop + yCurve[4], xLeft + xCurve[5], yTop + yCurve[5], xLeft + xCurve[6], yTop + yCurve[6]);
 }
 var draw = function draw(renderer, xLeft, yTop, yBottom, type, header, selectables) {
   //Tony
@@ -21477,7 +21657,7 @@ var draw = function draw(renderer, xLeft, yTop, yBottom, type, header, selectabl
     });
     var position = yTop + (yBottom - yTop) / 2;
     position = position - renderer.controller.getTextSize.baselineToCenter(header, "voicefont", 'staff-extra voice-name', 0, 1);
-    renderText(renderer, {
+    (0,_text__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, {
       x: renderer.padding.left,
       y: position,
       text: header,
@@ -21498,7 +21678,7 @@ var draw = function draw(renderer, xLeft, yTop, yBottom, type, header, selectabl
   }, ret);
   return ret;
 };
-module.exports = drawBrace;
+/* harmony default export */ __webpack_exports__["default"] = (drawBrace);
 
 /***/ }),
 
@@ -21506,11 +21686,15 @@ module.exports = drawBrace;
 /*!*************************************!*\
   !*** ./src/write/draw/crescendo.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var printPath = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _print_path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
+
 function drawCrescendo(renderer, params, selectables) {
   if (params.pitch === undefined) window.console.error("Crescendo Element y-coordinate not set.");
   var y = renderer.calcY(params.pitch) + 4; // This is the top pixel to use (it is offset a little so that it looks good with the volume marks.)
@@ -21533,14 +21717,14 @@ function drawCrescendo(renderer, params, selectables) {
   return [el];
 }
 var drawLine = function drawLine(renderer, y1, y2, y3, y4, left, right) {
-  y1 = roundNumber(y1);
-  y2 = roundNumber(y2);
-  y3 = roundNumber(y3);
-  y4 = roundNumber(y4);
-  left = roundNumber(left);
-  right = roundNumber(right);
-  var pathString = sprintf("M %f %f L %f %f M %f %f L %f %f", left, y1, right, y2, left, y3, right, y4);
-  return printPath(renderer, {
+  y1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(y1);
+  y2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(y2);
+  y3 = (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(y3);
+  y4 = (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(y4);
+  left = (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(left);
+  right = (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(right);
+  var pathString = (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f L %f %f M %f %f L %f %f", left, y1, right, y2, left, y3, right, y4);
+  return (0,_print_path__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
     path: pathString,
     highlight: "stroke",
     stroke: renderer.foregroundColor,
@@ -21548,7 +21732,7 @@ var drawLine = function drawLine(renderer, y1, y2, y3, y4, left, right) {
     "data-name": "dynamics"
   });
 };
-module.exports = drawCrescendo;
+/* harmony default export */ __webpack_exports__["default"] = (drawCrescendo);
 
 /***/ }),
 
@@ -21556,8 +21740,9 @@ module.exports = drawCrescendo;
 /*!*************************************!*\
   !*** ./src/write/draw/debug-box.js ***!
   \*************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function printDebugBox(renderer, attr, comment) {
   var box = renderer.paper.rectBeneath(attr);
   if (comment) renderer.paper.text(comment, {
@@ -21570,7 +21755,7 @@ function printDebugBox(renderer, attr, comment) {
   });
   return box;
 }
-module.exports = printDebugBox;
+/* harmony default export */ __webpack_exports__["default"] = (printDebugBox);
 
 /***/ }),
 
@@ -21578,20 +21763,26 @@ module.exports = printDebugBox;
 /*!********************************!*\
   !*** ./src/write/draw/draw.js ***!
   \********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var drawStaffGroup = __webpack_require__(/*! ./staff-group */ "./src/write/draw/staff-group.js");
-var setPaperSize = __webpack_require__(/*! ./set-paper-size */ "./src/write/draw/set-paper-size.js");
-var nonMusic = __webpack_require__(/*! ./non-music */ "./src/write/draw/non-music.js");
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var Selectables = __webpack_require__(/*! ./selectables */ "./src/write/draw/selectables.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _staff_group__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./staff-group */ "./src/write/draw/staff-group.js");
+/* harmony import */ var _set_paper_size__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./set-paper-size */ "./src/write/draw/set-paper-size.js");
+/* harmony import */ var _non_music__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./non-music */ "./src/write/draw/non-music.js");
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _selectables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./selectables */ "./src/write/draw/selectables.js");
+
+
+
+
+
 function draw(renderer, classes, abcTune, width, maxWidth, responsive, scale, selectTypes, tuneNumber, lineOffset) {
-  var selectables = new Selectables(renderer.paper, selectTypes, tuneNumber);
+  var selectables = new _selectables__WEBPACK_IMPORTED_MODULE_4__["default"](renderer.paper, selectTypes, tuneNumber);
   var groupClasses = {};
   if (classes.shouldAddClasses) groupClasses.klass = "abcjs-meta-top";
   renderer.paper.openGroup(groupClasses);
   renderer.moveY(renderer.padding.top);
-  nonMusic(renderer, abcTune.topText, selectables);
+  (0,_non_music__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, abcTune.topText, selectables);
   renderer.paper.closeGroup();
   renderer.moveY(renderer.spacing.music);
   var staffgroups = [];
@@ -21612,7 +21803,7 @@ function draw(renderer, classes, abcTune, width, maxWidth, responsive, scale, se
     } else if (abcLine.nonMusic) {
       if (classes.shouldAddClasses) groupClasses.klass = "abcjs-non-music";
       renderer.paper.openGroup(groupClasses);
-      nonMusic(renderer, abcLine.nonMusic, selectables);
+      (0,_non_music__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, abcLine.nonMusic, selectables);
       renderer.paper.closeGroup();
     }
   }
@@ -21621,18 +21812,18 @@ function draw(renderer, classes, abcTune, width, maxWidth, responsive, scale, se
     if (classes.shouldAddClasses) groupClasses.klass = "abcjs-meta-bottom";
     renderer.paper.openGroup(groupClasses);
     renderer.moveY(24); // TODO-PER: Empirically discovered. What variable should this be?
-    nonMusic(renderer, abcTune.bottomText, selectables);
+    (0,_non_music__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, abcTune.bottomText, selectables);
     renderer.paper.closeGroup();
   }
-  setPaperSize(renderer, maxWidth, scale, responsive);
+  (0,_set_paper_size__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, maxWidth, scale, responsive);
   return {
     staffgroups: staffgroups,
     selectables: selectables.getElements()
   };
 }
 function engraveStaffLine(renderer, staffGroup, selectables, lineNumber) {
-  drawStaffGroup(renderer, staffGroup, selectables, lineNumber);
-  var height = staffGroup.height * spacing.STEP;
+  (0,_staff_group__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, staffGroup, selectables, lineNumber);
+  var height = staffGroup.height * _helpers_spacing__WEBPACK_IMPORTED_MODULE_3__["default"].STEP;
   renderer.y += height;
   return staffGroup;
 }
@@ -21641,10 +21832,10 @@ function addStaffPadding(renderer, staffSeparation, lastStaffGroup, thisStaffGro
   var lastBottomLine = -(lastStaff.bottom - 2); // The 2 is because the scale goes to 2 below the last line.
   var nextTopLine = thisStaffGroup.staffs[0].top - 10; // Because 10 represents the top line.
   var naturalSeparation = nextTopLine + lastBottomLine; // This is how far apart they'd be without extra spacing
-  var separationInPixels = naturalSeparation * spacing.STEP;
+  var separationInPixels = naturalSeparation * _helpers_spacing__WEBPACK_IMPORTED_MODULE_3__["default"].STEP;
   if (separationInPixels < staffSeparation) renderer.moveY(staffSeparation - separationInPixels);
 }
-module.exports = draw;
+/* harmony default export */ __webpack_exports__["default"] = (draw);
 
 /***/ }),
 
@@ -21652,14 +21843,16 @@ module.exports = draw;
 /*!************************************!*\
   !*** ./src/write/draw/dynamics.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var printSymbol = __webpack_require__(/*! ./print-symbol */ "./src/write/draw/print-symbol.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _print_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./print-symbol */ "./src/write/draw/print-symbol.js");
+
 function drawDynamics(renderer, params, selectables) {
   if (params.pitch === undefined) window.console.error("Dynamic Element y-coordinate not set.");
   var scalex = 1;
   var scaley = 1;
-  var el = printSymbol(renderer, params.anchor.x, params.pitch, params.dec, {
+  var el = (0,_print_symbol__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, params.anchor.x, params.pitch, params.dec, {
     scalex: scalex,
     scaley: scaley,
     klass: renderer.controller.classes.generate('decoration dynamics'),
@@ -21675,7 +21868,7 @@ function drawDynamics(renderer, params, selectables) {
   }, el);
   return [el];
 }
-module.exports = drawDynamics;
+/* harmony default export */ __webpack_exports__["default"] = (drawDynamics);
 
 /***/ }),
 
@@ -21683,39 +21876,44 @@ module.exports = drawDynamics;
 /*!**********************************!*\
   !*** ./src/write/draw/ending.js ***!
   \**********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
-var printPath = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+/* harmony import */ var _print_path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
+
+
 function drawEnding(renderer, params, linestartx, lineendx, selectables) {
   if (params.pitch === undefined) window.console.error("Ending Element y-coordinate not set.");
-  var y = roundNumber(renderer.calcY(params.pitch));
+  var y = (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(renderer.calcY(params.pitch));
   var height = 20;
   var pathString = '';
   if (params.anchor1) {
-    linestartx = roundNumber(params.anchor1.x + params.anchor1.w);
-    pathString += sprintf("M %f %f L %f %f ", linestartx, y, linestartx, roundNumber(y + height));
+    linestartx = (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(params.anchor1.x + params.anchor1.w);
+    pathString += (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f L %f %f ", linestartx, y, linestartx, (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(y + height));
   }
   if (params.anchor2) {
-    lineendx = roundNumber(params.anchor2.x);
-    pathString += sprintf("M %f %f L %f %f ", lineendx, y, lineendx, roundNumber(y + height));
+    lineendx = (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(params.anchor2.x);
+    pathString += (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f L %f %f ", lineendx, y, lineendx, (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(y + height));
   }
-  pathString += sprintf("M %f %f L %f %f ", linestartx, y, lineendx, y);
+  pathString += (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f L %f %f ", linestartx, y, lineendx, y);
   renderer.paper.openGroup({
     klass: renderer.controller.classes.generate("ending"),
     "data-name": "ending"
   });
-  printPath(renderer, {
+  (0,_print_path__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, {
     path: pathString,
     stroke: renderer.foregroundColor,
     fill: renderer.foregroundColor,
     "data-name": "line"
   });
-  if (params.anchor1) renderText(renderer, {
-    x: roundNumber(linestartx + 5),
-    y: roundNumber(renderer.calcY(params.pitch - 0.5)),
+  if (params.anchor1) (0,_text__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
+    x: (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(linestartx + 5),
+    y: (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(renderer.calcY(params.pitch - 0.5)),
     text: params.text,
     type: 'repeatfont',
     klass: 'ending',
@@ -21731,7 +21929,7 @@ function drawEnding(renderer, params, linestartx, lineendx, selectables) {
   }, g);
   return [g];
 }
-module.exports = drawEnding;
+/* harmony default export */ __webpack_exports__["default"] = (drawEnding);
 
 /***/ }),
 
@@ -21739,11 +21937,15 @@ module.exports = drawEnding;
 /*!*************************************!*\
   !*** ./src/write/draw/glissando.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var printPath = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _print_path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
+
 function drawGlissando(renderer, params, selectables) {
   if (!params.anchor1 || !params.anchor2 || !params.anchor1.heads || !params.anchor2.heads || params.anchor1.heads.length === 0 || params.anchor2.heads.length === 0) window.console.error("Glissando Element not set.");
   var margin = 4;
@@ -21776,7 +21978,7 @@ function slope(leftX, leftY, rightX, rightY) {
   return (rightY - leftY) / (rightX - leftX);
 }
 function getY(y, slope, xOfs) {
-  return roundNumber(y + xOfs * slope);
+  return (0,_round_number__WEBPACK_IMPORTED_MODULE_2__["default"])(y + xOfs * slope);
 }
 function numSquigglies(length) {
   var endLen = 5; // The width of the end - that is, the non repeating part
@@ -21795,7 +21997,7 @@ function segment(arr, slope) {
   return ret;
 }
 var drawSquiggly = function drawSquiggly(renderer, x, y, num, slope) {
-  var p = sprintf("M %f %f", x, y);
+  var p = (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f", x, y);
   p += segment(leftStart, slope);
   var i;
   for (i = 0; i < num; i++) {
@@ -21806,7 +22008,7 @@ var drawSquiggly = function drawSquiggly(renderer, x, y, num, slope) {
     p += segment(bottom, slope);
   }
   p += segment(leftEnd, slope) + 'z';
-  return printPath(renderer, {
+  return (0,_print_path__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
     path: p,
     highlight: "stroke",
     stroke: renderer.foregroundColor,
@@ -21814,7 +22016,7 @@ var drawSquiggly = function drawSquiggly(renderer, x, y, num, slope) {
     "data-name": "glissando"
   });
 };
-module.exports = drawGlissando;
+/* harmony default export */ __webpack_exports__["default"] = (drawGlissando);
 
 /***/ }),
 
@@ -21822,13 +22024,15 @@ module.exports = drawGlissando;
 /*!******************************************!*\
   !*** ./src/write/draw/group-elements.js ***!
   \******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
 /**
  * Begin a group of glyphs that will always be moved, scaled and highlighted together
  */
 
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
 function Group() {
   this.ingroup = false;
 }
@@ -21847,8 +22051,8 @@ Group.prototype.addPath = function (path) {
   path = path || [];
   if (path.length === 0) return;
   path[0][0] = "m";
-  path[0][1] = roundNumber(path[0][1] - this.lastM[0]);
-  path[0][2] = roundNumber(path[0][2] - this.lastM[1]);
+  path[0][1] = (0,_round_number__WEBPACK_IMPORTED_MODULE_0__["default"])(path[0][1] - this.lastM[0]);
+  path[0][2] = (0,_round_number__WEBPACK_IMPORTED_MODULE_0__["default"])(path[0][2] - this.lastM[1]);
   this.lastM[0] += path[0][1];
   this.lastM[1] += path[0][2];
   this.path.push(path[0]);
@@ -21884,7 +22088,7 @@ Group.prototype.endGroup = function (klass, name) {
 
 // There is just a singleton of this object.
 var elementGroup = new Group();
-module.exports = elementGroup;
+/* harmony default export */ __webpack_exports__["default"] = (elementGroup);
 
 /***/ }),
 
@@ -21892,10 +22096,13 @@ module.exports = elementGroup;
 /*!*************************************!*\
   !*** ./src/write/draw/non-music.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var drawSeparator = __webpack_require__(/*! ./separator */ "./src/write/draw/separator.js");
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _separator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./separator */ "./src/write/draw/separator.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+
+
 function nonMusic(renderer, obj, selectables) {
   for (var i = 0; i < obj.rows.length; i++) {
     var row = obj.rows[i];
@@ -21905,7 +22112,7 @@ function nonMusic(renderer, obj, selectables) {
       renderer.moveY(row.move);
     } else if (row.text || row.phrases) {
       var x = row.left ? row.left : 0;
-      var el = renderText(renderer, {
+      var el = (0,_text__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
         x: x,
         y: renderer.y,
         text: row.text,
@@ -21926,7 +22133,7 @@ function nonMusic(renderer, obj, selectables) {
         }, el);
       }
     } else if (row.separator) {
-      drawSeparator(renderer, row.separator);
+      (0,_separator__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, row.separator);
     } else if (row.startGroup) {
       renderer.paper.openGroup({
         klass: row.klass,
@@ -21945,7 +22152,7 @@ function nonMusic(renderer, obj, selectables) {
     }
   }
 }
-module.exports = nonMusic;
+/* harmony default export */ __webpack_exports__["default"] = (nonMusic);
 
 /***/ }),
 
@@ -21953,16 +22160,19 @@ module.exports = nonMusic;
 /*!**************************************!*\
   !*** ./src/write/draw/print-line.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
 function printLine(renderer, x1, x2, y, klass, name, dy) {
   var fill = renderer.foregroundColor;
-  x1 = roundNumber(x1);
-  x2 = roundNumber(x2);
-  var y1 = roundNumber(y - dy);
-  var y2 = roundNumber(y + dy);
+  x1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x1);
+  x2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x2);
+  var y1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y - dy);
+  var y2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y + dy);
   // TODO-PER: This fixes a firefox bug where it isn't displayed
   if (renderer.firefox112) {
     y += dy / 2; // Because the y coordinate is the edge of where the line goes but the width widens from the middle.
@@ -21978,7 +22188,7 @@ function printLine(renderer, x1, x2, y, klass, name, dy) {
     if (name) attr['data-name'] = name;
     return renderer.paper.lineToBack(attr);
   }
-  var pathString = sprintf("M %f %f L %f %f L %f %f L %f %f z", x1, y1, x2, y1, x2, y2, x1, y2);
+  var pathString = (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f L %f %f L %f %f L %f %f z", x1, y1, x2, y1, x2, y2, x1, y2);
   var options = {
     path: pathString,
     stroke: "none",
@@ -21989,7 +22199,7 @@ function printLine(renderer, x1, x2, y, klass, name, dy) {
   var ret = renderer.paper.pathToBack(options);
   return ret;
 }
-module.exports = printLine;
+/* harmony default export */ __webpack_exports__["default"] = (printLine);
 
 /***/ }),
 
@@ -21997,13 +22207,14 @@ module.exports = printLine;
 /*!**************************************!*\
   !*** ./src/write/draw/print-path.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function printPath(renderer, attrs, params) {
   var ret = renderer.paper.path(attrs);
   return ret;
 }
-module.exports = printPath;
+/* harmony default export */ __webpack_exports__["default"] = (printPath);
 
 /***/ }),
 
@@ -22011,22 +22222,25 @@ module.exports = printPath;
 /*!**************************************!*\
   !*** ./src/write/draw/print-stem.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var elementGroup = __webpack_require__(/*! ./group-elements */ "./src/write/draw/group-elements.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _group_elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./group-elements */ "./src/write/draw/group-elements.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
 function printStem(renderer, x, dx, y1, y2, klass, name) {
   if (dx < 0 || y1 < y2) {
     // correct path "handedness" for intersection with other elements
-    var tmp = roundNumber(y2);
-    y2 = roundNumber(y1);
+    var tmp = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y2);
+    y2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y1);
     y1 = tmp;
   } else {
-    y1 = roundNumber(y1);
-    y2 = roundNumber(y2);
+    y1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y1);
+    y2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y2);
   }
-  x = roundNumber(x);
-  var x2 = roundNumber(x + dx);
+  x = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x);
+  var x2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x + dx);
   // TODO-PER: This fixes a firefox bug where it isn't displayed
   if (renderer.firefox112) {
     x += dx / 2; // Because the x coordinate is the edge of where the line goes but the width widens from the middle.
@@ -22051,13 +22265,13 @@ function printStem(renderer, x, dx, y1, y2, klass, name) {
   }
   if (klass) attr['class'] = klass;
   if (name) attr['data-name'] = name;
-  if (!elementGroup.isInGroup()) {
+  if (!_group_elements__WEBPACK_IMPORTED_MODULE_0__["default"].isInGroup()) {
     attr.stroke = "none";
     attr.fill = renderer.foregroundColor;
   }
   return renderer.paper.pathToBack(attr);
 }
-module.exports = printStem;
+/* harmony default export */ __webpack_exports__["default"] = (printStem);
 
 /***/ }),
 
@@ -22065,11 +22279,15 @@ module.exports = printStem;
 /*!****************************************!*\
   !*** ./src/write/draw/print-symbol.js ***!
   \****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
-var glyphs = __webpack_require__(/*! ../creation/glyphs */ "./src/write/creation/glyphs.js");
-var elementGroup = __webpack_require__(/*! ./group-elements */ "./src/write/draw/group-elements.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+/* harmony import */ var _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../creation/glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _group_elements__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./group-elements */ "./src/write/draw/group-elements.js");
+
+
+
 
 /**
  * assumes this.y is set appropriately
@@ -22082,7 +22300,7 @@ function printSymbol(renderer, x, offset, symbol, options) {
   var ycorr;
   if (!symbol) return null;
   if (symbol.length > 1 && symbol.indexOf(".") < 0) {
-    var groupClass = elementGroup.isInGroup() ? '' : options.klass; // If this is already in a group then don't repeat the classes for the sub-group)
+    var groupClass = _group_elements__WEBPACK_IMPORTED_MODULE_2__["default"].isInGroup() ? '' : options.klass; // If this is already in a group then don't repeat the classes for the sub-group)
     renderer.paper.openGroup({
       "data-name": options.name,
       klass: groupClass
@@ -22090,15 +22308,15 @@ function printSymbol(renderer, x, offset, symbol, options) {
     var dx = 0;
     for (var i = 0; i < symbol.length; i++) {
       var s = symbol[i];
-      ycorr = glyphs.getYCorr(s);
-      el = glyphs.printSymbol(x + dx, renderer.calcY(offset + ycorr), s, renderer.paper, {
+      ycorr = _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getYCorr(s);
+      el = _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].printSymbol(x + dx, renderer.calcY(offset + ycorr), s, renderer.paper, {
         stroke: options.stroke,
         fill: options.fill
       });
       if (el) {
-        if (i < symbol.length - 1) dx += kernSymbols(s, symbol[i + 1], glyphs.getSymbolWidth(s));
+        if (i < symbol.length - 1) dx += kernSymbols(s, symbol[i + 1], _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getSymbolWidth(s));
       } else {
-        renderText(renderer, {
+        (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
           x: x,
           y: renderer.y,
           text: "no symbol:" + symbol,
@@ -22111,13 +22329,13 @@ function printSymbol(renderer, x, offset, symbol, options) {
     var g = renderer.paper.closeGroup();
     return g;
   } else {
-    ycorr = glyphs.getYCorr(symbol);
-    if (elementGroup.isInGroup()) {
-      el = glyphs.printSymbol(x, renderer.calcY(offset + ycorr), symbol, renderer.paper, {
+    ycorr = _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].getYCorr(symbol);
+    if (_group_elements__WEBPACK_IMPORTED_MODULE_2__["default"].isInGroup()) {
+      el = _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].printSymbol(x, renderer.calcY(offset + ycorr), symbol, renderer.paper, {
         "data-name": options.name
       });
     } else {
-      el = glyphs.printSymbol(x, renderer.calcY(offset + ycorr), symbol, renderer.paper, {
+      el = _creation_glyphs__WEBPACK_IMPORTED_MODULE_1__["default"].printSymbol(x, renderer.calcY(offset + ycorr), symbol, renderer.paper, {
         klass: options.klass,
         stroke: options.stroke,
         fill: options.fill,
@@ -22127,7 +22345,7 @@ function printSymbol(renderer, x, offset, symbol, options) {
     if (el) {
       return el;
     }
-    renderText(renderer, {
+    (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
       x: x,
       y: renderer.y,
       text: "no symbol:" + symbol,
@@ -22146,7 +22364,7 @@ function kernSymbols(lastSymbol, thisSymbol, lastSymbolWidth) {
   if (lastSymbol === 'f' && thisSymbol === 'z') width = width * 5 / 8;
   return width;
 }
-module.exports = printSymbol;
+/* harmony default export */ __webpack_exports__["default"] = (printSymbol);
 
 /***/ }),
 
@@ -22154,12 +22372,17 @@ module.exports = printSymbol;
 /*!************************************!*\
   !*** ./src/write/draw/relative.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
-var printStem = __webpack_require__(/*! ./print-stem */ "./src/write/draw/print-stem.js");
-var printStaffLine = __webpack_require__(/*! ./staff-line */ "./src/write/draw/staff-line.js");
-var printSymbol = __webpack_require__(/*! ./print-symbol */ "./src/write/draw/print-symbol.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+/* harmony import */ var _print_stem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./print-stem */ "./src/write/draw/print-stem.js");
+/* harmony import */ var _staff_line__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./staff-line */ "./src/write/draw/staff-line.js");
+/* harmony import */ var _print_symbol__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./print-symbol */ "./src/write/draw/print-symbol.js");
+
+
+
+
 function drawRelativeElement(renderer, params, bartop) {
   if (params.pitch === undefined) window.console.error(params.type + " Relative Element y-coordinate not set.");
   var y = renderer.calcY(params.pitch);
@@ -22168,7 +22391,7 @@ function drawRelativeElement(renderer, params, bartop) {
       if (params.c === null) return null;
       var klass = "symbol";
       if (params.klass) klass += " " + params.klass;
-      params.graphelem = printSymbol(renderer, params.x, params.pitch, params.c, {
+      params.graphelem = (0,_print_symbol__WEBPACK_IMPORTED_MODULE_3__["default"])(renderer, params.x, params.pitch, params.c, {
         scalex: params.scalex,
         scaley: params.scaley,
         klass: renderer.controller.classes.generate(klass),
@@ -22178,7 +22401,7 @@ function drawRelativeElement(renderer, params, bartop) {
       });
       break;
     case "debug":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: renderer.calcY(15),
         text: "" + params.c,
@@ -22198,7 +22421,7 @@ function drawRelativeElement(renderer, params, bartop) {
         y += 2.5;
         tabClass = 'tab-grace';
       }
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y,
         text: "" + params.c,
@@ -22211,7 +22434,7 @@ function drawRelativeElement(renderer, params, bartop) {
       }, false);
       break;
     case "barNumber":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y,
         text: "" + params.c,
@@ -22223,7 +22446,7 @@ function drawRelativeElement(renderer, params, bartop) {
       }, true);
       break;
     case "lyric":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y,
         text: params.c,
@@ -22235,7 +22458,7 @@ function drawRelativeElement(renderer, params, bartop) {
       }, false);
       break;
     case "chord":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y,
         text: params.c,
@@ -22249,7 +22472,7 @@ function drawRelativeElement(renderer, params, bartop) {
       break;
     case "decoration":
       // The +6 is to compensate for the placement of text in svg: to be on the same row as symbols, the y-coord needs to compensate for the center line.
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y + 6,
         text: params.c,
@@ -22261,7 +22484,7 @@ function drawRelativeElement(renderer, params, bartop) {
       }, false);
       break;
     case "text":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y,
         text: params.c,
@@ -22275,7 +22498,7 @@ function drawRelativeElement(renderer, params, bartop) {
       }, false);
       break;
     case "multimeasure-text":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x + params.w / 2,
         y: y,
         text: params.c,
@@ -22287,7 +22510,7 @@ function drawRelativeElement(renderer, params, bartop) {
       }, false);
       break;
     case "part":
-      params.graphelem = renderText(renderer, {
+      params.graphelem = (0,_text__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, {
         x: params.x,
         y: y,
         text: params.c,
@@ -22299,15 +22522,15 @@ function drawRelativeElement(renderer, params, bartop) {
       }, true);
       break;
     case "bar":
-      params.graphelem = printStem(renderer, params.x, params.linewidth + renderer.lineThickness, y, bartop ? bartop : renderer.calcY(params.pitch2), null, "bar");
+      params.graphelem = (0,_print_stem__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, params.x, params.linewidth + renderer.lineThickness, y, bartop ? bartop : renderer.calcY(params.pitch2), null, "bar");
       break;
     // bartop can't be 0
     case "stem":
       var stemWidth = params.linewidth > 0 ? params.linewidth + renderer.lineThickness : params.linewidth - renderer.lineThickness;
-      params.graphelem = printStem(renderer, params.x, stemWidth, y, renderer.calcY(params.pitch2), 'abcjs-stem', 'stem');
+      params.graphelem = (0,_print_stem__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, params.x, stemWidth, y, renderer.calcY(params.pitch2), 'abcjs-stem', 'stem');
       break;
     case "ledger":
-      params.graphelem = printStaffLine(renderer, params.x, params.x + params.w, params.pitch, "abcjs-ledger", "ledger", 0.35 + renderer.lineThickness);
+      params.graphelem = (0,_staff_line__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, params.x, params.x + params.w, params.pitch, "abcjs-ledger", "ledger", 0.35 + renderer.lineThickness);
       break;
   }
   if (params.scalex !== 1 && params.graphelem) {
@@ -22320,7 +22543,7 @@ function scaleExistingElem(paper, elem, scaleX, scaleY, x, y) {
     style: "transform:scale(" + scaleX + "," + scaleY + ");transform-origin:" + x + "px " + y + "px;"
   });
 }
-module.exports = drawRelativeElement;
+/* harmony default export */ __webpack_exports__["default"] = (drawRelativeElement);
 
 /***/ }),
 
@@ -22328,12 +22551,13 @@ module.exports = drawRelativeElement;
 /*!****************************************!*\
   !*** ./src/write/draw/round-number.js ***!
   \****************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function roundNumber(x) {
   return parseFloat(x.toFixed(2));
 }
-module.exports = roundNumber;
+/* harmony default export */ __webpack_exports__["default"] = (roundNumber);
 
 /***/ }),
 
@@ -22341,10 +22565,13 @@ module.exports = roundNumber;
 /*!***************************************!*\
   !*** ./src/write/draw/selectables.js ***!
   \***************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var highlight = __webpack_require__(/*! ../interactive/highlight */ "./src/write/interactive/highlight.js");
-var unhighlight = __webpack_require__(/*! ../interactive/unhighlight */ "./src/write/interactive/unhighlight.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _interactive_highlight__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../interactive/highlight */ "./src/write/interactive/highlight.js");
+/* harmony import */ var _interactive_unhighlight__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interactive/unhighlight */ "./src/write/interactive/unhighlight.js");
+
+
 function Selectables(paper, selectTypes, tuneNumber) {
   this.elements = [];
   this.paper = paper;
@@ -22393,12 +22620,12 @@ Selectables.prototype.wrapSvgEl = function (abcelem, el) {
     tuneNumber: this.tuneNumber,
     abcelem: abcelem,
     elemset: [el],
-    highlight: highlight,
-    unhighlight: unhighlight
+    highlight: _interactive_highlight__WEBPACK_IMPORTED_MODULE_0__["default"],
+    unhighlight: _interactive_unhighlight__WEBPACK_IMPORTED_MODULE_1__["default"]
   };
   this.add(absEl, el, false);
 };
-module.exports = Selectables;
+/* harmony default export */ __webpack_exports__["default"] = (Selectables);
 
 /***/ }),
 
@@ -22406,8 +22633,9 @@ module.exports = Selectables;
 /*!*************************************!*\
   !*** ./src/write/draw/separator.js ***!
   \*************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function drawSeparator(renderer, width) {
   var fill = "rgba(0,0,0,255)";
   var stroke = "rgba(0,0,0,0)";
@@ -22423,7 +22651,7 @@ function drawSeparator(renderer, width) {
     'class': renderer.controller.classes.generate('defined-text')
   });
 }
-module.exports = drawSeparator;
+/* harmony default export */ __webpack_exports__["default"] = (drawSeparator);
 
 /***/ }),
 
@@ -22431,8 +22659,9 @@ module.exports = drawSeparator;
 /*!******************************************!*\
   !*** ./src/write/draw/set-paper-size.js ***!
   \******************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function setPaperSize(renderer, maxwidth, scale, responsive) {
   var w = (maxwidth + renderer.padding.left + renderer.padding.right) * scale;
   var h = (renderer.y + renderer.padding.bottom) * scale;
@@ -22467,7 +22696,7 @@ function setPaperSize(renderer, maxwidth, scale, responsive) {
   renderer.paper.setScale(scale);
   renderer.paper.setParentStyles(parentStyles);
 }
-module.exports = setPaperSize;
+/* harmony default export */ __webpack_exports__["default"] = (setPaperSize);
 
 /***/ }),
 
@@ -22475,8 +22704,9 @@ module.exports = setPaperSize;
 /*!***********************************!*\
   !*** ./src/write/draw/sprintf.js ***!
   \***********************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /**
  * sprintf() for JavaScript v.0.4
@@ -22564,7 +22794,7 @@ var sprintf = function sprintf() {
   }
   return o.join('');
 };
-module.exports = sprintf;
+/* harmony default export */ __webpack_exports__["default"] = (sprintf);
 
 /***/ }),
 
@@ -22572,15 +22802,23 @@ module.exports = sprintf;
 /*!***************************************!*\
   !*** ./src/write/draw/staff-group.js ***!
   \***************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var drawBrace = __webpack_require__(/*! ./brace */ "./src/write/draw/brace.js");
-var drawVoice = __webpack_require__(/*! ./voice */ "./src/write/draw/voice.js");
-var printStaff = __webpack_require__(/*! ./staff */ "./src/write/draw/staff.js");
-var printDebugBox = __webpack_require__(/*! ./debug-box */ "./src/write/draw/debug-box.js");
-var printStem = __webpack_require__(/*! ./print-stem */ "./src/write/draw/print-stem.js");
-var nonMusic = __webpack_require__(/*! ./non-music */ "./src/write/draw/non-music.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _brace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./brace */ "./src/write/draw/brace.js");
+/* harmony import */ var _voice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./voice */ "./src/write/draw/voice.js");
+/* harmony import */ var _staff__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./staff */ "./src/write/draw/staff.js");
+/* harmony import */ var _debug_box__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./debug-box */ "./src/write/draw/debug-box.js");
+/* harmony import */ var _print_stem__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./print-stem */ "./src/write/draw/print-stem.js");
+/* harmony import */ var _non_music__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./non-music */ "./src/write/draw/non-music.js");
+
+
+
+
+
+
+
 function drawStaffGroup(renderer, params, selectables, lineNumber) {
   // We enter this method with renderer.y pointing to the topmost coordinate that we're allowed to draw.
   // All of the children that will be drawn have a relative "pitch" set, where zero is the first ledger line below the staff.
@@ -22597,7 +22835,7 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
   for (var j = 0; j < params.staffs.length; j++) {
     var staff1 = params.staffs[j];
     //renderer.printHorizontalLine(50, renderer.y, "start");
-    renderer.moveY(spacing.STEP, staff1.top);
+    renderer.moveY(_helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP, staff1.top);
     staff1.absoluteY = renderer.y;
     if (renderer.showDebug) {
       if (renderer.showDebug.indexOf("box") >= 0 && staff1.voices) {
@@ -22611,7 +22849,7 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
           y2: startY,
           stroke: "#0000ff"
         });
-        printDebugBox(renderer, {
+        (0,_debug_box__WEBPACK_IMPORTED_MODULE_4__["default"])(renderer, {
           x: renderer.padding.left,
           y: renderer.calcY(staff1.originalTop),
           width: renderer.controller.width,
@@ -22635,7 +22873,7 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
         debugPrintGridItem(staff1, 'volumeHeightBelow');
       }
     }
-    renderer.moveY(spacing.STEP, -staff1.bottom);
+    renderer.moveY(_helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP, -staff1.bottom);
     if (renderer.showDebug) {
       if (renderer.showDebug.indexOf("grid") >= 0) {
         renderer.paper.dottedLine({
@@ -22668,7 +22906,7 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
           linePitch = staff.linePitch;
         }
         renderer.controller.classes.newMeasure();
-        var lines = printStaff(renderer, params.startx, params.w, staff.lines, staff.linePitch, 0.35);
+        var lines = (0,_staff__WEBPACK_IMPORTED_MODULE_3__["default"])(renderer, params.startx, params.w, staff.lines, staff.linePitch, 0.35);
         bottomLine = lines[1];
         staff.bottomLine = bottomLine;
         staff.topLine = lines[0];
@@ -22687,10 +22925,10 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
       printBrace(renderer, staff.absoluteY, params.brace, i, selectables);
       printBrace(renderer, staff.absoluteY, params.bracket, i, selectables);
     }
-    drawVoice(renderer, params.voices[i], bartop, selectables, {
+    (0,_voice__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, params.voices[i], bartop, selectables, {
       top: startY,
       zero: renderer.y,
-      height: params.height * spacing.STEP
+      height: params.height * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP
     });
     var tabNameHeight = 0;
     if (tabName) {
@@ -22712,7 +22950,7 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
       r.rows.push({
         move: tabName.textSize.height
       });
-      nonMusic(renderer, r);
+      (0,_non_music__WEBPACK_IMPORTED_MODULE_6__["default"])(renderer, r);
       tabNameHeight = tabName.textSize.height;
     }
     renderer.controller.classes.newMeasure();
@@ -22730,16 +22968,16 @@ function drawStaffGroup(renderer, params, selectables, lineNumber) {
   if (staffSize > 1) {
     topLine = params.staffs[0].topLine;
     bottomLine = params.staffs[staffSize - 1].bottomLine;
-    printStem(renderer, params.startx, 0.6, topLine, bottomLine, null);
+    (0,_print_stem__WEBPACK_IMPORTED_MODULE_5__["default"])(renderer, params.startx, 0.6, topLine, bottomLine, null);
   }
   renderer.y = startY;
   function debugPrintGridItem(staff, key) {
     var colors = ["rgb(207,27,36)", "rgb(168,214,80)", "rgb(110,161,224)", "rgb(191,119,218)", "rgb(195,30,151)", "rgb(31,170,177)", "rgb(220,166,142)"];
     if (staff.positionY && staff.positionY[key]) {
-      var height = staff.specialY[key] * spacing.STEP;
+      var height = staff.specialY[key] * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
       if (key === "chordHeightAbove" && staff.specialY.chordLines && staff.specialY.chordLines.above) height *= staff.specialY.chordLines.above;
       if (key === "chordHeightBelow" && staff.specialY.chordLines && staff.specialY.chordLines.below) height *= staff.specialY.chordLines.below;
-      printDebugBox(renderer, {
+      (0,_debug_box__WEBPACK_IMPORTED_MODULE_4__["default"])(renderer, {
         x: renderer.padding.left,
         y: renderer.calcY(staff.positionY[key]),
         width: renderer.controller.width,
@@ -22758,8 +22996,8 @@ function printBrace(renderer, absoluteY, brace, index, selectables) {
   if (brace) {
     for (var i = 0; i < brace.length; i++) {
       if (brace[i].isStartVoice(index)) {
-        brace[i].startY = absoluteY - spacing.STEP * 10;
-        brace[i].elemset = drawBrace(renderer, brace[i], selectables);
+        brace[i].startY = absoluteY - _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP * 10;
+        brace[i].elemset = (0,_brace__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, brace[i], selectables);
       }
     }
   }
@@ -22777,8 +23015,8 @@ function boxAllElements(renderer, voices, which) {
       var elem = children[j];
       var coords = elem.getFixedCoords();
       if (elem.invisible || coords.t === undefined || coords.b === undefined) continue;
-      var height = (coords.t - coords.b) * spacing.STEP;
-      printDebugBox(renderer, {
+      var height = (coords.t - coords.b) * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
+      (0,_debug_box__WEBPACK_IMPORTED_MODULE_4__["default"])(renderer, {
         x: coords.x,
         y: renderer.calcY(coords.t),
         width: coords.w,
@@ -22794,7 +23032,7 @@ function boxAllElements(renderer, voices, which) {
         if (chord) {
           var y = renderer.calcY(relElem.pitch);
           y += relElem.dim.font.size * relElem.getLane();
-          printDebugBox(renderer, {
+          (0,_debug_box__WEBPACK_IMPORTED_MODULE_4__["default"])(renderer, {
             x: chord.left,
             y: y,
             width: chord.right - chord.left,
@@ -22808,7 +23046,7 @@ function boxAllElements(renderer, voices, which) {
     }
   }
 }
-module.exports = drawStaffGroup;
+/* harmony default export */ __webpack_exports__["default"] = (drawStaffGroup);
 
 /***/ }),
 
@@ -22816,14 +23054,16 @@ module.exports = drawStaffGroup;
 /*!**************************************!*\
   !*** ./src/write/draw/staff-line.js ***!
   \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var printLine = __webpack_require__(/*! ./print-line */ "./src/write/draw/print-line.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _print_line__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./print-line */ "./src/write/draw/print-line.js");
+
 function printStaffLine(renderer, x1, x2, pitch, klass, name, dy) {
   var y = renderer.calcY(pitch);
-  return printLine(renderer, x1, x2, y, klass, name, dy);
+  return (0,_print_line__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, x1, x2, y, klass, name, dy);
 }
-module.exports = printStaffLine;
+/* harmony default export */ __webpack_exports__["default"] = (printStaffLine);
 
 /***/ }),
 
@@ -22831,9 +23071,11 @@ module.exports = printStaffLine;
 /*!*********************************!*\
   !*** ./src/write/draw/staff.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var printStaffLine = __webpack_require__(/*! ./staff-line */ "./src/write/draw/staff-line.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _staff_line__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./staff-line */ "./src/write/draw/staff-line.js");
+
 function printStaff(renderer, startx, endx, numLines, linePitch, dy) {
   var klass = "abcjs-top-line";
   var pitch = 2;
@@ -22848,7 +23090,7 @@ function printStaff(renderer, startx, endx, numLines, linePitch, dy) {
   var firstYLine = 0;
   var lastYLine = 0;
   if (numLines === 1) {
-    printStaffLine(renderer, startx, endx, 6, klass, null, dy + renderer.lineThickness);
+    (0,_staff_line__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, startx, endx, 6, klass, null, dy + renderer.lineThickness);
     firstYLine = renderer.calcY(10);
     lastYLine = renderer.calcY(2);
   } else {
@@ -22858,14 +23100,14 @@ function printStaff(renderer, startx, endx, numLines, linePitch, dy) {
       if (firstYLine === 0) {
         firstYLine = lastYLine;
       }
-      printStaffLine(renderer, startx, endx, curpitch, klass, null, dy + renderer.lineThickness);
+      (0,_staff_line__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, startx, endx, curpitch, klass, null, dy + renderer.lineThickness);
       klass = undefined;
     }
   }
   renderer.paper.closeGroup();
   return [firstYLine, lastYLine];
 }
-module.exports = printStaff;
+/* harmony default export */ __webpack_exports__["default"] = (printStaff);
 
 /***/ }),
 
@@ -22873,10 +23115,13 @@ module.exports = printStaff;
 /*!*********************************!*\
   !*** ./src/write/draw/tempo.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var drawRelativeElement = __webpack_require__(/*! ./relative */ "./src/write/draw/relative.js");
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _relative__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./relative */ "./src/write/draw/relative.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+
+
 function drawTempo(renderer, params) {
   var x = params.x;
   if (params.pitch === undefined) window.console.error("Tempo Element y-coordinate not set.");
@@ -22891,7 +23136,7 @@ function drawTempo(renderer, params) {
   var text;
   var size;
   if (params.tempo.preString) {
-    text = renderText(renderer, {
+    text = (0,_text__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
       x: x,
       y: y,
       text: params.tempo.preString,
@@ -22909,11 +23154,11 @@ function drawTempo(renderer, params) {
   if (params.note) {
     params.note.setX(x);
     for (var i = 0; i < params.note.children.length; i++) {
-      drawRelativeElement(renderer, params.note.children[i], x);
+      (0,_relative__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, params.note.children[i], x);
     }
     x += params.note.w + 5;
     var str = "= " + params.tempo.bpm;
-    text = renderText(renderer, {
+    text = (0,_text__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
       x: x,
       y: y,
       text: str,
@@ -22929,7 +23174,7 @@ function drawTempo(renderer, params) {
     x += postWidth + charWidth2;
   }
   if (params.tempo.postString) {
-    renderText(renderer, {
+    (0,_text__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
       x: x,
       y: y,
       text: params.tempo.postString,
@@ -22945,7 +23190,7 @@ function drawTempo(renderer, params) {
   //return [tempoGroup];
 }
 
-module.exports = drawTempo;
+/* harmony default export */ __webpack_exports__["default"] = (drawTempo);
 
 /***/ }),
 
@@ -22953,9 +23198,11 @@ module.exports = drawTempo;
 /*!********************************!*\
   !*** ./src/write/draw/text.js ***!
   \********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
 function renderText(renderer, params, alreadyInGroup) {
   var y = params.y;
 
@@ -23003,8 +23250,8 @@ function renderText(renderer, params, alreadyInGroup) {
     delete hash.attr['class'];
   }
   if (params.noClass) delete hash.attr['class'];
-  hash.attr.x = roundNumber(hash.attr.x);
-  hash.attr.y = roundNumber(hash.attr.y);
+  hash.attr.x = (0,_round_number__WEBPACK_IMPORTED_MODULE_0__["default"])(hash.attr.x);
+  hash.attr.y = (0,_round_number__WEBPACK_IMPORTED_MODULE_0__["default"])(hash.attr.y);
   if (params.name) hash.attr["data-name"] = params.name;
   var elem = renderer.paper.text(text, hash.attr);
   if (hash.font.box) {
@@ -23030,7 +23277,7 @@ function renderText(renderer, params, alreadyInGroup) {
   }
   return elem;
 }
-module.exports = renderText;
+/* harmony default export */ __webpack_exports__["default"] = (renderText);
 
 /***/ }),
 
@@ -23038,10 +23285,13 @@ module.exports = renderText;
 /*!*******************************!*\
   !*** ./src/write/draw/tie.js ***!
   \*******************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
 function drawTie(renderer, params, linestartx, lineendx, selectables) {
   layout(params, linestartx, lineendx);
   var klass = '';
@@ -23088,12 +23338,12 @@ var layout = function layout(params, lineStartX, lineEndX) {
 var drawArc = function drawArc(renderer, x1, x2, pitch1, pitch2, above, klass, isTie, dotted) {
   // If it is a tie vs. a slur, draw it shallower.
   var spacing = isTie ? 1.2 : 1.5;
-  x1 = roundNumber(x1 + 6);
-  x2 = roundNumber(x2 + 4);
+  x1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x1 + 6);
+  x2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x2 + 4);
   pitch1 = pitch1 + (above ? spacing : -spacing);
   pitch2 = pitch2 + (above ? spacing : -spacing);
-  var y1 = roundNumber(renderer.calcY(pitch1));
-  var y2 = roundNumber(renderer.calcY(pitch2));
+  var y1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer.calcY(pitch1));
+  var y2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer.calcY(pitch2));
 
   //unit direction vector
   var dx = x2 - x1;
@@ -23104,17 +23354,17 @@ var drawArc = function drawArc(renderer, x1, x2, pitch1, pitch2, above, klass, i
   var flatten = norm / 3.5;
   var maxFlatten = isTie ? 10 : 25; // If it is a tie vs. a slur, draw it shallower.
   var curve = (above ? -1 : 1) * Math.min(maxFlatten, Math.max(4, flatten));
-  var controlx1 = roundNumber(x1 + flatten * ux - curve * uy);
-  var controly1 = roundNumber(y1 + flatten * uy + curve * ux);
-  var controlx2 = roundNumber(x2 - flatten * ux - curve * uy);
-  var controly2 = roundNumber(y2 - flatten * uy + curve * ux);
+  var controlx1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x1 + flatten * ux - curve * uy);
+  var controly1 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y1 + flatten * uy + curve * ux);
+  var controlx2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(x2 - flatten * ux - curve * uy);
+  var controly2 = (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(y2 - flatten * uy + curve * ux);
   var thickness = 2;
   if (klass) klass += ' slur';else klass = 'slur';
   klass += isTie ? ' tie' : ' legato';
   var ret;
   if (dotted) {
     klass += ' dotted';
-    var pathString2 = sprintf("M %f %f C %f %f %f %f %f %f", x1, y1, controlx1, controly1, controlx2, controly2, x2, y2);
+    var pathString2 = (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f C %f %f %f %f %f %f", x1, y1, controlx1, controly1, controlx2, controly2, x2, y2);
     ret = renderer.paper.path({
       path: pathString2,
       stroke: renderer.foregroundColor,
@@ -23124,7 +23374,7 @@ var drawArc = function drawArc(renderer, x1, x2, pitch1, pitch2, above, klass, i
       "data-name": isTie ? "tie" : "slur"
     });
   } else {
-    var pathString = sprintf("M %f %f C %f %f %f %f %f %f C %f %f %f %f %f %f z", x1, y1, controlx1, controly1, controlx2, controly2, x2, y2, roundNumber(controlx2 - thickness * uy), roundNumber(controly2 + thickness * ux), roundNumber(controlx1 - thickness * uy), roundNumber(controly1 + thickness * ux), x1, y1);
+    var pathString = (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f C %f %f %f %f %f %f C %f %f %f %f %f %f z", x1, y1, controlx1, controly1, controlx2, controly2, x2, y2, (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(controlx2 - thickness * uy), (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(controly2 + thickness * ux), (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(controlx1 - thickness * uy), (0,_round_number__WEBPACK_IMPORTED_MODULE_1__["default"])(controly1 + thickness * ux), x1, y1);
     ret = renderer.paper.path({
       path: pathString,
       stroke: "none",
@@ -23135,7 +23385,7 @@ var drawArc = function drawArc(renderer, x1, x2, pitch1, pitch2, above, klass, i
   }
   return ret;
 };
-module.exports = drawTie;
+/* harmony default export */ __webpack_exports__["default"] = (drawTie);
 
 /***/ }),
 
@@ -23143,12 +23393,17 @@ module.exports = drawTie;
 /*!***********************************!*\
   !*** ./src/write/draw/triplet.js ***!
   \***********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var sprintf = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
-var printPath = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
-var roundNumber = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sprintf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sprintf */ "./src/write/draw/sprintf.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+/* harmony import */ var _print_path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./print-path */ "./src/write/draw/print-path.js");
+/* harmony import */ var _round_number__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./round-number */ "./src/write/draw/round-number.js");
+
+
+
+
 function drawTriplet(renderer, params, selectables) {
   renderer.paper.openGroup({
     klass: renderer.controller.classes.generate('triplet ' + params.durationClass),
@@ -23158,7 +23413,7 @@ function drawTriplet(renderer, params, selectables) {
     drawBracket(renderer, params.anchor1.x, params.startNote, params.anchor2.x + params.anchor2.w, params.endNote);
   }
   // HACK: adjust the position of "3". It is too high in all cases so we fudge it by subtracting 1 here.
-  renderText(renderer, {
+  (0,_text__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, {
     x: params.xTextPos,
     y: renderer.calcY(params.yTextPos - 1),
     text: "" + params.number,
@@ -23177,7 +23432,7 @@ function drawTriplet(renderer, params, selectables) {
   return g;
 }
 function drawLine(l, t, r, b) {
-  return sprintf("M %f %f L %f %f", roundNumber(l), roundNumber(t), roundNumber(r), roundNumber(b));
+  return (0,_sprintf__WEBPACK_IMPORTED_MODULE_0__["default"])("M %f %f L %f %f", (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(l), (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(t), (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(r), (0,_round_number__WEBPACK_IMPORTED_MODULE_3__["default"])(b));
 }
 function drawBracket(renderer, x1, y1, x2, y2) {
   y1 = renderer.calcY(y1);
@@ -23200,13 +23455,13 @@ function drawBracket(renderer, x1, y1, x2, y2) {
   var rightStartX = midX + gapWidth;
   var rightStartY = y1 + (rightStartX - x1) * slope;
   pathString += drawLine(rightStartX, rightStartY, x2, y2);
-  printPath(renderer, {
+  (0,_print_path__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, {
     path: pathString,
     stroke: renderer.foregroundColor,
     "data-name": "triplet-bracket"
   });
 }
-module.exports = drawTriplet;
+/* harmony default export */ __webpack_exports__["default"] = (drawTriplet);
 
 /***/ }),
 
@@ -23214,17 +23469,27 @@ module.exports = drawTriplet;
 /*!*********************************!*\
   !*** ./src/write/draw/voice.js ***!
   \*********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var drawGlissando = __webpack_require__(/*! ./glissando */ "./src/write/draw/glissando.js");
-var drawCrescendo = __webpack_require__(/*! ./crescendo */ "./src/write/draw/crescendo.js");
-var drawDynamics = __webpack_require__(/*! ./dynamics */ "./src/write/draw/dynamics.js");
-var drawTriplet = __webpack_require__(/*! ./triplet */ "./src/write/draw/triplet.js");
-var drawEnding = __webpack_require__(/*! ./ending */ "./src/write/draw/ending.js");
-var drawTie = __webpack_require__(/*! ./tie */ "./src/write/draw/tie.js");
-var drawBeam = __webpack_require__(/*! ./beam */ "./src/write/draw/beam.js");
-var renderText = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
-var drawAbsolute = __webpack_require__(/*! ./absolute */ "./src/write/draw/absolute.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _glissando__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./glissando */ "./src/write/draw/glissando.js");
+/* harmony import */ var _crescendo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crescendo */ "./src/write/draw/crescendo.js");
+/* harmony import */ var _dynamics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dynamics */ "./src/write/draw/dynamics.js");
+/* harmony import */ var _triplet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./triplet */ "./src/write/draw/triplet.js");
+/* harmony import */ var _ending__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ending */ "./src/write/draw/ending.js");
+/* harmony import */ var _tie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tie */ "./src/write/draw/tie.js");
+/* harmony import */ var _beam__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./beam */ "./src/write/draw/beam.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./text */ "./src/write/draw/text.js");
+/* harmony import */ var _absolute__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./absolute */ "./src/write/draw/absolute.js");
+
+
+
+
+
+
+
+
+
 function drawVoice(renderer, params, bartop, selectables, staffPos) {
   var width = params.w - 1;
   renderer.staffbottom = params.staff.bottom;
@@ -23232,7 +23497,7 @@ function drawVoice(renderer, params, bartop, selectables, staffPos) {
   if (params.color) renderer.foregroundColor = params.color;
   if (params.header) {
     // print voice name
-    var textEl = renderText(renderer, {
+    var textEl = (0,_text__WEBPACK_IMPORTED_MODULE_7__["default"])(renderer, {
       x: renderer.padding.left,
       y: renderer.calcY(params.headerPosition),
       text: params.header,
@@ -23268,7 +23533,7 @@ function drawVoice(renderer, params, bartop, selectables, staffPos) {
         }
       }
     }
-    drawAbsolute(renderer, child, params.barto || i === params.children.length - 1 ? bartop : 0, selectables, staffPos);
+    (0,_absolute__WEBPACK_IMPORTED_MODULE_8__["default"])(renderer, child, params.barto || i === params.children.length - 1 ? bartop : 0, selectables, staffPos);
     if (child.type === 'note' || isNonSpacerRest(child)) renderer.controller.classes.incrNote();
     if (child.type === 'bar' && !justInitializedMeasureNumber && foundNote) {
       renderer.controller.classes.incrMeasure();
@@ -23279,7 +23544,7 @@ function drawVoice(renderer, params, bartop, selectables, staffPos) {
     var beam = params.beams[i];
     if (beam === 'bar') {
       renderer.controller.classes.incrMeasure();
-    } else drawBeam(renderer, beam, selectables); // beams must be drawn first for proper printing of triplets, slurs and ties.
+    } else (0,_beam__WEBPACK_IMPORTED_MODULE_6__["default"])(renderer, beam, selectables); // beams must be drawn first for proper printing of triplets, slurs and ties.
   }
 
   renderer.controller.classes.startMeasure();
@@ -23290,26 +23555,26 @@ function drawVoice(renderer, params, bartop, selectables, staffPos) {
     } else {
       switch (child.type) {
         case "GlissandoElem":
-          child.elemset = drawGlissando(renderer, child, selectables);
+          child.elemset = (0,_glissando__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, child, selectables);
           break;
         case "CrescendoElem":
-          child.elemset = drawCrescendo(renderer, child, selectables);
+          child.elemset = (0,_crescendo__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, child, selectables);
           break;
         case "DynamicDecoration":
-          child.elemset = drawDynamics(renderer, child, selectables);
+          child.elemset = (0,_dynamics__WEBPACK_IMPORTED_MODULE_2__["default"])(renderer, child, selectables);
           break;
         case "TripletElem":
-          drawTriplet(renderer, child, selectables);
+          (0,_triplet__WEBPACK_IMPORTED_MODULE_3__["default"])(renderer, child, selectables);
           break;
         case "EndingElem":
-          child.elemset = drawEnding(renderer, child, params.startx + 10, width, selectables);
+          child.elemset = (0,_ending__WEBPACK_IMPORTED_MODULE_4__["default"])(renderer, child, params.startx + 10, width, selectables);
           break;
         case "TieElem":
-          child.elemset = drawTie(renderer, child, params.startx + 10, width, selectables);
+          child.elemset = (0,_tie__WEBPACK_IMPORTED_MODULE_5__["default"])(renderer, child, params.startx + 10, width, selectables);
           break;
         default:
           console.log(child);
-          drawAbsolute(renderer, child, params.startx + 10, width, selectables, staffPos);
+          (0,_absolute__WEBPACK_IMPORTED_MODULE_8__["default"])(renderer, child, params.startx + 10, width, selectables, staffPos);
       }
     }
   }
@@ -23320,7 +23585,7 @@ function isNonSpacerRest(elem) {
   if (elem.abcelem && elem.abcelem.rest && elem.abcelem.rest.type !== 'spacer') return true;
   return false;
 }
-module.exports = drawVoice;
+/* harmony default export */ __webpack_exports__["default"] = (drawVoice);
 
 /***/ }),
 
@@ -23328,28 +23593,45 @@ module.exports = drawVoice;
 /*!******************************************!*\
   !*** ./src/write/engraver-controller.js ***!
   \******************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _creation_abstract_engraver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./creation/abstract-engraver */ "./src/write/creation/abstract-engraver.js");
+/* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderer */ "./src/write/renderer.js");
+/* harmony import */ var _creation_elements_free_text__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./creation/elements/free-text */ "./src/write/creation/elements/free-text.js");
+/* harmony import */ var _creation_elements_separator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./creation/elements/separator */ "./src/write/creation/elements/separator.js");
+/* harmony import */ var _creation_elements_subtitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./creation/elements/subtitle */ "./src/write/creation/elements/subtitle.js");
+/* harmony import */ var _creation_elements_top_text__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./creation/elements/top-text */ "./src/write/creation/elements/top-text.js");
+/* harmony import */ var _creation_elements_bottom_text__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./creation/elements/bottom-text */ "./src/write/creation/elements/bottom-text.js");
+/* harmony import */ var _interactive_selection__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./interactive/selection */ "./src/write/interactive/selection.js");
+/* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./layout/layout */ "./src/write/layout/layout.js");
+/* harmony import */ var _helpers_classes__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./helpers/classes */ "./src/write/helpers/classes.js");
+/* harmony import */ var _helpers_get_font_and_attr__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./helpers/get-font-and-attr */ "./src/write/helpers/get-font-and-attr.js");
+/* harmony import */ var _helpers_get_text_size__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./helpers/get-text-size */ "./src/write/helpers/get-text-size.js");
+/* harmony import */ var _draw_draw__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./draw/draw */ "./src/write/draw/draw.js");
+/* harmony import */ var _api_abc_tablatures__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../api/abc_tablatures */ "./src/api/abc_tablatures.js");
+/* harmony import */ var _interactive_find_selectable_element__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./interactive/find-selectable-element */ "./src/write/interactive/find-selectable-element.js");
 //    abc_engraver_controller.js: Controls the engraving process of an ABCJS abstract syntax tree as produced by ABCJS/parse
 
 /*global Math */
 
-var spacing = __webpack_require__(/*! ./helpers/spacing */ "./src/write/helpers/spacing.js");
-var AbstractEngraver = __webpack_require__(/*! ./creation/abstract-engraver */ "./src/write/creation/abstract-engraver.js");
-var Renderer = __webpack_require__(/*! ./renderer */ "./src/write/renderer.js");
-var FreeText = __webpack_require__(/*! ./creation/elements/free-text */ "./src/write/creation/elements/free-text.js");
-var Separator = __webpack_require__(/*! ./creation/elements/separator */ "./src/write/creation/elements/separator.js");
-var Subtitle = __webpack_require__(/*! ./creation/elements/subtitle */ "./src/write/creation/elements/subtitle.js");
-var TopText = __webpack_require__(/*! ./creation/elements/top-text */ "./src/write/creation/elements/top-text.js");
-var BottomText = __webpack_require__(/*! ./creation/elements/bottom-text */ "./src/write/creation/elements/bottom-text.js");
-var setupSelection = __webpack_require__(/*! ./interactive/selection */ "./src/write/interactive/selection.js");
-var layout = __webpack_require__(/*! ./layout/layout */ "./src/write/layout/layout.js");
-var Classes = __webpack_require__(/*! ./helpers/classes */ "./src/write/helpers/classes.js");
-var GetFontAndAttr = __webpack_require__(/*! ./helpers/get-font-and-attr */ "./src/write/helpers/get-font-and-attr.js");
-var GetTextSize = __webpack_require__(/*! ./helpers/get-text-size */ "./src/write/helpers/get-text-size.js");
-var draw = __webpack_require__(/*! ./draw/draw */ "./src/write/draw/draw.js");
-var tablatures = __webpack_require__(/*! ../api/abc_tablatures */ "./src/api/abc_tablatures.js");
-var findSelectableElement = __webpack_require__(/*! ./interactive/find-selectable-element */ "./src/write/interactive/find-selectable-element.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * @class
@@ -23365,19 +23647,19 @@ var findSelectableElement = __webpack_require__(/*! ./interactive/find-selectabl
  */
 var EngraverController = function EngraverController(paper, params) {
   params = params || {};
-  this.findSelectableElement = findSelectableElement;
+  this.findSelectableElement = _interactive_find_selectable_element__WEBPACK_IMPORTED_MODULE_15__["default"];
   this.oneSvgPerLine = params.oneSvgPerLine;
   this.selectionColor = params.selectionColor;
   this.dragColor = params.dragColor ? params.dragColor : params.selectionColor;
   this.dragging = !!params.dragging;
   this.selectTypes = params.selectTypes;
   this.responsive = params.responsive;
-  this.space = 3 * spacing.SPACE;
+  this.space = 3 * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].SPACE;
   this.initialClef = params.initialClef;
   this.timeBasedLayout = params.timeBasedLayout;
   this.expandToWidest = !!params.expandToWidest;
   this.scale = params.scale ? parseFloat(params.scale) : 0;
-  this.classes = new Classes({
+  this.classes = new _helpers_classes__WEBPACK_IMPORTED_MODULE_10__["default"]({
     shouldAddClasses: params.add_classes
   });
   if (!(this.scale > 0.1)) this.scale = undefined;
@@ -23393,7 +23675,7 @@ var EngraverController = function EngraverController(paper, params) {
 
   this.listeners = [];
   if (params.clickListener) this.addSelectListener(params.clickListener);
-  this.renderer = new Renderer(paper);
+  this.renderer = new _renderer__WEBPACK_IMPORTED_MODULE_2__["default"](paper);
   this.renderer.setPaddingOverride(params);
   if (params.showDebug) this.renderer.showDebug = params.showDebug;
   if (params.jazzchords) this.jazzchords = params.jazzchords;
@@ -23432,8 +23714,8 @@ EngraverController.prototype.engraveABC = function (abctunes, tuneNumber, lineOf
   this.reset();
   for (var i = 0; i < abctunes.length; i++) {
     if (tuneNumber === undefined) tuneNumber = i;
-    this.getFontAndAttr = new GetFontAndAttr(abctunes[i].formatting, this.classes);
-    this.getTextSize = new GetTextSize(this.getFontAndAttr, this.renderer.paper);
+    this.getFontAndAttr = new _helpers_get_font_and_attr__WEBPACK_IMPORTED_MODULE_11__["default"](abctunes[i].formatting, this.classes);
+    this.getTextSize = new _helpers_get_text_size__WEBPACK_IMPORTED_MODULE_12__["default"](this.getFontAndAttr, this.renderer.paper);
     this.engraveTune(abctunes[i], tuneNumber, lineOffset);
   }
 };
@@ -23447,14 +23729,14 @@ EngraverController.prototype.adjustNonScaledItems = function (scale) {
 };
 EngraverController.prototype.getMeasureWidths = function (abcTune) {
   this.reset();
-  this.getFontAndAttr = new GetFontAndAttr(abcTune.formatting, this.classes);
-  this.getTextSize = new GetTextSize(this.getFontAndAttr, this.renderer.paper);
+  this.getFontAndAttr = new _helpers_get_font_and_attr__WEBPACK_IMPORTED_MODULE_11__["default"](abcTune.formatting, this.classes);
+  this.getTextSize = new _helpers_get_text_size__WEBPACK_IMPORTED_MODULE_12__["default"](this.getFontAndAttr, this.renderer.paper);
   var origJazzChords = this.jazzchords;
   this.setupTune(abcTune, 0);
   this.constructTuneElements(abcTune);
   // layout() sets the x-coordinate of the abcTune element here:
   // abcTune.lines[0].staffGroup.voices[0].children[0].x
-  layout(this.renderer, abcTune, 0, this.space, this.timeBasedLayout);
+  (0,_layout_layout__WEBPACK_IMPORTED_MODULE_9__["default"])(this.renderer, abcTune, 0, this.space, this.timeBasedLayout);
   var ret = [];
   var section;
   var needNewSection = true;
@@ -23501,7 +23783,7 @@ EngraverController.prototype.setupTune = function (abcTune, tuneNumber) {
   if (abcTune.formatting.jazzchords !== undefined) this.jazzchords = abcTune.formatting.jazzchords;
   if (abcTune.formatting.accentAbove !== undefined) this.accentAbove = abcTune.formatting.accentAbove;
   this.renderer.newTune(abcTune);
-  this.engraver = new AbstractEngraver(this.getTextSize, tuneNumber, {
+  this.engraver = new _creation_abstract_engraver__WEBPACK_IMPORTED_MODULE_1__["default"](this.getTextSize, tuneNumber, {
     bagpipes: abcTune.formatting.bagpipes,
     flatbeams: abcTune.formatting.flatbeams,
     graceSlurs: abcTune.formatting.graceSlurs !== false,
@@ -23529,7 +23811,7 @@ EngraverController.prototype.setupTune = function (abcTune, tuneNumber) {
   return scale;
 };
 EngraverController.prototype.constructTuneElements = function (abcTune) {
-  abcTune.topText = new TopText(abcTune.metaText, abcTune.metaTextInfo, abcTune.formatting, abcTune.lines, this.width, this.renderer.isPrint, this.renderer.padding.left, this.renderer.spacing, this.classes.shouldAddClasses, this.getTextSize);
+  abcTune.topText = new _creation_elements_top_text__WEBPACK_IMPORTED_MODULE_6__["default"](abcTune.metaText, abcTune.metaTextInfo, abcTune.formatting, abcTune.lines, this.width, this.renderer.isPrint, this.renderer.padding.left, this.renderer.spacing, this.classes.shouldAddClasses, this.getTextSize);
 
   // Generate the raw staff line data
   var i;
@@ -23546,17 +23828,17 @@ EngraverController.prototype.constructTuneElements = function (abcTune) {
       // If the subtitle is at the top, then it was already accounted for. So skip all subtitles until the first non-subtitle line.
       if (hasSeenNonSubtitle) {
         var center = this.width / 2 + this.renderer.padding.left;
-        abcLine.nonMusic = new Subtitle(this.renderer.spacing.subtitle, abcTune.formatting, abcLine.subtitle, center, this.renderer.padding.left, this.getTextSize);
+        abcLine.nonMusic = new _creation_elements_subtitle__WEBPACK_IMPORTED_MODULE_5__["default"](this.renderer.spacing.subtitle, abcTune.formatting, abcLine.subtitle, center, this.renderer.padding.left, this.getTextSize);
       }
     } else if (abcLine.text !== undefined) {
       hasSeenNonSubtitle = true;
-      abcLine.nonMusic = new FreeText(abcLine.text, abcLine.vskip, this.getFontAndAttr, this.renderer.padding.left, this.width, this.getTextSize);
+      abcLine.nonMusic = new _creation_elements_free_text__WEBPACK_IMPORTED_MODULE_3__["default"](abcLine.text, abcLine.vskip, this.getFontAndAttr, this.renderer.padding.left, this.width, this.getTextSize);
     } else if (abcLine.separator !== undefined && abcLine.separator.lineLength) {
       hasSeenNonSubtitle = true;
-      abcLine.nonMusic = new Separator(abcLine.separator.spaceAbove, abcLine.separator.lineLength, abcLine.separator.spaceBelow);
+      abcLine.nonMusic = new _creation_elements_separator__WEBPACK_IMPORTED_MODULE_4__["default"](abcLine.separator.spaceAbove, abcLine.separator.lineLength, abcLine.separator.spaceBelow);
     }
   }
-  abcTune.bottomText = new BottomText(abcTune.metaText, this.width, this.renderer.isPrint, this.renderer.padding.left, this.renderer.spacing, this.classes.shouldAddClasses, this.getTextSize);
+  abcTune.bottomText = new _creation_elements_bottom_text__WEBPACK_IMPORTED_MODULE_7__["default"](abcTune.metaText, this.width, this.renderer.isPrint, this.renderer.padding.left, this.renderer.spacing, this.classes.shouldAddClasses, this.getTextSize);
 };
 EngraverController.prototype.engraveTune = function (abcTune, tuneNumber, lineOffset) {
   var origJazzChords = this.jazzchords;
@@ -23568,11 +23850,11 @@ EngraverController.prototype.engraveTune = function (abcTune, tuneNumber, lineOf
   //Set the top text now that we know the width
 
   // Do all the positioning, both horizontally and vertically
-  var maxWidth = layout(this.renderer, abcTune, this.width, this.space, this.expandToWidest, this.timeBasedLayout);
+  var maxWidth = (0,_layout_layout__WEBPACK_IMPORTED_MODULE_9__["default"])(this.renderer, abcTune, this.width, this.space, this.expandToWidest, this.timeBasedLayout);
 
   //Set the top text now that we know the width
   if (this.expandToWidest && maxWidth > this.width + 1) {
-    abcTune.topText = new TopText(abcTune.metaText, abcTune.metaTextInfo, abcTune.formatting, abcTune.lines, maxWidth, this.renderer.isPrint, this.renderer.padding.left, this.renderer.spacing, this.classes.shouldAddClasses, this.getTextSize);
+    abcTune.topText = new _creation_elements_top_text__WEBPACK_IMPORTED_MODULE_6__["default"](abcTune.metaText, abcTune.metaTextInfo, abcTune.formatting, abcTune.lines, maxWidth, this.renderer.isPrint, this.renderer.padding.left, this.renderer.spacing, this.classes.shouldAddClasses, this.getTextSize);
     if (abcTune.lines && abcTune.lines.length > 0) {
       var nlines = abcTune.lines.length;
       for (var i = 0; i < nlines; ++i) {
@@ -23603,11 +23885,11 @@ EngraverController.prototype.engraveTune = function (abcTune, tuneNumber, lineOf
 
   // Deal with tablature for staff
   if (abcTune.tablatures) {
-    tablatures.layoutTablatures(this.renderer, abcTune);
+    _api_abc_tablatures__WEBPACK_IMPORTED_MODULE_14__["default"].layoutTablatures(this.renderer, abcTune);
   }
 
   // Do all the writing to the SVG
-  var ret = draw(this.renderer, this.classes, abcTune, this.width, maxWidth, this.responsive, scale, this.selectTypes, tuneNumber, lineOffset);
+  var ret = (0,_draw_draw__WEBPACK_IMPORTED_MODULE_13__["default"])(this.renderer, this.classes, abcTune, this.width, maxWidth, this.responsive, scale, this.selectTypes, tuneNumber, lineOffset);
   this.staffgroups = ret.staffgroups;
   this.selectables = ret.selectables;
   if (this.oneSvgPerLine) {
@@ -23616,7 +23898,7 @@ EngraverController.prototype.engraveTune = function (abcTune, tuneNumber, lineOf
   } else {
     this.svgs = [this.renderer.paper.svg];
   }
-  setupSelection(this, this.svgs);
+  (0,_interactive_selection__WEBPACK_IMPORTED_MODULE_8__["default"])(this, this.svgs);
   this.jazzchords = origJazzChords;
 };
 function splitSvgIntoLines(renderer, output, title, responsive, scale) {
@@ -23693,7 +23975,7 @@ EngraverController.prototype.getDim = function (historyEl) {
 EngraverController.prototype.addSelectListener = function (clickListener) {
   this.listeners[this.listeners.length] = clickListener;
 };
-module.exports = EngraverController;
+/* harmony default export */ __webpack_exports__["default"] = (EngraverController);
 
 /***/ }),
 
@@ -23701,8 +23983,9 @@ module.exports = EngraverController;
 /*!**************************************!*\
   !*** ./src/write/helpers/classes.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var Classes = function Classes(options) {
   this.shouldAddClasses = options.shouldAddClasses;
   this.reset();
@@ -23786,7 +24069,7 @@ Classes.prototype.generate = function (c) {
   }
   return ret.join(' ');
 };
-module.exports = Classes;
+/* harmony default export */ __webpack_exports__["default"] = (Classes);
 
 /***/ }),
 
@@ -23794,8 +24077,9 @@ module.exports = Classes;
 /*!************************************************!*\
   !*** ./src/write/helpers/get-font-and-attr.js ***!
   \************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var GetFontAndAttr = function GetFontAndAttr(formatting, classes) {
   this.formatting = formatting;
   this.classes = classes;
@@ -23854,7 +24138,7 @@ GetFontAndAttr.prototype.calc = function (type, klass) {
     attr: attr
   };
 };
-module.exports = GetFontAndAttr;
+/* harmony default export */ __webpack_exports__["default"] = (GetFontAndAttr);
 
 /***/ }),
 
@@ -23862,8 +24146,9 @@ module.exports = GetFontAndAttr;
 /*!********************************************!*\
   !*** ./src/write/helpers/get-text-size.js ***!
   \********************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var GetTextSize = function GetTextSize(getFontAndAttr, svg) {
   this.getFontAndAttr = getFontAndAttr;
   this.svg = svg;
@@ -23919,7 +24204,7 @@ GetTextSize.prototype.baselineToCenter = function (text, type, klass, index, tot
   var fontHeight = this.attr(type, klass).font.size;
   return height * 0.5 + (total - index - 2) * fontHeight;
 };
-module.exports = GetTextSize;
+/* harmony default export */ __webpack_exports__["default"] = (GetTextSize);
 
 /***/ }),
 
@@ -23927,8 +24212,9 @@ module.exports = GetTextSize;
 /*!****************************************!*\
   !*** ./src/write/helpers/set-class.js ***!
   \****************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var setClass = function setClass(elemset, addClass, removeClass, color) {
   if (!elemset) return;
   for (var i = 0; i < elemset.length; i++) {
@@ -23947,7 +24233,7 @@ var setClass = function setClass(elemset, addClass, removeClass, color) {
     el.setAttribute("class", kls);
   }
 };
-module.exports = setClass;
+/* harmony default export */ __webpack_exports__["default"] = (setClass);
 
 /***/ }),
 
@@ -23955,8 +24241,9 @@ module.exports = setClass;
 /*!**************************************!*\
   !*** ./src/write/helpers/spacing.js ***!
   \**************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var spacing = {};
 spacing.FONTEM = 360;
 spacing.FONTSIZE = 30;
@@ -23965,7 +24252,7 @@ spacing.SPACE = 10;
 spacing.TOPNOTE = 15;
 spacing.STAVEHEIGHT = 100;
 spacing.INDENT = 50;
-module.exports = spacing;
+/* harmony default export */ __webpack_exports__["default"] = (spacing);
 
 /***/ }),
 
@@ -23973,8 +24260,9 @@ module.exports = spacing;
 /*!**************************************************!*\
   !*** ./src/write/interactive/create-analysis.js ***!
   \**************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function findNumber(klass, match, target, name) {
   if (klass.indexOf(match) === 0) {
     var value = klass.replace(match, '');
@@ -24026,7 +24314,7 @@ function createAnalysis(target, ev) {
     analysis: analysis
   };
 }
-module.exports = createAnalysis;
+/* harmony default export */ __webpack_exports__["default"] = (createAnalysis);
 
 /***/ }),
 
@@ -24034,9 +24322,11 @@ module.exports = createAnalysis;
 /*!**********************************************************!*\
   !*** ./src/write/interactive/find-selectable-element.js ***!
   \**********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var createAnalysis = __webpack_require__(/*! ./create-analysis */ "./src/write/interactive/create-analysis.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _create_analysis__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create-analysis */ "./src/write/interactive/create-analysis.js");
+
 function findSelectableElement(event) {
   var selectable = event;
   while (selectable && selectable.attributes && selectable.tagName.toLowerCase() !== 'svg' && !selectable.attributes.selectable) {
@@ -24048,7 +24338,7 @@ function findSelectableElement(event) {
       index = parseInt(index, 10);
       if (index >= 0 && index < this.selectables.length) {
         var element = this.selectables[index];
-        var ret = createAnalysis(element, event);
+        var ret = (0,_create_analysis__WEBPACK_IMPORTED_MODULE_0__["default"])(element, event);
         ret.index = index;
         ret.element = element;
         return ret;
@@ -24057,7 +24347,7 @@ function findSelectableElement(event) {
   }
   return null;
 }
-module.exports = findSelectableElement;
+/* harmony default export */ __webpack_exports__["default"] = (findSelectableElement);
 
 /***/ }),
 
@@ -24065,15 +24355,17 @@ module.exports = findSelectableElement;
 /*!********************************************!*\
   !*** ./src/write/interactive/highlight.js ***!
   \********************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var setClass = __webpack_require__(/*! ../helpers/set-class */ "./src/write/helpers/set-class.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_set_class__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/set-class */ "./src/write/helpers/set-class.js");
+
 var highlight = function highlight(klass, color) {
   if (klass === undefined) klass = "abcjs-note_selected";
   if (color === undefined) color = "#ff0000";
-  setClass(this.elemset, klass, "", color);
+  (0,_helpers_set_class__WEBPACK_IMPORTED_MODULE_0__["default"])(this.elemset, klass, "", color);
 };
-module.exports = highlight;
+/* harmony default export */ __webpack_exports__["default"] = (highlight);
 
 /***/ }),
 
@@ -24081,10 +24373,13 @@ module.exports = highlight;
 /*!********************************************!*\
   !*** ./src/write/interactive/selection.js ***!
   \********************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var createAnalysis = __webpack_require__(/*! ./create-analysis */ "./src/write/interactive/create-analysis.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _create_analysis__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-analysis */ "./src/write/interactive/create-analysis.js");
+
+
 function setupSelection(engraver, svgs) {
   engraver.rangeHighlight = rangeHighlight;
   if (engraver.dragging) {
@@ -24179,7 +24474,7 @@ function keyboardSelection(ev) {
       if (this.dragTarget && this.dragTarget.isDraggable) {
         if (this.dragging && this.dragTarget.isDraggable) this.dragTarget.absEl.highlight(undefined, this.dragColor);
         this.dragYStep--;
-        this.dragTarget.svgEl.setAttribute("transform", "translate(0," + this.dragYStep * spacing.STEP + ")");
+        this.dragTarget.svgEl.setAttribute("transform", "translate(0," + this.dragYStep * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP + ")");
       }
       break;
     case 40:
@@ -24191,7 +24486,7 @@ function keyboardSelection(ev) {
       if (this.dragTarget && this.dragTarget.isDraggable) {
         if (this.dragging && this.dragTarget.isDraggable) this.dragTarget.absEl.highlight(undefined, this.dragColor);
         this.dragYStep++;
-        this.dragTarget.svgEl.setAttribute("transform", "translate(0," + this.dragYStep * spacing.STEP + ")");
+        this.dragTarget.svgEl.setAttribute("transform", "translate(0," + this.dragYStep * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP + ")");
       }
       break;
     case 9:
@@ -24352,10 +24647,10 @@ function mouseMove(ev) {
 
   if (!this.dragTarget || !this.dragging || !this.dragTarget.isDraggable || this.dragMechanism !== 'mouse' || !this.dragMouseStart) return;
   var positioning = getMousePosition(this, _ev);
-  var yDist = Math.round((positioning.y - this.dragMouseStart.y) / spacing.STEP);
+  var yDist = Math.round((positioning.y - this.dragMouseStart.y) / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP);
   if (yDist !== this.dragYStep) {
     this.dragYStep = yDist;
-    this.dragTarget.svgEl.setAttribute("transform", "translate(0," + yDist * spacing.STEP + ")");
+    this.dragTarget.svgEl.setAttribute("transform", "translate(0," + yDist * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP + ")");
   }
 }
 function mouseUp(ev) {
@@ -24390,7 +24685,7 @@ function setSelection(dragIndex) {
   }
 }
 function notifySelect(target, dragStep, dragMax, dragIndex, ev) {
-  var ret = createAnalysis(target, ev);
+  var ret = (0,_create_analysis__WEBPACK_IMPORTED_MODULE_1__["default"])(target, ev);
   var classes = ret.classes;
   var analysis = ret.analysis;
   for (var i = 0; i < this.listeners.length; i++) {
@@ -24459,7 +24754,7 @@ function removeGlobalClass(svg, klass) {
     setClassSet(svg.svg, obj);
   }
 }
-module.exports = setupSelection;
+/* harmony default export */ __webpack_exports__["default"] = (setupSelection);
 
 /***/ }),
 
@@ -24467,15 +24762,17 @@ module.exports = setupSelection;
 /*!**********************************************!*\
   !*** ./src/write/interactive/unhighlight.js ***!
   \**********************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var setClass = __webpack_require__(/*! ../helpers/set-class */ "./src/write/helpers/set-class.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_set_class__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/set-class */ "./src/write/helpers/set-class.js");
+
 var unhighlight = function unhighlight(klass, color) {
   if (klass === undefined) klass = "abcjs-note_selected";
   if (color === undefined) color = "#000000";
-  setClass(this.elemset, "", klass, color);
+  (0,_helpers_set_class__WEBPACK_IMPORTED_MODULE_0__["default"])(this.elemset, "", klass, color);
 };
-module.exports = unhighlight;
+/* harmony default export */ __webpack_exports__["default"] = (unhighlight);
 
 /***/ }),
 
@@ -24483,11 +24780,15 @@ module.exports = unhighlight;
 /*!**********************************!*\
   !*** ./src/write/layout/beam.js ***!
   \**********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var RelativeElement = __webpack_require__(/*! ../creation/elements/relative-element */ "./src/write/creation/elements/relative-element.js");
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
-var getBarYAt = __webpack_require__(/*! ./get-bar-y-at */ "./src/write/layout/get-bar-y-at.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _creation_elements_relative_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../creation/elements/relative-element */ "./src/write/creation/elements/relative-element.js");
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _get_bar_y_at__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./get-bar-y-at */ "./src/write/layout/get-bar-y-at.js");
+
+
+
 var layoutBeam = function layoutBeam(beam) {
   if (beam.elems.length === 0 || beam.allrests) return;
   var dy = calcDy(beam.stemsUp, beam.isgrace); // This is the width of the beam line.
@@ -24550,7 +24851,7 @@ function calcSlant(leftAveragePitch, rightAveragePitch, numStems, isFlat) {
   return slant;
 }
 function calcDy(asc, isGrace) {
-  var dy = asc ? spacing.STEP : -spacing.STEP;
+  var dy = asc ? _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP : -_helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP;
   if (isGrace) dy = dy * 0.4;
   return dy;
 }
@@ -24596,15 +24897,15 @@ function createStems(elems, asc, beam, dy, mainNote) {
     var dx = asc ? furthestHead.w : 0; // down-pointing stems start on the left side of the note, up-pointing stems start on the right side, so we offset by the note width.
     if (!isGrace) dx += furthestHead.dx;
     var x = furthestHead.x + dx; // this is now the actual x location in pixels.
-    var bary = getBarYAt(beam.startX, beam.startY, beam.endX, beam.endY, x);
+    var bary = (0,_get_bar_y_at__WEBPACK_IMPORTED_MODULE_2__["default"])(beam.startX, beam.startY, beam.endX, beam.endY, x);
     var lineWidth = asc ? -0.6 : 0.6;
-    if (!asc) bary -= dy / 2 / spacing.STEP; // TODO-PER: This is just a fudge factor so the down-pointing stems don't overlap.
+    if (!asc) bary -= dy / 2 / _helpers_spacing__WEBPACK_IMPORTED_MODULE_1__["default"].STEP; // TODO-PER: This is just a fudge factor so the down-pointing stems don't overlap.
     if (isGrace) dx += elem.heads[0].dx;
     // TODO-PER-HACK: One type of note head has a different placement of the stem. This should be more generically calculated:
     if (furthestHead.c === 'noteheads.slash.quarter') {
       if (asc) pitch += 1;else pitch -= 1;
     }
-    var stem = new RelativeElement(null, dx, 0, pitch, {
+    var stem = new _creation_elements_relative_element__WEBPACK_IMPORTED_MODULE_0__["default"](null, dx, 0, pitch, {
       "type": "stem",
       "pitch2": bary,
       linewidth: lineWidth
@@ -24621,7 +24922,7 @@ function createAdditionalBeams(elems, asc, beam, isGrace, dy) {
     if (elem.abcelem.rest) continue;
     var furthestHead = elem.heads[asc ? 0 : elem.heads.length - 1];
     var x = furthestHead.x + (asc ? furthestHead.w : 0);
-    var bary = getBarYAt(beam.startX, beam.startY, beam.endX, beam.endY, x);
+    var bary = (0,_get_bar_y_at__WEBPACK_IMPORTED_MODULE_2__["default"])(beam.startX, beam.startY, beam.endX, beam.endY, x);
     var sy = asc ? -1.5 : 1.5;
     if (isGrace) sy = sy * 2 / 3; // This makes the second beam on grace notes closer to the first one.
     var duration = elem.abcelem.duration; // get the duration via abcelem because of triplets
@@ -24655,7 +24956,7 @@ function createAdditionalBeams(elems, asc, beam, isGrace, dy) {
         var auxBeamEndY = bary + sy * (j + 1);
         if (auxBeams[j].single) {
           auxBeamEndX = i === 0 ? x + 5 : x - 5;
-          auxBeamEndY = getBarYAt(beam.startX, beam.startY, beam.endX, beam.endY, auxBeamEndX) + sy * (j + 1);
+          auxBeamEndY = (0,_get_bar_y_at__WEBPACK_IMPORTED_MODULE_2__["default"])(beam.startX, beam.startY, beam.endX, beam.endY, auxBeamEndX) + sy * (j + 1);
         }
         var b = {
           startX: auxBeams[j].x,
@@ -24680,7 +24981,7 @@ function createAdditionalBeams(elems, asc, beam, isGrace, dy) {
   }
   return beams;
 }
-module.exports = layoutBeam;
+/* harmony default export */ __webpack_exports__["default"] = (layoutBeam);
 
 /***/ }),
 
@@ -24688,12 +24989,13 @@ module.exports = layoutBeam;
 /*!******************************************!*\
   !*** ./src/write/layout/get-bar-y-at.js ***!
   \******************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function getBarYAt(startx, starty, endx, endy, x) {
   return starty + (endy - starty) / (endx - startx) * (x - startx);
 }
-module.exports = getBarYAt;
+/* harmony default export */ __webpack_exports__["default"] = (getBarYAt);
 
 /***/ }),
 
@@ -24701,8 +25003,9 @@ module.exports = getBarYAt;
 /*!****************************************************!*\
   !*** ./src/write/layout/get-left-edge-of-staff.js ***!
   \****************************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 function getLeftEdgeOfStaff(renderer, getTextSize, voices, brace, bracket) {
   var x = renderer.padding.left;
 
@@ -24752,7 +25055,7 @@ function setBraceLocation(brace, x, ofs) {
 function setLocation(x, element) {
   element.x = x;
 }
-module.exports = getLeftEdgeOfStaff;
+/* harmony default export */ __webpack_exports__["default"] = (getLeftEdgeOfStaff);
 
 /***/ }),
 
@@ -24760,11 +25063,13 @@ module.exports = getLeftEdgeOfStaff;
 /*!********************************************!*\
   !*** ./src/write/layout/layout-in-grid.js ***!
   \********************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var getLeftEdgeOfStaff = __webpack_require__(/*! ./get-left-edge-of-staff */ "./src/write/layout/get-left-edge-of-staff.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _get_left_edge_of_staff__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./get-left-edge-of-staff */ "./src/write/layout/get-left-edge-of-staff.js");
+
 function layoutInGrid(renderer, staffGroup, timeBasedLayout) {
-  var leftEdge = getLeftEdgeOfStaff(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
+  var leftEdge = (0,_get_left_edge_of_staff__WEBPACK_IMPORTED_MODULE_0__["default"])(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
   var ret = getTotalDuration(staffGroup, timeBasedLayout.minPadding);
   var totalDuration = ret.totalDuration;
   var minSpacing = ret.minSpacing;
@@ -24840,7 +25145,7 @@ function getTotalDuration(staffGroup, timeBasedLayout) {
     minSpacing: maxSpacing
   };
 }
-module.exports = layoutInGrid;
+/* harmony default export */ __webpack_exports__["default"] = (layoutInGrid);
 
 /***/ }),
 
@@ -24848,13 +25153,19 @@ module.exports = layoutInGrid;
 /*!************************************!*\
   !*** ./src/write/layout/layout.js ***!
   \************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var layoutVoice = __webpack_require__(/*! ./voice */ "./src/write/layout/voice.js");
-var setUpperAndLowerElements = __webpack_require__(/*! ./set-upper-and-lower-elements */ "./src/write/layout/set-upper-and-lower-elements.js");
-var layoutStaffGroup = __webpack_require__(/*! ./staff-group */ "./src/write/layout/staff-group.js");
-var getLeftEdgeOfStaff = __webpack_require__(/*! ./get-left-edge-of-staff */ "./src/write/layout/get-left-edge-of-staff.js");
-var layoutInGrid = __webpack_require__(/*! ./layout-in-grid */ "./src/write/layout/layout-in-grid.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _voice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voice */ "./src/write/layout/voice.js");
+/* harmony import */ var _set_upper_and_lower_elements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./set-upper-and-lower-elements */ "./src/write/layout/set-upper-and-lower-elements.js");
+/* harmony import */ var _staff_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./staff-group */ "./src/write/layout/staff-group.js");
+/* harmony import */ var _get_left_edge_of_staff__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./get-left-edge-of-staff */ "./src/write/layout/get-left-edge-of-staff.js");
+/* harmony import */ var _layout_in_grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout-in-grid */ "./src/write/layout/layout-in-grid.js");
+
+
+
+
+
 
 // This sets the "x" attribute on all the children in abctune.lines
 // It also sets the "w" and "startx" attributes on "voices"
@@ -24869,7 +25180,7 @@ var layout = function layout(renderer, abctune, width, space, expandToWidest, ti
     if (abcLine.staff) {
       // console.log("=== line", i)
       var thisWidth;
-      if (timeBasedLayout !== undefined) thisWidth = layoutInGrid(renderer, abcLine.staffGroup, timeBasedLayout);else thisWidth = setXSpacing(renderer, maxWidth, space, abcLine.staffGroup, abctune.formatting, i === abctune.lines.length - 1, false);
+      if (timeBasedLayout !== undefined) thisWidth = (0,_layout_in_grid__WEBPACK_IMPORTED_MODULE_4__["default"])(renderer, abcLine.staffGroup, timeBasedLayout);else thisWidth = setXSpacing(renderer, maxWidth, space, abcLine.staffGroup, abctune.formatting, i === abctune.lines.length - 1, false);
       // console.log(thisWidth, maxWidth)
       if (Math.round(thisWidth) > Math.round(maxWidth)) {
         // to take care of floating point weirdness
@@ -24884,9 +25195,9 @@ var layout = function layout(renderer, abctune, width, space, expandToWidest, ti
     abcLine = abctune.lines[i];
     if (abcLine.staffGroup && abcLine.staffGroup.voices) {
       for (var j = 0; j < abcLine.staffGroup.voices.length; j++) {
-        layoutVoice(abcLine.staffGroup.voices[j]);
+        (0,_voice__WEBPACK_IMPORTED_MODULE_0__["default"])(abcLine.staffGroup.voices[j]);
       }
-      setUpperAndLowerElements(renderer, abcLine.staffGroup);
+      (0,_set_upper_and_lower_elements__WEBPACK_IMPORTED_MODULE_1__["default"])(renderer, abcLine.staffGroup);
     }
   }
 
@@ -24902,13 +25213,13 @@ var layout = function layout(renderer, abctune, width, space, expandToWidest, ti
 };
 // Do the x-axis positioning for a single line (a group of related staffs)
 var setXSpacing = function setXSpacing(renderer, width, space, staffGroup, formatting, isLastLine, debug) {
-  var leftEdge = getLeftEdgeOfStaff(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
+  var leftEdge = (0,_get_left_edge_of_staff__WEBPACK_IMPORTED_MODULE_3__["default"])(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
   var newspace = space;
   //dumpGroup("before", staffGroup)
   for (var it = 0; it < 8; it++) {
     // TODO-PER: shouldn't need multiple passes, but each pass gets it closer to the right spacing. (Only affects long lines: normal lines break out of this loop quickly.)
     // console.log("iteration", it)
-    var ret = layoutStaffGroup(newspace, renderer.minPadding, debug, staffGroup, leftEdge);
+    var ret = (0,_staff_group__WEBPACK_IMPORTED_MODULE_2__["default"])(newspace, renderer.minPadding, debug, staffGroup, leftEdge);
     newspace = calcHorizontalSpacing(isLastLine, formatting.stretchlast, width + renderer.padding.left, staffGroup.w, newspace, ret.spacingUnits, ret.minSpace, renderer.padding.left + renderer.padding.right);
     if (debug) console.log("setXSpace", it, staffGroup.w, newspace, staffGroup.minspace);
     if (newspace === null) break;
@@ -24972,7 +25283,7 @@ function centerWholeRests(voices) {
     }
   }
 }
-module.exports = layout;
+/* harmony default export */ __webpack_exports__["default"] = (layout);
 
 /***/ }),
 
@@ -24980,9 +25291,11 @@ module.exports = layout;
 /*!**********************************************************!*\
   !*** ./src/write/layout/set-upper-and-lower-elements.js ***!
   \**********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var spacing = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/spacing */ "./src/write/helpers/spacing.js");
+
 var setUpperAndLowerElements = function setUpperAndLowerElements(renderer, staffGroup) {
   // Each staff already has the top and bottom set, now we see if there are elements that are always on top and bottom, and resolve their pitch.
   // Also, get the overall height of all the staves in this group.
@@ -25026,7 +25339,7 @@ var setUpperAndLowerElements = function setUpperAndLowerElements(renderer, staff
     incTop(staff, positionY, 'partHeightAbove');
     incTop(staff, positionY, 'tempoHeightAbove');
     if (staff.specialY.lyricHeightBelow) {
-      staff.specialY.lyricHeightBelow += renderer.spacing.vocal / spacing.STEP;
+      staff.specialY.lyricHeightBelow += renderer.spacing.vocal / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
       positionY.lyricHeightBelow = staff.bottom;
       staff.bottom -= staff.specialY.lyricHeightBelow + margin;
     }
@@ -25058,11 +25371,11 @@ var setUpperAndLowerElements = function setUpperAndLowerElements(renderer, staff
     if (lastStaffBottom !== undefined) {
       var thisStaffTop = staff.top - 10;
       var forcedSpacingBetween = lastStaffBottom + thisStaffTop;
-      var minSpacingInPitches = renderer.spacing.systemStaffSeparation / spacing.STEP;
+      var minSpacingInPitches = renderer.spacing.systemStaffSeparation / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
       var addedSpace = minSpacingInPitches - forcedSpacingBetween;
       if (addedSpace > 0) staff.top += addedSpace;
     }
-    staff.top += renderer.spacing.staffTopMargin / spacing.STEP;
+    staff.top += renderer.spacing.staffTopMargin / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
     lastStaffBottom = 2 - staff.bottom; // the staff starts at position 2 and the bottom variable is negative. Therefore to find out how large the bottom is, we reverse the sign of the bottom, and add the 2 in.
 
     // Now we need a little margin on the top, so we'll just throw that in.
@@ -25180,9 +25493,9 @@ function setUpperAndLowerRelativeElements(positionY, element, renderSpacing) {
         element.top = positionY.lyricHeightAbove;
         element.bottom = positionY.lyricHeightAbove;
       } else {
-        element.top = positionY.lyricHeightBelow + renderSpacing.vocal / spacing.STEP;
-        element.bottom = positionY.lyricHeightBelow + renderSpacing.vocal / spacing.STEP;
-        element.pitch -= renderSpacing.vocal / spacing.STEP;
+        element.top = positionY.lyricHeightBelow + renderSpacing.vocal / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
+        element.bottom = positionY.lyricHeightBelow + renderSpacing.vocal / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
+        element.pitch -= renderSpacing.vocal / _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
       }
       break;
     case "debug":
@@ -25192,7 +25505,7 @@ function setUpperAndLowerRelativeElements(positionY, element, renderSpacing) {
   }
   if (element.pitch === undefined || element.top === undefined) console.error("RelativeElement position not set.", element.type, element.pitch, element.top, positionY);
 }
-module.exports = setUpperAndLowerElements;
+/* harmony default export */ __webpack_exports__["default"] = (setUpperAndLowerElements);
 
 /***/ }),
 
@@ -25200,9 +25513,11 @@ module.exports = setUpperAndLowerElements;
 /*!*****************************************!*\
   !*** ./src/write/layout/staff-group.js ***!
   \*****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var layoutVoiceElements = __webpack_require__(/*! ./voice-elements */ "./src/write/layout/voice-elements.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _voice_elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voice-elements */ "./src/write/layout/voice-elements.js");
+
 function checkLastBarX(voices) {
   var maxX = 0;
   for (var i = 0; i < voices.length; i++) {
@@ -25232,14 +25547,14 @@ var layoutStaffGroup = function layoutStaffGroup(spacing, minPadding, debug, sta
   var currentduration = 0;
   if (debug) console.log("init layout", spacing);
   for (i = 0; i < staffGroup.voices.length; i++) {
-    layoutVoiceElements.beginLayout(x, staffGroup.voices[i]);
+    _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].beginLayout(x, staffGroup.voices[i]);
   }
   var spacingunit = 0; // number of spacingunits coming from the previously laid out element to this one
   while (!finished(staffGroup.voices)) {
     // find first duration level to be laid out among candidates across voices
     currentduration = null; // candidate smallest duration level
     for (i = 0; i < staffGroup.voices.length; i++) {
-      if (!layoutVoiceElements.layoutEnded(staffGroup.voices[i]) && (!currentduration || getDurationIndex(staffGroup.voices[i]) < currentduration)) currentduration = getDurationIndex(staffGroup.voices[i]);
+      if (!_voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].layoutEnded(staffGroup.voices[i]) && (!currentduration || getDurationIndex(staffGroup.voices[i]) < currentduration)) currentduration = getDurationIndex(staffGroup.voices[i]);
     }
 
     // isolate voices at current duration level
@@ -25262,9 +25577,9 @@ var layoutStaffGroup = function layoutStaffGroup(spacing, minPadding, debug, sta
     var spacingduration = 0;
     for (i = 0; i < currentvoices.length; i++) {
       //console.log("greatest spacing unit", x, layoutVoiceElements.getNextX(currentvoices[i]), layoutVoiceElements.getSpacingUnits(currentvoices[i]), currentvoices[i].spacingduration);
-      if (layoutVoiceElements.getNextX(currentvoices[i]) > x) {
-        x = layoutVoiceElements.getNextX(currentvoices[i]);
-        spacingunit = layoutVoiceElements.getSpacingUnits(currentvoices[i]);
+      if (_voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].getNextX(currentvoices[i]) > x) {
+        x = _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].getNextX(currentvoices[i]);
+        spacingunit = _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].getSpacingUnits(currentvoices[i]);
         spacingduration = currentvoices[i].spacingduration;
       }
     }
@@ -25277,13 +25592,13 @@ var layoutStaffGroup = function layoutStaffGroup(spacing, minPadding, debug, sta
       if (v.voicenumber === 0) lastTopVoice = i;
       var topVoice = lastTopVoice !== undefined && currentvoices[lastTopVoice].voicenumber !== v.voicenumber ? currentvoices[lastTopVoice] : undefined;
       if (!isSameStaff(v, topVoice)) topVoice = undefined;
-      var voicechildx = layoutVoiceElements.layoutOneItem(x, spacing, v, minPadding, topVoice);
+      var voicechildx = _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].layoutOneItem(x, spacing, v, minPadding, topVoice);
       var dx = voicechildx - x;
       if (dx > 0) {
         x = voicechildx; //update x
         for (var j = 0; j < i; j++) {
           // shift over all previously laid out elements
-          layoutVoiceElements.shiftRight(dx, currentvoices[j]);
+          _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].shiftRight(dx, currentvoices[j]);
         }
       }
     }
@@ -25291,21 +25606,21 @@ var layoutStaffGroup = function layoutStaffGroup(spacing, minPadding, debug, sta
     // remove the value of already counted spacing units in other voices (e.g. if a voice had planned to use up 5 spacing units but is not in line to be laid out at this duration level - where we've used 2 spacing units - then we must use up 3 spacing units, not 5)
     for (i = 0; i < othervoices.length; i++) {
       othervoices[i].spacingduration -= spacingduration;
-      layoutVoiceElements.updateNextX(x, spacing, othervoices[i]); // adjust other voices expectations
+      _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].updateNextX(x, spacing, othervoices[i]); // adjust other voices expectations
     }
 
     // update indexes of currently laid out elems
     for (i = 0; i < currentvoices.length; i++) {
       var voice = currentvoices[i];
-      layoutVoiceElements.updateIndices(voice);
+      _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].updateIndices(voice);
     }
   } // finished laying out
 
   // find the greatest remaining x as a base for the width
   for (i = 0; i < staffGroup.voices.length; i++) {
-    if (layoutVoiceElements.getNextX(staffGroup.voices[i]) > x) {
-      x = layoutVoiceElements.getNextX(staffGroup.voices[i]);
-      spacingunit = layoutVoiceElements.getSpacingUnits(staffGroup.voices[i]);
+    if (_voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].getNextX(staffGroup.voices[i]) > x) {
+      x = _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].getNextX(staffGroup.voices[i]);
+      spacingunit = _voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].getSpacingUnits(staffGroup.voices[i]);
     }
   }
 
@@ -25321,7 +25636,7 @@ var layoutStaffGroup = function layoutStaffGroup(spacing, minPadding, debug, sta
 };
 function finished(voices) {
   for (var i = 0; i < voices.length; i++) {
-    if (!layoutVoiceElements.layoutEnded(voices[i])) return false;
+    if (!_voice_elements__WEBPACK_IMPORTED_MODULE_0__["default"].layoutEnded(voices[i])) return false;
   }
   return true;
 }
@@ -25334,7 +25649,7 @@ function isSameStaff(voice1, voice2) {
   if (!voice2 || !voice2.staff || !voice2.staff.voices || voice2.staff.voices.length === 0) return false;
   return voice1.staff.voices[0] === voice2.staff.voices[0];
 }
-module.exports = layoutStaffGroup;
+/* harmony default export */ __webpack_exports__["default"] = (layoutStaffGroup);
 
 /***/ }),
 
@@ -25342,9 +25657,11 @@ module.exports = layoutStaffGroup;
 /*!*************************************!*\
   !*** ./src/write/layout/triplet.js ***!
   \*************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var getBarYAt = __webpack_require__(/*! ./get-bar-y-at */ "./src/write/layout/get-bar-y-at.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _get_bar_y_at__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./get-bar-y-at */ "./src/write/layout/get-bar-y-at.js");
+
 function layoutTriplet(element) {
   // TODO end and beginning of line (PER: P.S. I'm not sure this can happen: I think the parser will always specify both the start and end points.)
   if (element.anchor1 && element.anchor2) {
@@ -25401,12 +25718,12 @@ function heightAtMidpoint(startX, endX, beam) {
   if (beam.beams.length === 0) return 0;
   beam = beam.beams[0];
   var midPoint = startX + (endX - startX) / 2;
-  return getBarYAt(beam.startX, beam.startY, beam.endX, beam.endY, midPoint);
+  return (0,_get_bar_y_at__WEBPACK_IMPORTED_MODULE_0__["default"])(beam.startX, beam.startY, beam.endX, beam.endY, midPoint);
 }
 function xAtMidpoint(startX, endX) {
   return startX + (endX - startX) / 2;
 }
-module.exports = layoutTriplet;
+/* harmony default export */ __webpack_exports__["default"] = (layoutTriplet);
 
 /***/ }),
 
@@ -25414,8 +25731,9 @@ module.exports = layoutTriplet;
 /*!********************************************!*\
   !*** ./src/write/layout/voice-elements.js ***!
   \********************************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var VoiceElement = function VoiceElements() {};
 VoiceElement.beginLayout = function (startx, voice) {
   voice.i = 0;
@@ -25522,7 +25840,7 @@ function getMinWidth(child) {
   // absolute space taken to the right of the note
   return child.w;
 }
-module.exports = VoiceElement;
+/* harmony default export */ __webpack_exports__["default"] = (VoiceElement);
 
 /***/ }),
 
@@ -25530,15 +25848,19 @@ module.exports = VoiceElement;
 /*!***********************************!*\
   !*** ./src/write/layout/voice.js ***!
   \***********************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-var layoutBeam = __webpack_require__(/*! ./beam */ "./src/write/layout/beam.js");
-var getBarYAt = __webpack_require__(/*! ./get-bar-y-at */ "./src/write/layout/get-bar-y-at.js");
-var layoutTriplet = __webpack_require__(/*! ./triplet */ "./src/write/layout/triplet.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _beam__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./beam */ "./src/write/layout/beam.js");
+/* harmony import */ var _get_bar_y_at__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./get-bar-y-at */ "./src/write/layout/get-bar-y-at.js");
+/* harmony import */ var _triplet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./triplet */ "./src/write/layout/triplet.js");
+
+
+
 var layoutVoice = function layoutVoice(voice) {
   for (var i = 0; i < voice.beams.length; i++) {
     if (voice.beams[i].type === 'BeamElem') {
-      layoutBeam(voice.beams[i]);
+      (0,_beam__WEBPACK_IMPORTED_MODULE_0__["default"])(voice.beams[i]);
       moveDecorations(voice.beams[i]);
       // The above will change the top and bottom of the abselem children, so see if we need to expand our range.
       for (var j = 0; j < voice.beams[i].elems.length; j++) {
@@ -25552,7 +25874,7 @@ var layoutVoice = function layoutVoice(voice) {
   for (i = 0; i < voice.otherchildren.length; i++) {
     var child = voice.otherchildren[i];
     if (child.type === 'TripletElem') {
-      layoutTriplet(child);
+      (0,_triplet__WEBPACK_IMPORTED_MODULE_2__["default"])(child);
       voice.adjustRange(child);
     }
   }
@@ -25658,9 +25980,9 @@ function setLane(absElems, numLanesAbove, numLanesBelow) {
 
 function yAtNote(element, beam) {
   beam = beam.beams[0];
-  return getBarYAt(beam.startX, beam.startY, beam.endX, beam.endY, element.x);
+  return (0,_get_bar_y_at__WEBPACK_IMPORTED_MODULE_1__["default"])(beam.startX, beam.startY, beam.endX, beam.endY, element.x);
 }
-module.exports = layoutVoice;
+/* harmony default export */ __webpack_exports__["default"] = (layoutVoice);
 
 /***/ }),
 
@@ -25668,23 +25990,26 @@ module.exports = layoutVoice;
 /*!*******************************!*\
   !*** ./src/write/renderer.js ***!
   \*******************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers/spacing */ "./src/write/helpers/spacing.js");
+/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svg */ "./src/write/svg.js");
 //    abc_renderer.js: API to render to SVG/Raphael/whatever rendering engine
 
 /*global Math */
 
-var spacing = __webpack_require__(/*! ./helpers/spacing */ "./src/write/helpers/spacing.js");
-var Svg = __webpack_require__(/*! ./svg */ "./src/write/svg.js");
+
+
 
 /**
  * Implements the API for rendering ABCJS Abstract Rendering Structure to a canvas/paper (e.g. SVG, Raphael, etc)
  * @param {Object} paper
  */
 var Renderer = function Renderer(paper) {
-  this.paper = new Svg(paper);
+  this.paper = new _svg__WEBPACK_IMPORTED_MODULE_1__["default"](paper);
   this.controller = null;
-  this.space = 3 * spacing.SPACE;
+  this.space = 3 * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].SPACE;
   this.padding = {}; // renderer's padding is managed by the controller
   this.reset();
   this.firefox112 = navigator.userAgent.indexOf('Firefox/112.0') >= 0;
@@ -25836,7 +26161,7 @@ Renderer.prototype.setVerticalSpace = function (formatting) {
  * @param {number} ofs pitch value (bottom C on a G clef = 0, D=1, etc.)
  */
 Renderer.prototype.calcY = function (ofs) {
-  return this.y - ofs * spacing.STEP;
+  return this.y - ofs * _helpers_spacing__WEBPACK_IMPORTED_MODULE_0__["default"].STEP;
 };
 Renderer.prototype.moveY = function (em, numLines) {
   if (numLines === undefined) numLines = 1;
@@ -25845,7 +26170,7 @@ Renderer.prototype.moveY = function (em, numLines) {
 Renderer.prototype.absolutemoveY = function (y) {
   this.y = y;
 };
-module.exports = Renderer;
+/* harmony default export */ __webpack_exports__["default"] = (Renderer);
 
 /***/ }),
 
@@ -25853,8 +26178,9 @@ module.exports = Renderer;
 /*!**************************!*\
   !*** ./src/write/svg.js ***!
   \**************************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 //    abc_voice_element.js: Definition of the VoiceElement class.
 
 /*global module */
@@ -26198,7 +26524,7 @@ function createSvg() {
   svg.setAttribute('stroke', 'currentColor'); // for automatically picking up dark mode and high contrast
   return svg;
 }
-module.exports = Svg;
+/* harmony default export */ __webpack_exports__["default"] = (Svg);
 
 /***/ }),
 
@@ -26206,10 +26532,11 @@ module.exports = Svg;
 /*!********************!*\
   !*** ./version.js ***!
   \********************/
-/***/ (function(module) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 var version = '6.4.1';
-module.exports = version;
+/* harmony default export */ __webpack_exports__["default"] = (version);
 
 /***/ })
 
@@ -26240,12 +26567,136 @@ module.exports = version;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
 /******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./index.js");
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _version__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./version */ "./version.js");
+/* harmony import */ var _src_api_abc_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/api/abc_animation */ "./src/api/abc_animation.js");
+/* harmony import */ var _src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/api/abc_tunebook */ "./src/api/abc_tunebook.js");
+/* harmony import */ var _src_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/synth/abc_midi_sequencer */ "./src/synth/abc_midi_sequencer.js");
+/* harmony import */ var _src_str_output__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/str/output */ "./src/str/output.js");
+/* harmony import */ var _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./src/write/creation/glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/synth/create-synth */ "./src/synth/create-synth.js");
+/* harmony import */ var _src_synth_instrument_index_to_name__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/synth/instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
+/* harmony import */ var _src_synth_pitch_to_note_name__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/synth/pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
+/* harmony import */ var _src_synth_synth_sequence__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./src/synth/synth-sequence */ "./src/synth/synth-sequence.js");
+/* harmony import */ var _src_synth_create_synth_control__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./src/synth/create-synth-control */ "./src/synth/create-synth-control.js");
+/* harmony import */ var _src_synth_register_audio_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./src/synth/register-audio-context */ "./src/synth/register-audio-context.js");
+/* harmony import */ var _src_synth_active_audio_context__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./src/synth/active-audio-context */ "./src/synth/active-audio-context.js");
+/* harmony import */ var _src_synth_supports_audio__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./src/synth/supports-audio */ "./src/synth/supports-audio.js");
+/* harmony import */ var _src_synth_play_event__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./src/synth/play-event */ "./src/synth/play-event.js");
+/* harmony import */ var _src_synth_synth_controller__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./src/synth/synth-controller */ "./src/synth/synth-controller.js");
+/* harmony import */ var _src_synth_get_midi_file__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./src/synth/get-midi-file */ "./src/synth/get-midi-file.js");
+/* harmony import */ var _src_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./src/synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
+/* harmony import */ var _src_synth_sounds_cache__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./src/synth/sounds-cache */ "./src/synth/sounds-cache.js");
+/**!
+Copyright (c) 2009-2023 Paul Rosen and Gregory Dyke
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+ **This text is from: http://opensource.org/licenses/MIT**
+!**/
+
+
+
+
+
+var abcjs = {};
+abcjs.signature = "abcjs-basic v" + _version__WEBPACK_IMPORTED_MODULE_0__["default"];
+Object.keys(_src_api_abc_animation__WEBPACK_IMPORTED_MODULE_1__["default"]).forEach(function (key) {
+  abcjs[key] = _src_api_abc_animation__WEBPACK_IMPORTED_MODULE_1__["default"][key];
+});
+Object.keys(_src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_2__["default"]).forEach(function (key) {
+  abcjs[key] = _src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_2__["default"][key];
+});
+abcjs.renderAbc = __webpack_require__(/*! ./src/api/abc_tunebook_svg */ "./src/api/abc_tunebook_svg.js");
+abcjs.tuneMetrics = __webpack_require__(/*! ./src/api/tune-metrics */ "./src/api/tune-metrics.js");
+abcjs.TimingCallbacks = __webpack_require__(/*! ./src/api/abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
+
+abcjs.setGlyph = _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_5__["default"].setSymbol;
+abcjs.strTranspose = _src_str_output__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+abcjs.synth = {
+  CreateSynth: _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_6__["default"],
+  instrumentIndexToName: _src_synth_instrument_index_to_name__WEBPACK_IMPORTED_MODULE_7__["default"],
+  pitchToNoteName: _src_synth_pitch_to_note_name__WEBPACK_IMPORTED_MODULE_8__["default"],
+  SynthController: _src_synth_synth_controller__WEBPACK_IMPORTED_MODULE_15__["default"],
+  SynthSequence: _src_synth_synth_sequence__WEBPACK_IMPORTED_MODULE_9__["default"],
+  CreateSynthControl: _src_synth_create_synth_control__WEBPACK_IMPORTED_MODULE_10__["default"],
+  registerAudioContext: _src_synth_register_audio_context__WEBPACK_IMPORTED_MODULE_11__["default"],
+  activeAudioContext: _src_synth_active_audio_context__WEBPACK_IMPORTED_MODULE_12__["default"],
+  supportsAudio: _src_synth_supports_audio__WEBPACK_IMPORTED_MODULE_13__["default"],
+  playEvent: _src_synth_play_event__WEBPACK_IMPORTED_MODULE_14__["default"],
+  getMidiFile: _src_synth_get_midi_file__WEBPACK_IMPORTED_MODULE_16__["default"],
+  sequence: _src_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  midiRenderer: _src_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_17__["default"],
+  soundsCache: _src_synth_sounds_cache__WEBPACK_IMPORTED_MODULE_18__["default"]
+};
+abcjs['Editor'] = __webpack_require__(/*! ./src/edit/abc_editor */ "./src/edit/abc_editor.js");
+abcjs['EditArea'] = __webpack_require__(/*! ./src/edit/abc_editarea */ "./src/edit/abc_editarea.js");
+/* harmony default export */ __webpack_exports__["default"] = (abcjs);
+}();
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

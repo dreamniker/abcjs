@@ -1,26 +1,26 @@
 // abc_abstract_engraver.js: Creates a data structure suitable for printing a line of abc
 
-var AbsoluteElement = require('./elements/absolute-element');
-var BeamElem = require('./elements/beam-element');
-var BraceElem = require('./elements/brace-element');
-var createClef = require('./create-clef');
-var createKeySignature = require('./create-key-signature');
-var createNoteHead = require('./create-note-head');
-var createTimeSignature = require('./create-time-signature');
-var Decoration = require('./decoration');
-var EndingElem = require('./elements/ending-element');
-var glyphs = require('./glyphs');
-var RelativeElement = require('./elements/relative-element');
-var spacing = require('../helpers/spacing');
-var StaffGroupElement = require('./elements/staff-group-element');
-var TempoElement = require('./elements/tempo-element');
-var TieElem = require('./elements/tie-element');
-var TripletElem = require('./elements/triplet-element');
-var VoiceElement = require('./elements/voice-element');
-var addChord = require('./add-chord');
-var pitchesToPerc = require('../../synth/pitches-to-perc')
+import AbsoluteElement from './elements/absolute-element';
 
-var parseCommon = require('../../parse/abc_common');
+import BeamElem from './elements/beam-element';
+import BraceElem from './elements/brace-element';
+import createClef from './create-clef';
+import createKeySignature from './create-key-signature';
+import createNoteHead from './create-note-head';
+import createTimeSignature from './create-time-signature';
+import Decoration from './decoration';
+import EndingElem from './elements/ending-element';
+import glyphs from './glyphs';
+import RelativeElement from './elements/relative-element';
+import spacing from '../helpers/spacing';
+import StaffGroupElement from './elements/staff-group-element';
+import TempoElement from './elements/tempo-element';
+import TieElem from './elements/tie-element';
+import TripletElem from './elements/triplet-element';
+import VoiceElement from './elements/voice-element';
+import addChord from './add-chord';
+import pitchesToPerc from '../../synth/pitches-to-perc';
+import parseCommon from '../../parse/abc_common';
 
 var getDuration = function (elem) {
 	var d = 0;
@@ -1043,4 +1043,4 @@ AbstractEngraver.prototype.createBarLine = function (voice, elem, isFirstStaff) 
 
 };
 
-module.exports = AbstractEngraver;
+export default AbstractEngraver;

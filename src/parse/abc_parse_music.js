@@ -1,6 +1,6 @@
-var parseCommon = require('./abc_common');
-var parseKeyVoice = require('./abc_parse_key_voice');
-var transpose = require('./abc_transpose');
+import parseCommon from './abc_common';
+import parseKeyVoice from './abc_parse_key_voice';
+import transpose from './abc_transpose';
 
 var tokenizer;
 var warn;
@@ -9,19 +9,19 @@ var tune;
 var tuneBuilder;
 var header;
 
-var {
-  legalAccents,
-  volumeDecorations,
-  dynamicDecorations,
-  accentPseudonyms,
-  accentDynamicPseudonyms,
-  nonDecorations,
-  durations,
-  pitches,
-  rests,
-  accMap,
-  tripletQ
-} = require('./abc_parse_settings')
+import {
+    legalAccents,
+    volumeDecorations,
+    dynamicDecorations,
+    accentPseudonyms,
+    accentDynamicPseudonyms,
+    nonDecorations,
+    durations,
+    pitches,
+    rests,
+    accMap,
+    tripletQ,
+} from './abc_parse_settings';
 
 var MusicParser = function(_tokenizer, _warn, _multilineVars, _tune, _tuneBuilder, _header) {
 	tokenizer = _tokenizer;
@@ -1283,4 +1283,4 @@ var getBrokenRhythm = function(line, index) {
 	return null;
 };
 
-module.exports = MusicParser;
+export default MusicParser;

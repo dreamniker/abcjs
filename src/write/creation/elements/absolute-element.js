@@ -1,7 +1,8 @@
 //    abc_absolute_element.js: Definition of the AbsoluteElement class.
 
-var highlight = require("../../interactive/highlight");
-var unhighlight = require("../../interactive/unhighlight");
+import highlight from '../../interactive/highlight';
+
+import unhighlight from '../../interactive/unhighlight';
 
 // Everything that is placed in the SVG is first created as an absolute element. This is one unit of graphic information.
 // That is, it embodies a concept: a clef, a time signature, a bar line,etc. or most complexly:
@@ -239,4 +240,4 @@ AbsoluteElement.prototype.unhighlight = function (klass, color) {
 	unhighlight.bind(this)(klass, color);
 };
 
-module.exports = AbsoluteElement;
+export default AbsoluteElement;

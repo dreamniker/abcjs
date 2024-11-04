@@ -149,4 +149,4 @@ var midiSequencerLint = function(tune) {
 	return ret;
 };
 
-module.exports = midiSequencerLint;
+export default midiSequencerLint;

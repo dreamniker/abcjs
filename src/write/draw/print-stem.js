@@ -1,5 +1,5 @@
-var elementGroup = require('./group-elements');
-var roundNumber = require("./round-number");
+import elementGroup from './group-elements';
+import roundNumber from './round-number';
 
 function printStem(renderer, x, dx, y1, y2, klass, name) {
 	if (dx < 0 || y1 < y2) { // correct path "handedness" for intersection with other elements
@@ -45,4 +45,4 @@ function printStem(renderer, x, dx, y1, y2, klass, name) {
 	return renderer.paper.pathToBack(attr);
 }
 
-module.exports = printStem;
+export default printStem;

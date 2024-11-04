@@ -1,4 +1,4 @@
-var StringPatterns = require('./string-patterns');
+import StringPatterns from './string-patterns';
 
 function TabStringPatterns(plugin, defaultTuning) {
   this.tuning = plugin._super.params.tuning;
@@ -20,4 +20,4 @@ TabStringPatterns.prototype.stringToPitch = function (stringNumber) {
 };
 
 
-module.exports = TabStringPatterns;
+export default TabStringPatterns;

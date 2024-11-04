@@ -91,4 +91,4 @@ VoiceElement.prototype.setWidth = function (width) {
 	this.w = width;
 };
 
-module.exports = VoiceElement;
+export default VoiceElement;

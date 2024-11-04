@@ -27,7 +27,7 @@ StringTablature.prototype.bypass = function (line) {
     if (voices[0].isPercussion) return true;
   }
   return false;
-};  
+};
 
 
 StringTablature.prototype.setRelative = function (child, relative, first) {
@@ -53,4 +53,4 @@ StringTablature.prototype.setRelative = function (child, relative, first) {
   return first;
 };
 
-module.exports = StringTablature;
+export default StringTablature;

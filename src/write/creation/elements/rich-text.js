@@ -1,4 +1,4 @@
-const addTextIf = require("../add-text-if");
+import addTextIf from '../add-text-if';
 
 function richText(rows, str, defFont, klass, name, paddingLeft, attr, getTextSize) {
 	var space = getTextSize.calc("i", defFont, klass);
@@ -48,4 +48,4 @@ function richText(rows, str, defFont, klass, name, paddingLeft, attr, getTextSiz
 	}
 }
 
-module.exports = richText;
+export default richText;

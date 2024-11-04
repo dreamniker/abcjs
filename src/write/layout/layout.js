@@ -1,8 +1,8 @@
-var layoutVoice = require('./voice');
-var setUpperAndLowerElements = require('./set-upper-and-lower-elements');
-var layoutStaffGroup = require('./staff-group');
-var getLeftEdgeOfStaff = require('./get-left-edge-of-staff');
-var layoutInGrid = require('./layout-in-grid');
+import layoutVoice from './voice';
+import setUpperAndLowerElements from './set-upper-and-lower-elements';
+import layoutStaffGroup from './staff-group';
+import getLeftEdgeOfStaff from './get-left-edge-of-staff';
+import layoutInGrid from './layout-in-grid';
 
 // This sets the "x" attribute on all the children in abctune.lines
 // It also sets the "w" and "startx" attributes on "voices"
@@ -126,4 +126,4 @@ function centerWholeRests(voices) {
 	}
 }
 
-module.exports = layout;
+export default layout;

@@ -1,4 +1,4 @@
-var roundNumber = require("./round-number");
+import roundNumber from './round-number';
 
 function renderText(renderer, params, alreadyInGroup) {
 	var y = params.y;
@@ -78,4 +78,4 @@ function renderText(renderer, params, alreadyInGroup) {
 	return elem;
 }
 
-module.exports = renderText;
+export default renderText;

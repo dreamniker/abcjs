@@ -1,5 +1,5 @@
-const addTextIf = require("../add-text-if");
-const richText = require("./rich-text");
+import addTextIf from '../add-text-if';
+import richText from './rich-text';
 
 function BottomText(metaText, width, isPrint, paddingLeft, spacing, shouldAddClasses, getTextSize) {
 	this.rows = [];
@@ -90,4 +90,4 @@ BottomText.prototype.footer = function (footer, width, paddingLeft, getTextSize)
 	addTextIf(this.rows, { marginLeft: paddingLeft + width, text: footer.right, font: font, klass: klass, anchor: 'end', name: "footer" }, getTextSize);
 }
 
-module.exports = BottomText;
+export default BottomText;

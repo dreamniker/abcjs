@@ -1,4 +1,4 @@
-var { relativeMajor } = require("./relative-major");
+import { relativeMajor } from './relative-major';
 
 var key1sharp = { acc: 'sharp', note: 'f' };
 var key2sharp = { acc: 'sharp', note: 'c' };
@@ -48,6 +48,6 @@ function keyAccidentals(key) {
 	if (!newKey) // If we don't recognize the key then there is no change
 		return null
 	return JSON.parse(JSON.stringify(newKey))
-};
+}
 
-module.exports = keyAccidentals;
+export default keyAccidentals;

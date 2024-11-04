@@ -1,6 +1,6 @@
-var soundsCache = require('./sounds-cache');
-var pitchToNoteName = require('./pitch-to-note-name');
-var centsToFactor = require("./cents-to-factor");
+import soundsCache from './sounds-cache';
+import pitchToNoteName from './pitch-to-note-name';
+import centsToFactor from './cents-to-factor';
 
 function placeNote(outputAudioBuffer, sampleRate, sound, startArray, volumeMultiplier, ofsMs, fadeTimeSec, noteEndSec, debugCallback) {
 	// sound contains { instrument, pitch, volume, len, pan, tempoMultiplier
@@ -117,4 +117,4 @@ var copyToChannel = function(toBuffer, fromBuffer, start) {
 	}
 };
 
-module.exports = placeNote;
+export default placeNote;

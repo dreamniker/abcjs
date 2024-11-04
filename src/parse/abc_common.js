@@ -54,4 +54,4 @@ parseCommon.last = function(arr) {
 };
 
 
-module.exports = parseCommon;
+export default parseCommon;

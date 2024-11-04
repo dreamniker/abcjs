@@ -47,4 +47,4 @@ function createAnalysis(target, ev) {
 	return {classes: classes, analysis: analysis}
 }
 
-module.exports = createAnalysis;
+export default createAnalysis;

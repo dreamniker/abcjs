@@ -1,4 +1,4 @@
-var spacing = require('../helpers/spacing');
+import spacing from '../helpers/spacing';
 
 var setUpperAndLowerElements = function (renderer, staffGroup) {
 	// Each staff already has the top and bottom set, now we see if there are elements that are always on top and bottom, and resolve their pitch.
@@ -231,4 +231,4 @@ function setUpperAndLowerRelativeElements(positionY, element, renderSpacing) {
 		console.error("RelativeElement position not set.", element.type, element.pitch, element.top, positionY);
 }
 
-module.exports = setUpperAndLowerElements;
+export default setUpperAndLowerElements;

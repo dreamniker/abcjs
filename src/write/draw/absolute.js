@@ -1,8 +1,8 @@
-var drawTempo = require('./tempo');
-var drawRelativeElement = require('./relative');
-var spacing = require('../helpers/spacing');
-var setClass = require('../helpers/set-class');
-var elementGroup = require('./group-elements');
+import drawTempo from './tempo';
+import drawRelativeElement from './relative';
+import spacing from '../helpers/spacing';
+import setClass from '../helpers/set-class';
+import elementGroup from './group-elements';
 
 function drawAbsolute(renderer, params, bartop, selectables, staffPos) {
 	if (params.invisible) return;
@@ -76,4 +76,4 @@ function drawAbsolute(renderer, params, bartop, selectables, staffPos) {
 	}
 }
 
-module.exports = drawAbsolute;
+export default drawAbsolute;

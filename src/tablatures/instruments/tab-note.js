@@ -1,4 +1,4 @@
-var {noteToMidi, midiToNote} = require('../../synth/note-to-midi');
+import { noteToMidi, midiToNote } from '../../synth/note-to-midi';
 
 /**
  * 
@@ -92,7 +92,7 @@ function cloneNote(self) {
   newTabNote.isFlat = self.isFlat;
   newTabNote.isKeyFlat = self.isKeyFlat;
   return newTabNote;
-} 
+}
 TabNote.prototype.sameNoteAs = function (note) {
   return note.pitch === this.pitch
 };
@@ -210,7 +210,7 @@ TabNote.prototype.emit = function () {
   return returned;
 };
 
-module.exports = {
+export default {
   'TabNote': TabNote,
   'notes': notes
 };

@@ -1,4 +1,4 @@
-var createAnalysis = require('./create-analysis');
+import createAnalysis from './create-analysis';
 
 function findSelectableElement(event) {
 	var selectable = event
@@ -21,4 +21,4 @@ function findSelectableElement(event) {
 	return null
 }
 
-module.exports = findSelectableElement;
+export default findSelectableElement;

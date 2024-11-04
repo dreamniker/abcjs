@@ -29,4 +29,4 @@ BraceElem.prototype.isStartVoice = function (voice) {
 	return false;
 };
 
-module.exports = BraceElem;
+export default BraceElem;

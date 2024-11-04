@@ -1,6 +1,6 @@
-const {noteToMidi} = require('../../synth/note-to-midi');
-var TabNote = require('./tab-note');
-var TabNotes = require('./tab-notes');
+import { noteToMidi } from '../../synth/note-to-midi';
+import TabNote from './tab-note';
+import TabNotes from './tab-notes';
 
 
 function buildCapo(self) {
@@ -184,7 +184,7 @@ function invalidNumber( retNotes , note ) {
   };
   retNotes.push(number);
   retNotes.error = note.emit() + ': unexpected note for instrument' ;
-} 
+}
 
 StringPatterns.prototype.notesToNumber = function (notes, graces) {
   var note;
@@ -320,4 +320,4 @@ function StringPatterns(plugin) {
 
 
 
-module.exports = StringPatterns;
+export default StringPatterns;

@@ -1,4 +1,4 @@
-var printStaffLine = require('./staff-line');
+import printStaffLine from './staff-line';
 
 function printStaff(renderer, startx, endx, numLines, linePitch, dy) {
 	var klass = "abcjs-top-line";
@@ -30,4 +30,4 @@ function printStaff(renderer, startx, endx, numLines, linePitch, dy) {
 	return [firstYLine, lastYLine];
 }
 
-module.exports = printStaff;
+export default printStaff;

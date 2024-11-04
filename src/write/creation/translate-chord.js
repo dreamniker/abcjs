@@ -34,4 +34,4 @@ function translateChord(chordString, jazzchords, germanAlphabet) {
 	return lines.join("\n");
 }
 
-module.exports = translateChord;
+export default translateChord;

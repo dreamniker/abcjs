@@ -5,8 +5,8 @@
 // It also extracts guitar chords to a separate voice and resolves their rhythm.
 
 var flatten;
-var ChordTrack = require("./chord-track");
-var pitchesToPerc = require('./pitches-to-perc');
+import ChordTrack from './chord-track';
+import pitchesToPerc from './pitches-to-perc';
 
 (function() {
 	"use strict";
@@ -883,4 +883,4 @@ var pitchesToPerc = require('./pitches-to-perc');
 	}
 })();
 
-module.exports = flatten;
+export default flatten;

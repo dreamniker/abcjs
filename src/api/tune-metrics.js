@@ -1,5 +1,5 @@
-var tunebook = require('./abc_tunebook');
-var EngraverController = require('../write/engraver-controller');
+import tunebook from './abc_tunebook';
+import EngraverController from '../write/engraver-controller';
 
 var tuneMetrics = function(abc, params) {
     function callback(div, tune, tuneNumber, abcString) {
@@ -15,4 +15,4 @@ var tuneMetrics = function(abc, params) {
     return tunebook.renderEngine(callback, "*", abc, params);
 };
 
-module.exports = tuneMetrics;
+export default tuneMetrics;

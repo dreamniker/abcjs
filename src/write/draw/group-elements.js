@@ -2,7 +2,7 @@
  * Begin a group of glyphs that will always be moved, scaled and highlighted together
  */
 
-var roundNumber = require("./round-number");
+import roundNumber from './round-number';
 
 function Group() {
 	this.ingroup = false;
@@ -63,4 +63,4 @@ Group.prototype.endGroup = function (klass, name) {
 // There is just a singleton of this object.
 var elementGroup = new Group();
 
-module.exports = elementGroup;
+export default elementGroup;

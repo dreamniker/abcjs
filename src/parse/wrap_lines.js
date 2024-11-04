@@ -439,4 +439,4 @@ function calcLineWraps(tune, widths, params) {
 	return ret;
 }
 
-module.exports = { wrapLines: wrapLines, calcLineWraps: calcLineWraps };
+export default { wrapLines: wrapLines, calcLineWraps: calcLineWraps };
