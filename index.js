@@ -95,4 +95,4 @@ abcjs.synth = synth
 
 export default abcjs
 
-export { renderAbc, tuneMetrics, TimingCallbacks, synth, setGlyph, strTranspose, CreateSynth }
+export { renderAbc }
