@@ -88,3 +88,5 @@ export function transposeKey(key, steps) {
 	}
 	return key;
 }
+
+export default {relativeMajor: relativeMajor, relativeMode: relativeMode, transposeKey: transposeKey};

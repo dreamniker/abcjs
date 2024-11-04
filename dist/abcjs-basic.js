@@ -1291,6 +1291,11 @@ function transposeKey(key, steps) {
   }
   return key;
 }
+/* harmony default export */ __webpack_exports__["default"] = ({
+  relativeMajor: relativeMajor,
+  relativeMode: relativeMode,
+  transposeKey: transposeKey
+});
 
 /***/ }),
 
@@ -10753,6 +10758,10 @@ function calcLineWraps(tune, widths, params) {
   ret.reParse = true;
   return ret;
 }
+/* harmony default export */ __webpack_exports__["default"] = ({
+  wrapLines: wrapLines,
+  calcLineWraps: calcLineWraps
+});
 
 /***/ }),
 
@@ -15258,6 +15267,10 @@ function midiToNote(midi) {
   }
   return name;
 }
+/* harmony default export */ __webpack_exports__["default"] = ({
+  noteToMidi: noteToMidi,
+  midiToNote: midiToNote
+});
 
 /***/ }),
 
@@ -16607,6 +16620,10 @@ TabNote.prototype.emit = function () {
   }
   return returned;
 };
+/* harmony default export */ __webpack_exports__["default"] = ({
+  'TabNote': TabNote,
+  'notes': notes
+});
 
 /***/ }),
 

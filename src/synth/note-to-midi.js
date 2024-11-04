@@ -46,3 +46,5 @@ export function midiToNote(midi) {
 	}	
 	return name
 }
+
+export default {noteToMidi: noteToMidi, midiToNote: midiToNote};

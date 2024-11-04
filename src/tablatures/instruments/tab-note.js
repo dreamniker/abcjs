@@ -209,3 +209,8 @@ TabNote.prototype.emit = function () {
   }
   return returned;
 };
+
+export default {
+  'TabNote': TabNote,
+  'notes': notes
+};

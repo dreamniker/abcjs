@@ -438,3 +438,5 @@ export function calcLineWraps(tune, widths, params) {
 	ret.reParse = true;
 	return ret;
 }
+
+export default { wrapLines: wrapLines, calcLineWraps: calcLineWraps };
