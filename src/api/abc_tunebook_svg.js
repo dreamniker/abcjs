@@ -2,7 +2,7 @@ import tunebook from './abc_tunebook';
 import Tune from '../data/abc_tune';
 import EngraverController from '../write/engraver-controller';
 import Parse from '../parse/abc_parse';
-import wrap from '../parse/wrap_lines';
+import {calcLineWraps} from '../parse/wrap_lines';
 // var tablatures = require('./abc_tablatures');
 
 
@@ -135,7 +135,7 @@ function doLineWrapping(div, tune, tuneNumber, abcString, params) {
 	var engraver_controller = new EngraverController(div, params);
 	var widths = engraver_controller.getMeasureWidths(tune);
 
-	var ret = wrap.calcLineWraps(tune, widths, params);
+	var ret = calcLineWraps(tune, widths, params);
 	if (ret.reParse) {
         var abcParser = new Parse();
         abcParser.parse(abcString, ret.revisedParams);

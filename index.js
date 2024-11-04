@@ -50,49 +50,49 @@ import getMidiFile from './src/synth/get-midi-file'
 import midiRenderer from './src/synth/abc_midi_renderer'
 import soundsCache from './src/synth/sounds-cache'
 
-var abcjs = {}
+// var abcjs = {}
 
-abcjs.renderAbc = renderAbc
-abcjs.tuneMetrics = tuneMetrics
-abcjs.TimingCallbacks = TimingCallbacks
+// abcjs.renderAbc = renderAbc
+// abcjs.tuneMetrics = tuneMetrics
+// abcjs.TimingCallbacks = TimingCallbacks
 
-abcjs.signature = 'abcjs-basic v' + version
+// abcjs.signature = 'abcjs-basic v' + version
 
-Object.keys(animation).forEach(function (key) {
-  abcjs[key] = animation[key]
-})
+// Object.keys(animation).forEach(function (key) {
+//   abcjs[key] = animation[key]
+// })
 
-Object.keys(tuneBook).forEach(function (key) {
-  abcjs[key] = tuneBook[key]
-})
+// Object.keys(tuneBook).forEach(function (key) {
+//   abcjs[key] = tuneBook[key]
+// })
 
 const setGlyph = glyphs.setSymbol
 
-abcjs.setGlyph = glyphs.setSymbol
-abcjs.strTranspose = strTranspose
+// abcjs.setGlyph = glyphs.setSymbol
+// abcjs.strTranspose = strTranspose
 
-abcjs['Editor'] = Editor
-abcjs['EditArea'] = EditArea
+// abcjs['Editor'] = Editor
+// abcjs['EditArea'] = EditArea
 
-const synth = {
-  CreateSynth: CreateSynth,
-  instrumentIndexToName: instrumentIndexToName,
-  pitchToNoteName: pitchToNoteName,
-  SynthController: SynthController,
-  SynthSequence: SynthSequence,
-  CreateSynthControl: CreateSynthControl,
-  registerAudioContext: registerAudioContext,
-  activeAudioContext: activeAudioContext,
-  supportsAudio: supportsAudio,
-  playEvent: playEvent,
-  getMidiFile: getMidiFile,
-  sequence: sequence,
-  midiRenderer: midiRenderer,
-  soundsCache: soundsCache,
-}
+// const synth = {
+//   CreateSynth: CreateSynth,
+//   instrumentIndexToName: instrumentIndexToName,
+//   pitchToNoteName: pitchToNoteName,
+//   SynthController: SynthController,
+//   SynthSequence: SynthSequence,
+//   CreateSynthControl: CreateSynthControl,
+//   registerAudioContext: registerAudioContext,
+//   activeAudioContext: activeAudioContext,
+//   supportsAudio: supportsAudio,
+//   playEvent: playEvent,
+//   getMidiFile: getMidiFile,
+//   sequence: sequence,
+//   midiRenderer: midiRenderer,
+//   soundsCache: soundsCache,
+// }
 
-abcjs.synth = synth
+// abcjs.synth = synth
 
-export default abcjs
+// export default abcjs
 
-export { renderAbc }
+export { renderAbc, tuneMetrics, TimingCallbacks, setGlyph, strTranspose, CreateSynth }

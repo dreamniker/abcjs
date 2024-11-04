@@ -2,13 +2,6 @@ import parseCommon from './abc_common';
 import parseKeyVoice from './abc_parse_key_voice';
 import transpose from './abc_transpose';
 
-var tokenizer;
-var warn;
-var multilineVars;
-var tune;
-var tuneBuilder;
-var header;
-
 import {
     legalAccents,
     volumeDecorations,
@@ -22,6 +15,13 @@ import {
     accMap,
     tripletQ,
 } from './abc_parse_settings';
+
+var tokenizer;
+var warn;
+var multilineVars;
+var tune;
+var tuneBuilder;
+var header;
 
 var MusicParser = function(_tokenizer, _warn, _multilineVars, _tune, _tuneBuilder, _header) {
 	tokenizer = _tokenizer;
