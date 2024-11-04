@@ -26620,25 +26620,39 @@ var __webpack_exports__ = {};
   !*** ./index.js ***!
   \******************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CreateSynth": function() { return /* reexport safe */ _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_11__["default"]; },
+/* harmony export */   "TimingCallbacks": function() { return /* reexport safe */ _src_api_abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_9__["default"]; },
+/* harmony export */   "renderAbc": function() { return /* reexport safe */ _src_api_abc_tunebook_svg__WEBPACK_IMPORTED_MODULE_7__["default"]; },
+/* harmony export */   "setGlyph": function() { return /* binding */ setGlyph; },
+/* harmony export */   "strTranspose": function() { return /* reexport safe */ _src_str_output__WEBPACK_IMPORTED_MODULE_6__["default"]; },
+/* harmony export */   "synth": function() { return /* binding */ synth; },
+/* harmony export */   "tuneMetrics": function() { return /* reexport safe */ _src_api_tune_metrics__WEBPACK_IMPORTED_MODULE_8__["default"]; }
+/* harmony export */ });
 /* harmony import */ var _version__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./version */ "./version.js");
-/* harmony import */ var _src_api_abc_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/api/abc_animation */ "./src/api/abc_animation.js");
-/* harmony import */ var _src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/api/abc_tunebook */ "./src/api/abc_tunebook.js");
-/* harmony import */ var _src_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/synth/abc_midi_sequencer */ "./src/synth/abc_midi_sequencer.js");
-/* harmony import */ var _src_str_output__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/str/output */ "./src/str/output.js");
-/* harmony import */ var _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./src/write/creation/glyphs */ "./src/write/creation/glyphs.js");
-/* harmony import */ var _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/synth/create-synth */ "./src/synth/create-synth.js");
-/* harmony import */ var _src_synth_instrument_index_to_name__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/synth/instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
-/* harmony import */ var _src_synth_pitch_to_note_name__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/synth/pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
-/* harmony import */ var _src_synth_synth_sequence__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./src/synth/synth-sequence */ "./src/synth/synth-sequence.js");
-/* harmony import */ var _src_synth_create_synth_control__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./src/synth/create-synth-control */ "./src/synth/create-synth-control.js");
-/* harmony import */ var _src_synth_register_audio_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./src/synth/register-audio-context */ "./src/synth/register-audio-context.js");
-/* harmony import */ var _src_synth_active_audio_context__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./src/synth/active-audio-context */ "./src/synth/active-audio-context.js");
-/* harmony import */ var _src_synth_supports_audio__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./src/synth/supports-audio */ "./src/synth/supports-audio.js");
-/* harmony import */ var _src_synth_play_event__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./src/synth/play-event */ "./src/synth/play-event.js");
-/* harmony import */ var _src_synth_synth_controller__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./src/synth/synth-controller */ "./src/synth/synth-controller.js");
-/* harmony import */ var _src_synth_get_midi_file__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./src/synth/get-midi-file */ "./src/synth/get-midi-file.js");
-/* harmony import */ var _src_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./src/synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
-/* harmony import */ var _src_synth_sounds_cache__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./src/synth/sounds-cache */ "./src/synth/sounds-cache.js");
+/* harmony import */ var _src_edit_abc_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/edit/abc_editor */ "./src/edit/abc_editor.js");
+/* harmony import */ var _src_edit_abc_editarea__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/edit/abc_editarea */ "./src/edit/abc_editarea.js");
+/* harmony import */ var _src_api_abc_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/api/abc_animation */ "./src/api/abc_animation.js");
+/* harmony import */ var _src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/api/abc_tunebook */ "./src/api/abc_tunebook.js");
+/* harmony import */ var _src_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./src/synth/abc_midi_sequencer */ "./src/synth/abc_midi_sequencer.js");
+/* harmony import */ var _src_str_output__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/str/output */ "./src/str/output.js");
+/* harmony import */ var _src_api_abc_tunebook_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/api/abc_tunebook_svg */ "./src/api/abc_tunebook_svg.js");
+/* harmony import */ var _src_api_tune_metrics__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/api/tune-metrics */ "./src/api/tune-metrics.js");
+/* harmony import */ var _src_api_abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./src/api/abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
+/* harmony import */ var _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./src/write/creation/glyphs */ "./src/write/creation/glyphs.js");
+/* harmony import */ var _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./src/synth/create-synth */ "./src/synth/create-synth.js");
+/* harmony import */ var _src_synth_instrument_index_to_name__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./src/synth/instrument-index-to-name */ "./src/synth/instrument-index-to-name.js");
+/* harmony import */ var _src_synth_pitch_to_note_name__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./src/synth/pitch-to-note-name */ "./src/synth/pitch-to-note-name.js");
+/* harmony import */ var _src_synth_synth_sequence__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./src/synth/synth-sequence */ "./src/synth/synth-sequence.js");
+/* harmony import */ var _src_synth_create_synth_control__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./src/synth/create-synth-control */ "./src/synth/create-synth-control.js");
+/* harmony import */ var _src_synth_register_audio_context__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./src/synth/register-audio-context */ "./src/synth/register-audio-context.js");
+/* harmony import */ var _src_synth_active_audio_context__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./src/synth/active-audio-context */ "./src/synth/active-audio-context.js");
+/* harmony import */ var _src_synth_supports_audio__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./src/synth/supports-audio */ "./src/synth/supports-audio.js");
+/* harmony import */ var _src_synth_play_event__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./src/synth/play-event */ "./src/synth/play-event.js");
+/* harmony import */ var _src_synth_synth_controller__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./src/synth/synth-controller */ "./src/synth/synth-controller.js");
+/* harmony import */ var _src_synth_get_midi_file__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./src/synth/get-midi-file */ "./src/synth/get-midi-file.js");
+/* harmony import */ var _src_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./src/synth/abc_midi_renderer */ "./src/synth/abc_midi_renderer.js");
+/* harmony import */ var _src_synth_sounds_cache__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./src/synth/sounds-cache */ "./src/synth/sounds-cache.js");
 /**!
 Copyright (c) 2009-2023 Paul Rosen and Gregory Dyke
 
@@ -26667,52 +26681,60 @@ THE SOFTWARE.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var abcjs = {};
-abcjs.signature = "abcjs-basic v" + _version__WEBPACK_IMPORTED_MODULE_0__["default"];
-Object.keys(_src_api_abc_animation__WEBPACK_IMPORTED_MODULE_1__["default"]).forEach(function (key) {
-  abcjs[key] = _src_api_abc_animation__WEBPACK_IMPORTED_MODULE_1__["default"][key];
+abcjs.renderAbc = _src_api_abc_tunebook_svg__WEBPACK_IMPORTED_MODULE_7__["default"];
+abcjs.tuneMetrics = _src_api_tune_metrics__WEBPACK_IMPORTED_MODULE_8__["default"];
+abcjs.TimingCallbacks = _src_api_abc_timing_callbacks__WEBPACK_IMPORTED_MODULE_9__["default"];
+abcjs.signature = 'abcjs-basic v' + _version__WEBPACK_IMPORTED_MODULE_0__["default"];
+Object.keys(_src_api_abc_animation__WEBPACK_IMPORTED_MODULE_3__["default"]).forEach(function (key) {
+  abcjs[key] = _src_api_abc_animation__WEBPACK_IMPORTED_MODULE_3__["default"][key];
 });
-Object.keys(_src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_2__["default"]).forEach(function (key) {
-  abcjs[key] = _src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_2__["default"][key];
+Object.keys(_src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_4__["default"]).forEach(function (key) {
+  abcjs[key] = _src_api_abc_tunebook__WEBPACK_IMPORTED_MODULE_4__["default"][key];
 });
-abcjs.renderAbc = __webpack_require__(/*! ./src/api/abc_tunebook_svg */ "./src/api/abc_tunebook_svg.js");
-abcjs.tuneMetrics = __webpack_require__(/*! ./src/api/tune-metrics */ "./src/api/tune-metrics.js");
-abcjs.TimingCallbacks = __webpack_require__(/*! ./src/api/abc_timing_callbacks */ "./src/api/abc_timing_callbacks.js");
-
-abcjs.setGlyph = _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_5__["default"].setSymbol;
-abcjs.strTranspose = _src_str_output__WEBPACK_IMPORTED_MODULE_4__["default"];
-
-
-
-
-
-
-
-
-
-
-
-
-
-abcjs.synth = {
-  CreateSynth: _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_6__["default"],
-  instrumentIndexToName: _src_synth_instrument_index_to_name__WEBPACK_IMPORTED_MODULE_7__["default"],
-  pitchToNoteName: _src_synth_pitch_to_note_name__WEBPACK_IMPORTED_MODULE_8__["default"],
-  SynthController: _src_synth_synth_controller__WEBPACK_IMPORTED_MODULE_15__["default"],
-  SynthSequence: _src_synth_synth_sequence__WEBPACK_IMPORTED_MODULE_9__["default"],
-  CreateSynthControl: _src_synth_create_synth_control__WEBPACK_IMPORTED_MODULE_10__["default"],
-  registerAudioContext: _src_synth_register_audio_context__WEBPACK_IMPORTED_MODULE_11__["default"],
-  activeAudioContext: _src_synth_active_audio_context__WEBPACK_IMPORTED_MODULE_12__["default"],
-  supportsAudio: _src_synth_supports_audio__WEBPACK_IMPORTED_MODULE_13__["default"],
-  playEvent: _src_synth_play_event__WEBPACK_IMPORTED_MODULE_14__["default"],
-  getMidiFile: _src_synth_get_midi_file__WEBPACK_IMPORTED_MODULE_16__["default"],
-  sequence: _src_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  midiRenderer: _src_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_17__["default"],
-  soundsCache: _src_synth_sounds_cache__WEBPACK_IMPORTED_MODULE_18__["default"]
+var setGlyph = _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_10__["default"].setSymbol;
+abcjs.setGlyph = _src_write_creation_glyphs__WEBPACK_IMPORTED_MODULE_10__["default"].setSymbol;
+abcjs.strTranspose = _src_str_output__WEBPACK_IMPORTED_MODULE_6__["default"];
+abcjs['Editor'] = _src_edit_abc_editor__WEBPACK_IMPORTED_MODULE_1__["default"];
+abcjs['EditArea'] = _src_edit_abc_editarea__WEBPACK_IMPORTED_MODULE_2__["default"];
+var synth = {
+  CreateSynth: _src_synth_create_synth__WEBPACK_IMPORTED_MODULE_11__["default"],
+  instrumentIndexToName: _src_synth_instrument_index_to_name__WEBPACK_IMPORTED_MODULE_12__["default"],
+  pitchToNoteName: _src_synth_pitch_to_note_name__WEBPACK_IMPORTED_MODULE_13__["default"],
+  SynthController: _src_synth_synth_controller__WEBPACK_IMPORTED_MODULE_20__["default"],
+  SynthSequence: _src_synth_synth_sequence__WEBPACK_IMPORTED_MODULE_14__["default"],
+  CreateSynthControl: _src_synth_create_synth_control__WEBPACK_IMPORTED_MODULE_15__["default"],
+  registerAudioContext: _src_synth_register_audio_context__WEBPACK_IMPORTED_MODULE_16__["default"],
+  activeAudioContext: _src_synth_active_audio_context__WEBPACK_IMPORTED_MODULE_17__["default"],
+  supportsAudio: _src_synth_supports_audio__WEBPACK_IMPORTED_MODULE_18__["default"],
+  playEvent: _src_synth_play_event__WEBPACK_IMPORTED_MODULE_19__["default"],
+  getMidiFile: _src_synth_get_midi_file__WEBPACK_IMPORTED_MODULE_21__["default"],
+  sequence: _src_synth_abc_midi_sequencer__WEBPACK_IMPORTED_MODULE_5__["default"],
+  midiRenderer: _src_synth_abc_midi_renderer__WEBPACK_IMPORTED_MODULE_22__["default"],
+  soundsCache: _src_synth_sounds_cache__WEBPACK_IMPORTED_MODULE_23__["default"]
 };
-abcjs['Editor'] = __webpack_require__(/*! ./src/edit/abc_editor */ "./src/edit/abc_editor.js");
-abcjs['EditArea'] = __webpack_require__(/*! ./src/edit/abc_editarea */ "./src/edit/abc_editarea.js");
+abcjs.synth = synth;
 /* harmony default export */ __webpack_exports__["default"] = (abcjs);
+
 }();
 /******/ 	return __webpack_exports__;
 /******/ })()

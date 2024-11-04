@@ -21,65 +21,78 @@ THE SOFTWARE.
 
  **This text is from: http://opensource.org/licenses/MIT**
 !**/
-import version from './version';
+import version from './version'
+import Editor from './src/edit/abc_editor'
+import EditArea from './src/edit/abc_editarea'
 
-import animation from './src/api/abc_animation';
-import tuneBook from './src/api/abc_tunebook';
-import sequence from './src/synth/abc_midi_sequencer';
-import strTranspose from './src/str/output';
+import animation from './src/api/abc_animation'
+import tuneBook from './src/api/abc_tunebook'
+import sequence from './src/synth/abc_midi_sequencer'
+import strTranspose from './src/str/output'
 
-var abcjs = {};
+import renderAbc from './src/api/abc_tunebook_svg'
+import tuneMetrics from './src/api/tune-metrics'
+import TimingCallbacks from './src/api/abc_timing_callbacks'
 
-abcjs.signature = "abcjs-basic v" + version;
+import glyphs from './src/write/creation/glyphs'
+
+import CreateSynth from './src/synth/create-synth'
+import instrumentIndexToName from './src/synth/instrument-index-to-name'
+import pitchToNoteName from './src/synth/pitch-to-note-name'
+import SynthSequence from './src/synth/synth-sequence'
+import CreateSynthControl from './src/synth/create-synth-control'
+import registerAudioContext from './src/synth/register-audio-context'
+import activeAudioContext from './src/synth/active-audio-context'
+import supportsAudio from './src/synth/supports-audio'
+import playEvent from './src/synth/play-event'
+import SynthController from './src/synth/synth-controller'
+import getMidiFile from './src/synth/get-midi-file'
+import midiRenderer from './src/synth/abc_midi_renderer'
+import soundsCache from './src/synth/sounds-cache'
+
+var abcjs = {}
+
+abcjs.renderAbc = renderAbc
+abcjs.tuneMetrics = tuneMetrics
+abcjs.TimingCallbacks = TimingCallbacks
+
+abcjs.signature = 'abcjs-basic v' + version
 
 Object.keys(animation).forEach(function (key) {
-	abcjs[key] = animation[key];
-});
+  abcjs[key] = animation[key]
+})
 
 Object.keys(tuneBook).forEach(function (key) {
-	abcjs[key] = tuneBook[key];
-});
+  abcjs[key] = tuneBook[key]
+})
 
-abcjs.renderAbc = require('./src/api/abc_tunebook_svg');
-abcjs.tuneMetrics = require('./src/api/tune-metrics');
-abcjs.TimingCallbacks = require('./src/api/abc_timing_callbacks');
+const setGlyph = glyphs.setSymbol
 
-import glyphs from './src/write/creation/glyphs';
-abcjs.setGlyph = glyphs.setSymbol;
-abcjs.strTranspose = strTranspose;
+abcjs.setGlyph = glyphs.setSymbol
+abcjs.strTranspose = strTranspose
 
-import CreateSynth from './src/synth/create-synth';
-import instrumentIndexToName from './src/synth/instrument-index-to-name';
-import pitchToNoteName from './src/synth/pitch-to-note-name';
-import SynthSequence from './src/synth/synth-sequence';
-import CreateSynthControl from './src/synth/create-synth-control';
-import registerAudioContext from './src/synth/register-audio-context';
-import activeAudioContext from './src/synth/active-audio-context';
-import supportsAudio from './src/synth/supports-audio';
-import playEvent from './src/synth/play-event';
-import SynthController from './src/synth/synth-controller';
-import getMidiFile from './src/synth/get-midi-file';
-import midiRenderer from './src/synth/abc_midi_renderer';
-import soundsCache from './src/synth/sounds-cache';
+abcjs['Editor'] = Editor
+abcjs['EditArea'] = EditArea
 
-abcjs.synth = {
-	CreateSynth: CreateSynth,
-	instrumentIndexToName: instrumentIndexToName,
-	pitchToNoteName: pitchToNoteName,
-	SynthController: SynthController,
-	SynthSequence: SynthSequence,
-	CreateSynthControl: CreateSynthControl,
-	registerAudioContext: registerAudioContext,
-	activeAudioContext: activeAudioContext,
-	supportsAudio: supportsAudio,
-	playEvent: playEvent,
-	getMidiFile: getMidiFile,
-	sequence: sequence,
-	midiRenderer: midiRenderer,
-	soundsCache: soundsCache,
-};
+const synth = {
+  CreateSynth: CreateSynth,
+  instrumentIndexToName: instrumentIndexToName,
+  pitchToNoteName: pitchToNoteName,
+  SynthController: SynthController,
+  SynthSequence: SynthSequence,
+  CreateSynthControl: CreateSynthControl,
+  registerAudioContext: registerAudioContext,
+  activeAudioContext: activeAudioContext,
+  supportsAudio: supportsAudio,
+  playEvent: playEvent,
+  getMidiFile: getMidiFile,
+  sequence: sequence,
+  midiRenderer: midiRenderer,
+  soundsCache: soundsCache,
+}
 
-abcjs['Editor'] = require('./src/edit/abc_editor');
-abcjs['EditArea'] = require('./src/edit/abc_editarea');
+abcjs.synth = synth
 
-export default abcjs;
+export default abcjs
+
+export { renderAbc, tuneMetrics, TimingCallbacks, synth, setGlyph, strTranspose, CreateSynth }
